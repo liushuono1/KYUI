@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<network>
+	<node x="230" y="220" text="general:MainTreeHelper.Part_Master" network_text='添加新的儿童'
+		tooltip="general:MainTreeHelper.Part_Master" icon="/free/images/Engineering_icon_Part_Master_unselected.png" 
+		 selected_icon="/free/images/Engineering_icon_Part_Master_selected.png" 
+		 hovered_icon="/free/images/Engineering_icon_Part_Master_hovered.png" 
+		 treeNodeName="ADD_STUDENT"
+		 list_icon="/free/images/Engineering_Part_Master_unselected.png" selected_list_icon="/free/images/Engineering_Part_Master_selected.png">
+		<button1 tooltip="/ManageUI/CardRegUI" icon="/free/images/add_icon_unselected.png" selected_icon="/free/images/add_icon_unselected.png" hovered_icon="/free/images/add_icon_unselected.png" action="" />
+		<button2 tooltip="engineering:PartHomePageLookupSearchPane.SearchButton" icon="/free/images/lookup_icon_unselected.png" selected_icon="/free/images/lookup_icon_unselected.png" hovered_icon="/free/images/lookup_icon_unselected.png" action="EL01" ></button2>
+		<button3 tooltip="engineering:PartHomePageSearchPane.Search_by_Part" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" action="ES01" ></button3>
+		<shortcuts>
+			<separator text="general:MainTreeHelper.Part_Master" />
+			<shortcut action="EA01" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="EL01" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="ES01" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES011" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="EL011" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="EL012" icon="/free/images/replace_unselected.png" selected_icon="/free/images/replace_selected.png" hovered_icon="/free/images/replace_hovered.png" text="" tooltip="" />
+			<shortcut action="ES014" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES015" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES016" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES017" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES018" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES019" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0110" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0111" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0112" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0113" icon="/free/images/inactive_parts_unselected.png" selected_icon="/free/images/inactive_parts_selected.png" hovered_icon="/free/images/inactive_parts_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0114" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0115" icon="/free/images/update_unselected.png" selected_icon="/free/images/update_selected.png" hovered_icon="/free/images/update_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0116" icon="/free/images/replace_unselected.png" selected_icon="/free/images/replace_selected.png" hovered_icon="/free/images/replace_hovered.png" text="" tooltip="" Conditions = "" />
+			<shortcut action="ES0117" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="EA11" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0118" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES0119" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" Conditions = "" />
+			<shortcut action="ES0120" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" Conditions = "" />
+			<shortcut action="EA12" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" Conditions = "" />
+			<shortcut action="ES0121" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" Conditions = "" />
+		</shortcuts>
+	</node>
+	<node x="230" y="50" text="general:MainTreeHelper.BOM" network_text="general:MainTreeHelper.BOM" tooltip="general:MainTreeHelper.BOM"
+		icon="/free/images/Engineering_icon_Bom_unselected.png"
+		selected_icon="/free/images/Engineering_icon_Bom_selected.png"
+		hovered_icon="/free/images/Engineering_icon_Bom_hovered.png"
+		treeNodeName="BOM"
+		list_icon="/free/images/Engineering_Bom_unselected.png" selected_list_icon="/free/images/Engineering_Bom_selected.png">
+		<button1 tooltip="engineering:BomHomePage.Addbom" icon="/free/images/add_icon_unselected.png" selected_icon="/free/images/add_icon_unselected.png" hovered_icon="/free/images/add_icon_unselected.png" action="EA04" />
+		<button2 tooltip="engineering:BomHomePageLookupSearchPane.SearchButton" icon="/free/images/lookup_icon_unselected.png" selected_icon="/free/images/lookup_icon_unselected.png" hovered_icon="/free/images/lookup_icon_unselected.png" action="EL02" />
+		<button3 tooltip="engineering:BomHomePageByBomSearchPane.SearchButton" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" action="ES02" />
+		<shortcuts>
+			<separator text="general:MainTreeHelper.BOMTitle" />
+			<shortcut action="EA04" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="EL02" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="ES02" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="EL021" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="EL022" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="EL023" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="EL024" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="EL025" icon="/free/images/replace_unselected.png" selected_icon="/free/images/replace_selected.png" hovered_icon="/free/images/replace_hovered.png" text="" tooltip="" />
+			<shortcut action="ES021" icon="/free/images/all_boms_unselected.png" selected_icon="/free/images/all_boms_selected.png" hovered_icon="/free/images/all_boms_hovered.png" text="" tooltip="" />
+			<shortcut action="ES022" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<separator text="general:MainTreeHelper.BOMApprovalTitle"  condition = "CompanyVO.useBomApproval"/>
+			<shortcut action="EA041" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="ES023" icon="/free/images/approval_unselected.png" selected_icon="/free/images/approval_selected.png" hovered_icon="/free/images/approval_hovered.png" text="" tooltip="" />
+		</shortcuts>
+	</node>
+	<node x="430" y="50" text="general:MainTreeHelper.Part_Drawing" network_text="general:MainTreeHelper.Part_Drawing"
+		tooltip="general:MainTreeHelper.Part_Drawing" icon="/free/images/Engineering_icon_Drawing_unselected.png"
+		selected_icon="/free/images/Engineering_icon_Drawing_selected.png"
+		hovered_icon="/free/images/Engineering_icon_Drawing_hovered.png"
+		treeNodeName="Part_Drawing"
+		list_icon="/free/images/Engineering_Drawing_unselected.png" selected_list_icon="/free/images/Engineering_Drawing_selected.png">
+		<button1 tooltip="engineering:DrawingHomePage.2AddDrawing" icon="/free/images/upload_icon_unselected.png" selected_icon="/free/images/upload_icon_unselected.png" hovered_icon="/free/images/upload_icon_unselected.png" action="EA02" />
+		<button2 tooltip="engineering:DrawingHomePage.2SearchDWF" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" action="ES03" />
+		<button3 tooltip="engineering:DrawingHomePage.2AddDWGDrawing" icon="/free/images/upload_icon_unselected.png" selected_icon="/free/images/upload_icon_unselected.png" hovered_icon="/free/images/upload_icon_unselected.png" action="EA03" />
+		<shortcuts>
+			<separator text="general:MainTreeHelper.Part_Drawing" />
+			<shortcut action="EA02" icon="/free/images/upload_unselected.png" selected_icon="/free/images/replace_selected.png" hovered_icon="/free/images/replace_hovered.png" text="" tooltip="" />
+			<shortcut action="EA021" icon="/free/images/upload_unselected.png" selected_icon="/free/images/replace_selected.png" hovered_icon="/free/images/replace_hovered.png" text="" tooltip="" />
+			<shortcut action="ES03" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES031" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="EA03" icon="/free/images/upload_unselected.png" selected_icon="/free/images/replace_selected.png" hovered_icon="/free/images/replace_hovered.png" text="" tooltip="" />
+			<shortcut action="EA031" icon="/free/images/upload_unselected.png" selected_icon="/free/images/replace_selected.png" hovered_icon="/free/images/replace_hovered.png" text="" tooltip="" />
+			<shortcut action="ES04" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES041" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES042" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<separator text="general:MainTreeHelper.Part_DrawingSettingTitle" />
+			<shortcut action="ES044" icon="/free/images/MFG_drawing_setting_unselected.png" selected_icon="/free/images/MFG_drawing_setting_selected.png" hovered_icon="/free/images/MFG_drawing_setting_hovered.png" text="" tooltip="" />
+			<shortcut action="ES043" icon="/free/images/ENG_drawing_setting_unselected.png" selected_icon="/free/images/ENG_drawing_setting_selected.png" hovered_icon="/free/images/ENG_drawing_setting_hovered.png" text="" tooltip="" />
+		</shortcuts>
+	</node>
+	<node x="30" y="220" text="general:MainTreeHelper.ECN" network_text="general:MainTreeHelper.ECN" tooltip="general:MainTreeHelper.ECN"
+		icon="/free/images/Engineering_icon_ECN_unselected.png"
+		selected_icon="/free/images/Engineering_icon_ECN_selected.png"
+		hovered_icon="/free/images/Engineering_icon_ECN_hovered.png"
+		treeNodeName="ECN"
+		list_icon="/free/images/Engineering_ECN_unselected.png" selected_list_icon="/free/images/Engineering_ECN_selected.png">
+		<button1 tooltip="engineering:EcnHomePage.AddECN" icon="/free/images/add_icon_unselected.png" selected_icon="/free/images/add_icon_unselected.png" hovered_icon="/free/images/add_icon_unselected.png" action="EA05" />
+		<button2 tooltip="engineering:EcnHomePageLookupSearchPane.SearchButton" icon="/free/images/lookup_icon_unselected.png" selected_icon="/free/images/lookup_icon_unselected.png" hovered_icon="/free/images/lookup_icon_unselected.png" action="EL03" />
+		<button3 tooltip="engineering:EcnHomePageByECNSearchPane.SearchButton" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" action="ES05" />
+		<shortcuts>
+			<separator text="general:MainTreeHelper.ECNTitle" />
+			<shortcut action="EA05" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="EL03" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="ES051" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES05" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES052" icon="/free/images/open_unselected.png" selected_icon="/free/images/open_selected.png" hovered_icon="/free/images/open_hovered.png" text="" tooltip="" />
+			<shortcut action="ES053" icon="/free/images/close_past_due_quote_unselected.png" selected_icon="/free/images/close_past_due_quote_selected.png" hovered_icon="/free/images/close_past_due_quote_hovered.png" text="" tooltip="" />
+			<separator text="general:MainTreeHelper.ECNApprovals" />
+			<shortcut action="EA051" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="ES054" icon="/free/images/approval_unselected.png" selected_icon="/free/images/approval_selected.png" hovered_icon="/free/images/approval_hovered.png" text="" tooltip="" />
+		</shortcuts>
+	</node>
+	<node x="30" y="50" text="general:MainTreeHelper.ECR" network_text="general:MainTreeHelper.ECR" tooltip="general:MainTreeHelper.ECR"
+		icon="/free/images/Engineering_icon_ECR_unselected.png"
+		selected_icon="/free/images/Engineering_icon_ECR_selected.png"
+		hovered_icon="/free/images/Engineering_icon_ECR_hovered.png"
+		treeNodeName="ECR"
+		list_icon="/free/images/Engineering_ECR_unselected.png" selected_list_icon="/free/images/Engineering_ECR_selected.png">
+		<button1 tooltip="engineering:EcrHomePage.AddECR" icon="/free/images/add_icon_unselected.png" selected_icon="/free/images/add_icon_unselected.png" hovered_icon="/free/images/add_icon_unselected.png" action="EA06" />
+		<button2 tooltip="engineering:EcrHomePageLookupSearchPane.SearchButton" icon="/free/images/lookup_icon_unselected.png" selected_icon="/free/images/lookup_icon_unselected.png" hovered_icon="/free/images/lookup_icon_unselected.png" action="EL04" />
+		<button3 tooltip="engineering:EcrHomePageByPNSearchPane.SearchButton" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" action="ES06" />
+		<shortcuts>
+			<separator text="general:MainTreeHelper.ECRTitle" />
+			<shortcut action="EA06" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="EL04" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="ES061" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES06" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES062" icon="/free/images/close_past_due_quote_unselected.png" selected_icon="/free/images/close_past_due_quote_selected.png" hovered_icon="/free/images/close_past_due_quote_hovered.png" text="" tooltip="" />
+			<shortcut action="ES063" icon="/free/images/open_unselected.png" selected_icon="/free/images/open_selected.png" hovered_icon="/free/images/open_hovered.png" text="" tooltip="" />
+			<separator text="general:MainTreeHelper.ECRApproval" />
+			<shortcut action="EA061" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="ES064" icon="/free/images/approval_unselected.png" selected_icon="/free/images/approval_selected.png" hovered_icon="/free/images/approval_hovered.png" text="" tooltip="" />
+		</shortcuts>
+	</node>
+	
+	<node x="430" y="220" text="general:MainTreeHelper.Design_Control" network_text="general:MainTreeHelper.Design_Control"
+		tooltip="general:MainTreeHelper.Design_Control" icon="/free/images/Engineering_icon_EDC_unselected.png"
+		selected_icon="/free/images/Engineering_icon_EDC_selected.png"
+		hovered_icon="/free/images/Engineering_icon_EDC_hovered.png"
+		treeNodeName="Design_Control"
+		list_icon="/free/images/Engineering_EDC_unselected.png" selected_list_icon="/free/images/Engineering_EDC_selected.png">
+		<button1 tooltip="engineering:DesignControlHomePage.AddDesign" icon="/free/images/add_icon_unselected.png" selected_icon="/free/images/add_icon_unselected.png" hovered_icon="/free/images/add_icon_unselected.png" action="EA07" />
+		<button2 tooltip="engineering:DesignControlHomePageLookupSearchPane.SearchButton" icon="/free/images/lookup_icon_unselected.png" selected_icon="/free/images/lookup_icon_unselected.png" hovered_icon="/free/images/lookup_icon_unselected.png" action="EL05" />
+		<button3 tooltip="engineering:DesignControlHomePageByPNSearchPane.2SearchbyPN" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" action="ES07" />
+		<shortcuts>
+			<separator text="general:MainTreeHelper.EDCTitle" />
+			<shortcut action="EA07" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" text="" tooltip="" />
+			<shortcut action="EL05" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" text="" tooltip="" />
+			<shortcut action="ES071" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES07" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES072" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" text="" tooltip="" />
+			<shortcut action="ES073" icon="/free/images/open_unselected.png" selected_icon="/free/images/open_selected.png" hovered_icon="/free/images/open_hovered.png" text="" tooltip="" />
+			<shortcut action="ES074" icon="/free/images/close_past_due_quote_unselected.png" selected_icon="/free/images/close_past_due_quote_selected.png" hovered_icon="/free/images/close_past_due_quote_hovered.png" text="" tooltip="" />
+		</shortcuts>
+	</node>
+
+	<node x="230" y="390"
+		text="general:MainTreeHelper.Detection_Standard"
+		network_text="general:MainTreeHelper.Detection_Standard"
+		tooltip="general:MainTreeHelper.Detection_Standard"
+		icon="/free/images/EngineeringBox_icon_DetectionStandard_unselected.png"
+		selected_icon="/free/images/EngineeringBox_icon_DetectionStandard_selected.png"
+		hovered_icon="/free/images/EngineeringBox_icon_DetectionStandard_hovered.png"
+		treeNodeName="Detection_Standard"
+		list_icon="/free/images/EngineeringBox_DetectionStandard_unselected.png" 
+		selected_list_icon="/free/images/Accounting_DetectionStandard_selected.png">
+		<button1 tooltip="engineering:TraceHomePageSetPane.Super" icon="/free/images/add_icon_unselected.png" selected_icon="/free/images/add_icon_unselected.png" hovered_icon="/free/images/add_icon_unselected.png" action="EA09" />
+		<button2 tooltip="engineering:TraceHomePageLookupPane.Super" icon="/free/images/lookup_icon_unselected.png" selected_icon="/free/images/lookup_icon_unselected.png" hovered_icon="/free/images/lookup_icon_unselected.png" action="EL06" />
+		<button3 tooltip="engineering:TraceHomePageSearchPane.Super" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" action="ES08" />
+		<shortcuts>
+		<separator text="general:MainTreeHelper.Detection_Standard"/>
+		<shortcut action="EA09" text="engineering:TraceHomePageSetPane.Super" tooltip="engineering:TraceHomePageSetPane.Super" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" />
+		<shortcut action="EL06" text="engineering:TraceHomePageLookupPane.Super" tooltip="engineering:TraceHomePageLookupPane.Super" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" />
+		<shortcut action="ES08" text="engineering:TraceHomePageSearchPane.Super" tooltip="engineering:TraceaHomepageSearchByPartPane.2SearchbyPart" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" />
+		<shortcut action="ES075" text="" tooltip="" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" />
+		<shortcut action="ES076" text="" tooltip="" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" />
+		</shortcuts>
+	</node>
+	<node x="30" y="390"
+		text="engineering:MaterialHomePage.Material"
+		network_text="engineering:MaterialHomePage.Material"
+		tooltip="engineering:MaterialHomePage.Material"
+		
+		icon="/free/images/EngineeringBox_icon_Material_unselected.png"
+		selected_icon="/free/images/EngineeringBox_icon_Material_selected.png"
+		hovered_icon="/free/images/EngineeringBox_icon_Material_hovered.png"
+		treeNodeName="Material"
+		list_icon="/free/images/EngineeringBox_Material_unselected.png" 
+		selected_list_icon="/free/images/EngineeringBox_Material_selected.png">
+		<button1 action="EA14" tooltip="engineering:MaterialHomePage.AddMaterial" icon="/free/images/add_icon_unselected.png" selected_icon="/free/images/add_icon_unselected.png" hovered_icon="/free/images/add_icon_unselected.png" />
+		<button2 action="EL026" tooltip="engineering:MaterialHomePageLookupPane.2LookupMaterial" icon="/free/images/lookup_icon_unselected.png" selected_icon="/free/images/lookup_icon_unselected.png" hovered_icon="/free/images/lookup_icon_unselected.png" />
+		<button3 action="ES13" tooltip="engineering:MaterialHomeSearchReportPane.2SearchMaterial" icon="/free/images/search_icon_unselected.png" selected_icon="/free/images/search_icon_unselected.png" hovered_icon="/free/images/search_icon_unselected.png" />
+		<shortcuts>
+		<separator text="engineering:MaterialHomePage.Material"/>
+		<shortcut action="EA14" text="engineering:MaterialHomePage.AddMaterial" tooltip="engineering:MaterialHomePage.AddMaterial" icon="/free/images/add_unselected.png" selected_icon="/free/images/add_selected.png" hovered_icon="/free/images/add_hovered.png" />
+		<shortcut action="EL026" text="engineering:MaterialHomePageLookupPane.2LookupMaterial" tooltip="engineering:MaterialHomePageLookupPane.2LookupMaterial" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" />
+		<shortcut action="EL027" text="engineering:MaterialHomeByPartSearchPane.LookUpWhereUsedWithMateriaInfo" tooltip="engineering:MaterialHomeByPartSearchPane.LookUpWhereUsedWithMateriaInfo" icon="/free/images/lookup_unselected.png" selected_icon="/free/images/lookup_selected.png" hovered_icon="/free/images/lookup_hovered.png" /> 
+		<shortcut action="ES13" text="engineering:MaterialHomeSearchReportPane.2SearchMaterial" tooltip="engineering:MaterialHomeSearchReportPane.2SearchMaterial" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" />
+		<shortcut action="ES12" text="engineering:MaterialHomeByPartSearchPane.SearchbyBOM" tooltip="engineering:MaterialHomeByPartSearchPane.SearchbyBOM" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" />
+		<shortcut action="ES11" text="engineering:MaterialHomeByPartSearchPane.Title" tooltip="engineering:MaterialHomeByPartSearchPane.Title" icon="/free/images/search_unselected.png" selected_icon="/free/images/search_selected.png" hovered_icon="/free/images/search_hovered.png" />
+		</shortcuts>
+	</node>
+	
+    <quickStart>
+		<tab title="General">
+		<panel>
+			<item title="general:MainTreeHelper.Part_Master" />
+			<item code="EA01" />
+			<item code="EL01" />
+			<item code="ES01" />
+			<item title="general:MainTreeHelper.Part_Document" />
+			<item code="EA10" />
+			<item code="ES10" />
+			<item code="ES101" />
+		</panel>
+		<panel>
+			<item title="general:MainTreeHelper.BOM" />
+			<item code="EA04" />
+			<item code="EL02" />
+			<item code="ES02" />
+			<item title="general:MainTreeHelper.Part_Drawing" />
+			<item code="EA02" />
+			<item code="ES03" />
+			<item code="EA03" />
+			<item title="general:MainTreeHelper.Design_Control" />
+			<item code="EA07" />
+			<item code="EL05" />
+			<item code="ES07" />
+		</panel>
+		<panel>
+			<item title="general:MainTreeHelper.ECN" />
+			<item code="EA05" />
+			<item code="EL03" />
+			<item code="ES05" />
+			<item title="general:MainTreeHelper.ECR" />
+			<item code="EA06" />
+			<item code="EL04" />
+			<item code="ES06" />
+		</panel>
+		</tab>
+		<tab title="Others">
+		<panel>
+			<item title="general:MainTreeHelper.Part_Master" />
+			<item code="EA01" />
+			<item code="EL01" />
+			<item code="ES01" />
+			<item title="general:MainTreeHelper.Part_Document" />
+			<item code="EA10" />
+			<item code="ES10" />
+			<item code="ES101" />
+		</panel>
+		</tab>
+	</quickStart>
+	<!--
+		<node x="230" y="390"
+		text="general:MainTreeHelper.Traceable"
+		network_text="general:MainTreeHelper.Traceable"
+		tooltip="general:MainTreeHelper.Traceable"
+		icon="/free/images/module.png"
+		list_icon="/free/images/submodule.png">
+		<button1 tooltip="engineering:TraceHomePageSetPane.Super" icon="/free/images/module_attachment.png" action="EA09"/>
+		<button2 tooltip="engineering:TraceHomePageLookupPane.Super" icon="/free/images/module_attachment.png" action="EL06"/>
+		<button3 tooltip="engineering:TraceaHomepageSearchByPartPane.2SearchbyPart" icon="/free/images/module_attachment.png" action="ES08"/>
+		<shortcuts>
+		<separator text="Most Often Used Reports"/>
+		<shortcut text="engineering:TraceHomePageSetPane.Super" tooltip="engineering:TraceHomePageSetPane.Super" icon="/free/images/submodule.png" action="EA09"/>
+		<shortcut text="engineering:TraceHomePageLookupPane.Super" tooltip="engineering:TraceHomePageLookupPane.Super" icon="/free/images/submodule.png" action="EL06"/>
+		<shortcut text="engineering:TraceaHomepageSearchByPartPane.2SearchbyPart" tooltip="engineering:TraceaHomepageSearchByPartPane.2SearchbyPart" icon="/free/images/chart.png" action="ES08"/>
+		</shortcuts>
+		</node>
+	-->
+	
+	<arrow x="365" y="175" direction="right_up" rotation="0" />
+	<arrow x="170" y="255" direction="left" rotation="0" />
+	<!--
+	<arrow x="370" y="255" direction="right" rotation="0" />
+	-->
+	<arrow x="170" y="170" direction="left_up" rotation="0" />
+	<!--
+	<arrow x="170" y="85" direction="left" rotation="0" />
+	-->
+	<arrow x="365" y="85" direction="left" rotation="0" />
+	<arrow x="70" y="170" direction="down" rotation="0" />
+	<arrow x="170" y="85" direction="left" rotation="0" />
+	<arrow x="270" y="170" direction="up" rotation="0" />
+	<arrow x="170" y="255" direction="left" rotation="0" />
+	<arrow x="365" y="175" direction="right_up" rotation="0" />
+	<arrow x="370" y="255" direction="left" rotation="0" />
+	<arrow x="270" y="350" direction="down" rotation="0" />
+	
+</network>

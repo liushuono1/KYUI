@@ -1,0 +1,3843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menubar>
+	<menu text="general:MainTreeHelper.System">
+		<menuitem text="general:SystemMenu.SystemHelp"
+			tooltip="general:SystemMenu.SystemHelp" action="HELP" />
+		<menuitem text="general:SystemMenu.SupportAndDiscussion"
+			tooltip="general:SystemMenu.SupportAndDiscussion" action="REPORTBUG" />
+		<menuitem text="general:SystemMenu.OnlineDocumentation"
+			tooltip="general:SystemMenu.OnlineDocumentation" action="SEARCH" />
+		<menuitem text="general:SystemMenu.WhatsNew"
+			tooltip="general:SystemMenu.WhatsNew" action="WHATSNEW" />
+		<separator />
+		<menuitem text="general:SystemMenu.Preferences"
+			tooltip="general:SystemMenu.Preferences" action="PREFERENCES" />
+		<menuitem text="general:SystemMenu.Config2BizBoxFree"
+			tooltip="general:SystemMenu.Config2BizBoxFree" action="CONFIGTREE" />
+		<separator />
+		<menuitem action="HS03" />
+		<menuitem text="general:SystemMenu.ChangePassword"
+			tooltip="general:SystemMenu.ChangePassword" action="CHANGEPASSWORD" />
+		<!--
+		<menuitem text="general:RunSqlConsoleUI.RunSqlConsoleUI"
+			tooltip="general:RunSqlConsoleUI.RunSqlConsoleUI" action="RUNSQL" />	
+		-->
+		<menuitem text="general:SystemMenu.Logout"
+			tooltip="general:SystemMenu.Logout" action="LOGOUT" />
+		<menuitem text="general:SystemMenu.Exit"
+			tooltip="general:SystemMenu.Exit" action="EXIT" />
+	</menu>
+	<menu text="general:MainTreeHelper.Menu_Engineering_Box">
+		<menu text="general:MainTreeHelper.Part_Master">
+			<menuitem text="engineering:PartHomePage.AddPart"
+				tooltip="engineering:PartHomePage.AddPart" action="EA01" />
+			<separator></separator>
+			<menuitem text="engineering:PartHomePageMenuItem.2LookPart"
+				tooltip="engineering:PartHomePageMenuItem.2LookPart" action="EL01" />
+			<menuitem
+				text="engineering:PartHomePageWhereUsedSearchPane.SearchButton"
+				tooltip="engineering:PartHomePageWhereUsedSearchPane.SearchButton"
+				action="EL011" />
+			<separator></separator>
+			<menuitem
+				text="engineering:PartHomePageChangePartType.ReplacePartType"
+				tooltip="engineering:PartHomePageChangePartType.ReplacePartType"
+				action="EL012" />
+			<menuitem action="ES0115" />
+			<menuitem action="ES0116" />
+			<separator></separator>
+			<menuitem
+				text="engineering:PartHomePageSearchPane.Search_by_Part"
+				tooltip="engineering:PartHomePageSearchPane.Search_by_Part"
+				action="ES01" />
+			<menuitem
+				text="engineering:PartHomePageByDescStartWithSearchPane.SearchButton"
+				tooltip="engineering:PartHomePageByDescStartWithSearchPane.SearchButton"
+				action="ES014" />
+			<menuitem
+				text="engineering:PartHomePageByDescContainSearchPane.SearchButton"
+				tooltip="engineering:PartHomePageByDescContainSearchPane.SearchButton"
+				action="ES015" />
+			<menuitem
+				text="engineering:PartHomePageMenuItem.2SearchByPartDescKey"
+				tooltip="engineering:PartHomePageMenuItem.2SearchByPartDescKey"
+				action="ES016" />
+			<menuitem
+				text="engineering:PartHomePageMenuItem.2SearchByPartOrDesc"
+				tooltip="engineering:PartHomePageMenuItem.2SearchByPartOrDesc"
+				action="ES011" />
+			<menuitem
+				text="engineering:PartHomePageByMfrIDStartWithSearchPane.SearchButton"
+				tooltip="engineering:PartHomePageByMfrIDStartWithSearchPane.SearchButton"
+				action="ES019" />
+			<menuitem
+				text="engineering:PartHomePageByMfrPartStartWithPane.SearchButton"
+				tooltip="engineering:PartHomePageByMfrPartStartWithPane.SearchButton"
+				action="ES017" />
+			<menuitem
+				text="engineering:PartHomePageMenuItem.2SearchByMFGPartNumberContain"
+				tooltip="engineering:PartHomePageMenuItem.2SearchByMFGPartNumberContain"
+				action="ES018" />
+			<separator></separator>
+			<menuitem
+				text="engineering:PartHomePageSearchBomItemPane.Search"
+				tooltip="engineering:PartHomePageSearchBomItemPane.Search"
+				action="ES0114" />
+			<separator></separator>
+			<menuitem
+				text="engineering:PartHomePageMenuItem.2AllPartsOnHold"
+				tooltip="engineering:PartHomePageMenuItem.2AllPartsOnHold"
+				action="ES0110" />
+			<menuitem
+				text="engineering:PartHomePageMenuItem.2AllPartsOnWI"
+				tooltip="engineering:PartHomePageMenuItem.2AllPartsOnWI"
+				action="ES0112" />
+			<menuitem
+				text="engineering:PartHomePageMenuItem.2AllInactiveParts"
+				tooltip="engineering:PartHomePageMenuItem.2AllInactiveParts"
+				action="ES0113" />
+			<menuitem
+				text="engineering:PartHomePageMenuItem.2AllPartsOnBOM"
+				tooltip="engineering:PartHomePageMenuItem.2AllPartsOnBOM"
+				action="ES0111" />
+			<separator></separator>
+			<menuitem action="EA11" />
+			<menuitem action="ES0119" />
+			<menuitem action="EA12" />
+			<menuitem action="ES0120" />
+			<menuitem action="ES0121" />
+			<menuitem action="ES0117" />
+			<menuitem action="ES0118" />
+			<menuitem action = "ES0122"/>
+		</menu>
+		<menu text="general:MainTreeHelper.BOM">
+			<menuitem text="engineering:BomHomePage.AddBOM"
+				tooltip="engineering:BomHomePage.AddBOM" action="EA04" />
+			<separator></separator>
+			<menuitem
+				text="engineering:BomHomePageLookupSearchPane.SearchButton"
+				tooltip="engineering:BomHomePageLookupSearchPane.SearchButton"
+				action="EL02" />
+			<menuitem
+				text="engineering:BomHomePageCostLookupPane.2LookUpBOMCost"
+				tooltip="engineering:BomHomePageCostLookupPane.2LookUpBOMCost"
+				action="EL021" />
+			<menuitem
+				text="engineering:BomHomePageByBomSearchPane.LookUpBom"
+				tooltip="engineering:BomHomePageByBomSearchPane.LookUpBom"
+				action="EL022" />
+			<menuitem
+				text="engineering:PartHomePageWhereUsedSearchPane.SearchButton"
+				tooltip="engineering:PartHomePageWhereUsedSearchPane.SearchButton"
+				action="EL023" />
+			<menuitem
+				text="engineering:BomHomePageMultiPartWhereUsedPane.SearchButton"
+				tooltip="engineering:BomHomePageMultiPartWhereUsedPane.SearchButton"
+				action="EL024" />
+			<separator></separator>
+			<menuitem text="engineering:BomHomePage.ReplacePartInBOM"
+				tooltip="engineering:BomHomePage.ReplacePartInBOM" action="EL025" />
+			<separator></separator>
+			<menuitem
+				text="engineering:BomHomePageByBomSearchPane.SearchButton"
+				tooltip="engineering:BomHomePageByBomSearchPane.SearchButton"
+				action="ES02" />
+			<menuitem
+				text="engineering:BomHomePageAllBillLogPane.SearchBOMLog"
+				tooltip="engineering:BomHomePageAllBillLogPane.SearchBOMLog"
+				action="ES022" />
+
+			<separator></separator>
+			<menuitem
+				text="engineering:BomHomePageAllSearchPane.SearchButton"
+				tooltip="engineering:BomHomePageAllSearchPane.SearchButton"
+				action="ES021" />
+
+			<separator />
+			<menuitem
+				text="engineering:BomHomePageAddBomApprovalPane.2AddBOMApproval"
+				tooltip="engineering:BomHomePageAddBomApprovalPane.2AddBOMApproval"
+				action="EA041" />
+			<menuitem
+				text="engineering:BomHomePageSearchAllBomApprovalPane.title"
+				tooltip="engineering:BomHomePageSearchAllBomApprovalPane.title"
+				action="ES023" />
+		</menu>
+		<menu text="general:MainTreeHelper.Part_Drawing">
+			<menuitem text="engineering:DrawingHomePage.AddDrawing"
+				tooltip="engineering:DrawingHomePage.AddDrawing" action="EA02" />
+			<menuitem action = "EA021"/>
+			<menuitem text="engineering:DrawingHomePage.AddDWGDrawing"
+				tooltip="engineering:DrawingHomePage.AddDWGDrawing" action="EA03" />
+			<menuitem action = "EA031"/>
+			<separator></separator>
+			<menuitem text="engineering:DrawingHomePage.2SearchDWF"
+				tooltip="engineering:DrawingHomePage.2SearchDWF" action="ES03" />
+			<menuitem text="engineering:DrawingHomePage.2SearchDWFLog"
+				tooltip="engineering:DrawingHomePage.2SearchDWFLog" action="ES031" />
+			<menuitem text="engineering:DrawingHomePage.2SearchDWG"
+				tooltip="engineering:DrawingHomePage.2SearchDWG" action="ES04" />
+			<menuitem
+				text="engineering:DwgHomePageLogSearchPane.2Search"
+				tooltip="engineering:DwgHomePageLogSearchPane.2Search"
+				action="ES041" />
+			<menuitem
+				text="engineering:SearchMistachPartDrawingPane.2SearchMismatchPartDrawing"
+				tooltip="engineering:SearchMistachPartDrawingPane.2SearchMismatchPartDrawing"
+				action="ES042" />
+			<separator />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.DwfSettings"
+				tooltip="companysettings:CompanySettingHomePage.DwfSettings"
+				action="ES044" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.DwgSettings"
+				tooltip="companysettings:CompanySettingHomePage.DwgSettings"
+				action="ES043" />
+		</menu>
+		<menu text="general:MainTreeHelper.ECN">
+			<menuitem text="engineering:EcnHomePage.AddECN"
+				tooltip="engineering:EcnHomePage.AddECN" action="EA05" />
+			<menuitem
+				text="engineering:EcnHomePageLookupSearchPane.SearchButton"
+				tooltip="engineering:EcnHomePageLookupSearchPane.SearchButton"
+				action="EL03" />
+			<separator></separator>
+			<menuitem
+				text="engineering:EcnHomePageByECNSearchPane.SearchButton"
+				tooltip="engineering:EcnHomePageByECNSearchPane.SearchButton"
+				action="ES051" />
+			<menuitem
+				text="engineering:EcnHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="engineering:EcnHomePageByPNSearchPane.2SearchbyPN"
+				action="ES05" />
+			<separator></separator>
+			<menuitem
+				text="engineering:EcnHomePageOpenSearchPane.SearchButton"
+				tooltip="engineering:EcnHomePageOpenSearchPane.SearchButton"
+				action="ES052" />
+			<menuitem
+				text="engineering:EcnHomePageDueSearchPane.SearchButton"
+				tooltip="engineering:EcnHomePageDueSearchPane.SearchButton"
+				action="ES053" />
+			<separator />
+			<menuitem
+				text="engineering:ECNHomePageAddECNAprrovePane.2AddECNApproval"
+				tooltip="engineering:ECNHomePageAddECNAprrovePane.2AddECNApproval"
+				action="EA051" />
+			<menuitem
+				text="engineering:ECNApprovalHomePageAllSearchPane.Super"
+				tooltip="engineering:ECNApprovalHomePageAllSearchPane.Super"
+				action="ES054" />
+		</menu>
+		<menu text="general:MainTreeHelper.ECR">
+			<menuitem text="engineering:EcrHomePage.AddECR"
+				tooltip="engineering:EcrHomePage.AddECR" action="EA06" />
+			<menuitem
+				text="engineering:EcrHomePageLookupSearchPane.SearchButton"
+				tooltip="engineering:EcrHomePageLookupSearchPane.SearchButton"
+				action="EL04" />
+			<separator></separator>
+			<menuitem
+				text="engineering:EcrHomePageByEcrSearchPane.SearchButton"
+				tooltip="engineering:EcrHomePageByEcrSearchPane.SearchButton"
+				action="ES061" />
+			<menuitem
+				text="engineering:EcrHomePageByPNSearchPane.SearchButton"
+				tooltip="engineering:EcrHomePageByPNSearchPane.SearchButton"
+				action="ES06" />
+			<separator></separator>
+			<menuitem
+				text="engineering:EcrHomePageDueSearchPane.SearchButton"
+				tooltip="engineering:EcrHomePageDueSearchPane.SearchButton"
+				action="ES062" />
+			<menuitem
+				text="engineering:EcrHomePageOpenSearchPane.SearchButton"
+				tooltip="engineering:EcrHomePageOpenSearchPane.SearchButton"
+				action="ES063" />
+			<separator />
+			<menuitem
+				text="engineering:ECRHomePageAddECRAprrovePane.2AddECRApproval"
+				tooltip="engineering:ECRHomePageAddECRAprrovePane.2AddECRApproval"
+				action="EA061" />
+			<menuitem
+				text="engineering:ECRApprovalHomePageAllSearchPane.Super"
+				tooltip="engineering:ECRApprovalHomePageAllSearchPane.Super"
+				action="ES064" />
+		</menu>
+		<menu text="general:MainTreeHelper.Design_Control">
+			<menuitem
+				text="engineering:DesignControlHomePage.AddDesignControl"
+				tooltip="engineering:DesignControlHomePage.AddDesignControl"
+				action="EA07" />
+			<menuitem
+				text="engineering:DesignControlHomePageLookupSearchPane.SearchButton"
+				tooltip="engineering:DesignControlHomePageLookupSearchPane.SearchButton"
+				action="EL05" />
+			<separator></separator>
+			<menuitem
+				text="engineering:DesignControlHomePageByEDCSearchPane.SearchButton"
+				tooltip="engineering:DesignControlHomePageByEDCSearchPane.SearchButton"
+				action="ES071" />
+			<menuitem
+				text="engineering:DesignControlHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="engineering:DesignControlHomePageByPNSearchPane.2SearchbyPN"
+				action="ES07" />
+			<menuitem
+				text="engineering:DesignControlHomePageByProjectEngineerSearchPane.SearchButton"
+				tooltip="engineering:DesignControlHomePageByProjectEngineerSearchPane.SearchButton"
+				action="ES072" />
+			<separator></separator>
+			<menuitem
+				text="engineering:DesignControlHomePageOpenSearchPane.SearchButton"
+				tooltip="engineering:DesignControlHomePageOpenSearchPane.SearchButton"
+				action="ES073" />
+			<menuitem
+				text="engineering:DesignControlHomePageDueSearchPane.SearchButton"
+				tooltip="engineering:DesignControlHomePageDueSearchPane.SearchButton"
+				action="ES074" />
+		</menu>
+		<menu text="general:MainTreeHelper.Detection_Standard">
+			<menuitem text="" tooltip="" action="EA09" />
+			<menuitem text="engineering:TraceHomePageLookupPane.Super"
+				tooltip="engineering:TraceHomePageLookupPane.Super" action="EL06" />
+			<separator></separator>
+			<menuitem
+				text="engineering:TraceaHomepageSearchByPartPane.2SearchbyPart"
+				tooltip="engineering:TraceaHomepageSearchByPartPane.2SearchbyPart"
+				action="ES076" />
+			<menuitem text="engineering:TraceHomePageSearchPane.Super"
+				tooltip="engineering:TraceHomePageSearchPane.Super" action="ES08" />
+			<menuitem text="engineering:TraceHomePageListAllPane.Super"
+				tooltip="engineering:TraceHomePageListAllPane.Super" action="ES075" />
+		</menu>
+
+		<menu text="general:MainTreeHelper.Material">
+			<menuitem text="engineering:MaterialHomePage.AddMaterial"
+				tooltip="engineering:MaterialHomePage.AddMaterial" action="EA14" />
+			<menuitem
+				text="engineering:MaterialHomePageLookupPane.2LookupMaterial"
+				tooltip="engineering:MaterialHomePageLookupPane.2LookupMaterial"
+				action="EL026" />
+			<menuitem
+				text="engineering:MaterialHomeByPartSearchPane.LookUpWhereUsedWithMateriaInfo"
+				tooltip="engineering:MaterialHomeByPartSearchPane.LookUpWhereUsedWithMateriaInfo"
+				action="EL027" />
+			<menuitem
+				text="engineering:MaterialHomeSearchReportPane.2SearchMaterial"
+				tooltip="engineering:MaterialHomeSearchReportPane.2SearchMaterial"
+				action="ES13" />
+			<menuitem
+				text="engineering:MaterialHomeByPartSearchPane.SearchbyBOM"
+				tooltip="engineering:MaterialHomeByPartSearchPane.SearchbyBOM"
+				action="ES12" />
+			<menuitem
+				text="engineering:MaterialHomeByPartSearchPane.Title"
+				tooltip="engineering:MaterialHomeByPartSearchPane.Title"
+				action="ES11" />
+		</menu>
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Purchasing_Box">
+		<menu text="general:MainTreeHelper.Purchase_Order">
+			<menuitem
+				text="purchasing:PurchaseOrderItemActionManager.AddPO"
+				tooltip="purchasing:PurchaseOrderItemActionManager.AddPO"
+				action="PA01" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageAddPOFromRFQPane.Super"
+				tooltip="purchasing:PurchaseOrderHomePageAddPOFromRFQPane.Super"
+				action="PS0113" />
+			<separator></separator>
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageLookupSearchPane.Super"
+				tooltip="purchasing:PurchaseOrderHomePageLookupSearchPane.Super"
+				action="PL01" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageByPOSearchPane.SearchOPENPO"
+				tooltip="purchasing:PurchaseOrderHomePageByPOSearchPane.SearchOPENPO"
+				action="PS011" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchCancelledPO"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchCancelledPO"
+				action="PS019" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="purchasing:PurchaseOrderHomePageByPNSearchPane.2SearchbyPN"
+				action="PS012" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageByDateSearchPane.2SearchPObyDate"
+				tooltip="purchasing:PurchaseOrderHomePageByDateSearchPane.2SearchPObyDate"
+				action="PS01" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchOpenPObyRequester"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchOpenPObyRequester"
+				action="PS013" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchOpenPObyProject"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchOpenPObyProject"
+				action="PS014" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchPObyID"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchPObyID"
+				action="PS015" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchOpenPOByID"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchOpenPOByID"
+				action="PS016" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchPastDuePOByIDandShipVia"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchPastDuePOByIDandShipVia"
+				action="PS0110" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchOpenPOByIDandShipVia"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchOpenPOByIDandShipVia"
+				action="PS0111" />
+			<separator />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchOpenPObybuyercode"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchOpenPObybuyercode"
+				action="PS0115" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchDuePObybuyercode"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchDuePObybuyercode"
+				action="PS0116" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchAllPartsByBuyerCode"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchAllPartsByBuyerCode"
+				action="PS0117" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchOpenPObybuyer"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchOpenPObybuyer"
+				action="PS0118" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchDuePObybuyer"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchDuePObybuyer"
+				action="PS0119" />
+			<menuitem action="PS0151" />
+			<separator />
+			<menuitem action="PA013" />
+			<menuitem action="PS0143" />
+			<menuitem action="PS0144" />
+			<menuitem action="PS0145" />
+			<separator></separator>
+
+			<menuitem text="purchasing:PurchaseOrderHomePage.2Print"
+				tooltip="purchasing:PurchaseOrderHomePage.2Print" action="PS0121" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2PrintPastDuePO"
+				tooltip="purchasing:PurchaseOrderHomePage.2PrintPastDuePO"
+				action="PS0122" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.MyPOPrintList"
+				tooltip="purchasing:PurchaseOrderHomePage.MyPOPrintList"
+				action="PS0123" />
+			<separator></separator>
+			<menuitem
+				text="management:ManagementHomePagePurchasingPane.PurchasinginfoBox"
+				tooltip="management:ManagementHomePagePurchasingPane.PurchasinginfoBox"
+				action="PS0146" />
+		</menu>
+		<menu text="general:General.RFQ">
+			<menuitem text="purchasing:RfqHomePage.AddRFQ"
+				tooltip="purchasing:RfqHomePage.AddRFQ" action="PA02" />
+			<menuitem
+				text="purchasing:RfqHomePageLookupSearchPane.Super"
+				tooltip="purchasing:RfqHomePageLookupSearchPane.Super"
+				action="PL02" />
+			<separator></separator>
+			<menuitem text="purchasing:RfqHomePageByRfqSearchPane.Super"
+				tooltip="purchasing:RfqHomePageByRfqSearchPane.Super" action="PS02" />
+			<menuitem
+				text="purchasing:RfqHomePageByPNSearchPane.2SearchbyPNAndDate"
+				tooltip="purchasing:RfqHomePageByPNSearchPane.2SearchbyPNAndDate"
+				action="PS021" />
+
+			<separator></separator>
+			<menuitem text="purchasing:RfqHomePageCheckListPane.Super"
+				tooltip="purchasing:RfqHomePageCheckListPane.Super" action="PS022" />
+			<menuitem text="purchasing:RfqHomePageDueSearchPane.Super"
+				tooltip="purchasing:RfqHomePageDueSearchPane.Super" action="PS023" />
+			<menuitem text="purchasing:RfqHomePageOpenSearchPane.Super"
+				tooltip="purchasing:RfqHomePageOpenSearchPane.Super" action="PS04" />
+		</menu>
+		
+		<menu text="general:MainTreeHelper.Swap_Order">
+			<menuitem text="purchasing:SwapOrderHomePageAddSWOPane.AddSwapOrderTitle"
+				tooltip="purchasing:SwapOrderHomePageAddSWOPane.AddSwapOrderTitle" action="PS044" />
+			<menuitem text="purchasing:SwapOrderHomePageLookupSearchPane.Super"
+				tooltip="purchasing:SwapOrderHomePageLookupSearchPane.Super" action="PS045" />
+			<menuitem text="purchasing:SwapOrderHomePageBySWOSearchPane.SearchOPENSWO"
+				tooltip="purchasing:SwapOrderHomePageBySWOSearchPane.SearchOPENSWO" action="PS046" />
+			<menuitem text="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrder"
+				tooltip="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrder" action="PS047" />
+			<menuitem text="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrderItems"
+				tooltip="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrderItems" action="PS048" />
+			<menuitem text="purchasing:SwapOrderApprovalAddPane.2AddSwapOrderApproval"
+				tooltip="purchasing:SwapOrderApprovalAddPane.2AddSwapOrderApproval" action="PS049" />
+			<menuitem text="purchasing:SwapOrderHomepageLookupSWOApprovalPane.2LookupSwapOrderApprovalbyEmployeeId"
+				tooltip="purchasing:SwapOrderHomepageLookupSWOApprovalPane.2LookupSwapOrderApprovalbyEmployeeId" action="PS050" />
+			<menuitem text="purchasing:SwapOrderHomepageSearchBySWOApprovalPane.AllSwapOrderApproval"
+				tooltip="purchasing:SwapOrderHomepageSearchBySWOApprovalPane.AllSwapOrderApproval" action="PS054" />
+		</menu>
+		
+		<menu text="general:MainTreeHelper.RTV">
+			<menuitem text="purchasing:RTVHomePage.AddRTV"
+				tooltip="purchasing:RTVHomePage.AddRTV" action="PA03" />
+			<menuitem
+				text="purchasing:RTVHomePageLookupSearchPane.Super"
+				tooltip="purchasing:RTVHomePageLookupSearchPane.Super"
+				action="PL03" />
+			<separator></separator>
+			<menuitem text="purchasing:RTVHomePageByRTVSearchPane.Super"
+				tooltip="purchasing:RTVHomePageByRTVSearchPane.Super"
+				action="PS031" />
+
+			<menuitem
+				text="purchasing:RTVHomePageByDateSearchPane.2SearchRTVbyDate"
+				tooltip="purchasing:RTVHomePageByDateSearchPane.2SearchRTVbyDate"
+				action="PS03" />
+			<menuitem
+				text="purchasing:RTVHomePageByPNSearchPaneFree.2SearchbyPN"
+				tooltip="purchasing:RTVHomePageByPNSearchPaneFree.2SearchbyPN"
+				action="PS033" />
+			<menuitem
+				text="purchasing:RTVHomePageByVendorIDSearchPane.Super"
+				tooltip="purchasing:RTVHomePageByVendorIDSearchPane.Super"
+				action="PS034" />
+
+			<separator></separator>
+			<menuitem text="purchasing:RtvHomePageCheckListPane.Super"
+				tooltip="purchasing:RtvHomePageCheckListPane.Super" action="PS032" />
+			<menuitem text="purchasing:RTVHomePageDueSearchPane.Super"
+				tooltip="purchasing:RTVHomePageDueSearchPane.Super" action="PS035" />
+			<menuitem text="purchasing:RTVHomePageOpenSearchPane.Super"
+				tooltip="purchasing:RTVHomePageOpenSearchPane.Super" action="PS036" />
+			<separator></separator>
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2AddRTVApproval"
+				tooltip="purchasing:PurchaseOrderHomePage.2AddRTVApproval"
+				action="PA031" />
+			<menuitem
+				text="purchasing:RTVReviewHomePageLookupByEmployeeIDPane.Super"
+				tooltip="purchasing:RTVReviewHomePageLookupByEmployeeIDPane.Super"
+				action="PS037" />
+			<menuitem
+				text="purchasing:RTVReviewHomePageSearchAllPane.AllRTVApproval"
+				tooltip="purchasing:RTVReviewHomePageSearchAllPane.AllRTVApproval"
+				action="PS038" />
+		</menu>
+		<menu text="general:MainTreeHelper.PO_Worksheet">
+			<menuitem text="purchasing:WorksheetHomePage.2AddWorksheet"
+				tooltip="purchasing:WorksheetHomePage.2AddWorksheet" action="PA05" />
+			<menuitem text="purchasing:WorksheetHomePage.MyWorkSheet"
+				tooltip="purchasing:WorksheetHomePage.MyWorkSheet" action="PL05" />
+		</menu>
+		<menu text="general:MainTreeHelper.MRP">
+			<menuitem text="purchasing:MrpHomePage.Super"
+				tooltip="purchasing:MrpHomePage.Super" action="PS05" />
+			<menuitem text="purchasing:MrpHomePage.RunMRP"
+				tooltip="purchasing:MrpHomePage.RunMRP" action="PS051" />
+			<menuitem text="purchasing:MrpHomePage.WOOnDemandReport"
+				tooltip="purchasing:MrpHomePage.WOOnDemandReport" action="PS052" />
+			<menuitem
+				text="sales:SalesOrderHomePageByHoldAndDateSearchPane.SOOnDemandReport"
+				tooltip="sales:SalesOrderHomePageByHoldAndDateSearchPane.SOOnDemandReport"
+				action="PS053" />
+		</menu>
+		<menu text="sales:VendorContractPriceHomePage.Title">
+			<menuitem action="PA20" />
+			<menuitem action="PL20" />
+			<menuitem action="PS041" />
+			<menuitem action="PS042" />
+			<menuitem action="PS043" />
+		</menu>
+
+		<menu text="purchasing:PurchaseOrderHomePage.VG">
+			<menuitem text="purchasing:VgHomePage.2AddVgUser"
+				tooltip="purchasing:VgHomePage.2AddVgUser" action="PA012" />
+			<menuitem text="purchasing:HomePageVgUserSearchPane.Search"
+				tooltip="purchasing:HomePageVgUserSearchPane.Search"
+				action="PS0134" />
+			<separator></separator>
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.SearchPOMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.SearchPOMessage"
+				action="PS0142" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.AllPOMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.AllPOMessage"
+				action="PS0139" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.AllPendingPOMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.AllPendingPOMessage"
+				action="PS0140" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.AllWaitingPOMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.AllWaitingPOMessage"
+				action="PS0141" />
+
+			<separator></separator>
+		    <menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchRFQMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchRFQMessage"
+				action="PS0138" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.AllRFQMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.AllRFQMessage"
+				action="PS0135" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.AllPendingRFQMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.AllPendingRFQMessage"
+				action="PS0136" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.AllWaitingRFQMessage"
+				tooltip="purchasing:PurchaseOrderHomePage.AllWaitingRFQMessage"
+				action="PS0137" />
+
+		</menu>
+		<menu text="purchasing:PurchaseOrderHomePage.POBoilerplate">
+			<menuitem action="PA06" />
+			<menuitem action="PL06" />
+			<menuitem
+				text="purchasing:BoilerplateHomePage.2SearchPOBoilerplate"
+				tooltip="purchasing:BoilerplateHomePage.2SearchPOBoilerplate"
+				action="PS039" />
+		</menu>
+		<menu text="purchasing:PurchaseOrderHomePageMenu.BuyerCode">
+			<menuitem
+				text="companysettings:CompanySettingHomePage.2SearchBuyerCodesLike"
+				tooltip="companysettings:CompanySettingHomePage.2SearchBuyerCodesLike"
+				action="PS040" />
+		</menu>
+		<menu text="accounting:ARHomePage.Reports">
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageOpenSearchPane.Super"
+				tooltip="purchasing:PurchaseOrderHomePageOpenSearchPane.Super"
+				action="PS0124" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageDueSearchPane.Super"
+				tooltip="purchasing:PurchaseOrderHomePageDueSearchPane.Super"
+				action="PS0125" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePage.2SearchCheckList"
+				tooltip="purchasing:PurchaseOrderHomePage.2SearchCheckList"
+				action="PS0126" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageOpenSearchPane.SearcbyAcknowledged"
+				tooltip="purchasing:PurchaseOrderHomePageOpenSearchPane.SearcbyAcknowledged"
+				action="PS0128" />
+			<menuitem
+				text="purchasing:POStatisticsHomePageSearchByConditionsPane.2SearchPOStatisticsByConditions"
+				tooltip="purchasing:POStatisticsHomePageSearchByConditionsPane.2SearchPOStatisticsByConditions"
+				action="PS0129" />
+			<menuitem
+				text="purchasing:TotalAmountInPOByRefDocSearchPane.2SearchTotalAmountInPOByProject"
+				tooltip="purchasing:TotalAmountInPOByRefDocSearchPane.2SearchTotalAmountInPOByProject"
+				action="PS01291" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageDeliveryRatePane.VendorSearch"
+				tooltip="purchasing:PurchaseOrderHomePageDeliveryRatePane.VendorSearch"
+				action="PS0130" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageVendorAmountPane.2SearchVendorPOAmountByDate"
+				tooltip="purchasing:PurchaseOrderHomePageVendorAmountPane.2SearchVendorPOAmountByDate"
+				action="PS0131" />
+			<menuitem
+				text="purchasing:TotalAmountInPOByRefDocSearchPane.2SearchTotalAmountInPOByRelatedDoc"
+				tooltip="purchasing:TotalAmountInPOByRefDocSearchPane.2SearchTotalAmountInPOByRelatedDoc"
+				action="PS0132" />
+			<menuitem
+				text="purchasing:TotalAmountInPOByRefDocSearchPane.2SearchTotalAmountInPOByRefDoc1"
+				tooltip="purchasing:TotalAmountInPOByRefDocSearchPane.2SearchTotalAmountInPOByRefDoc1"
+				action="PS0133" />
+		</menu>
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Sales_Box">
+		<menu text="general:MainTreeHelper.Sales_Order">
+			<menuitem text="sales:SalesOrderHomePage.AddSalesOrderTitle"
+				tooltip="sales:SalesOrderHomePage.AddSalesOrderTitle" action="SA01" />
+			<menuitem
+				text="sales:SalesOrderHomePageLookupSearchPane.Super"
+				tooltip="sales:SalesOrderHomePageLookupSearchPane.Super"
+				action="SL01" />
+			<separator></separator>
+			<menuitem
+				text="sales:SalesOrderHomePageByDateSearchPane.2SearchSObyDate"
+				tooltip="sales:SalesOrderHomePageByDateSearchPane.2SearchSObyDate"
+				action="SS01" />
+			<menuitem action="SS019" />
+			<menuitem
+				text="sales:SalesOrderHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="sales:SalesOrderHomePageByPNSearchPane.2SearchbyPN"
+				action="SS012" />
+			<menuitem
+				text="sales:SalesOrderHomePageByPOSearchPane.Super"
+				tooltip="sales:SalesOrderHomePageByPOSearchPane.Super"
+				action="SS013" />
+			<menuitem
+				text="sales:SalesOrderHomePageOpenByCustomerIDSearchPane.Super"
+				tooltip="sales:SalesOrderHomePageOpenByCustomerIDSearchPane.Super"
+				action="SS014" />
+			<menuitem
+				text="sales:SalesOrderHomePageDueByCustomerIDSearchPane.Super"
+				tooltip="sales:SalesOrderHomePageDueByCustomerIDSearchPane.Super"
+				action="SS015" />
+
+			<menuitem action="SS018" />
+
+			<menuitem
+				text="sales:SalesOrderHomePageBySOSearchPane.SearchOPENSO"
+				tooltip="sales:SalesOrderHomePageBySOSearchPane.SearchOPENSO"
+				action="SS011" />
+			<separator></separator>
+			<menuitem text="sales:SOReviewHomePage.2AddSOApproval"
+				tooltip="sales:SOReviewHomePage.2AddSOApproval" action="SA05" />
+			<menuitem text="sales:SOReviewHomePageAllSearchPane.Super"
+				tooltip="sales:SOReviewHomePageAllSearchPane.Super" action="SS0120" />
+		</menu>
+		<menu text="general:MainTreeHelper.Quote">
+			<menuitem text="sales:QuoteHomePage.AddQuote"
+				tooltip="sales:QuoteHomePage.AddQuote" action="SA02" />
+			<menuitem text="sales:QuoteHomePageLookupSearchPane.Super"
+				tooltip="sales:QuoteHomePageLookupSearchPane.Super" action="SL02" />
+			<separator></separator>
+			<menuitem text="sales:QuoteHomePageByQuoteSearchPane.Super"
+				tooltip="sales:QuoteHomePageByQuoteSearchPane.Super" action="SS021" />
+			<menuitem
+				text="sales:QuoteHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="sales:QuoteHomePageByPNSearchPane.2SearchbyPN"
+				action="SS022" />
+			<menuitem
+				text="sales:QuoteHomePageSearchQuoteByIdPane.Super"
+				tooltip="sales:QuoteHomePageSearchQuoteByIdPane.Super"
+				action="SS023" />
+			<menuitem
+				text="sales:QuoteHomePageSearchOpenQuoteByIdPane.Super"
+				tooltip="sales:QuoteHomePageSearchOpenQuoteByIdPane.Super"
+				action="SS024" />
+			<menuitem
+				text="sales:FindAllPastedQuotePane.ClosePastedQuote"
+				tooltip="sales:FindAllPastedQuotePane.ClosePastedQuote"
+				action="SS025" />
+			<menuitem
+				text="sales:QuoteHomePageByDateSearchPane.2SearchQTbyQTDate"
+				tooltip="sales:QuoteHomePageByDateSearchPane.2SearchQTbyQTDate"
+				action="SS02" />
+			<separator></separator>
+			<menuitem action="SA15" />
+			<menuitem action="SL12" />
+			<menuitem action="SS044" />
+		</menu>
+		<menu text="general:MainTreeHelper.RMA">
+			<menuitem text="sales:RmaHomePage.AddRMA"
+				tooltip="sales:RmaHomePage.AddRMA" action="SA03" />
+			<menuitem text="sales:RmaHomePageLookupSearchPane.Super"
+				tooltip="sales:RmaHomePageLookupSearchPane.Super" action="SL03" />
+			<separator></separator>
+
+			<menuitem
+				text="sales:RmaHomePageByInvoiceSearchPane.2SearchbyInvoiceNumber"
+				tooltip="sales:RmaHomePageByInvoiceSearchPane.2SearchbyInvoiceNumber"
+				action="SS036" />
+			<menuitem text="sales:RmaHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="sales:RmaHomePageByPNSearchPane.2SearchbyPN"
+				action="SS033" />
+			<menuitem text="sales:RmaHomePage.2SearchbySO"
+				tooltip="sales:RmaHomePage.2SearchbySO" action="SS034" />
+			<menuitem text="sales:RmaHomePageByRmaSearchPane.Super"
+				tooltip="sales:RmaHomePageByRmaSearchPane.Super" action="SS032" />
+			<menuitem
+				text="sales:RmaHomePageByDateSearchPane.SearchRMAbyDate"
+				tooltip="sales:RmaHomePageByDateSearchPane.SearchRMAbyDate"
+				action="SS03" />
+			<menuitem
+				text="sales:RmaHomePageByCustomerIdSearchPane.2SearchRMAbyID"
+				tooltip="sales:RmaHomePageByCustomerIdSearchPane.2SearchRMAbyID"
+				action="SS035" />
+			<menuitem text="sales:RmaHomePageDueSearchPane.Super"
+				tooltip="sales:RmaHomePageDueSearchPane.Super" action="SS037" />
+			<menuitem text="sales:RmaHomePageOpenSearchPane.Super"
+				tooltip="sales:RmaHomePageOpenSearchPane.Super" action="SS038" />
+			<menuitem text="sales:RmaHomePageCheckListPane.RMACheckList"
+				tooltip="sales:RmaHomePageCheckListPane.RMACheckList"
+				action="SS031" />
+			<separator></separator>
+			<menuitem text="sales:RmaHomePage.2AddRMAReview"
+				tooltip="sales:RmaHomePage.2AddRMAReview" action="SA10" />
+			<menuitem text="" tooltip="" action="SS039" />
+			<menuitem
+				text="sales:RMAReviewHomePageSearchAllPane.AllRMAReview"
+				tooltip="sales:RMAReviewHomePageSearchAllPane.AllRMAReview"
+				action="SS0310" />
+		</menu>
+		<menu text="general:MainTreeHelper.CustomerContract_Price">
+			<menuitem action="SA16" />
+			<menuitem action="SL13" />
+			<menuitem action="SS045" />
+			<menuitem action="SS046" />
+		</menu>
+		<menu text="accounting:AssetUsageVO.ReceiveComment">
+			<menuitem text="sales:IncotermHomePage.AddIncotermTitle"
+				tooltip="sales:IncotermHomePage.AddIncotermTitle" action="SA06" />
+			<menuitem text="sales:IncotermHomePageAllSearchPane.Super"
+				tooltip="sales:IncotermHomePageAllSearchPane.Super" action="SS0121" />
+			<separator></separator>
+			<menuitem text="" tooltip="" action="SA101" />
+			<menuitem text="" tooltip="" action="SS0125" />
+			<menuitem text="sales:SalesOrderHomePage.2AddDiscountCode"
+				tooltip="sales:SalesOrderHomePage.2AddDiscountCode" action="SA07" />
+			<menuitem
+				text="sales:SalesOrderDiscountHomePageSearchPane.2SearchAllDiscountCode"
+				tooltip="sales:SalesOrderDiscountHomePageSearchPane.2SearchAllDiscountCode"
+				action="SS0122" />
+			<separator></separator>
+			<menuitem text="sales:ProjectAddPane.2AddProject"
+				tooltip="sales:ProjectAddPane.2AddProject" action="SA09" />
+			<menuitem
+				text="sales:SalesOrderHomePageLookupProjectPane.2LookupProject"
+				tooltip="sales:SalesOrderHomePageLookupProjectPane.2LookupProject"
+				action="SL07" />
+			<menuitem
+				text="sales:SalesOrderHomePageSearchProjectByProjectPane.2SearchProject"
+				tooltip="sales:SalesOrderHomePageSearchProjectByProjectPane.2SearchProject"
+				action="SS0124" />
+
+		</menu>
+
+
+
+		<menu text="sales:SalesOrderHomePage.SalesBOMPartList ">
+			<menuitem
+				text="sales:SalesOrderBomHomePageByPNSearchPane.2LookUpSalesXBOMbyPN"
+				tooltip="sales:SalesOrderBomHomePageByPNSearchPane.2LookUpSalesXBOMbyPN"
+				action="SL09" />
+			<menuitem
+				text="sales:SalesOrderPartListHomePageByPNSearchPane.2LookUpSalesPartListbyPN"
+				tooltip="sales:SalesOrderPartListHomePageByPNSearchPane.2LookUpSalesPartListbyPN"
+				action="SL10" />
+		</menu>
+
+		<menu text="sales:SOBoilerPlateHomePage.SOBoilerplate">
+            <menuitem text="sales:SalesOrderHomePage.AddSOBoilerplate"
+				tooltip="sales:SalesOrderHomePage.AddSOBoilerplate" action="SA08" />
+			<menuitem
+				text="sales:SOBoilerPlateHomePageLookupSearchPane.2LookUpSOBoilerplate"
+				tooltip="sales:SOBoilerPlateHomePageLookupSearchPane.2LookUpSOBoilerplate"
+				action="SL06" />
+			<menuitem
+				text="sales:SOBoilerPlateHomePageByBoilerPlateIDSearchPane.2SearchBPBYBPID"
+				tooltip="sales:SOBoilerPlateHomePageByBoilerPlateIDSearchPane.2SearchBPBYBPID"
+				action="SS0123" />
+		</menu>
+
+		<menu text="purchasing:VgHomePage.SupplyChainParts">
+			<menuitem
+				text="purchasing:VgHomePage.2AddSupplyChainPartcolor"
+				tooltip="purchasing:VgHomePage.2AddSupplyChainPartcolor"
+				action="WA012" />
+			<menuitem
+				text="purchasing:VgHomePageSearchVendorPartPane.SearchSupplyChainParts"
+				tooltip="purchasing:VgHomePageSearchVendorPartPane.SearchSupplyChainParts"
+				action="SS043" />
+		</menu>
+
+		<menu text="sales:SalesOrderHomePage.Reports">
+			<menuitem text="sales:SalesOrderHomePageCheckListPane.Super"
+				tooltip="sales:SalesOrderHomePageCheckListPane.Super"
+				action="SS0112" />
+			<menuitem text="sales:SalesOrderHomePageDueSearchPane.Super"
+				tooltip="sales:SalesOrderHomePageDueSearchPane.Super"
+				action="SS0113" />
+			<menuitem
+				text="sales:SalesOrderHomePageOpenSearchPane.Super"
+				tooltip="sales:SalesOrderHomePageOpenSearchPane.Super"
+				action="SS0114" />
+			<menuitem text="sales:SalesOrderHomepageByCost.SOOpenByCost"
+				tooltip="sales:SalesOrderHomepageByCost.SOOpenByCost"
+				action="SS0115" />
+			<menuitem
+				text="sales:SalesOrderHomePageReportPane.2SearchPartsToSell"
+				tooltip="sales:SalesOrderHomePageReportPane.2SearchPartsToSell"
+				action="SS0116" />
+			<menuitem
+				text="sales:SalesOrderHomePageMyPrintList.2SearchMySOPrintList"
+				tooltip="sales:SalesOrderHomePageMyPrintList.2SearchMySOPrintList"
+				action="SS0117" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageDeliveryRatePane.CustomerSearch"
+				tooltip="purchasing:PurchaseOrderHomePageDeliveryRatePane.CustomerSearch"
+				action="SS0118" />
+			<menuitem
+				text="sales:SalesOrderHomePageMonthReportByCustomerID.SearchCustomerMonthStatReport"
+				tooltip="sales:SalesOrderHomePageMonthReportByCustomerID.SearchCustomerMonthStatReport"
+				action="SS0119" />
+			<separator/>
+			<menuitem
+				text="management:ManagementHomePageMonthlySalesChartPane.Title"
+				tooltip="management:ManagementHomePageMonthlySalesChartPane.Title"
+				action="SL11" />
+			<menuitem
+				text="management:ManagementHomePageSalesPane.SalesinfoBox"
+				tooltip="management:ManagementHomePageSalesPane.SalesinfoBox"
+				action="SS042" />
+		</menu>
+
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Manufacturing_Box">
+		<menu text="general:MainTreeHelper.Tool_Room">
+			<menuitem text="manufacturing:ToolHomePage.2Add"
+				tooltip="manufacturing:ToolHomePage.2Add" action="MA01" />
+			<menuitem
+				text="manufacturing:ToolHomePageLookupSearchPane.2LookUpToolMaster"
+				tooltip="manufacturing:ToolHomePageLookupSearchPane.2LookUpToolMaster"
+				action="ML01" />
+			<menuitem text="manufacturing:ToolHomePage.SearchToolMaster"
+				tooltip="manufacturing:ToolHomePage.SearchToolMaster" action="MS01" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:ToolHomePageByDescSearchPane.Super"
+				tooltip="manufacturing:ToolHomePageByDescSearchPane.Super"
+				action="MS011" />
+			<menuitem
+				text="manufacturing:ToolHomePageStartWithDescSearchPane.Super"
+				tooltip="manufacturing:ToolHomePageStartWithDescSearchPane.Super"
+				action="MS012" />
+            <menuitem
+				text="manufacturing:ToolHomePageWhereUsedSearchPane.2LookUpWhereUsed"
+				tooltip="manufacturing:ToolHomePageWhereUsedSearchPane.2LookUpWhereUsed"
+				action="MS013" />
+			<menuitem
+				text="manufacturing:ToolHomePageByMfrPNSearchPane.Super"
+				tooltip="manufacturing:ToolHomePageByMfrPNSearchPane.Super"
+				action="MS014" />
+			<menuitem
+				text="manufacturing:ToolHomePageByMfrIDSearchPane.Super"
+				tooltip="manufacturing:ToolHomePageByMfrIDSearchPane.Super"
+				action="MS015" /> 
+			<menuitem
+				text="manufacturing:ToolHomePageOnHoldSearchPane.Super"
+				tooltip="manufacturing:ToolHomePageOnHoldSearchPane.Super"
+				action="MS016" />
+			<menuitem
+				text="manufacturing:ToolHomePageWithBomSearchPane.Super"
+				tooltip="manufacturing:ToolHomePageWithBomSearchPane.Super"
+				action="MS017" />
+			<menuitem
+				text="manufacturing:ToolHomePageWithWISearchPane.Super"
+				tooltip="manufacturing:ToolHomePageWithWISearchPane.Super"
+				action="MS018" />
+			<menuitem
+				text="manufacturing:ToolHomePageWithDrawingSearchPane.Super"
+				tooltip="manufacturing:ToolHomePageWithDrawingSearchPane.Super"
+				action="MS019" />
+			<menuitem
+				text="manufacturing:ToolHomePageInactiveSearchPane.SearchInactiveTool"
+				tooltip="manufacturing:ToolHomePageInactiveSearchPane.SearchInactiveTool"
+				action="MA19" />
+				
+		</menu>
+		<menu text="general:MainTreeHelper.Tool_List">
+			<menuitem text="manufacturing:ToolListHomePage.2AddToolList"
+				tooltip="manufacturing:ToolListHomePage.2AddToolList" action="MA02" />
+			<menuitem
+				text="manufacturing:ToolListHomePageLookupSearchPane.2LookUpTLbyPN"
+				tooltip="manufacturing:ToolListHomePageLookupSearchPane.2LookUpTLbyPN"
+				action="ML02" />
+			<menuitem
+				text="manufacturing:ToolListHomePageByPNSearchPane.2SearchTLbyPN"
+				tooltip="manufacturing:ToolListHomePageByPNSearchPane.2SearchTLbyPN"
+				action="MS02" />
+		</menu>
+
+		<menu text="general:MainTreeHelper.Shop_Floor">
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.SetupSetupJobbyWO"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.SetupSetupJobbyWO"
+				action="MS35" />
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.SetupJobbyPN"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.SetupJobbyPN"
+				action="MS37" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.Setup2Search"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.Setup2Search"
+				action="MS36" />
+
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.2SearchbyPN"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.2SearchbyPN"
+				action="MS38" />
+		</menu>
+
+
+		<menu text="general:MainTreeHelper.Time_Card">
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.AddTimeCard"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.AddTimeCard"
+				action="MA14" />
+			<menuitem
+				text="manufacturing:TimeCardHomePageLookupSearchPane.Super"
+				tooltip="manufacturing:TimeCardHomePageLookupSearchPane.Super"
+				action="ML20" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:TimeCardHomePageByEmployeeIDSearchPane.Super"
+				tooltip="manufacturing:TimeCardHomePageByEmployeeIDSearchPane.Super"
+				action="MS39" />
+			<menuitem
+				text="manufacturing:TimeCardHomePageByWOSearchPane.Super"
+				tooltip="manufacturing:TimeCardHomePageByWOSearchPane.Super"
+				action="MS40" />
+			<menuitem
+				text="manufacturing:TimeCardHomePageByVendorSearchPane.Super"
+				tooltip="manufacturing:TimeCardHomePageByVendorSearchPane.Super"
+				action="MS41" />
+			<menuitem
+				text="manufacturing:TimeCardHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="manufacturing:TimeCardHomePageByDateSearchPane.2SearchbyDate"
+				action="MS42" />
+			<!-- <menuitem text="manufacturing:TimeCardHomePage.WorkCalendar"
+				tooltip="manufacturing:TimeCardHomePage.WorkCalendar" action="MS43" /> -->
+		</menu>
+
+
+		<menu text="general:MainTreeHelper.Equipment">
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.2AddEquipment"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.2AddEquipment"
+				action="MA04" />
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.2LookUpEquipment"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.2LookUpEquipment"
+				action="ML06" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.2SearchEquipment"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.2SearchEquipment"
+				action="MS04" />
+			<menuitem
+				text="manufacturing:MaintenanceHomePageByHoursSearchPane.2SearchPastDuebyHour"
+				tooltip="manufacturing:MaintenanceHomePageByHoursSearchPane.2SearchPastDuebyHour"
+				action="MS20" />
+		</menu>
+		<menu text="general:MainTreeHelper.Work_Center">
+			<menuitem
+				text="manufacturing:WorkCenterHomePageFree.AddWorkCenter"
+				tooltip="manufacturing:WorkCenterHomePageFree.AddWorkCenter"
+				action="MA05" />
+			<menuitem
+				text="manufacturing:WorkCenterHomePageLookupSearchPane.Super"
+				tooltip="manufacturing:WorkCenterHomePageLookupSearchPane.Super"
+				action="ML07" />
+			<menuitem
+				text="manufacturing:WorkCenterHomePageByWCSearchPane.Super"
+				tooltip="manufacturing:WorkCenterHomePageByWCSearchPane.Super"
+				action="MS05" />
+			<!--<menuitem
+				text="manufacturing:WorkCenterHomePageByTimeSearchPane.2SearchTimeforWC"
+				tooltip="manufacturing:WorkCenterHomePageByTimeSearchPane.2SearchTimeforWC"
+				action="MS27" />
+			 
+				<separator></separator>
+				<menuitem text="manufacturing:WorkCenterHomePageMpsSearchPane.MasterProductionScheduling" tooltip="manufacturing:WorkCenterHomePageMpsSearchPane.MasterProductionScheduling"   action="ML17"/>
+				<menuitem text="manufacturing:WorkCenterHomePageLoadByWeekSearchPane.WorkCenterLoadofThisWeek" tooltip="manufacturing:WorkCenterHomePageLoadByWeekSearchPane.WorkCenterLoadofThisWeek"   action="MS13"/>
+				<menuitem text="manufacturing:WorkCenterHomePageLoadSearchPane.2CheckWCLoad" tooltip="manufacturing:WorkCenterHomePageLoadSearchPane.2CheckWCLoad"   action="MS14"/>
+				<menuitem text="manufacturing:WorkCenterHomePageLoadSearchPane.2CheckWCLoad" tooltip="manufacturing:WorkCenterHomePageLoadSearchPane.2CheckWCLoad"   action="MS15"/>
+				<menuitem text="manufacturing:WorkCenterHomePageLoadSearchPane.2CheckWCLoad" tooltip="manufacturing:WorkCenterHomePageLoadSearchPane.2CheckWCLoad"   action="MS16"/>
+				<separator></separator>
+				<menuitem text="manufacturing:WorkCenterHomePageMpsSearchPane.workLoad" tooltip="manufacturing:WorkCenterHomePageMpsSearchPane.workLoad"   action="MS17"/>
+				<menuitem text="manufacturing:WorkOrderLoadPlanSearchPane.Title" tooltip="manufacturing:WorkOrderLoadPlanSearchPane.Title"   action="MS18"/>
+				<menuitem text="manufacturing:WorkCenterHomePageLoadByWOSearchPane.WorkCenterLoadforWO" tooltip="manufacturing:WorkCenterHomePageLoadByWOSearchPane.WorkCenterLoadforWO"   action="MS19"/>
+			-->
+		</menu>
+		<menu text="general:MainTreeHelper.Work_Instruction">
+			<menuitem
+				text="manufacturing:WorkCenterHomePage.AddWorknstruction"
+				tooltip="manufacturing:WorkCenterHomePage.AddWorknstruction"
+				action="MA06" />
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageLookupSearchPane.2LookUpWI"
+				tooltip="manufacturing:WorkInstructionHomePageLookupSearchPane.2LookUpWI"
+				action="ML10" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageLookupSearchPane.2CopyWI"
+				tooltip="manufacturing:WorkInstructionHomePageLookupSearchPane.2CopyWI"
+				action="MS30" />
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageLookupSearchPane.2UpdateWI"
+				tooltip="manufacturing:WorkInstructionHomePageLookupSearchPane.2UpdateWI"
+				action="ML18" />
+			<menuitem
+				text="manufacturing:WorkCenterHomePage.2AuditWIAvgHours"
+				tooltip="manufacturing:WorkCenterHomePage.2AuditWIAvgHours"
+				action="MS28" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageLookupSearchPane.2SearchWI"
+				tooltip="manufacturing:WorkInstructionHomePageLookupSearchPane.2SearchWI"
+				action="MS06" />
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageByDateSearchPane.2SearchOpenWI"
+				tooltip="manufacturing:WorkInstructionHomePageByDateSearchPane.2SearchOpenWI"
+				action="MS21" />
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageByAuthorSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionHomePageByAuthorSearchPane.Super"
+				action="MS24" />
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageByWCSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionHomePageByWCSearchPane.Super"
+				action="MS23" />
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageByWOSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionHomePageByWOSearchPane.Super"
+				action="MS22" />
+
+
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageWISeqOnHoldSearchPane.2SearchWISeqonhold"
+				tooltip="manufacturing:WorkInstructionHomePageWISeqOnHoldSearchPane.2SearchWISeqonhold"
+				action="MS29" />
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageZeroRuntimeSeqSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionHomePageZeroRuntimeSeqSearchPane.Super"
+				action="MS25" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkInstructionHomePage.2AddWIApproval"
+				tooltip="" action="MA13" />
+			<menuitem
+				text="manufacturing:WorkInstructionApprovalHomePageSearchPane.2SearchAllWorkInstructionApproval"
+				tooltip="manufacturing:WorkInstructionApprovalHomePageSearchPane.2SearchAllWorkInstructionApproval"
+				action="MS34" />
+		</menu>
+
+		<menu text="general:MainTreeHelper.Calibration">
+
+
+			<menuitem
+				text="manufacturing:CalibrationHomePageByLocationSearchPane.Super"
+				tooltip="manufacturing:CalibrationHomePageByLocationSearchPane.Super"
+				action="MS46" />
+
+			<menuitem
+				text="manufacturing:CalibrationHomePageByDaysSearchPane.Super"
+				tooltip="manufacturing:CalibrationHomePageByDaysSearchPane.Super"
+				action="MS48" />
+			<menuitem
+				text="manufacturing:CalibrationHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="manufacturing:CalibrationHomePageByDateSearchPane.2SearchbyDate"
+				action="MS50" />
+			<menuitem
+				text="manufacturing:CalibrationHomePageByInspectedbySearchPane.Super"
+				tooltip="manufacturing:CalibrationHomePageByInspectedbySearchPane.Super"
+				action="MS47" />
+			<menuitem
+				text="manufacturing:CalibrationHomePageByAssignedToSearchPane.Super"
+				tooltip="manufacturing:CalibrationHomePageByAssignedToSearchPane.Super"
+				action="MS45" />
+			<menuitem
+				text="manufacturing:CalibrationHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="manufacturing:CalibrationHomePageByPNSearchPane.2SearchbyPN"
+				action="MS44" />
+			<menuitem
+				text="manufacturing:CalibrationHomePageDueSearchPane.Super"
+				tooltip="manufacturing:CalibrationHomePageDueSearchPane.Super"
+				action="MS49" />
+
+		</menu>
+
+
+		<menu text="general:MainTreeHelper.Mfg_Purchasing">
+			<menuitem text="manufacturing:MPurchasingHomePage.2AddMPO"
+				tooltip="manufacturing:MPurchasingHomePage.2AddMPO" action="MA15" />
+			<menuitem
+				text="manufacturing:MPurchaseOrderHomePageLookupSearchPane.Super"
+				tooltip="manufacturing:MPurchaseOrderHomePageLookupSearchPane.Super"
+				action="ML21" />
+			<menuitem
+				text="manufacturing:MPurchaseOrderHomePageByPOSearchPane.Super"
+				tooltip="manufacturing:MPurchaseOrderHomePageByPOSearchPane.Super"
+				action="MS51" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:MPurchasingHomePageByPNSearchPane.2SearchbyTN"
+				tooltip="manufacturing:MPurchasingHomePageByPNSearchPane.2SearchbyTN"
+				action="MS53" />
+			
+			<menuitem
+				text="manufacturing:MPurchasingHomeSearchCheckListByPoNumberPane.2SearchCheckList"
+				tooltip="manufacturing:MPurchasingHomeSearchCheckListByPoNumberPane.2SearchCheckList"
+				action="MS54" />
+				
+			<menuitem
+				text="manufacturing:MPurchasingHomeSearchAllCheckListPane.AllCheckList"
+				tooltip="manufacturing:MPurchasingHomeSearchAllCheckListPane.AllCheckList"
+				action="MS55" />
+				
+			<menuitem
+				text="manufacturing:MPurchaseOrderHomePageDueSearchPane.Super"
+				tooltip="manufacturing:MPurchaseOrderHomePageDueSearchPane.Super"
+				action="MS56" />
+			<menuitem
+				text="manufacturing:MPurchaseOrderHomePageOpenSearchPane.Super"
+				tooltip="manufacturing:MPurchaseOrderHomePageOpenSearchPane.Super"
+				action="MS57" />
+			<menuitem
+				text="manufacturing:MPurchaseOrderHomePageByDateSearchPane.2SearchPObyDate"
+				tooltip="manufacturing:MPurchaseOrderHomePageByDateSearchPane.2SearchPObyDate"
+				action="MS52" />
+           <menuitem
+				text="manufacturing:MPurchaseOrderHomePageAddPOFromRFQPane.Super"
+				tooltip="manufacturing:MPurchaseOrderHomePageAddPOFromRFQPane.Super"
+				action="ML22" />
+		</menu>
+
+		<menu text="general:MainTreeHelper.Mfg_Rfq">
+			<menuitem text="manufacturing:MPurchasingHomePage.2AddMRFQ"
+				tooltip="manufacturing:MPurchasingHomePage.2AddMRFQ" action="MA16" />
+
+			<menuitem
+				text=""
+				tooltip=""
+				action="ML23" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:MPurchasingHomePage.2SearchMRFQ"
+				tooltip="manufacturing:MPurchasingHomePage.2SearchMRFQ"
+				action="MS59" />
+			<menuitem text=""
+				tooltip="" action="MS62" />
+			<menuitem
+				text=""
+				tooltip=""
+				action="MS60" />
+			<menuitem
+				text="manufacturing:MPurchasingHomePage.MRFQCheckList"
+				tooltip="manufacturing:MPurchasingHomePage.MRFQCheckList"
+				action="MS58" />
+			<menuitem text=""
+				tooltip="" action="MS61" />
+		</menu>
+
+
+		<menu text="general:MainTreeHelper.MECN">
+			<menuitem text="engineering:MEcnHomePage.AddMECN"
+				tooltip="engineering:MEcnHomePage.AddMECN" action="MA17" />
+			<menuitem
+				text="engineering:MEcnHomePageLookupSearchPane.SearchButton"
+				tooltip="engineering:MEcnHomePageLookupSearchPane.SearchButton"
+				action="ML24" />
+			<separator></separator>
+			<menuitem
+				text="engineering:MEcnHomePageByMECNSearchPane.SearchButton"
+				tooltip="engineering:MEcnHomePageByMECNSearchPane.SearchButton"
+				action="MS63" />
+			<menuitem
+				text="engineering:MEcnHomePageDueSearchPane.SearchButton"
+				tooltip="engineering:MEcnHomePageDueSearchPane.SearchButton"
+				action="MS66" />
+			<menuitem
+				text="engineering:EcnHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="engineering:EcnHomePageByPNSearchPane.2SearchbyPN"
+				action="MS64" />
+			<menuitem
+				text="engineering:MEcnHomePageOpenSearchPane.SearchButton"
+				tooltip="engineering:MEcnHomePageOpenSearchPane.SearchButton"
+				action="MS65" />
+
+		</menu>
+
+		<menu text="general:MainTreeHelper.MECR">
+			<menuitem text="engineering:MEcrHomePage.AddMECR"
+				tooltip="engineering:MEcrHomePage.AddMECR" action="MA18" />
+			<menuitem
+				text="engineering:MEcrHomePageLookupSearchPane.SearchButton"
+				tooltip="engineering:MEcrHomePageLookupSearchPane.SearchButton"
+				action="ML25" />
+			<separator></separator>
+			<menuitem
+				text="engineering:MEcrHomePageByMEcrSearchPane.SearchButton"
+				tooltip="engineering:MEcrHomePageByMEcrSearchPane.SearchButton"
+				action="MS67" />
+			<menuitem
+				text="engineering:MEcrHomePageByPNSearchPane.SearchButton"
+				tooltip="engineering:MEcrHomePageByPNSearchPane.SearchButton"
+				action="MS68" />
+			<menuitem
+				text="engineering:MEcrHomePageDueSearchPane.SearchButton"
+				tooltip="engineering:MEcrHomePageDueSearchPane.SearchButton"
+				action="MS70" />
+			<menuitem text="engineering:MEcrHomePage.AllOpenMECR"
+				tooltip="engineering:MEcrHomePage.AllOpenMECR" action="MS69" />
+
+		</menu>
+
+		<menu text="general:MainTreeHelper.Manufacture_BOM">
+			<menuitem
+				text="manufacturing:PFEPHomePageLookUpAsmSequencePane.2LookUpMfgBOMAsmSequence"
+				tooltip="manufacturing:PFEPHomePageLookUpAsmSequencePane.2LookUpMfgBOMAsmSequence"
+				action="ML26" />
+			<menuitem
+				text=""
+				tooltip=""
+				action="MS71" />
+		</menu>
+		<menu
+			text="manufacturing:WorkCenterHomePage.WIRequestforChange">
+			<menuitem
+				text="manufacturing:WorkInstructionRfcUIFree.2AddWorkInstructionRFC"
+				tooltip="manufacturing:WorkInstructionRfcUIFree.2AddWorkInstructionRFC"
+				action="MA07" />
+			<menuitem
+				text="manufacturing:WorkInstructionRfcHomePageLookupSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionRfcHomePageLookupSearchPane.Super"
+				action="ML19" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkInstructionRfcHomePageByRfcSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionRfcHomePageByRfcSearchPane.Super"
+				action="MS31" />
+			<menuitem
+				text="manufacturing:WorkInstructionRfcHomePageOpenSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionRfcHomePageOpenSearchPane.Super"
+				action="MS33" />
+			<menuitem
+				text="manufacturing:WorkInstructionRfcHomePageDueSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionRfcHomePageDueSearchPane.Super"
+				action="MS32" />
+
+		</menu>
+
+		<menu text="general:MainTreeHelper.PFEP">
+			<menuitem
+				text="manufacturing:PFEPHomePageLookUpPane.2LookUpPFEP"
+				tooltip="manufacturing:PFEPHomePageLookUpPane.2LookUpPFEP"
+				action="ML27" />
+		</menu>
+		<!-- 		<menu text="manufacturing:WorkInstructionHomePage.WIApproval">
+			<menuitem
+			text="manufacturing:WorkInstructionHomePage.2AddWIApproval"
+			tooltip="" action="MA13" />
+			<menuitem
+			text="manufacturing:WorkInstructionApprovalHomePageSearchPane.2SearchAllWorkInstructionApproval"
+			tooltip="manufacturing:WorkInstructionApprovalHomePageSearchPane.2SearchAllWorkInstructionApproval"
+			action="MS34" />	
+			</menu> -->
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Work_Order_Box">
+		<menu text="general:MainTreeHelper.Work_Order">
+			<menuitem text="workorder:WorkOrderHomePage.2AddWO"
+				tooltip="workorder:WorkOrderHomePage.2AddWO" action="WA01" />
+			<menuitem
+				text="workorder:WorkOrderHomePageLookupSearchPane.2LookUpWO"
+				tooltip="workorder:WorkOrderHomePageLookupSearchPane.2LookUpWO"
+				action="WL01" />
+			<menuitem
+				text="workorder:WorkOrderHomePageAssySearchPane.2SearchAllWOItemsCanBeAssy"
+				tooltip="workorder:WorkOrderHomePageAssySearchPane.2SearchAllWOItemsCanBeAssy"
+				action="WS014" />
+			<separator></separator>
+
+			<menuitem
+				text="workorder:WorkOrderHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="workorder:WorkOrderHomePageByDateSearchPane.2SearchbyDate"
+				action="WS016" />
+			<menuitem
+				text="workorder:WorkOrderHomePageByPNSearchPaneFree.2SearchByPN"
+				tooltip="workorder:WorkOrderHomePageByPNSearchPaneFree.2SearchByPN"
+				action="WS012" />
+			<menuitem
+				text="workorder:WorkOrderHomePageOpenByIDPane.2SearchOpenWOByID"
+				tooltip="workorder:WorkOrderHomePageOpenByIDPane.2SearchOpenWOByID"
+				action="WS013" />
+
+			<menuitem
+				text="workorder:WorkOrderHomePageOpenByVendorIDSearchPane.2SearchOpenWObyPNWO"
+				tooltip="workorder:WorkOrderHomePageOpenByVendorIDSearchPane.2SearchOpenWObyPNWO"
+				action="WS015" />
+			<menuitem
+				text="workorder:WorkOrderHomePageByWOSearchPane.AllOpenWO"
+				tooltip="workorder:WorkOrderHomePageByWOSearchPane.AllOpenWO"
+				action="WS011" />
+			<separator></separator>
+			<menuitem text="workorder:WOWorksheetHomepage.AddWOApproval"
+				tooltip="workorder:WOWorksheetHomepage.AddWOApproval" action="WA03" />
+			<menuitem
+				text="workorder:WOWorksheetHomepage.2SearchAllApprovals"
+				tooltip="workorder:WOWorksheetHomepage.2SearchAllApprovals"
+				action="WS05" />
+		</menu>
+		<menu text="workorder:WorkOrderHomePage.IssueParts">
+			<menuitem
+				text="workorder:WorkOrderIssueHomePageLookupSearchPane.IssuePartsToWO"
+				tooltip="workorder:WorkOrderIssueHomePageLookupSearchPane.IssuePartsToWO"
+				action="WS04" />
+			<separator></separator>
+			<menuitem
+				text="workorder:WorkOrderHomePageByWOSearchPane.2SearchWO"
+				tooltip="workorder:WorkOrderHomePageByWOSearchPane.2SearchWO"
+				action="WS041" />
+
+
+			<menuitem
+				text="warehouse:InventoryHomePagePartsIssuedPane.Search"
+				tooltip="warehouse:InventoryHomePagePartsIssuedPane.Search"
+				action="WS044" />
+			<menuitem
+				text="workorder:WorkOrderHomePage.WOItemnotIssuedParts"
+				tooltip="workorder:WorkOrderHomePage.WOItemnotIssuedParts"
+				action="WS043" />
+			<menuitem
+				text="workorder:WorkOrderHomePageByPNSearchPane.2SearchByPN"
+				tooltip="workorder:WorkOrderHomePageByPNSearchPane.2SearchByPN"
+				action="WS042" />
+			<!--		
+				<menuitem
+				text="workorder:WorkOrderHomePagePartsIssuedCostStatisticsPane.2SearchWorkOrderIssuedCostStatistics"
+				tooltip="workorder:WorkOrderHomePagePartsIssuedCostStatisticsPane.2SearchWorkOrderIssuedCostStatistics"
+				action="WS045" />
+			-->
+		</menu>
+		<menu text="general:MainTreeHelper.WO_Worksheet">
+			<menuitem text="workorder:WOWorksheetHomepage.2AddWorkSheet"
+				tooltip="workorder:WOWorksheetHomepage.2AddWorkSheet" action="WA02" />
+			<menuitem
+				text="workorder:WOWorksheetHomepageMyWOWorksheetPane.MyWOorkSheet"
+				tooltip="workorder:WOWorksheetHomepageMyWOWorksheetPane.MyWOorkSheet"
+				action="WS02" />
+		</menu>
+		
+		<menu text="workorder:WorkOrderHomePage.DisassembleWorkOrder">
+			<menuitem text="workorder:WorkOrderHomePage.2AddDWO"
+				tooltip="workorder:WorkOrderHomePage.2AddDWO" action="DWA001" />
+			<menuitem text="workorder:WorkOrderHomePageLookupSearchPane.2LookUpDWO"
+				tooltip="workorder:WorkOrderHomePageLookupSearchPane.2LookUpDWO" action="DW001"/>
+			<menuitem text="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllOpenDWO"
+				tooltip="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllOpenDWO" action="DW002" />
+			<menuitem text="workorder:DiassembleWorkOrderHomePageByPNSearchPane.2SearchDWObyPart"
+				tooltip="workorder:DiassembleWorkOrderHomePageByPNSearchPane.2SearchDWObyPart" action="DW003"/>
+			<menuitem text="workorder:DiassembleWorkOrderHomePageByVendorIDSearchPane.2SearchOpenDWObyVendorID"
+				tooltip="workorder:DiassembleWorkOrderHomePageByVendorIDSearchPane.2SearchOpenDWObyVendorID" action="DW004" />
+			<menuitem text="workorder:DisassembleWorkOrderHomePageSearchByDatePane.2SearchbyDate"
+				tooltip="workorder:DisassembleWorkOrderHomePageSearchByDatePane.2SearchbyDate" action="DW005"/>	
+			<menuitem text="workorder:DisassembleWorkOrderHomePageSearchCancelledPane.2SearchCancelledDWOItems"
+				tooltip="workorder:DisassembleWorkOrderHomePageSearchCancelledPane.2SearchCancelledDWOItems" action="DW006" />
+			<separator></separator>	
+			<menuitem text="workorder:DWOWorksheetHomepage.2AddDWOApproval"
+				tooltip="workorder:DWOWorksheetHomepage.2AddDWOApproval" action="DW007" />
+			<menuitem text="workorder:DWOApprovalHomePageSearchAllPane.2SearchAllApprovals"
+				tooltip="workorder:DWOApprovalHomePageSearchAllPane.2SearchAllApprovals" action="DW008"/>	
+			<separator></separator>	
+			<menuitem
+				text="warehouse:DisassembleWorkOrderIssueHomeLookUpShipByDWOPane.IssueDWO"
+				tooltip="warehouse:DisassembleWorkOrderIssueHomeLookUpShipByDWOPane.IssueDWO"
+				action="DWS001" />	
+			<menuitem
+				text="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				tooltip="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				action="DWS002" />
+			<menuitem
+				text="warehouse:DisassembleWorkOrderSearchDWOShipPane.2SearchIssueDWOsbyDate"
+				tooltip="warehouse:DisassembleWorkOrderSearchDWOShipPane.2SearchIssueDWOsbyDate"
+				action="DWS003" />
+			<separator></separator>	
+			<menuitem
+				text="warehouse:DisassembleWorkOrderReceivingHomeSearchDWOPane.DWOReceiving"
+				tooltip="warehouse:DisassembleWorkOrderReceivingHomeSearchDWOPane.DWOReceiving"
+				action="DWR001" />
+			<menuitem
+				text="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				tooltip="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				action="DWR002" />
+			<menuitem
+				text="warehouse:InventoryHomePagePartsReceivedPane.2SearchPartReceivedForDWO"
+				tooltip="warehouse:InventoryHomePagePartsReceivedPane.2SearchPartReceivedForDWO"
+				action="DWR003" />
+	    </menu>
+		
+		<menu text="workorder:MenuBar.WOBP">
+			<menuitem text="workorder:WorkOrderHomePage.AddWorkOrderBP"
+				tooltip="workorder:WorkOrderHomePage.AddWorkOrderBP" action="WA04" />
+			<menuitem text="workorder:WorkOrderHomePage.2LookUpWOBP"
+				tooltip="workorder:WorkOrderHomePage.2LookUpWOBP" action="WS051" />
+			<menuitem text="workorder:WorkOrderHomePage.2SearchWOBP"
+				tooltip="workorder:WorkOrderHomePage.2SearchWOBP" action="WS052" />
+		</menu>
+		<menu text="workorder:WorkOrderHomePage.Report">
+
+			<menuitem
+				text="workorder:WorkOrderHomePageMasterWorkOrderSearchPane.2SearchMasterWO"
+				tooltip="workorder:WorkOrderHomePageMasterWorkOrderSearchPane.2SearchMasterWO"
+				action="WS035" />
+			<menuitem
+				text="workorder:WorkOrderHomePageDeliveryRatePane.VendorSearch"
+				tooltip="workorder:WorkOrderHomePageDeliveryRatePane.VendorSearch"
+				action="WS036" />
+			<menuitem
+				text="workorder:WorkOrderHomepageSearchNotSetupByWONumberPane.2SearchNotSetup"
+				tooltip="workorder:WorkOrderHomepageSearchNotSetupByWONumberPane.2SearchNotSetup"
+				action="WS033" />
+			<menuitem
+				text="workorder:WorkOrderHomePageOverIssuePane.WorkOrderIssueReport"
+				tooltip="workorder:WorkOrderHomePageOverIssuePane.WorkOrderIssueReport"
+				action="WS034" />
+			<menuitem
+				text="workorder:WorkOrderHomePageSearchTopMainWOPane.SearchAllTopMasterWorkOrderStatus"
+				tooltip="workorder:WorkOrderHomePageSearchTopMainWOPane.SearchAllTopMasterWorkOrderStatus"
+				action="WS038" />
+			<menuitem
+				text="workorder:WorkOrderHomePageSearchTopMainWOPane.SearchAllSubWorkOrder"
+				tooltip="workorder:WorkOrderHomePageSearchTopMainWOPane.SearchAllSubWorkOrder"
+				action="WS037" />
+			<menuitem
+				text="workorder:WorkOrderHomePageOpenSearchPane.OpenWO"
+				tooltip="workorder:WorkOrderHomePageOpenSearchPane.OpenWO"
+				action="WS031" />
+			<menuitem
+				text="workorder:WorkOrderHomePageDueSearchPane.PastDueWO"
+				tooltip="workorder:WorkOrderHomePageDueSearchPane.PastDueWO"
+				action="WS03" />
+			<menuitem
+				text="workorder:WorkOrderHomePageCheckListPane.Super"
+				tooltip="workorder:WorkOrderHomePageCheckListPane.Super"
+				action="WS032" />
+		</menu>
+		<menu text="engineering:PartHomePage.InfoCenter">
+			<menuitem text="" action="WL02" />
+			<menuitem text="" action="WL03" />
+			<menuitem action="WS054" />
+			<menuitem action="WS055" />
+		</menu>
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Quality_Box">
+		<menu text="general:MainTreeHelper.Serial_Number">
+			<menuitem
+				text="manufacturing:SerialNumberUI.AddSerialNumber"
+				tooltip="manufacturing:SerialNumberUI.AddSerialNumber"
+				action="QA01" />
+			<menuitem text="quality:SerialHomePageByCNSearchPane.Super"
+				tooltip="quality:SerialHomePageByCNSearchPane.Super" action="QS01" />
+			<separator></separator>
+			<menuitem
+				text="management:ManagementHomePageQualityPane.QualityInfoBox"
+				tooltip="management:ManagementHomePageQualityPane.QualityInfoBox"
+				action="QS011" />
+		</menu>
+		<menu text="general:MainTreeHelper.Certificate">
+			<menuitem text="quality:CertificateUI.AddCertificate"
+				tooltip="quality:CertificateUI.AddCertificate" action="QA02" />
+			<separator></separator>
+
+			<menuitem
+				text="quality:CertificateHomePageByDescriptionSearchPane.Super"
+				tooltip="quality:CertificateHomePageByDescriptionSearchPane.Super"
+				action="QS022" />
+			<menuitem
+				text="quality:CertificateHomePageByWOSearchPane.Super"
+				tooltip="quality:CertificateHomePageByWOSearchPane.Super"
+				action="QS023" />
+			<menuitem
+				text="quality:CertificateHomePageByRefSearchPane.Super"
+				tooltip="quality:CertificateHomePageByRefSearchPane.Super"
+				action="QS026" />
+			<menuitem
+				text="quality:CertificateHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="quality:CertificateHomePageByPNSearchPane.2SearchbyPN"
+				action="QS021" />
+			<menuitem
+				text="quality:CertificateHomePageByPOSearchPane.Super"
+				tooltip="quality:CertificateHomePageByPOSearchPane.Super"
+				action="QS024" />
+			<menuitem
+				text="quality:CertificateHomePageByRNSearchPane.Super"
+				tooltip="quality:CertificateHomePageByRNSearchPane.Super"
+				action="QS025" />
+
+			<menuitem
+				text="quality:CertificateHomePageByCNSearchPane.Super"
+				tooltip="quality:CertificateHomePageByCNSearchPane.Super"
+				action="QS02" />
+			<separator></separator>
+			<menuitem
+				text="quality:CertificateHomePage.AddCertificateDescription"
+				tooltip="quality:CertificateHomePage.AddCertificateDescription"
+				action="QA08" />
+			<menuitem
+				text="quality:CertificateHomePageForCnDescriptionSearchPane.Super"
+				tooltip="quality:CertificateHomePageForCnDescriptionSearchPane.Super"
+				action="QS027" />
+		</menu>
+		<menu text="quality:TrackingHomepage.Title">
+			<menuitem text="quality:TrackingHomepageSearchPane.Search"
+				tooltip="quality:TrackingHomepageSearchPane.Search" action="QS028"
+				condition="" />
+		</menu>
+		<menu text="general:MainTreeHelper.NCR">
+			<menuitem text="quality:NcrHomePage.AddNCR"
+				tooltip="quality:NcrHomePage.AddNCR" action="QA03" />
+			<menuitem text="quality:NcrHomePageLookupSearchPane.Super"
+				tooltip="quality:NcrHomePageLookupSearchPane.Super" action="QL01" />
+			<separator></separator>
+			<menuitem
+				text="quality:NcrHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="quality:NcrHomePageByPNSearchPane.2SearchbyPN"
+				action="QS061" />
+			<menuitem
+				text="quality:NcrHomePageByDateSearchPane.SearchByDate"
+				tooltip="quality:NcrHomePageByDateSearchPane.SearchByDate"
+				action="QS063" />
+			<menuitem text="quality:NcrHomePageByNcrSearchPane.Super"
+				tooltip="quality:NcrHomePageByNcrSearchPane.Super" action="QS06" />
+			<menuitem
+				text="quality:NcrHomePageByPNSearchPane.2SearchPartInQA"
+				tooltip="quality:NcrHomePageByPNSearchPane.2SearchPartInQA"
+				action="QS062" />
+
+			<separator></separator>
+			<menuitem text="quality:NcrHomePageDueSearchPane.Super"
+				tooltip="quality:NcrHomePageDueSearchPane.Super" action="QS064" />
+			<menuitem text="quality:NcrHomePageOpenSearchPane.Super"
+				tooltip="quality:NcrHomePageOpenSearchPane.Super" action="QS065" />
+			<menuitem
+				text="quality:NcrHomePage.SearchNCRstoCreateScrapGL"
+				tooltip="quality:NcrHomePage.SearchNCRstoCreateScrapGL"
+				action="QS066" />
+			<menuitem
+				text="quality:NcrHomePageByDateSearchPane.SearchNeedClose"
+				tooltip="quality:NcrHomePageByDateSearchPane.SearchNeedClose"
+				action="QS067" />
+				
+			<separator></separator>
+			<menuitem text="quality:NcrReviewHomePage.2AddNcrApproval"
+				tooltip="quality:NcrReviewHomePage.2AddNcrApproval" action="QA10" />
+			<menuitem text="quality:NcrReviewHomePage.LookupNcrApproval"
+				tooltip="quality:NcrReviewHomePage.LookupNcrApproval" action="QS095" />
+			<menuitem text="quality:NcrReviewHomePageAllSearchPane.Super"
+				tooltip="quality:NcrReviewHomePageAllSearchPane.Super" action="QS096" />
+		</menu>
+		<menu text="general:MainTreeHelper.IR">
+			<menuitem text="quality:IcrAddPane.addIcr"
+				tooltip="quality:IcrAddPane.addIcr" action="QA09" />
+			<menuitem text="quality:IcrHomePageLookupIcrPane.2LookUpICR"
+				tooltip="quality:IcrHomePageLookupIcrPane.2LookUpICR" action="QL05" />
+			<separator></separator>
+			<menuitem
+				text="quality:IcrHomePageByIcrSearchPane.2SearchICR"
+				tooltip="quality:IcrHomePageByIcrSearchPane.2SearchICR"
+				action="QS07" />
+			<menuitem
+				text="quality:IcrHomePageByDateSearchPane.2SearchByDate"
+				tooltip="quality:IcrHomePageByDateSearchPane.2SearchByDate"
+				action="QS072" />
+			<menuitem
+				text="quality:IcrHomePageByIcrSearchPane.2SearchICRByVendorId"
+				tooltip="quality:IcrHomePageByIcrSearchPane.2SearchICRByVendorId"
+				action="QS071" />
+			<menuitem
+				text="quality:PartInspectionSearchByPNPane.SearchPartInspectionByPN"
+				tooltip="quality:PartInspectionSearchByPNPane.SearchPartInspectionByPN"
+				action="QS073" />
+			
+			<menuitem
+				text="quality:AllInspectionTypeSearchPane.AllInspectionType"
+				tooltip="quality:AllInspectionTypeSearchPane.AllInspectionType"
+				action="QS097" />
+			<menuitem
+				text="quality:IrHomePageSearchParyByInspectionType.2SearchPartWithInspectionType"
+				tooltip="quality:IrHomePageSearchParyByInspectionType.2SearchPartWithInspectionType"
+				action="QS098" />
+		</menu>
+		<menu text="general:MainTreeHelper.CAR">
+			<menuitem text="quality:CarActionManager.AddCAR"
+				tooltip="quality:CarActionManager.AddCAR" action="QA04" />
+			<menuitem text="quality:CarHomePageLookupSearchPane.Super"
+				tooltip="quality:CarHomePageLookupSearchPane.Super" action="QL02" />
+			<separator></separator>
+			<menuitem
+				text="quality:CarHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="quality:CarHomePageByPNSearchPane.2SearchbyPN"
+				action="QS081" />
+			<menuitem text="quality:CarHomePageByCarSearchPane.Super"
+				tooltip="quality:CarHomePageByCarSearchPane.Super" action="QS08" />
+
+			<menuitem
+				text="quality:CarHomePageByDateSearchPane.SearchByDate"
+				tooltip="quality:CarHomePageByDateSearchPane.SearchByDate"
+				action="QS082" />
+			<separator></separator>
+			<menuitem text="quality:CarHomePageDueSearchPane.Super"
+				tooltip="quality:CarHomePageDueSearchPane.Super" action="QS083" />
+			<menuitem text="quality:CarHomePageOpenSearchPane.Super"
+				tooltip="quality:CarHomePageOpenSearchPane.Super" action="QS084" />
+		</menu>
+		<menu text="general:MainTreeHelper.PAR">
+			<menuitem text="quality:ParActionManager.AddPAR"
+				tooltip="quality:ParActionManager.AddPAR" action="QA05" />
+			<menuitem text="quality:ParHomePageLookupSearchPane.Super"
+				tooltip="quality:ParHomePageLookupSearchPane.Super" action="QL03" />
+			<separator></separator>
+			<menuitem text="quality:ParHomePageByParSearchPane.Super"
+				tooltip="quality:ParHomePageByParSearchPane.Super" action="QS041" />
+			<menuitem
+				text="quality:ParHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="quality:ParHomePageByPNSearchPane.2SearchbyPN"
+				action="QS042" />
+			<menuitem
+				text="quality:ParHomePageByDateSearchPane.HeaderTitle"
+				tooltip="quality:ParHomePageByDateSearchPane.HeaderTitle"
+				action="QS04" />
+			<separator></separator>
+			<menuitem text="quality:ParHomePageDueSearchPane.Super"
+				tooltip="quality:ParHomePageDueSearchPane.Super" action="QS043" />
+			<menuitem text="quality:ParHomePageOpenSearchPane.Super"
+				tooltip="quality:ParHomePageOpenSearchPane.Super" action="QS044" />
+		</menu>
+		<menu text="general:MainTreeHelper.NC_Code">
+			<menuitem
+				text="quality:NcCodeActionManager.AddNewNonConformaceCode"
+				tooltip="quality:NcCodeActionManager.AddNewNonConformaceCode"
+				action="QA06" />
+			<menuitem
+				text="quality:NcCodeHomePageLookupSearchPane.Super"
+				tooltip="quality:NcCodeHomePageLookupSearchPane.Super"
+				action="QL04" />
+			<separator></separator>
+			<menuitem text="quality:NcCodeHomePageByNCSearchPane.Super"
+				tooltip="quality:NcCodeHomePageByNCSearchPane.Super" action="QS05" />
+			<menuitem
+				text="quality:NcCodeRejectRateHomePageSearchPane.2SearchNCCodeRejectRate"
+				tooltip="quality:NcCodeRejectRateHomePageSearchPane.2SearchNCCodeRejectRate"
+				action="QS051" />
+		</menu>
+		<menu text="general:MainTreeHelper.CustomerVendor_QA">
+			<menuitem text="" tooltip="" action="QS09" />
+			<menuitem text="" tooltip="" action="QS091" />
+			<menuitem text="" tooltip="" action="QS092" />
+			<menuitem text="" tooltip="" action="QS093" />
+			<menuitem text="" tooltip="" action="QS094" />
+			<menuitem text="" tooltip="" action="QS099" />
+		</menu>
+		<menu text="general:MainTreeHelper.Quality_Group">
+			<menuitem text="quality:UWQgUserGeneralPane.AddQGUser"
+				tooltip="quality:UWQgUserGeneralPane.AddQGUser" action="QA07" />
+			<menuitem text="quality:QgUserHomepageSearchPane.Super"
+				tooltip="quality:QgUserHomepageSearchPane.Super" action="QS10" />
+		</menu>
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Warehouse_Box">
+		<menu text="general:MainTreeHelper.Warehouse_Home">
+			<menuitem
+				text="warehouse:WarehouseHomePage.MakeInventoryList"
+				tooltip="warehouse:WarehouseHomePage.MakeInventoryList"
+				action="WS18" />
+			<menuitem
+				text="warehouse:WarehouseHomePage.SearchStockTransaction"
+				tooltip="warehouse:WarehouseHomePage.SearchStockTransaction"
+				action="WL11" />
+			<menuitem
+				text="warehouse:WarehouseHomePage.LookUpOnHandbyPN"
+				tooltip="warehouse:WarehouseHomePage.LookUpOnHandbyPN"
+				action="WL10" />
+			<menuitem text="purchasing:MrpHomePage.Super"
+				tooltip="purchasing:MrpHomePage.Super" action="WL20" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:InvoiceItemUI.NegativeOnHandReport"
+				tooltip="warehouse:InvoiceItemUI.NegativeOnHandReport"
+				action="WS16" />
+			<menuitem
+				text="management:ManagementHomePageWarehousingPane.WarehousinginfoBox"
+				tooltip="management:ManagementHomePageWarehousingPane.WarehousinginfoBox"
+				action="WS20" />
+			<menuitem text="warehouse:InvoiceItemUI.AuditLastInventory"
+				tooltip="warehouse:InvoiceItemUI.AuditLastInventory" action="WS19" />
+			<separator></separator>
+			<menuitem action="WA06" condition="" />
+			<menuitem action="WS057" condition="" />
+			<menuitem action="WS056" condition="" />
+			<menuitem action="WS058" condition="" />
+		</menu>
+		<separator></separator>
+		<menu text="general:MainTreeHelper.Shipping">
+			<menuitem text="warehouse:ShippingHomeShipSOPane.2ShipSO"
+				tooltip="warehouse:ShippingHomeShipSOPane.2ShipSO" action="WSH01" />
+			<menuitem
+				text="workorder:WorkOrderIssueHomePageLookupSearchPane.IssuePartsToWO"
+				tooltip="workorder:WorkOrderIssueHomePageLookupSearchPane.IssuePartsToWO"
+				action="WS9014" />
+			<menuitem
+				text="warehouse:DisassembleWorkOrderIssueHomeLookUpShipByDWOPane.IssueDWO"
+				tooltip="warehouse:DisassembleWorkOrderIssueHomeLookUpShipByDWOPane.IssueDWO"
+				action="DWS001" />	
+			<separator></separator>
+			<menuitem
+				text="workorder:WorkOrderHomePageByWOSearchPane.2SearchWO"
+				tooltip="workorder:WorkOrderHomePageByWOSearchPane.2SearchWO"
+				action="WS9015" />
+			<menuitem
+				text="warehouse:ShippingHomeSearchShipBySOPane.2SearchSO"
+				tooltip="warehouse:ShippingHomeSearchShipBySOPane.2SearchSO"
+				action="WS901" />
+			<menuitem
+				text="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				tooltip="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				action="DWS002" />
+			<menuitem
+				text="warehouse:WorkOrderHomePageAllOpenPOSearchPane.SearchAllWOItemCanIssue"
+				tooltip="warehouse:WorkOrderHomePageAllOpenPOSearchPane.SearchAllWOItemCanIssue"
+				action="WS9017" />
+			<menuitem
+				text="sales:SalseOrderHomePageAllOpenSOSearchPane.SearchAllSOItemCanShip"
+				tooltip="sales:SalseOrderHomePageAllOpenSOSearchPane.SearchAllSOItemCanShip"
+				action="WS9012" />
+			<menuitem
+				text="workorder:WorkOrderHomePageByPNSearchPane.2SearchByPN"
+				tooltip="workorder:WorkOrderHomePageByPNSearchPane.2SearchByPN"
+				action="WS9016" />
+			<menuitem
+				text="warehouse:SalseOrderHomePageAllShipDateSearchPane.2SearchAllSOShipDate"
+				tooltip="warehouse:SalseOrderHomePageAllShipDateSearchPane.2SearchAllSOShipDate"
+				action="WS9013" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:ShipperHomePageLookupSearchPane.Super"
+				tooltip="warehouse:ShipperHomePageLookupSearchPane.Super"
+				action="WS9018" />
+			<menuitem
+				text="warehouse:ShipperHomePageByShipperSearchPane.Super"
+				tooltip="warehouse:ShipperHomePageByShipperSearchPane.Super"
+				action="WS9019" />
+			<menuitem
+				text="warehouse:InventoryHomePagePartsIssuedPane.Search"
+				tooltip="warehouse:InventoryHomePagePartsIssuedPane.Search"
+				action="WS90115" />
+			<menuitem
+				text="warehouse:ShippingHomePageBySerialNumberSearchPane.2SearchbySerial"
+				tooltip="warehouse:ShippingHomePageBySerialNumberSearchPane.2SearchbySerial"
+				action="WS90114" />
+
+			<menuitem
+				text="warehouse:ShippingHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="warehouse:ShippingHomePageByDateSearchPane.2SearchbyDate"
+				action="WS90113" />
+			<menuitem
+				text="warehouse:ShippingHomeBySalesOrderSearchPane.2SearchbySalesOrder"
+				tooltip="warehouse:ShippingHomeBySalesOrderSearchPane.2SearchbySalesOrder"
+				action="WS90110" />
+			<menuitem
+				text="warehouse:ShippingHomeBySalesmanSearchPane.2SearcbySalesman"
+				tooltip="warehouse:ShippingHomeBySalesmanSearchPane.2SearcbySalesman"
+				action="WS90111" />
+			<menuitem
+				text="warehouse:ShippingHomeByCustomerSearchPaneFree.2SearchbyCustomer"
+				tooltip="warehouse:ShippingHomeByCustomerSearchPaneFree.2SearchbyCustomer"
+				action="WS90112" />
+			<menuitem
+				text="warehouse:ShippingHomepageOnloanShipperSearchPane.2SearchOnloanShipperByID"
+				tooltip="warehouse:ShippingHomepageOnloanShipperSearchPane.2SearchOnloanShipperByID"
+				action="WS90031" />	
+			<menuitem
+				text="warehouse:ShippingHomepageOnloanShipperSearchByOnloanNumberPane.2SearchOnloanShipperByOnloanNumber"
+				tooltip="warehouse:ShippingHomepageOnloanShipperSearchByOnloanNumberPane.2SearchOnloanShipperByOnloanNumber"
+				action="WS90032" />	
+			<separator></separator>
+			<menuitem
+				text="warehouse:ShippingHomePagePrintShipperListSearchPane.MyShipperPrintList"
+				tooltip="warehouse:ShippingHomePagePrintShipperListSearchPane.MyShipperPrintList"
+				action="WS10000" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:ShippingHomeLookUpShipByRTVPane.2ShipRTV"
+				tooltip="warehouse:ShippingHomeLookUpShipByRTVPane.2ShipRTV"
+				action="WSH03" />
+			<menuitem
+				text="warehouse:RTVShippingHomeByRTVShipperNumbeSearchPane.RTV"
+				tooltip="warehouse:RTVShippingHomeByRTVShipperNumbeSearchPane.RTV"
+				action="WS9021" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:ShippingHomeSearchShipBySOPane.2SearchRTV"
+				tooltip="warehouse:ShippingHomeSearchShipBySOPane.2SearchRTV"
+				action="WS902" />
+			<menuitem
+				text="warehouse:RTVShippingHomeByRTVNumberSearchPane.SearchRTVShipperbyRTV"
+				tooltip="warehouse:RTVShippingHomeByRTVNumberSearchPane.SearchRTVShipperbyRTV"
+				action="WS9022" />
+			<menuitem
+				text="warehouse:RTVShippingHomeByPONumberSearchPane.SearchRTVShipperbyPO"
+				tooltip="warehouse:RTVShippingHomeByPONumberSearchPane.SearchRTVShipperbyPO"
+				action="WS9024" />
+			<menuitem
+				text="warehouse:RTVShippingHomeByShippedBySearchPane.SearchRTVShipperShippedby"
+				tooltip="warehouse:RTVShippingHomeByShippedBySearchPane.SearchRTVShipperShippedby"
+				action="WS9025" />
+			<menuitem
+				text="warehouse:RTVShippingHomeByDateSearchPane.SearchShipperItemByDate"
+				tooltip="warehouse:RTVShippingHomeByDateSearchPane.SearchShipperItemByDate"
+				action="WS9027" />
+			<menuitem
+				text="warehouse:RTVShippingHomeByVendorIDSearchPane.SearchRTVShipperbyVendorID"
+				tooltip="warehouse:RTVShippingHomeByVendorIDSearchPane.SearchRTVShipperbyVendorID"
+				action="WS9023" />
+			<menuitem
+				text="warehouse:RTVShippingHomeAllNotPickedSearchPane.AllRTVShippersVendorNotPickedthePart"
+				tooltip="warehouse:RTVShippingHomeAllNotPickedSearchPane.AllRTVShippersVendorNotPickedthePart"
+				action="WS9026" />
+						
+		</menu>
+		<menu text="general:MainTreeHelper.Receiving">
+			<menuitem
+				text="warehouse:ReceivingHomeReceiveFromWOPane.2ReceivefromWO"
+				tooltip="warehouse:ReceivingHomeReceiveFromWOPane.2ReceivefromWO"
+				action="WS1032" />
+			<menuitem
+				text="warehouse:ReceivingHomeReceiveFromPOPane.2ReceivefromPO"
+				tooltip="warehouse:ReceivingHomeReceiveFromPOPane.2ReceivefromPO"
+				action="WR01" />
+			<menuitem
+				text="warehouse:DisassembleWorkOrderReceivingHomeSearchDWOPane.DWOReceiving"
+				tooltip="warehouse:DisassembleWorkOrderReceivingHomeSearchDWOPane.DWOReceiving"
+				action="DWR001" />
+			<menuitem
+				text="warehouse:ReceivingHomePageLookupSearchPane.2LookupReceiver"
+				tooltip="warehouse:ReceivingHomePageLookupSearchPane.2LookupReceiver"
+				action="WL17" />
+			<separator></separator>
+			<menuitem text="warehouse:ReceivingHomePage.2SearchWO"
+				tooltip="warehouse:ReceivingHomePage.2SearchWO" action="WS1033" />
+			<menuitem
+				text="warehouse:ReceivingPOHomePageByRNSearchPane.Super"
+				tooltip="warehouse:ReceivingPOHomePageByRNSearchPane.Super"
+				action="WS1034" />
+			<menuitem
+				text="warehouse:ReceivingHomeSearchPOPane.2SearchPO"
+				tooltip="warehouse:ReceivingHomeSearchPOPane.2SearchPO"
+				action="WS103" />
+			<menuitem
+				text="warehouse:ReceivingHomePageOpenByRNSearchPane.2SearchOpenReceiver"
+				tooltip="warehouse:ReceivingHomePageOpenByRNSearchPane.2SearchOpenReceiver"
+				action="WS1035" />
+			<menuitem
+				text="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				tooltip="workorder:DiassembleWorkOrderHomePageByDWOSearchOpenPane.AllDWO"
+				action="DWR002" />
+			<menuitem
+				text="warehouse:ReceivingWOHomePageByDateSearchPane.SearchWOReceiverByDate"
+				tooltip="warehouse:ReceivingWOHomePageByDateSearchPane.SearchWOReceiverByDate"
+				action="WS1037" />
+			<menuitem
+				text="warehouse:ReceivingHomeSearchPOByRelateDocPane.2SearchPOByRelateDoc"
+				tooltip="warehouse:ReceivingHomeSearchPOByRelateDocPane.2SearchPOByRelateDoc"
+				action="WS1031" />
+			<menuitem
+				text="warehouse:ReceivingPOHomePageByDateSearchPane.SearchPOReceiverByDate"
+				tooltip="warehouse:ReceivingPOHomePageByDateSearchPane.SearchPOReceiverByDate"
+				action="WS1036" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:ReceivingHomePagePrintReceiverListSearchPane.MyReceiverPrintList"
+				tooltip="warehouse:ReceivingHomePagePrintReceiverListSearchPane.MyReceiverPrintList"
+				action="WS10001" />
+			<separator></separator>
+			<menuitem text="warehouse:ReceivingHomePage.2ReceivefromRMA"
+				tooltip="warehouse:ReceivingHomePage.2ReceivefromRMA" action="WR03" />
+			<menuitem
+				text="warehouse:ReceivingHomeSearchRmaPane.2SearchRMA"
+				tooltip="warehouse:ReceivingHomeSearchRmaPane.2SearchRMA"
+				action="WS101" />
+			<menuitem
+				text="warehouse:ReceivingHomePage.2SearchRMAReceiversWithoutCM"
+				tooltip="warehouse:ReceivingHomePage.2SearchRMAReceiversWithoutCM"
+				action="WS1014" />
+			<menuitem
+				text="warehouse:RMAReceivingByCustomerIDHomeSearchPane.2SearchRMAReceiverByCustomerID"
+				tooltip="warehouse:RMAReceivingByCustomerIDHomeSearchPane.2SearchRMAReceiverByCustomerID"
+				action="WS1013" />
+			<menuitem
+				text="warehouse:ReceivingHomeSearchRmaPane.2SearchRMAReciverbySO"
+				tooltip="warehouse:ReceivingHomeSearchRmaPane.2SearchRMAReciverbySO"
+				action="WS1011" />
+			<menuitem
+				text="warehouse:RMAReceivingByRMAReceiverNumberHomeSearchPane.2SearchRMAReceiverByRMAReceiver"
+				tooltip="warehouse:RMAReceivingByRMAReceiverNumberHomeSearchPane.2SearchRMAReceiverByRMAReceiver"
+				action="WS1012" />
+
+		</menu>
+
+		<menu text="planning:ShipListHomePage.Title">
+			<menuitem action="WA18" />
+			<menuitem action="WL31" />
+			<menuitem action="WSH05" />
+			<menuitem action="WSH06" />
+			<separator></separator>
+			<menuitem action="WA19" />
+			<menuitem action="WL32" />
+			<menuitem action="WSH07" />
+		</menu>
+		<separator></separator>
+		<menu text="general:MainTreeHelper.OnLoan">
+			<menuitem text="warehouse:OnLoanHomePage.2AddOnLoan"
+				tooltip="warehouse:OnLoanHomePage.2AddOnLoan" action="WA12" />
+			<menuitem text="warehouse:OnLoanHomePage.2LookupOnLoan"
+				tooltip="warehouse:OnLoanHomePage.2LookupOnLoan" action="WL18" />
+			<separator></separator>
+			<menuitem text="warehouse:OnLoanHomePage.2SearchOnLoan"
+				tooltip="warehouse:OnLoanHomePage.2SearchOnLoan" action="WS28" />
+			<menuitem
+				text="warehouse:OnLoanHomePageOpenSearchPane.2SearchOpen"
+				tooltip="warehouse:OnLoanHomePageOpenSearchPane.2SearchOpen"
+				action="WS31" />
+			<menuitem
+				text="warehouse:OnLoanHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="warehouse:OnLoanHomePageByPNSearchPane.2SearchbyPN"
+				action="WS29" />
+			<menuitem
+				text="warehouse:OnLoanHomePageByCustomerIDSearchPane.2SearchbyCustomerID"
+				tooltip="warehouse:OnLoanHomePageByCustomerIDSearchPane.2SearchbyCustomerID"
+				action="WS30" />
+
+			<menuitem text="warehouse:OnLoanHomePage.2SearchDue"
+				tooltip="warehouse:OnLoanHomePage.2SearchDue" action="WS32" />
+			<menuitem action="WS1109" />
+			<separator></separator>
+			<menuitem action="WSH04" text="" tooltip="" />
+			<menuitem action="WS903" text="" tooltip="" />
+			<!-- 
+			<menuitem action="WS9031" text="" tooltip="" />
+			<menuitem action="WS9032" text="" tooltip="" />
+			 -->
+			<menuitem action="WS9033" text="" tooltip="" />
+			<menuitem action="WS9034" text="" tooltip="" />
+			<menuitem action="WS9035" text="" tooltip="" />
+			<menuitem action="WS9036" text="" tooltip="" />
+			<menuitem action="WS9037" text="" tooltip="" />
+			<separator></separator>
+			<menuitem action="WR04" text="" tooltip="" />
+			<menuitem action="WS102" text="" tooltip="" />
+			<menuitem action="WS1021" text="" tooltip="" />
+			<menuitem action="WS1110" text="" tooltip="" />
+			<menuitem action="WS1023" text="" tooltip="" />
+			<menuitem action="WS1024" text="" tooltip="" />
+			<menuitem action="WS1025" text="" tooltip="" />
+			<menuitem action="WS1026" text="" tooltip="" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:OnLoanReviewActionManager.AddOnLoanReview"
+				tooltip="warehouse:OnLoanReviewActionManager.AddOnLoanReview"
+				action="WA17" />
+			<menuitem
+				text="warehouse:OnLoanHomePage.2SearchAllOnLoanReview"
+				tooltip="warehouse:OnLoanHomePage.2SearchAllOnLoanReview"
+				action="WS33" />
+		</menu>
+		<menu text="general:MainTreeHelper.Inventory">
+			<menuitem
+				text="warehouse:ResetBB2PartAvgCostPane.ResetAvgCost"
+				tooltip="warehouse:ResetBB2PartAvgCostPane.ResetAvgCost"
+				action="WS60" />
+			<menuitem
+				text="warehouse:InventoryHomePageCycleCount.CycleCountWorkSheet"
+				tooltip="warehouse:InventoryHomePageCycleCount.CycleCountWorkSheet"
+				action="WS62" />
+			<separator></separator>
+			
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInventoryPane.2SearchInventory"
+				tooltip="warehouse:InventoryHomePageSearchInventoryPane.2SearchInventory"
+				action="WS65" />
+				
+			<menuitem
+				text="warehouse:InventoryHomePageSearchHighUsagePartPane.2SearchHighUsagePart"
+				tooltip="warehouse:InventoryHomePageSearchHighUsagePartPane.2SearchHighUsagePart"
+				action="WS63" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInventoryByLocationPane.2SearchInventorybyLocation"
+				tooltip="warehouse:InventoryHomePageSearchInventoryByLocationPane.2SearchInventorybyLocation"
+				action="WS64" />
+
+			<menuitem
+				text="warehouse:InventoryHomePageInventoryNotUsedPane.2Search"
+				tooltip="warehouse:InventoryHomePageInventoryNotUsedPane.2Search"
+				action="WS66" />
+			<menuitem
+				text="warehouse:InventoryHomePageInventoryNotUsedByMonthPane.2Search"
+				tooltip="warehouse:InventoryHomePageInventoryNotUsedByMonthPane.2Search"
+				action="WS67" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchWIPByIDPane.2SearchPartsinWIPByID"
+				tooltip="warehouse:InventoryHomePageSearchWIPByIDPane.2SearchPartsinWIPByID"
+				action="WS68" />
+
+			<separator></separator>
+			<menuitem
+				text="warehouse:WarehouseHomePage.SearchInventoryLog"
+				tooltip="warehouse:WarehouseHomePage.SearchInventoryLog"
+				action="WS70" />
+		</menu>
+		
+		<menu text="general:MainTreeHelper.Swap_Order">
+			<menuitem text="purchasing:SwapOrderHomePageAddSWOPane.AddSwapOrderTitle"
+				tooltip="purchasing:SwapOrderHomePageAddSWOPane.AddSwapOrderTitle" action="PS044" />
+			<menuitem text="purchasing:SwapOrderHomePageLookupSearchPane.Super"
+				tooltip="purchasing:SwapOrderHomePageLookupSearchPane.Super" action="PS045" />
+			<menuitem text="purchasing:SwapOrderHomePageBySWOSearchPane.SearchOPENSWO"
+				tooltip="purchasing:SwapOrderHomePageBySWOSearchPane.SearchOPENSWO" action="PS046" />
+			<menuitem text="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrder"
+				tooltip="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrder" action="PS047" />
+			<menuitem text="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrderItems"
+				tooltip="purchasing:SwapOrderHomePageSearchBySwapOrderPane.2SearchSwapOrderItems" action="PS048" />
+			<menuitem text="purchasing:SwapOrderApprovalAddPane.2AddSwapOrderApproval"
+				tooltip="purchasing:SwapOrderApprovalAddPane.2AddSwapOrderApproval" action="PS049" />
+			<menuitem text="purchasing:SwapOrderHomepageLookupSWOApprovalPane.2LookupSwapOrderApprovalbyEmployeeId"
+				tooltip="purchasing:SwapOrderHomepageLookupSWOApprovalPane.2LookupSwapOrderApprovalbyEmployeeId" action="PS050" />
+			<menuitem text="purchasing:SwapOrderHomepageSearchBySWOApprovalPane.AllSwapOrderApproval"
+				tooltip="purchasing:SwapOrderHomepageSearchBySWOApprovalPane.AllSwapOrderApproval" action="PS054" />
+			<separator></separator>
+			<menuitem text="warehouse:SwapOrderHomePageShipSwapOrderPane.2ShipSwapOrder"
+		    	tooltip="warehouse:SwapOrderHomePageShipSwapOrderPane.2ShipSwapOrder" action="WS1111" />
+			<menuitem text="warehouse:SwapOrderHomePageSearchSwapOrderToShipPane.2SearchSwapOrder"
+		    	tooltip="warehouse:SwapOrderHomePageSearchSwapOrderToShipPane.2SearchSwapOrder" action="WS1112" />
+			<menuitem text="warehouse:SwapHomePageLookupSwapShipperPane.2LookupSwapShipper"
+		    	tooltip="warehouse:SwapHomePageLookupSwapShipperPane.2LookupSwapShipper" action="WS1113" />
+		 	<menuitem text="warehouse:SwapHomePageSearchSwapShippersPane.2SearchSwapShipperbyDate"
+			    tooltip="warehouse:SwapHomePageSearchSwapShippersPane.2SearchSwapShipperbyDate" action="WS1114" />
+			<menuitem text="warehouse:SwapHomePageSearchSwapShipperItemsByDatePane.2SearchSwapShipperItemsbyDate"
+			    tooltip="warehouse:SwapHomePageSearchSwapShipperItemsByDatePane.2SearchSwapShipperItemsbyDate" action="WS1115" />
+			
+			<separator></separator>
+			<menuitem text="warehouse:ReceivingHomePage.2ReceivefromSwapShipper"
+				tooltip="warehouse:ReceivingHomePage.2ReceivefromSwapShipper" action="WS1116" />
+			<menuitem text="warehouse:ReceivingHomeSearchSwapShipperPane.2SearchSwapShipper"
+				tooltip="warehouse:ReceivingHomeSearchSwapShipperPane.2SearchSwapShipper" action="WS1117" />
+			<menuitem text="warehouse:SwapReceiverLookupByReceiverNumberHomeSearchPane.2LookupSwapReceiver"
+				tooltip="warehouse:SwapReceiverLookupByReceiverNumberHomeSearchPane.2LookupSwapReceiver" action="WS1118" />
+			<menuitem text="warehouse:SwapReceiverLookupByReceiverNumberHomeSearchPane.2LookupSwapReceiver"
+				tooltip="warehouse:SwapReceiverLookupByReceiverNumberHomeSearchPane.2LookupSwapReceiver" action="WS1119" />
+			<menuitem text="warehouse:ReceivingHomeageSearchSwapReceiverItemsByDatePane.2SearchSwapReceiverItemsbyDate"
+				tooltip="warehouse:ReceivingHomeageSearchSwapReceiverItemsByDatePane.2SearchSwapReceiverItemsbyDate" action="WS1120" />
+				
+		</menu>
+		
+		<menu text="warehouse:TransferOrderHomePage.Title">
+			<menuitem action="WA20" />
+			<menuitem action="WL34" />
+			<menuitem action="WS1106" />
+			<menuitem action="WS1107" />
+			<separator></separator>
+			<menuitem action="WA21" />
+			<menuitem action="WL35" />
+			<menuitem action="WS1108" />
+			<separator></separator>
+			<menuitem action="WS9028" />
+			<menuitem action="WS9030" />
+			<menuitem action="WS9029" />
+			<menuitem action="WS9031" />
+			<menuitem action="WS9032" />
+			<separator></separator>
+			<menuitem action="WS9038" />
+			<menuitem action="WS9039" />
+			<menuitem action="WS9040" />
+			<menuitem action="WS9041" />
+			<menuitem action="WS9042" />
+		</menu>
+		
+		<menu text= "general:MainTreeHelper.Nonproductive_Picking">
+		   <menuitem action="NONP001"/>
+		   <menuitem action="NONP002"/>
+		   <menuitem action="NONP003"/>
+		   <menuitem action="NONP004"/>
+		   <separator></separator>
+		   <menuitem action="NONP005"/>
+		   <menuitem action="NONP006"/>
+		   <separator></separator>
+		   <menuitem action="NONPS001"/>
+		   <menuitem action="NONPS002"/>
+		   <menuitem action="NONPS003"/>
+		</menu>
+		
+		<menu text="general:MainTreeHelper.Physical_Inventory">
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageTakeNew.2TakeaNewPhysicalInventory"
+				tooltip="warehouse:PhysicalInventoryHomePageTakeNew.2TakeaNewPhysicalInventory"
+				action="WA13" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageLookUpWorkSheet.2LookUpPhysicalInventoryWorkSheet"
+				tooltip="warehouse:PhysicalInventoryHomePageLookUpWorkSheet.2LookUpPhysicalInventoryWorkSheet"
+				action="WL21" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageCommitWorkSheetFree.CommitInventoryWorkSheet"
+				tooltip="warehouse:PhysicalInventoryHomePageCommitWorkSheetFree.CommitInventoryWorkSheet"
+				action="WS41" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageLookUpWorkSheetWithAvgCost.2LookUpPhysicalInventoryWorkSheetWithAvgCost"
+				tooltip="warehouse:PhysicalInventoryHomePageLookUpWorkSheetWithAvgCost.2LookUpPhysicalInventoryWorkSheetWithAvgCost"
+				action="WS43" 
+				condition="PermissionPanel.haveCostPermission"/>
+			<separator></separator>
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageSearchWorkSheet.2SearchPhysicalInventoryWorkSheet"
+				tooltip="warehouse:PhysicalInventoryHomePageSearchWorkSheet.2SearchPhysicalInventoryWorkSheet"
+				action="WS40" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageSearchByPartFree.2SearchbyPart"
+				tooltip="warehouse:PhysicalInventoryHomePageSearchByPartFree.2SearchbyPart"
+				action="WS44" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.2SearchPartInventoryNeedtobeAudited"
+				tooltip="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.2SearchPartInventoryNeedtobeAudited"
+				action="WS45" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageFinalCommitWorkSheet.FinalCommitInventoryWorkSheet"
+				tooltip="warehouse:PhysicalInventoryHomePageFinalCommitWorkSheet.FinalCommitInventoryWorkSheet"
+				action="WS42" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:CycleCountHomePageTakeNew.TakeNewCycleCount"
+				tooltip="warehouse:CycleCountHomePageTakeNew.TakeNewCycleCount"
+				action="WA15" />
+			<menuitem
+				text="warehouse:CycleCountHomePageLookUpWorkSheet.2LookupCycleCount"
+				tooltip="warehouse:CycleCountHomePageLookUpWorkSheet.2LookupCycleCount"
+				action="WL23" />
+			<menuitem
+				text="warehouse:CycleCountHomePageSearchWorkSheet.2SearchCycleCountWorkSheet"
+				tooltip="warehouse:CycleCountHomePageSearchWorkSheet.2SearchCycleCountWorkSheet"
+				action="WS53" />
+			<menuitem
+				text="warehouse:CycleCountHomePageCommitWorkSheet.CommitCycleCount"
+				tooltip="warehouse:CycleCountHomePageCommitWorkSheet.CommitCycleCount"
+				action="WS54" />
+			<menuitem
+				text="warehouse:CycleCountHomePageFinalCommitWorkSheet.FinalCommitCycleCountWorkSheet"
+				tooltip="warehouse:CycleCountHomePageFinalCommitWorkSheet.FinalCommitCycleCountWorkSheet"
+				action="WS55" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageLookUpWorkSheetWithAvgCostFree.2LookUpPhysicalInventoryWorkSheetWithAvgCost"
+				tooltip="warehouse:PhysicalInventoryHomePageLookUpWorkSheetWithAvgCostFree.2LookUpPhysicalInventoryWorkSheetWithAvgCost"
+				action="WS56" 
+				condition="PermissionPanel.haveCostPermission"/>
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageSearchByPartCCFree.2SearchbyPart"
+				tooltip="warehouse:PhysicalInventoryHomePageSearchByPartCCFree.2SearchbyPart"
+				action="WS57" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePage.AddPartClass"
+				tooltip="warehouse:PhysicalInventoryHomePage.AddPartClass"
+				action="WA14" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageLookUpPartClassByID.2LookUpPartClass"
+				tooltip="warehouse:PhysicalInventoryHomePageLookUpPartClassByID.2LookUpPartClass"
+				action="WL22" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageSearchPartClass.2SearchPartClass"
+				tooltip="warehouse:PhysicalInventoryHomePageSearchPartClass.2SearchPartClass"
+				action="WS50" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageSearchPartClassInfo.2SearchPartClassInfo"
+				tooltip="warehouse:PhysicalInventoryHomePageSearchPartClassInfo.2SearchPartClassInfo"
+				action="WS51" />
+			<menuitem
+				text="warehouse:PhysicalInventoryHomePageSearchPartClassInfo.2SearchPartWithoutClassInfo"
+				tooltip="warehouse:PhysicalInventoryHomePageSearchPartClassInfo.2SearchPartWithoutClassInfo"
+				action="WS52" />
+		</menu>
+		<menu text="general:MainTreeHelper.Proforma_Invoice">
+			<menuitem
+				text="warehouse:ProformaShipperUI.2AddProFormaSHIPPER"
+				tooltip="warehouse:ProformaShipperUI.2AddProFormaSHIPPER"
+				action="WA16" />
+			<menuitem
+				text="warehouse:InvoicePBHomePageLookupSearchPane.LookupPB"
+				tooltip="warehouse:InvoicePBHomePageLookupSearchPane.LookupPB"
+				action="WL30" />
+			<menuitem
+				text="warehouse:InvoicePFHomePageLookupSearchPane.Super"
+				tooltip="warehouse:InvoicePFHomePageLookupSearchPane.Super"
+				action="WL24" />
+
+			<separator></separator>
+			<menuitem
+				text="warehouse:InvoicePBHomePageByPBSearchPane.2SearchPB"
+				tooltip="warehouse:InvoicePBHomePageByPBSearchPane.2SearchPB"
+				action="WS24" />
+			<menuitem text="warehouse:InvoiceHomePageSearchPane.2Search"
+				tooltip="warehouse:InvoiceHomePageSearchPane.2Search" action="WS23" />
+			<menuitem
+				text="warehouse:InvoicePFHomePageByPFSearchPane.Super"
+				tooltip="warehouse:InvoicePFHomePageByPFSearchPane.Super"
+				action="WS21" />
+			<menuitem
+				text="warehouse:InvoiceHomeByIDSearchPane.2SearchbyID"
+				tooltip="warehouse:InvoiceHomeByIDSearchPane.2SearchbyID"
+				action="WS22" />
+
+			<separator></separator>
+			<menuitem
+				text="warehouse:InvoiceHomeSearchNotClosedPane.AllOpenProformaShippers"
+				tooltip="warehouse:InvoiceHomeSearchNotClosedPane.AllOpenProformaShippers"
+				action="WS25" />
+			<menuitem
+				text="warehouse:InvoiceHomeBatchClosePFPane.CloseProformaShippers"
+				tooltip="warehouse:InvoiceHomeBatchClosePFPane.CloseProformaShippers"
+				action="WS26" />
+		</menu>
+		<menu text="general:MainTreeHelper.Pick_List">
+			<menuitem text="warehouse:PickListHomePage.PickListforBOM"
+				tooltip="warehouse:PickListHomePage.PickListforBOM" action="WL25" />
+			<menuitem
+				text="warehouse:PickListHomePage.PickListforSODetail"
+				tooltip="warehouse:PickListHomePage.PickListforSODetail"
+				action="WL29" />
+			<separator></separator>
+			<menuitem text="warehouse:PickListHomePage.PickListforSO"
+				tooltip="warehouse:PickListHomePage.PickListforSO" action="WL26" />
+			<menuitem text="warehouse:PickListHomePage.PickListforWO"
+				tooltip="warehouse:PickListHomePage.PickListforWO" action="WL27" />
+			<menuitem
+				text="warehouse:PickListHomePageForWOByVendorPane.PickListForWOByDate"
+				tooltip="warehouse:PickListHomePageForWOByVendorPane.PickListForWOByDate"
+				action="WL28" />
+		</menu>
+
+		<menu text="warehouse:LabelHomePage.Title">
+			<menuitem action="WA07" />
+			<menuitem action="WA08" />
+			<menuitem action="WA09" />
+			<separator></separator>
+			<menuitem action="WA010" />
+			<menuitem action="WS1038" />
+			<separator></separator>
+			<menuitem action="WS1039" />
+		</menu>
+		<menu text="purchasing:PurchaseOrderHomePage.VendorGroup">
+			<menuitem action="WA011" />
+			<menuitem action="WL33" />
+			<separator></separator>
+			<menuitem action="WS1102" />
+			<menuitem action="WS1103" />
+			<menuitem action="WS1104" />
+			<menuitem action="WS1101" />
+			<separator></separator>
+			<menuitem action="WA012V" />
+			<menuitem action="WS1105" />
+		</menu>
+
+		<menu text="accounting:ARHomePage.Reports">
+			<menuitem
+				text="warehouse:InventoryHomePageLocationWithZeroPane.SearchLocationswithZero"
+				tooltip="warehouse:InventoryHomePageLocationWithZeroPane.SearchLocationswithZero"
+				action="WS802" />
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartWithExcessiveInventorySearchPane.2SearchforExcessiveInventory"
+				tooltip="warehouse:InventoryHomePageAllPartWithExcessiveInventorySearchPane.2SearchforExcessiveInventory"
+				action="WS80" />
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartInWipSearchPane.2SearchPartsinWIP"
+				tooltip="warehouse:InventoryHomePageAllPartInWipSearchPane.2SearchPartsinWIP"
+				action="WS81" />
+			<menuitem action="WS807" />
+			<menuitem
+				text="warehouse:InventoryHomePagePartsWithoutLocationPane.SearchPartswithoutLocation"
+				tooltip="warehouse:InventoryHomePagePartsWithoutLocationPane.SearchPartswithoutLocation"
+				action="WS89" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInSIPNeedtobeAuditReportPane.title"
+				tooltip="warehouse:InventoryHomePageSearchInSIPNeedtobeAuditReportPane.title"
+				action="WS804" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInQANeedtobeAuditReportPane.title"
+				tooltip="warehouse:InventoryHomePageSearchInQANeedtobeAuditReportPane.title"
+				action="WS806" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchPartOnHandLessThanMinQty.2SearchPartOnHandMinQty"
+				tooltip="warehouse:InventoryHomePageSearchPartOnHandLessThanMinQty.2SearchPartOnHandMinQty"
+				action="WS84" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchPartOnHandBigThanMaxQty.2SearchPartOnHandMaxQty"
+				tooltip="warehouse:InventoryHomePageSearchPartOnHandBigThanMaxQty.2SearchPartOnHandMaxQty"
+				action="WS85" />
+			<menuitem
+				text="warehouse:InventoryHomePageHistoryInventorySearchPane.2Seachmonthlyinventoryreport"
+				tooltip="warehouse:InventoryHomePageHistoryInventorySearchPane.2Seachmonthlyinventoryreport"
+				action="WS803" />
+
+			<menuitem
+				text="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.SearchPartInventorybyBackupNeedtobeAudited"
+				tooltip="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.SearchPartInventorybyBackupNeedtobeAudited"
+				action="WS805" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInSip"
+				tooltip="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInSip"
+				action="WS82" />
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInQA"
+				tooltip="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInQA"
+				action="WS83" />
+
+			<!-- <menuitem text="warehouse:InventoryHomePagePartsWithOnLoanPane.SearchPartsWithOnLoan"
+				tooltip="warehouse:InventoryHomePagePartsWithOnLoanPane.SearchPartsWithOnLoan" action="WS86" />
+			-->
+			<menuitem
+				text="warehouse:InventoryHomePageTotalSearchPane.InventoryTotalby"
+				tooltip="warehouse:InventoryHomePageTotalSearchPane.InventoryTotalby"
+				action="WS87" />
+			<menuitem
+				text="warehouse:InventoryHomePageListOnhandSearchPane.InventoryListOnhand"
+				tooltip="warehouse:InventoryHomePageListOnhandSearchPane.InventoryListOnhand"
+				action="WS88" />
+
+			<menuitem
+				text="warehouse:InventoryMonthReport.InventoryMonthReportButton"
+				tooltip="warehouse:InventoryMonthReport.InventoryMonthReportButton"
+				action="AS1910" />
+
+
+
+		</menu>
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Accounting_Box">
+		<menu text="general:MainTreeHelper.AR">
+			<menuitem text="accounting:ARHomePage.AddARwithoutSOShipper"
+				tooltip="accounting:ARHomePage.AddARwithoutSOShipper" action="AA01" />
+			<menuitem action="AA201" />
+			<menuitem action="AA202" />
+			<menuitem action="AA302" />
+			<menuitem
+				text="accounting:ARHomePageLookupSearchPane.SearchButton"
+				tooltip="accounting:ARHomePageLookupSearchPane.SearchButton"
+				action="AL01" />
+			<separator></separator>
+			<menuitem
+				text="accounting:ARHomePageByInvoiceSearchPane.SearchButton"
+				tooltip="accounting:ARHomePageByInvoiceSearchPane.SearchButton"
+				action="AS011" />
+
+			<menuitem
+				text="accounting:ARHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="accounting:ARHomePageByDateSearchPane.2SearchbyDate"
+				action="AS01" />
+			<menuitem
+				text="accounting:ARHomepageShipperSearchPane.InvoiceNotReviewedchange"
+				tooltip="accounting:ARHomepageShipperSearchPane.InvoiceNotReviewedchange"
+				action="AS016" />
+			<menuitem action="AS0118" />
+
+			<menuitem
+				text="accounting:ARHomepageSearchInvoiceByIDPane.2SearchInvoicebyID"
+				tooltip="accounting:ARHomepageSearchInvoiceByIDPane.2SearchInvoicebyID"
+				action="AS012" />
+			<menuitem action="AS0117" />
+			<menuitem action="AS200" />
+			<menuitem
+				text="accounting:ARHomePageAllSearchPane.SearchButton"
+				tooltip="accounting:ARHomePageAllSearchPane.SearchButton"
+				action="AS018" />
+			<menuitem
+				text="accounting:ARHomePageOpenSearchPane.SearchButton"
+				tooltip="accounting:ARHomePageOpenSearchPane.SearchButton"
+				action="AS019" />
+			<menuitem
+				text="accounting:ARHomePageDueSearchPane.SearchButton"
+				tooltip="accounting:ARHomePageDueSearchPane.SearchButton"
+				action="AS0110" />
+			<menuitem
+				text="accounting:ARHomePageAgingSearchPane.ARAging"
+				tooltip="accounting:ARHomePageAgingSearchPane.ARAging"
+				action="AS0111" />
+
+
+			<separator></separator>
+			<menuitem
+				text="accounting:ARHomepageLookupStatementPane.2LookUpStatementbyCustomerID"
+				tooltip="accounting:ARHomepageLookupStatementPane.2LookUpStatementbyCustomerID"
+				action="AS014" />
+			<menuitem action="AL011" />
+
+
+
+			<menuitem
+				text="accounting:ARHomepageAllStatementsSearchPane.AllStatements"
+				tooltip="accounting:ARHomepageAllStatementsSearchPane.AllStatements"
+				action="AS015" />
+			<menuitem
+				text="accounting:ARHomePage.SearchAllLockedCustomer"
+				tooltip="accounting:ARHomePage.SearchAllLockedCustomer"
+				action="AS017" />
+			<separator></separator>
+			<menuitem
+				text="accounting:ARHomepageSearchSalesTaxByShippedDate.2SearchSalesTax"
+				tooltip="accounting:ARHomepageSearchSalesTaxByShippedDate.2SearchSalesTax"
+				action="AS013" />
+			<menuitem
+				text="accounting:ARHomePageSalesMarginSearchPane.GrossMargin"
+				tooltip="accounting:ARHomePageSalesMarginSearchPane.GrossMargin"
+				action="AS0112" />
+
+			<menuitem
+				text="accounting:ARhomePageMonthReportByCustomerID.SearchCustomerMonthStatReport"
+				tooltip="accounting:ARhomePageMonthReportByCustomerID.SearchCustomerMonthStatReport"
+				action="AS0113" />
+			<separator></separator>
+			<menuitem text="accounting:ARHomePage.2Print"
+				tooltip="accounting:ARHomePage.2Print" action="AS0116" />
+			<menuitem text="accounting:ARHomePage.MyArPrintList"
+				tooltip="accounting:ARHomePage.MyArPrintList" action="AS0115" />
+
+		</menu>
+		<menu text="general:MainTreeHelper.AR_Prepay">
+			<menuitem
+				text="accounting:ARHomepageLookupSOWithPrepayWithoutPayable.MakeARPrepayforSO"
+				tooltip="accounting:ARHomepageLookupSOWithPrepayWithoutPayable.MakeARPrepayforSO"
+				action="AS061" />
+			<menuitem
+				text="accounting:ARHomepageLookupArPrepayPane.LookUpARPrepay"
+				tooltip="accounting:ARHomepageLookupArPrepayPane.LookUpARPrepay"
+				action="AL02" />
+			<separator></separator>
+			<menuitem
+				text="accounting:APHomePageByDateSearchPane.2SearchARPrepay"
+				tooltip="accounting:APHomePageByDateSearchPane.2SearchARPrepay"
+				action="AS02" />
+			<menuitem
+				text="accounting:ARHomePageSearchSOWithPrepayWithoutPayableFree.SearchSOwithPrepay"
+				tooltip="accounting:ARHomePageSearchSOWithPrepayWithoutPayableFree.SearchSOwithPrepay"
+				action="AS062" />
+		</menu>
+
+		<menu text="general:MainTreeHelper.Credit_Memo">
+			<menuitem text="accounting:CMHomePage.2AddCreditMemo"
+				tooltip="accounting:CMHomePage.2AddCreditMemo" action="AA11" />
+			<menuitem
+				text="accounting:CMHomePage.2AddCreditMemoWithoutInvoice"
+				tooltip="accounting:CMHomePage.2AddCreditMemoWithoutInvoice"
+				action="AA12" />
+			<separator></separator>
+			<menuitem text="accounting:CMHomePageLookUpPane.2LookUpCM"
+				tooltip="accounting:CMHomePageLookUpPane.2LookUpCM" action="AS041" />
+			<separator></separator>
+			<menuitem text="accounting:CMHomePageSearchPane.2SearchCM"
+				tooltip="accounting:CMHomePageSearchPane.2SearchCM" action="AS042" />
+			<menuitem
+				text="warehouse:ReceivingHomePage.2SearchRMAReceiversWithoutCM"
+				tooltip="warehouse:ReceivingHomePage.2SearchRMAReceiversWithoutCM"
+				action="AS044" />
+			<menuitem
+				text="accounting:ARHomePageByDateSearchPane.2SearchCMByDate"
+				tooltip="accounting:ARHomePageByDateSearchPane.2SearchCMByDate"
+				action="AS04" />
+			<menuitem
+				text="accounting:ARHomePageByDateSearchPane.2SearchCMItemByDate"
+				tooltip="accounting:ARHomePageByDateSearchPane.2SearchCMItemByDate"
+				action="AS045" />
+			<menuitem
+				text="accounting:CMHomePageByIDSearchPane.SearchCMByID"
+				tooltip="accounting:CMHomePageByIDSearchPane.SearchCMByID"
+				action="AS043" />
+		</menu>
+		<menu text="general:MainTreeHelper.AP">
+			<menuitem text="accounting:APAddPane.2AddAP"
+				tooltip="accounting:APAddPane.2AddAP" action="AA04" />
+			<menuitem action="AA203" />
+			<menuitem
+				text="accounting:APHomePageLookupSearchPane.LookupPayable"
+				tooltip="accounting:APHomePageLookupSearchPane.LookupPayable"
+				action="AL04" />
+
+			<separator></separator>
+			<menuitem
+				text="accounting:APHomePageByAPSearchPane.SearchPayable"
+				tooltip="accounting:APHomePageByAPSearchPane.SearchPayable"
+				action="AS051" />
+
+			<menuitem
+				text="accounting:APHomePageSearchReceiverWithoutPayable.SearchReceiverWithoutPayable"
+				tooltip="accounting:APHomePageSearchReceiverWithoutPayable.SearchReceiverWithoutPayable"
+				action="AS054" />
+			<menuitem
+				text="accounting:APHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="accounting:APHomePageByDateSearchPane.2SearchbyDate"
+				action="AS05" />
+			<menuitem
+				text="accounting:APHomepageLookupStatmentByIDPaneFree.LookUpStatmentbyID"
+				tooltip="accounting:APHomepageLookupStatmentByIDPaneFree.LookUpStatmentbyID"
+				action="AS053" />
+			<menuitem
+				text="accounting:APHomePage.SearchPayablebyVendorInvoice"
+				tooltip="accounting:APHomePage.SearchPayablebyVendorInvoice"
+				action="AS055" />
+			<menuitem
+				text="accounting:APHomepageSearchAPByIDPane.SearchPayablebyID"
+				tooltip="accounting:APHomepageSearchAPByIDPane.SearchPayablebyID"
+				action="AS052" />
+			<menuitem text="accounting:APHomePageOpenSearchPane.APOpen"
+				tooltip="accounting:APHomePageOpenSearchPane.APOpen" action="AS056" />
+			<menuitem
+				text="accounting:APHomePageDueSearchPane.APPastDue"
+				tooltip="accounting:APHomePageDueSearchPane.APPastDue"
+				action="AS057" />
+			<separator></separator>
+
+			<menuitem
+				text="accounting:APHomePageAgingSearchPane.APAging"
+				tooltip="accounting:APHomePageAgingSearchPane.APAging"
+				action="AS058" />
+			<menuitem action="AS0513" />
+			<menuitem action="AS0514" />
+			<menuitem
+				text="purchasing:PurchaseOrderHomePageVendorAmountPane.2SearchVendorPOAmountByDate"
+				tooltip="purchasing:PurchaseOrderHomePageVendorAmountPane.2SearchVendorPOAmountByDate"
+				action="AS059" />
+			<menuitem action="AS0512" />
+			<separator></separator>
+			<menuitem text="purchasing:PurchaseOrderHomePage.2Print"
+				tooltip="purchasing:PurchaseOrderHomePage.2Print" action="AS0510" />
+		</menu>
+		<menu text="accounting:PAHomePage.PayableAccrual">
+			<menuitem action="AA30" />
+			<menuitem action="AL014" />
+			<menuitem action="AS300" />
+			<menuitem action="AS301" />
+			<menuitem action="AS302" />
+		</menu>	
+		<menu text="general:MainTreeHelper.AP_Prepay">
+			<menuitem text="accounting:APHomePage.LookUpAPPrepay"
+				tooltip="accounting:APHomePage.LookUpAPPrepay" action="AL05" />
+			<menuitem
+				text="accounting:APHomepageByAppSearchPane.2SearchAPPrepay"
+				tooltip="accounting:APHomepageByAppSearchPane.2SearchAPPrepay"
+				action="AS06" />
+			<separator></separator>
+			<menuitem
+				text="accounting:APHomepageLookupPOWithPrepayWithoutPayable.PrepayforPO"
+				tooltip="accounting:APHomepageLookupPOWithPrepayWithoutPayable.PrepayforPO"
+				action="AS15" />
+			<menuitem
+				text="accounting:APHomePageSearchPOWithPrepayWithoutPayable.SearchPOwithAPPrepay"
+				tooltip="accounting:APHomePageSearchPOWithPrepayWithoutPayable.SearchPOwithAPPrepay"
+				action="AS16" />
+		</menu>
+
+		<menu text="general:MainTreeHelper.Debit_Memo">
+			<menuitem text="accounting:DMHomePageLookUpPane.2LookUpDM"
+				tooltip="accounting:DMHomePageLookUpPane.2LookUpDM" action="AL07" />
+			<menuitem
+				text="accounting:APHomePageByAPSearchPaneFree.SearchDM"
+				tooltip="accounting:APHomePageByAPSearchPaneFree.SearchDM"
+				action="AS08" />
+			<menuitem
+				text="accounting:ARHomePageByDateSearchPane.2SearchDMnotReviewedToMakeDM"
+				tooltip="accounting:ARHomePageByDateSearchPane.2SearchDMnotReviewedToMakeDM"
+				action="AS082" />
+			<menuitem
+				text="accounting:DMHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="accounting:DMHomePageByDateSearchPane.2SearchbyDate"
+				action="AS081" />
+		</menu>
+		<menu text="accounting:MainTreeHelper.Cashier">
+			<menuitem
+				text="accounting:ARCashierHomePage.2AddARPaymentRun"
+				tooltip="accounting:ARCashierHomePage.2AddARPaymentRun"
+				action="AA02" />
+			<menuitem
+				text="accounting:ARCashierHomePage.2AddARWireTransfer" tooltip=""
+				action="AA03" />
+			<menuitem
+				text="accounting:ARCashierHomePageAddARPrepaymentRunPane.AddARPrepaymentRun"
+				tooltip="" action="AA021" />
+			<menuitem
+				text="accounting:ARCashierHomePage.AddWireTransferPrepayment"
+				tooltip="accounting:ARCashierHomePage.AddWireTransferPrepayment"
+				action="AA031" />
+			<separator></separator>
+			<menuitem
+				text="accounting:ARCashierHomePagePaymentRunLookupPane.2LookUpPaymentRun"
+				tooltip="accounting:ARCashierHomePagePaymentRunLookupPane.2LookUpPaymentRun"
+				action="AS141" />
+			<menuitem action="AS109" />
+			<separator></separator>
+			<menuitem
+				text="accounting:ARCashierHomePagePaymentSearchPane.2SearchPayment"
+				tooltip="accounting:ARCashierHomePagePaymentSearchPane.2SearchPayment"
+				action="AS14" />
+			<menuitem
+				text="accounting:ARCashierHomePagePaymentRunSearchPane.2SearchPaymentRun"
+				tooltip="accounting:ARCashierHomePagePaymentRunSearchPane.2SearchPaymentRun"
+				action="AS142" />
+			<menuitem
+				text="accounting:ARCashierHomePageSearchPaymentByDatePane.2SearchPayment"
+				tooltip="accounting:ARCashierHomePageSearchPaymentByDatePane.2SearchPayment"
+				action="AS143" />
+			<menuitem
+				text="accounting:ARCashierHomePageSearchAllPaymentRunPane.AllPaymentRun"
+				tooltip="accounting:ARCashierHomePageSearchAllPaymentRunPane.AllPaymentRun"
+				action="AS144" />
+			<separator></separator>
+			<menuitem
+				text="accounting:APCashierHomePage.2AddSingleCheck"
+				tooltip="accounting:APCashierHomePage.2AddSingleCheck"
+				action="AA06" />
+			<menuitem
+				text="accounting:APCashierHomePage.2AddWireTransfer"
+				tooltip="accounting:APCashierHomePage.2AddWireTransfer"
+				action="AA08" />
+			<menuitem
+				text="accounting:APCashierHomePageAddPrepaymentSingleCheckPane.AddPrepaymentSingleCheck"
+				tooltip="accounting:APCashierHomePageAddPrepaymentSingleCheckPane.AddPrepaymentSingleCheck"
+				action="AA14" />
+			<menuitem
+				text="accounting:APCashierHomePageAddPrepaymentWireTransferPane.AddPrepaymentWireTransfer"
+				tooltip="accounting:APCashierHomePageAddPrepaymentWireTransferPane.AddPrepaymentWireTransfer"
+				action="AA15" />
+			<menuitem text="accounting:APCashierHomePage.2AddCheckRun"
+				tooltip="accounting:APCashierHomePage.2AddCheckRun" action="AA05" />
+			<menuitem
+				text="accounting:APCashierHomePageAddPrepaymentCheckRunPane.AddPrepaymentCheckRun"
+				tooltip="accounting:APCashierHomePageAddPrepaymentCheckRunPane.AddPrepaymentCheckRun"
+				action="AA13" />
+			<separator></separator>
+			<menuitem text="accounting:APCashierHomePage.2LookUpCheck"
+				tooltip="accounting:APCashierHomePage.2LookUpCheck" action="AL06" />
+			<menuitem
+				text="accounting:APCashierHomePageCheckSearchPane.2SearchCheck"
+				tooltip="accounting:APCashierHomePageCheckSearchPane.2SearchCheck"
+				action="AS17" />
+			<menuitem
+				text="accounting:APCashierHomePageCheckRunSearchPane.2SearchCheckRun"
+				tooltip="accounting:APCashierHomePageCheckRunSearchPane.2SearchCheckRun"
+				action="AS171" />
+			<menuitem
+				text="accounting:APCashierHomePageSearchAllCheckRunPane.AllCheckRun"
+				tooltip="accounting:APCashierHomePageSearchAllCheckRunPane.AllCheckRun"
+				action="AS172" />
+			<menuitem
+				text="accounting:APCashierHomePageCheckRunSearchByDatePane.2SearchCheckRun"
+				tooltip="accounting:APCashierHomePageCheckRunSearchByDatePane.2SearchCheckRun"
+				action="AS173" />
+		</menu>
+		<separator></separator>
+		<menu text="general:MainTreeHelper.GL">
+			<menuitem text="accounting:GLHomePage.2AddGLTransaction"
+				tooltip="accounting:GLHomePage.2AddGLTransaction" action="AA09" />
+			<menuitem text="accounting:GLHomePageSearchPane.2Search"
+				tooltip="accounting:GLHomePageSearchPane.2Search" action="AS09" />
+			<menuitem action="AS09121" />
+			<menuitem
+				text="accounting:GLHomePageLookUpTrans.2LookUpGLTransactionbyTrans"
+				tooltip="accounting:GLHomePageLookUpTrans.2LookUpGLTransactionbyTrans"
+				action="AS092" />
+			<menuitem
+				text="accounting:GLHomepageSearchByCreditDebit.2SearchGLCreditDebit"
+				tooltip="accounting:GLHomepageSearchByCreditDebit.2SearchGLCreditDebit"
+				action="AS093" />
+			<menuitem
+				text="workorder:SearchCreateGLDisassembleWorkOrderItem.MakeDwosGL"
+				tooltip="workorder:SearchCreateGLDisassembleWorkOrderItem.MakeDwosGL"
+				action="ADWO001" />
+			<menuitem
+				text="accounting:GLHomePageNPItemListReportPane.NPItemReport"
+				tooltip="accounting:GLHomePageNPItemListReportPane.NPItemReport"
+				action="ANP001" />
+			<menuitem
+				text="accounting:GLHomePageSearchGLByConditions.2Search"
+				tooltip="accounting:GLHomePageSearchGLByConditions.2Search"
+				action="AS096" />
+			<menuitem
+				text="accounting:GLHomePageSearchGLByAmount.2SearchGLTransactionbyAmount"
+				tooltip="accounting:GLHomePageSearchGLByAmount.2SearchGLTransactionbyAmount"
+				action="AS097" />
+			<separator></separator>
+			<menuitem
+				text="accounting:GLHomepageApprovalGeneralLedgerPane.ApprovalGL"
+				tooltip="accounting:GLHomepageApprovalGeneralLedgerPane.ApprovalGL"
+				action="AS098" />
+			<menuitem
+				text="accounting:GLHomepageApprovalGeneralLedgerPane.CancelGL"
+				tooltip="accounting:GLHomepageApprovalGeneralLedgerPane.CancelGL"
+				action="AS099" />
+			<menuitem action="AS09130"></menuitem>
+			<menuitem action="AS09131"></menuitem>
+			<menuitem
+				text="accounting:GLHomePageOverCarryPLPane.ButtonTitle"
+				tooltip="accounting:GLHomePageOverCarryPLPane.ButtonTitle"
+				action="AS0910" />
+			<menuitem action="AS09132"></menuitem>
+			<menuitem
+				text="accounting:GLHomePageSearchJounalEntry.searchcashbankstatement"
+				tooltip="accounting:GLHomePageSearchJounalEntry.searchcashbankstatement"
+				action="AS0911" />
+			<menuitem action="AS0920" />
+			<menuitem
+				text="accounting:GLHomePageDetailAccountTransaction.searchDetailGLTranaction"
+				tooltip="accounting:GLHomePageDetailAccountTransaction.searchDetailGLTranaction"
+				action="AS0912" />
+			<menuitem action="AS09133"></menuitem>
+			<menuitem action="AS100"/>
+			<separator></separator>
+			<menuitem action="AS09125" />
+			<menuitem action="AS09124" />
+			<separator></separator>
+			<menuitem
+				text="accounting:GLHomePageLookUpTransForAP.2LookUpGLTransactionsforAP"
+				tooltip="accounting:GLHomePageLookUpTransForAP.2LookUpGLTransactionsforAP"
+				action="AS09110" />
+			<menuitem
+				text="accounting:GLHomePageLookUpTransForAR.2LookupUpGLTransactionsforAR"
+				tooltip="accounting:GLHomePageLookUpTransForAR.2LookupUpGLTransactionsforAR"
+				action="AS09111" />
+
+			<menuitem text="accounting:GLHomePageSearchBalence.2Search"
+				tooltip="accounting:GLHomePageSearchBalence.2Search" action="AS094" />
+			<menuitem action="AS0918" />
+            
+            <menuitem text="accounting:GLHomePageSearchJounalEntry.2SearchCheckRegister"
+				tooltip="accounting:GLHomePageSearchJounalEntry.2SearchCheckRegister" action="AS303" />
+				
+		</menu>
+		<menu text="accounting:GLHomePageAddGLApprovalPane.GLApproval"
+			condition="AccountingConfigurationVO.useApprovalGl">
+			<menuitem
+				text="accounting:GLHomePageAddGLApprovalPane.AddGLApproval"
+				tooltip="accounting:GLHomePageAddGLApprovalPane.AddGLApproval"
+				action="AA16" />
+			<menuitem
+				text="accounting:GLHomePageSearchAllGLApprovalPane.Super"
+				tooltip="accounting:GLHomePageSearchAllGLApprovalPane.Super"
+				action="AS09119" />
+		</menu>
+		<menu text="accounting:GLHomePageMenuBar.AccountBook">
+			<menuitem
+				text="accounting:GLHomePageChartOfAccountsPane.ChartofAccounts"
+				tooltip="accounting:GLHomePageChartOfAccountsPane.ChartofAccounts"
+				action="AS0913" />
+			<menuitem
+				text="accounting:GLHomePageCompanyUnitChartOfAccountsPane.ChartofAccounts"
+				tooltip="accounting:GLHomePageCompanyUnitChartOfAccountsPane.ChartofAccounts"
+				action="AS0914" />
+			<menuitem action="AS09134"></menuitem>
+			<menuitem action="AS0915" />
+			<menuitem action="AS0916" />
+		</menu>
+
+		<menu
+			text="accounting:GLHomePageAccountCategoryPane.AccountingReport">
+			<menuitem action="AS09122" />
+			<menuitem
+				text="accounting:GLHomePageAccountCategoryPane.ButtonTitle"
+				tooltip="accounting:GLHomePageAccountCategoryPane.ButtonTitle"
+				action="AS09112" />
+			<menuitem
+				text="accounting:GLHomePageProfitLossAccountCategoryPane.Search"
+				tooltip="accounting:GLHomePageProfitLossAccountCategoryPane.Search"
+				action="AS09113" />
+			<menuitem action="AS09123" />
+
+			<separator></separator>
+			<menuitem
+				text="quality:NcrHomePage.SearchNCRstoCreateScrapGL"
+				tooltip="quality:NcrHomePage.SearchNCRstoCreateScrapGL"
+				action="AS0917" />
+			<menuitem action="AS09120" />
+			<separator></separator>
+			<menuitem
+				text="accounting:AccountingInfoDocumentByFiscalYearHomePage.BackupDocumentbyFisicalYear"
+				tooltip="accounting:AccountingInfoDocumentByFiscalYearHomePage.BackupDocumentbyFisicalYear"
+				action="AS09116" />
+			<menuitem
+				text="accounting:AccountingSearchBackUpDocumentHomePage.2SearchAccountingDocument"
+				tooltip="accounting:AccountingSearchBackUpDocumentHomePage.2SearchAccountingDocument"
+				action="AS09117" />
+			<menuitem
+				text="accounting:AccountingSearchBackUpDocumentHomePage.2SearchProfitLossDocument"
+				tooltip="accounting:AccountingSearchBackUpDocumentHomePage.2SearchProfitLossDocument"
+				action="AS09118" />
+			<separator></separator>
+			<menuitem action="AS09126" />
+			<menuitem action="AS09127" />
+		</menu>
+		<menu text="general:MainTreeHelper.AccountsBP">
+			<menuitem action="AA18" />
+			<menuitem action="AL012" />
+			<menuitem action="AS201" />
+			<menuitem action="AS202" />
+		</menu>
+		<menu text="general:MainTreeHelper.Inventory_acc">
+			<menuitem action="AL010" />
+			<menuitem
+				text="warehouse:ResetBB2PartAvgCostPane.ResetAvgCost"
+				tooltip="warehouse:ResetBB2PartAvgCostPane.ResetAvgCost"
+				action="AS18" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInventoryPane.2SearchInventory"
+				tooltip="warehouse:InventoryHomePageSearchInventoryPane.2SearchInventory"
+				action="AS187" />
+			<menuitem
+				text="warehouse:InventoryHomeByDateSearchPane.2SearchInventoryAdjustment"
+				tooltip="warehouse:InventoryHomeByDateSearchPane.2SearchInventoryAdjustment"
+				action="AS181" />
+			<menuitem
+				text="warehouse:InventoryHomePageHistoryInventorySearchPane.2SearchHistoricalInventory"
+				tooltip="warehouse:InventoryHomePageHistoryInventorySearchPane.2SearchHistoricalInventory"
+				action="AS1811" />
+
+			<menuitem
+				text="warehouse:WarehouseHomePage.SearchInventoryLog"
+				tooltip="warehouse:WarehouseHomePage.SearchInventoryLog"
+				action="AS1812" />
+			<menuitem
+				text="warehouse:InventoryHomePagePartCostVariancePane.Search"
+				tooltip="warehouse:InventoryHomePagePartCostVariancePane.Search"
+				action="AS1814" />
+			<menuitem
+				text="warehouse:InventoryHomePagePartsIssuedPane.Search"
+				tooltip="warehouse:InventoryHomePagePartsIssuedPane.Search"
+				action="AS183" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchHighUsagePartPane.2SearchHighUsagePart"
+				tooltip="warehouse:InventoryHomePageSearchHighUsagePartPane.2SearchHighUsagePart"
+				action="AS184" />
+			<menuitem text="purchasing:MrpHomePage.Super"
+				tooltip="purchasing:MrpHomePage.Super" action="AS185" />
+
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInventoryByLocationPane.2SearchInventorybyLocation"
+				tooltip="warehouse:InventoryHomePageSearchInventoryByLocationPane.2SearchInventorybyLocation"
+				action="AS186" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchWIPByIDPane.2SearchPartsinWIPByID"
+				tooltip="warehouse:InventoryHomePageSearchWIPByIDPane.2SearchPartsinWIPByID"
+				action="AS1810" />
+			<menuitem
+				text="warehouse:InventoryHomePageInventoryNotUsedByMonthPane.2Search"
+				tooltip="warehouse:InventoryHomePageInventoryNotUsedByMonthPane.2Search"
+				action="AS189" />
+			<menuitem
+				text="warehouse:InventoryHomePageInventoryNotUsedPane.2Search"
+				tooltip="warehouse:InventoryHomePageInventoryNotUsedPane.2Search"
+				action="AS188" />
+			<menuitem
+				text="warehouse:InventoryHomePageCycleCount.CycleCountWorkSheet"
+				tooltip="warehouse:InventoryHomePageCycleCount.CycleCountWorkSheet"
+				action="AS182" />
+			<separator></separator>
+			<menuitem action="AA19" />
+			<menuitem action="AS09129" />
+			<menuitem
+				text="warehouse:InventoryHomePage.2AddCostChangeWorksheet"
+				tooltip="warehouse:InventoryHomePage.2AddCostChangeWorksheet"
+				action="AA17" />
+			<menuitem
+				text="warehouse:ChangeStdCostHomePageSearchPane.2SearchChangeStdCostWorkSheet"
+				tooltip="warehouse:ChangeStdCostHomePageSearchPane.2SearchChangeStdCostWorkSheet"
+				action="AS1813" />
+			<menuitem action="AS09128" />
+		</menu>
+		<separator></separator>
+		<menu text="general:MainTreeHelper.Asset">
+			<menuitem text="accounting:AssetHomePage.2AddAsset"
+				tooltip="accounting:AssetHomePage.2AddAsset" action="AA10" />
+			<menuitem
+				text="accounting:AssetHomePageLookupSearchPane.SearchButton"
+				tooltip="accounting:AssetHomePageLookupSearchPane.SearchButton"
+				action="AL08" />
+			<separator></separator>
+			<menuitem
+				text="accounting:AssetHomePageByAssetSearchPane.SearchButton"
+				tooltip="accounting:AssetHomePageByAssetSearchPane.SearchButton"
+				action="AS101" />
+			<menuitem
+				text="accounting:AssetHomePageAssetBigSearchPane.ButtonTitle"
+				tooltip="accounting:AssetHomePageAssetBigSearchPane.ButtonTitle"
+				action="AS10" />
+			<menuitem
+				text="accounting:AssetHomePageAllSearchPane.SearchButton"
+				tooltip="accounting:AssetHomePageAllSearchPane.SearchButton"
+				action="AS102" />
+
+			<menuitem
+				text="accounting:AllAssetTypeSearchPane.AllAssetType"
+				tooltip="accounting:AllAssetTypeSearchPane.AllAssetType"
+				action="AS103" />
+			<separator></separator>
+			<menuitem
+				text="accounting:AssetHomePageDepreciationPane.Depreciation"
+				tooltip="accounting:AssetHomePageDepreciationPane.Depreciation"
+				action="AS104" />
+			<menuitem
+				text="accounting:AssetHomePageDepreciationSearchPane.ButtonTitle"
+				tooltip="accounting:AssetHomePageDepreciationSearchPane.ButtonTitle"
+				action="AS105" />
+			<separator></separator>
+			<menuitem
+				text="accounting:AssetHomePageAssetDisposalReportPane.ButtonTitle"
+				tooltip="accounting:AssetHomePageAssetDisposalReportPane.ButtonTitle"
+				action="AS106" />
+			<menuitem
+				text="accounting:AssetHomePageAssetAdditionReportPane.ButtonTitle"
+				tooltip="accounting:AssetHomePageAssetAdditionReportPane.ButtonTitle"
+				action="AS107" />
+			<menuitem
+				text="accounting:AssetHomePageAssetDepreciationHistorySearchPane.ButtonTitle"
+				tooltip="accounting:AssetHomePageAssetDepreciationHistorySearchPane.ButtonTitle"
+				action="AS108" />
+		</menu>
+
+		<separator></separator>
+		<menu text="general:MainTreeHelper.Budget">
+			<menuitem action="AS203" />
+			<menuitem action="AS204" />
+			<menuitem action="AS205" />
+
+		</menu>
+		<separator></separator>
+		<menu text="accounting:ARHomePage.Reports">
+			<menuitem
+				text="warehouse:InventoryHomePageLocationWithZeroPane.SearchLocationswithZero"
+				tooltip="warehouse:InventoryHomePageLocationWithZeroPane.SearchLocationswithZero"
+				action="AS1911" />
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartWithExcessiveInventorySearchPane.2SearchforExcessiveInventory"
+				tooltip="warehouse:InventoryHomePageAllPartWithExcessiveInventorySearchPane.2SearchforExcessiveInventory"
+				action="AS19" />
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartInWipSearchPane.2SearchPartsinWIP"
+				tooltip="warehouse:InventoryHomePageAllPartInWipSearchPane.2SearchPartsinWIP"
+				action="AS191" />
+			<menuitem
+				text="warehouse:InventoryHomePagePartsWithoutLocationPane.SearchPartswithoutLocation"
+				tooltip="warehouse:InventoryHomePagePartsWithoutLocationPane.SearchPartswithoutLocation"
+				action="AS199" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInSIPNeedtobeAuditReportPane.title"
+				tooltip="warehouse:InventoryHomePageSearchInSIPNeedtobeAuditReportPane.title"
+				action="AS1913" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInQANeedtobeAuditReportPane.title"
+				tooltip="warehouse:InventoryHomePageSearchInQANeedtobeAuditReportPane.title"
+				action="AS1915" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchPartOnHandLessThanMinQty.2SearchPartOnHandMinQty"
+				tooltip="warehouse:InventoryHomePageSearchPartOnHandLessThanMinQty.2SearchPartOnHandMinQty"
+				action="AS194" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchPartOnHandBigThanMaxQty.2SearchPartOnHandMaxQty"
+				tooltip="warehouse:InventoryHomePageSearchPartOnHandBigThanMaxQty.2SearchPartOnHandMaxQty"
+				action="AS195" />
+			<!--<menuitem text="warehouse:InventoryHomePagePartsWithOnLoanPane.SearchPartsWithOnLoan"
+				tooltip="warehouse:InventoryHomePagePartsWithOnLoanPane.SearchPartsWithOnLoan" action="AS196" />
+			-->
+			<menuitem
+				text="warehouse:InventoryHomePageHistoryInventorySearchPane.2Seachmonthlyinventoryreport"
+				tooltip="warehouse:InventoryHomePageHistoryInventorySearchPane.2Seachmonthlyinventoryreport"
+				action="AS1912" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.SearchPartInventorybyBackupNeedtobeAudited"
+				tooltip="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.SearchPartInventorybyBackupNeedtobeAudited"
+				action="AS1914" />
+			<menuitem
+				text="warehouse:InventoryHomePageTotalSearchPane.InventoryTotalby"
+				tooltip="warehouse:InventoryHomePageTotalSearchPane.InventoryTotalby"
+				action="AS197" />
+			<menuitem
+				text="warehouse:InventoryMonthReport.InventoryMonthReportButton"
+				tooltip="warehouse:InventoryMonthReport.InventoryMonthReportButton"
+				action="AS1910" />
+			<menuitem
+				text="warehouse:InventoryHomePageListOnhandSearchPane.InventoryListOnhand"
+				tooltip="warehouse:InventoryHomePageListOnhandSearchPane.InventoryListOnhand"
+				action="AS198" />
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInSip"
+				tooltip="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInSip"
+				action="AS192" />
+			<menuitem
+				text="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInQA"
+				tooltip="warehouse:InventoryHomePageAllPartInSipSearchPane.2SearchAllPartInQA"
+				action="AS193" />
+		</menu>
+		<menuitem
+			text="management:ManagementHomePageAccountingPane.AccountinginfoCenter"
+			tooltip="management:ManagementHomePageAccountingPane.AccountinginfoCenter"
+			action="AS09115" />
+	</menu>
+
+
+
+	<menu text="general:MainTreeHelper.Menu_Address_Book_Box">
+		<menu text="general:MainTreeHelper.CustomerVendorAddress_Book"
+			condition="!CompanyVO.separateCV">
+			<menuitem
+				text="address:CVAddressHomePage.2AddCustomerVendor"
+				tooltip="address:CVAddressHomePage.2AddCustomerVendor"
+				action="AA20" />
+			<menuitem
+				text="address:CVAddressHomePageLookupSearchPane.2LookupCVAddress"
+				tooltip="address:CVAddressHomePageLookupSearchPane.2LookupCVAddress"
+				action="AL20" />
+			<separator></separator>
+			<menuitem
+				text="address:CVAddressHomePageByIDSearchPane.Super"
+				tooltip="address:CVAddressHomePageByIDSearchPane.Super"
+				action="AS22" />
+			<menuitem
+				text="address:CVAddressHomePageByNameSearchPane.Super"
+				tooltip="address:CVAddressHomePageByNameSearchPane.Super"
+				action="AS23" />
+			<menuitem
+				text="address:CVAddressHomePageSearchPane.SearchCustomerVendorAdress"
+				tooltip="address:CVAddressHomePageSearchPane.SearchCustomerVendorAdress"
+				action="AS20" />
+			<menuitem
+				text="address:CVAddressHomePageAllSearchPane.Super"
+				tooltip="address:CVAddressHomePageAllSearchPane.Super"
+				action="AS24" />
+			<menuitem
+				text="address:CVAddressHomePageAllInactiveSearchPane.Inactive"
+				tooltip="address:CVAddressHomePageAllInactiveSearchPane.Inactive"
+				action="AS25" />
+			<separator />
+			<menuitem text="" tooltip="" action="AA24" />
+			<menuitem text="" tooltip="" action="AS213" />
+			<menuitem text="" tooltip="" action="AA25" />
+			<menuitem text="" tooltip="" action="AS214" />
+			<menuitem text="" tooltip="" action="AA26" />
+			<menuitem text="" tooltip="" action="AS215" />
+			<menuitem text="" tooltip="" action="AA27" />
+			<menuitem text="" tooltip="" action="AS216" />
+			<menuitem text="" tooltip="" action="AL22" />
+		</menu>
+		<menu text="address:CVAddressHomePage.Customer" condition="CompanyVO.separateCV">
+			<menuitem text="" tooltip="" action="AA20C" />
+			<menuitem text="" tooltip="" action="AL20C" />
+			<separator></separator>
+			<menuitem text="" tooltip="" action="AS22C" />
+			<!--<menuitem text="" tooltip="" action="AS23C" />
+			--><menuitem text="" tooltip="" action="AS20C" />
+			<menuitem text="" tooltip="" action="AS24C" />
+			<menuitem text="" tooltip="" action="AS25C" />
+			<separator />
+			<menuitem text="" tooltip="" action="AA24" />
+			<menuitem text="" tooltip="" action="AS213" />
+			<menuitem text="" tooltip="" action="AS220" />
+			<menuitem text="" tooltip="" action="AL22" />
+		</menu>
+		<menu text="address:CVAddressHomePage.Vendor" condition="CompanyVO.separateCV">
+			<menuitem text="" tooltip="" action="AA20V" />
+			<menuitem text="" tooltip="" action="AL20V" />
+			<separator></separator>
+			<menuitem text="" tooltip="" action="AS22V" />
+			<!--<menuitem text="" tooltip="" action="AS23V" />
+			--><menuitem text="" tooltip="" action="AS20V" />
+			<menuitem text="" tooltip="" action="AS24V" />
+			<menuitem text="" tooltip="" action="AS25V" />
+			<separator />
+			<menuitem text="" tooltip="" action="AA25" />
+			<menuitem text="" tooltip="" action="AS214" />
+			<menuitem text="" tooltip="" action="AA26" />
+			<menuitem text="" tooltip="" action="AS215" />
+			<menuitem text="" tooltip="" action="AA27" />
+			<menuitem text="" tooltip="" action="AS216" />
+		</menu>
+		<menu text="address:CVAddressHomePage.Department" condition="CompanyVO.separateCV">
+			<menuitem text="" tooltip="" action="AA20D" />
+			<menuitem text="" tooltip="" action="AL20D" />
+			<separator></separator>
+			<menuitem text="" tooltip="" action="AS22D" />
+			<menuitem text="" tooltip="" action="AS23D" />
+			<!--
+			<menuitem text="" tooltip="" action="AS20D" />-->
+			<menuitem text="" tooltip="" action="AS24D" />
+			<menuitem text="" tooltip="" action="AS25D" />
+		</menu>
+		<menu text="general:MainTreeHelper.ManufacturerInformation">
+			<menuitem
+				text="address:MfrInfoActionManager.NewManufacturer"
+				tooltip="address:MfrInfoActionManager.NewManufacturer"
+				action="AA21" />
+			<menuitem
+				text="address:MfrInfoHomePageLookupSearchPane.2LookupMfr"
+				tooltip="address:MfrInfoHomePageLookupSearchPane.2LookupMfr"
+				action="AL21" />
+			<separator></separator>
+			<menuitem
+				text="address:MfrInfoHomePageByNameSearchPane.Super"
+				tooltip="address:MfrInfoHomePageByNameSearchPane.Super"
+				action="AS217" />
+			<menuitem text="address:MfrInfoHomePageByIDSearchPane.Super"
+				tooltip="address:MfrInfoHomePageByIDSearchPane.Super" action="AS21" />
+			<menuitem text="address:MfrInfoHomePageAllSearchPane.Super"
+				tooltip="address:MfrInfoHomePageAllSearchPane.Super" action="AS218" />
+			<menuitem text="address:MfrDeletedHomePagePane.inactiveMfr"
+				tooltip="address:MfrDeletedHomePagePane.inactiveMfr" action="AS219" />
+		</menu>
+		</menu>
+		<menu text="general:MainTreeHelper.Menu_Human_Resource">
+			<menu text="general:MainTreeHelper.Employee_Card">
+				<menuitem text="humanresource:AddEmployee.AddEmployee"
+					tooltip="humanresource:AddEmployee.AddEmployee" action="HA01" />
+				<menuitem
+					text="humanresource:EmployeeHomePageLookupSearchPane.2LookupEmployee"
+					tooltip="humanresource:EmployeeHomePageLookupSearchPane.2LookupEmployee"
+					action="HL01" />
+				<separator></separator>
+				<menuitem
+					text="humanresource:EmployeeHomePageByStatusSearchPane.2SearchEmployee"
+					tooltip="humanresource:EmployeeHomePageByStatusSearchPane.2SearchEmployee"
+					action="HS01" />
+				<menuitem
+					text="humanresource:EmployeeHomePageTraningByIdSearchPane.SearchRecords"
+					tooltip="humanresource:EmployeeHomePageTraningByIdSearchPane.SearchRecords"
+					action="HS013" />
+				<menuitem
+					text="humanresource:EmployeeHomePageByEmployeeIDSearchPane.Super"
+					tooltip="humanresource:EmployeeHomePageByEmployeeIDSearchPane.Super"
+					action="HS011" />
+				<menuitem
+					text="humanresource:EmployeeHomePageByLastNameSearchPane.Super"
+					tooltip="humanresource:EmployeeHomePageByLastNameSearchPane.Super"
+					action="HS012" />
+				<menuitem
+					text="humanresource:EmployeeHomePageByDepartmentSearchPane.Super"
+					tooltip="humanresource:EmployeeHomePageByDepartmentSearchPane.Super"
+					action="HS014" />
+				<menuitem
+					text="humanresource:EmployeeHomePageEducationSearchPane.SearchDegree"
+					tooltip="humanresource:EmployeeHomePageEducationSearchPane.SearchDegree"
+					action="HS015" />
+
+				<menuitem
+					text="humanresource:EmployeeActionManager.CompanyAddressBook"
+					tooltip="humanresource:EmployeeActionManager.CompanyAddressBook"
+					action="HS03" />
+			</menu>
+			<menu text="general:MainTreeHelper.temporary_Card">
+				<menuitem
+					text="humanresource:EmployeeActionManager.AddanTemporaryCard"
+					tooltip="humanresource:EmployeeActionManager.AddanTemporaryCard"
+					action="HA02" />
+				<menuitem
+					text="humanresource:EmployeeHomePageLookupSearchPane.2LookupTemporary"
+					tooltip="humanresource:EmployeeHomePageLookupSearchPane.2LookupTemporary"
+					action="HL02" />
+				<separator></separator>
+				<menuitem
+					text="humanresource:EmployeeHomePageTraningByIdSearchPane.SearchRecords"
+					tooltip="humanresource:EmployeeHomePageTraningByIdSearchPane.SearchRecords"
+					action="HS023" />
+				<menuitem
+					text="humanresource:EmployeeHomePageByStatusSearchPane.2SearchTemporary"
+					tooltip="humanresource:EmployeeHomePageByStatusSearchPane.2SearchTemporary"
+					action="HS02" />
+				<menuitem
+					text="humanresource:EmployeeHomePageByEmployeeIDSearchPane.Super"
+					tooltip="humanresource:EmployeeHomePageByEmployeeIDSearchPane.Super"
+					action="HS021" />
+				<menuitem
+					text="humanresource:EmployeeHomePageByLastNameSearchPane.Super"
+					tooltip="humanresource:EmployeeHomePageByLastNameSearchPane.Super"
+					action="HS022" />
+
+				<menuitem
+					text="humanresource:EmployeeHomePageByDepartmentSearchPane.Super"
+					tooltip="humanresource:EmployeeHomePageByDepartmentSearchPane.Super"
+					action="HS024" />
+
+			</menu>
+			<menuitem action="HS03" />
+			<!-- <menu text="general:MainTreeHelper.Company_workCalendar">
+				<menuitem action="MS43" />
+            </menu> -->
+		</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Planning_Box">
+		<menu text="workorder:MenuBar.Planning">
+			<menuitem action="WL04" />
+			<menuitem action="WL05" />
+			<menuitem
+				text="engineering:PartHomePageWhereUsedSearchPane.SearchButton"
+				tooltip="engineering:PartHomePageWhereUsedSearchPane.SearchButton"
+				action="EL011" />
+			<menuitem
+				text="engineering:BomHomePageCostLookupPane.2LookUpBOMCost"
+				tooltip="engineering:BomHomePageCostLookupPane.2LookUpBOMCost"
+				action="EL021" />
+		    <menuitem action="WS059" />
+		</menu>
+		<menu text="planning:ShipListHomePage.Title">
+			<menuitem action="WA18" />
+			<menuitem action="WL31" />
+			<menuitem action="WSH05" />
+			<menuitem action="WSH06" />
+			<separator></separator>
+			<menuitem action="WA19" />
+			<menuitem action="WL32" />
+			<menuitem action="WSH07" />
+		</menu>
+	</menu>
+
+	<menu text="general:MainTreeHelper.Menu_Customer_Service_Box">
+		<menu text="general:MainTreeHelper.Incident">
+			<menuitem text="" tooltip="" action="CA01" />
+			<menuitem text="" tooltip="" action="CL01" />
+			<separator></separator>
+			<menuitem text="" tooltip="" action="CS011" />
+			<menuitem text="" tooltip="" action="CS012" />
+			<menuitem text="" tooltip="" action="CS013" />
+			<menuitem text="" tooltip="" action="CS01" />
+			<menuitem text="" tooltip="" action="CS014" />
+			<menuitem text="" tooltip="" action="CS015" />
+		</menu>
+		<menu text="general:MainTreeHelper.Feedback">
+			<menuitem
+				text="customerservice:FeedbackHomePage.2AddFeedback"
+				tooltip="customerservice:FeedbackHomePage.2AddFeedback"
+				action="CA02" />
+			<menuitem
+				text="customerservice:FeedbackHomePageLookupFeedbackPane.2LookupFeedback"
+				tooltip="customerservice:FeedbackHomePageLookupFeedbackPane.2LookupFeedback"
+				action="CL02" />
+			<menuitem
+				text="customerservice:FeedbackHomePageSearchFeedbackPane.2SearchbyFeedback"
+				tooltip="customerservice:FeedbackHomePageSearchFeedbackPane.2SearchbyFeedback"
+				action="CS021" />
+			<menuitem
+				text="customerservice:FeedbackHomeByDateSearchPane.2SearchbyDate"
+				tooltip="customerservice:FeedbackHomeByDateSearchPane.2SearchbyDate"
+				action="CS02" />
+			<menuitem
+				text="customerservice:FeedbackHomeSearchAllPane.AllFeedback"
+				tooltip="customerservice:FeedbackHomeSearchAllPane.AllFeedback"
+				action="CS022" />
+			<menuitem
+				text="customerservice:FeedbackHomeSearchOpenPane.AllOpenFeedback"
+				tooltip="customerservice:FeedbackHomeSearchOpenPane.AllOpenFeedback"
+				action="CS023" />
+			<separator></separator>
+			<menuitem
+				text="customerservice:FeedbackHomePage.AddQuestion"
+				tooltip="customerservice:FeedbackHomePage.AddQuestion"
+				action="CA03" />
+			<menuitem
+				text="customerservice:FeedbackHomeLookupQuestionPane.2LookupQuestion"
+				tooltip="customerservice:FeedbackHomeLookupQuestionPane.2LookupQuestion"
+				action="CL03" />
+			<menuitem
+				text="customerservice:FeedbackHomeAllQuestionSearchPane.AllQuestions"
+				tooltip="customerservice:FeedbackHomeAllQuestionSearchPane.AllQuestions"
+				action="CS024" />
+		</menu>
+		<menu text="general:MainTreeHelper.RMA">
+			<menuitem text="sales:RmaHomePage.AddRMA"
+				tooltip="sales:RmaHomePage.AddRMA" action="SA03" />
+			<menuitem text="sales:RmaHomePageLookupSearchPane.Super"
+				tooltip="sales:RmaHomePageLookupSearchPane.Super" action="SL03" />
+			<separator></separator>
+
+			<menuitem
+				text="sales:RmaHomePageByInvoiceSearchPane.2SearchbyInvoiceNumber"
+				tooltip="sales:RmaHomePageByInvoiceSearchPane.2SearchbyInvoiceNumber"
+				action="SS036" />
+			<menuitem text="sales:RmaHomePageByPNSearchPane.2SearchbyPN"
+				tooltip="sales:RmaHomePageByPNSearchPane.2SearchbyPN"
+				action="SS033" />
+			<menuitem text="sales:RmaHomePage.2SearchbySO"
+				tooltip="sales:RmaHomePage.2SearchbySO" action="SS034" />
+			<menuitem text="sales:RmaHomePageByRmaSearchPane.Super"
+				tooltip="sales:RmaHomePageByRmaSearchPane.Super" action="SS032" />
+			<menuitem
+				text="sales:RmaHomePageByDateSearchPane.SearchRMAbyDate"
+				tooltip="sales:RmaHomePageByDateSearchPane.SearchRMAbyDate"
+				action="SS03" />
+			<menuitem
+				text="sales:RmaHomePageByCustomerIdSearchPane.2SearchRMAbyID"
+				tooltip="sales:RmaHomePageByCustomerIdSearchPane.2SearchRMAbyID"
+				action="SS035" />
+			<menuitem text="sales:RmaHomePageDueSearchPane.Super"
+				tooltip="sales:RmaHomePageDueSearchPane.Super" action="SS037" />
+			<menuitem text="sales:RmaHomePageOpenSearchPane.Super"
+				tooltip="sales:RmaHomePageOpenSearchPane.Super" action="SS038" />
+			<menuitem text="sales:RmaHomePageCheckListPane.RMACheckList"
+				tooltip="sales:RmaHomePageCheckListPane.RMACheckList"
+				action="SS031" />
+			<separator></separator>
+			<menuitem text="sales:RmaHomePage.2AddRMAReview"
+				tooltip="sales:RmaHomePage.2AddRMAReview" action="SA10" />
+			<menuitem text="" tooltip="" action="SS039" />
+			<menuitem
+				text="sales:RMAReviewHomePageSearchAllPane.AllRMAReview"
+				tooltip="sales:RMAReviewHomePageSearchAllPane.AllRMAReview"
+				action="SS0310" />
+		</menu>
+	</menu>
+
+
+	<menu text="general:MainTreeHelper.Menu_Security_Box">
+		<menu text="general:MainTreeHelper.User">
+			<menuitem text="general:AddUser.AddUser"
+				tooltip="general:AddUser.AddUser" action="SA11" />
+			<menuitem text="security:UserHomePageAllSearchPane.Title"
+				tooltip="security:UserHomePageAllSearchPane.Title" action="US01" />
+			<menuitem text="security:UserHomePage.AllOnlineUsers"
+				tooltip="security:UserHomePage.AllOnlineUsers" action="US011" />
+			<menuitem
+				text="security:ResetUsersExpiredDatePane.ResetExpiredDate"
+				tooltip="security:ResetUsersExpiredDatePane.ResetExpiredDate"
+				action="US012" />
+			<menuitem text="security:UserHomePage.SearchbyUserName"
+				tooltip="security:UserHomePage.SearchbyUserName" action="US013" />
+			<menuitem
+				text="security:UserHomePageSearchByEmployeeIDPane.SearchbyEmployeeID"
+				tooltip="security:UserHomePageSearchByEmployeeIDPane.SearchbyEmployeeID"
+				action="US014" />
+			<menuitem
+				text="security:UserHomePageSearchByEmployeeIDPane.2SearchUserPermission"
+				tooltip="security:UserHomePageSearchByEmployeeIDPane.2SearchUserPermission"
+				action="US015" />
+		</menu>
+		<menu text="general:MainTreeHelper.Role">
+			<menuitem text="security:AddRoleUI.Title"
+				tooltip="security:AddRoleUI.Title" action="SA12" />
+			<menuitem text="security:RoleHomePageAllSearchPane.Title"
+				tooltip="security:RoleHomePageAllSearchPane.Title" action="US02" />
+			<menuitem
+				text="security:RoleHomePageLookupPane.SearchbyRoleID"
+				tooltip="security:RoleHomePageLookupPane.SearchbyRoleID"
+				action="US021" />
+		</menu>
+		<menu text="general:MainTreeHelper.Permission">
+			<menuitem
+				text="security:PermissionHomePageAllSearchPane.Title"
+				tooltip="security:PermissionHomePageAllSearchPane.Title"
+				action="US03" />
+			<menuitem
+				text="security:PermissionHomePageLookupPane.SearchbyPermissionID"
+				tooltip="security:PermissionHomePageLookupPane.SearchbyPermissionID"
+				action="US031" />
+		</menu>
+		<menu text="general:MainTreeHelper.Operation_Log">
+			<menuitem
+				text="log:LogHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="log:LogHomePageByDateSearchPane.2SearchbyDate"
+				action="US045" />
+
+			<menuitem
+				text="log:LogHomePageByLastNameSearchPane.2SearchbyLastName"
+				tooltip="log:LogHomePageByLastNameSearchPane.2SearchbyLastName"
+				action="US041" />
+			<menuitem
+				text="log:LogHomePageByUserNameSearchPane.2SearchbyUserName"
+				tooltip="log:LogHomePageByUserNameSearchPane.2SearchbyUserName"
+				action="US04" />
+			<menuitem
+				text="log:LogHomePageByTrueNameSearchPane.2SearchbyLegalName"
+				tooltip="log:LogHomePageByTrueNameSearchPane.2SearchbyLegalName"
+				action="US042" />
+			<menuitem
+				text="log:LogHomePageByActionSearchPane.2SearchbyAction"
+				tooltip="log:LogHomePageByActionSearchPane.2SearchbyAction"
+				action="US043" />
+			<menuitem
+				text="log:LogHomePageByTargetSearchPane.2SearchbyTarget"
+				tooltip="log:LogHomePageByTargetSearchPane.2SearchbyTarget"
+				action="US044" />
+
+			<separator></separator>
+		</menu>
+	</menu>
+
+
+	<menu text="general:MainTreeHelper.Menu_Document_Box">
+		<menu text="general:MainTreeHelper.Part_Document">
+			<menuitem
+				text="documentcenter:DocumentHomePage.2AddDocument"
+				tooltip="documentcenter:DocumentHomePage.2AddDocument"
+				action="EA10" />
+			<menuitem
+				text="documentcenter:DocumentByPNSearchHomePage.SearchDocument"
+				tooltip="documentcenter:DocumentByPNSearchHomePage.SearchDocument"
+				action="ES10" />
+			<menuitem
+				text="documentcenter:DocumentLogFullSearchHomePage.2SearchDocumentLog"
+				tooltip="documentcenter:DocumentLogFullSearchHomePage.2SearchDocumentLog"
+				action="ES101" />
+		</menu>
+		<menu
+			text="companysettings:CompanySettingHomePage.DocumentSettings">
+			<separator />
+			<menuitem text="documentcenter:DocumentHomePage.AddDoc"
+				tooltip="documentcenter:DocumentHomePage.AddDoc" action="CPA03" />
+			<menuitem
+				text="documentcenter:HomePageMiscDocumentSettingPane.2SearchAllDocumentTypeSetting"
+				tooltip="documentcenter:HomePageMiscDocumentSettingPane.2SearchAllDocumentTypeSetting"
+				action="CPS07" />
+			<menuitem
+				text="documentcenter:MiscDocLogHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="documentcenter:MiscDocLogHomePageByDateSearchPane.2SearchbyDate"
+				action="CPS071" />
+		</menu>
+	</menu>
+
+	<menu text="general:MainTreeHelper.Control_Panel">
+		<menu text="general:HomePageFactory.GeneralSetting">
+			<menuitem
+				text="companysettings:CompanySettingHomePage.Super1"
+				tooltip="companysettings:CompanySettingHomePage.Super1"
+				action="CPS06" />
+			<menuitem text="companysettings:CompanyUI.SecurityPolicy"
+				tooltip="companysettings:CompanyUI.SecurityPolicy" action="CPS061" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.DwgSettings"
+				tooltip="companysettings:CompanySettingHomePage.DwgSettings"
+				action="CPS064" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.DwfSettings"
+				tooltip="companysettings:CompanySettingHomePage.DwfSettings"
+				action="CPS065" />
+			<menuitem
+				text="companysettings:PrintLogoAddPane.SettingMailServer"
+				tooltip="companysettings:PrintLogoAddPane.SettingMailServer"
+				action="CPS066" />
+				<!--
+			<menuitem
+				text="companysettings:CompanySettingHomePage.ServerTimeSettings"
+				tooltip="companysettings:CompanySettingHomePage.ServerTimeSettings"
+				action="CPS067" />
+			-->
+			
+			<menuitem
+				text="companysettings:CompanySettingHomePage.CustomProperty"
+				tooltip="companysettings:CompanySettingHomePage.CustomProperty"
+				action="CPS0670" />
+			<separator></separator>
+			<menuitem
+				text="companysettings:CompanySettingHomePage.Super6"
+				tooltip="companysettings:CompanySettingHomePage.Super6"
+				action="CPS068" />
+			<menuitem 
+			     text =""
+			     tooltip=""
+			     action="CPA033"/>
+			<menuitem
+				text="companysettings:CompanySettingHomePage.AllPartToolUOMs"
+				tooltip="companysettings:CompanySettingHomePage.AllPartToolUOMs"
+				action="CPS069" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.Super4"
+				tooltip="companysettings:CompanySettingHomePage.Super4"
+				action="CPS0610" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.Super3"
+				tooltip="companysettings:CompanySettingHomePage.Super3"
+				action="CPS0611" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.AllPrintLogos"
+				tooltip="companysettings:CompanySettingHomePage.AllPrintLogos"
+				action="CPS0612" />
+			<menuitem
+				text="companysettings:PrintLogoAddPane.AllTermsConditions"
+				tooltip="companysettings:PrintLogoAddPane.AllTermsConditions"
+				action="CPS0613" /><!--
+			<separator></separator>
+			<menuitem text="" tooltip="" action="CPA01" />
+			<menuitem text="" tooltip="" action="CPS01" />
+			<menuitem text="companysettings:CompanySettingHomePage.HelpManualSettings"
+				tooltip="companysettings:CompanySettingHomePage.HelpManualSettings" action="CPS0614" />
+			-->
+		</menu>
+		<menu text="general:CompanySettingHomePage.AccountingSetting">
+			<menuitem
+				text="companysettings:CompanySettingHomePage.Super5"
+				tooltip="companysettings:CompanySettingHomePage.Super5"
+				action="CPS05" />
+			<menuitem text="companysettings:AllTermSearchPane.AllTerm"
+				tooltip="companysettings:AllTermSearchPane.AllTerm" action="CPS051" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.AllTaxAccount"
+				tooltip="companysettings:CompanySettingHomePage.AllTaxAccount"
+				action="CPS052" />
+			<menuitem
+				text="companysettings:CompanySettingHomePage.AllZipCode"
+				tooltip="companysettings:CompanySettingHomePage.AllZipCode"
+				action="CPS053" />
+			<separator></separator>
+			<!-- 		<menuitem text="companysettings:AccountChartSetupSearchPane.Title" tooltip="companysettings:AccountChartSetupSearchPane.Title"
+				action="CPS054" /> -->
+			<menuitem
+				text="companysettings:AccountParameterSetupSearchPane.Super"
+				tooltip="companysettings:AccountParameterSetupSearchPane.Super"
+				action="CPS055" />
+			<menuitem
+				text="companysettings:AccountBalanceSetupSearchPane.Super"
+				tooltip="companysettings:AccountBalanceSetupSearchPane.Super"
+				action="CPS056" />
+			<separator></separator>
+			<!--<menuitem text="companysettings:CompanySettingSetupPane.Super" tooltip="companysettings:CompanySettingSetupPane.Super" action="CPS057" />
+			-->
+			<menuitem
+				text="companysettings:TaxAccountSetupUI.TaxAccountSetup"
+				tooltip="companysettings:TaxAccountSetupUI.TaxAccountSetup"
+				action="CPS058" />
+		</menu>
+		<!--        
+			<menu text="companysettings:CompanySettingHomePage.ImportData">
+			<menuitem text="general:ImportDataMenu.ImportPart" tooltip="general:ImportDataMenu.ImportPart" action="CPA02" />
+			<menuitem text="general:ImportDataMenu.ImportBOM" tooltip="general:ImportDataMenu.ImportBOM" action="CPA021" />
+			<menuitem text="general:ImportDataMenu.ImportInventory" tooltip="general:ImportDataMenu.ImportInventory" action="CPA022" />
+			<menuitem text="general:ImportDataMenu.ImportNCCode" tooltip="general:ImportDataMenu.ImportNCCode" action="CPA023" />
+			<menuitem text="general:ImportDataMenu.ImportCVAddress" tooltip="general:ImportDataMenu.ImportCVAddress" action="CPA024" />
+			<menuitem text="general:ImportDataMenu.ImportManufacture" tooltip="general:ImportDataMenu.ImportManufacture" action="CPA025" />
+			<menuitem text="general:ImportDataMenu.ImportMPN" tooltip="general:ImportDataMenu.ImportMPN" action="CPA026" />
+			<menuitem text="general:ImportDataMenu.ImportEmployee" tooltip="general:ImportDataMenu.ImportEmployee" action="CPA027" />
+			<menuitem text="general:ImportDataMenu.ImportMaterial" tooltip="general:ImportDataMenu.ImportMaterial" action="CPA028" />
+			<menuitem text="general:ImportDataMenu.ImportContractPrice" tooltip="general:ImportDataMenu.ImportContractPrice" action="CPA029" />
+			<menuitem text="general:ImportDataMenu.ImportPartMinMaxQty" tooltip="general:ImportDataMenu.ImportPartMinMaxQty" action="CPA0210" />
+			</menu>   
+		-->
+		<menu
+			text="general:CompanySettingHomePage.TaskSettingManagement">
+			<menuitem
+				text="companysettings:TaskHomePageSearchPane.SchedulerManagement"
+				tooltip="companysettings:TaskHomePageSearchPane.SchedulerManagement"
+				action="CPS04" />
+			<menuitem
+				text="companysettings:TasksLogHomePage.SearchTaskLogByDate"
+				tooltip="companysettings:TasksLogHomePage.SearchTaskLogByDate"
+				action="CPS041" />
+		</menu>
+		<menu
+			text="general:CompanySettingHomePage.ApprovalManagement">
+			<menuitem
+				text="purchasing:POReviewHomePageSearchAllPane.Super"
+				tooltip="purchasing:POReviewHomePageSearchAllPane.Super"
+				action="CPS03" />
+			<menuitem
+				text="purchasing:RTVReviewHomePageSearchAllPane.AllRTVApproval"
+				tooltip="purchasing:RTVReviewHomePageSearchAllPane.AllRTVApproval"
+				action="CPS031" />
+			<menuitem
+				text="sales:SOReviewHomePageAllSearchPaneFree.Super"
+				tooltip="sales:SOReviewHomePageAllSearchPaneFree.Super"
+				action="CPS032" />
+			<menuitem
+				text="sales:RMAReviewHomePageSearchAllPane.AllRMAReview"
+				tooltip="sales:RMAReviewHomePageSearchAllPane.AllRMAReview"
+				action="CPS033" />
+			<menuitem
+				text="workorder:WOWorksheetHomepage.2SearchAllApprovals"
+				tooltip="workorder:WOWorksheetHomepage.2SearchAllApprovals"
+				action="CPS034" />
+			<menuitem
+				text="manufacturing:WorkInstructionApprovalHomePageSearchPane.2SearchAllWorkInstructionApproval"
+				tooltip="manufacturing:WorkInstructionApprovalHomePageSearchPane.2SearchAllWorkInstructionApproval"
+				action="CPS035" />
+			<separator></separator>
+			<menuitem
+				text="engineering:BomHomePageSearchAllBomApprovalPane.title"
+				tooltip="engineering:BomHomePageSearchAllBomApprovalPane.title"
+				action="ES023" />
+			<menuitem
+				text="purchasing:SwapOrderHomepageSearchBySWOApprovalPane.AllSwapOrderApproval"
+				tooltip="purchasing:SwapOrderHomepageSearchBySWOApprovalPane.AllSwapOrderApproval"
+				action="PS054" />
+			<menuitem text="quality:NcrReviewHomePageAllSearchPane.SearchAllNcrReview"
+				tooltip="quality:NcrReviewHomePageAllSearchPane.SearchAllNcrReview" action="QS096" />
+			<menuitem
+				text="warehouse:OnLoanHomePage.2SearchAllOnLoanReview"
+				tooltip="warehouse:OnLoanHomePage.2SearchAllOnLoanReview"
+				action="WS33" />
+			<menuitem
+				text="warehouse:TransferOrderHomepageSearchByTransferOrderApprovalPane.AllTransferOrderApproval"
+				tooltip="warehouse:TransferOrderHomepageSearchByTransferOrderApprovalPane.AllTransferOrderApproval"
+				action="WS1108" />
+		</menu>
+		<menu text="general:CompanySettingHomePage.AuditCenter">
+			<menuitem
+				text="engineering:PartHomePageAuditBomPane.AuditPartBOMFlag"
+				tooltip="engineering:PartHomePageAuditBomPane.AuditPartBOMFlag"
+				action="CPS02" />
+			<menuitem
+				text="engineering:PartHomePageAuditDwgPane.AuditPartDrawingFlag"
+				tooltip="engineering:PartHomePageAuditDwgPane.AuditPartDrawingFlag"
+				action="CPS021" />
+			<menuitem
+				text="engineering:PartHomePageAuditWiPane.AuditPartWIFlag"
+				tooltip="engineering:PartHomePageAuditWiPane.AuditPartWIFlag"
+				action="CPS022" />
+			<menuitem
+				text="engineering:PartHomePageAuditDrawingPane.AuditPartPictureFlag"
+				tooltip="engineering:PartHomePageAuditDrawingPane.AuditPartPictureFlag"
+				action="CPS023" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.SearchPartInventorybyBackupNeedtobeAudited"
+				tooltip="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.SearchPartInventorybyBackupNeedtobeAudited"
+				action="CPS024" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInSIPNeedtobeAuditReportPane.title"
+				tooltip="warehouse:InventoryHomePageSearchInSIPNeedtobeAuditReportPane.title"
+				action="CPS025" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchAuditAllOnHandPane.AuditPartOnHandbyLocation"
+				tooltip="warehouse:InventoryHomePageSearchAuditAllOnHandPane.AuditPartOnHandbyLocation"
+				action="CPS026" />
+			<separator></separator>
+			<menuitem
+				text="companysettings:CompanySettingHomePage.ClearBillWithoutItems"
+				tooltip="companysettings:CompanySettingHomePage.ClearBillWithoutItems"
+				action="CPS027" />
+			<menuitem text="engineering:BomHomePage.ClearRecursiveBills"
+				tooltip="engineering:BomHomePage.ClearRecursiveBills"
+				action="CPS028" />
+			<separator></separator>
+			<menuitem
+				text="accounting:ARHomePageAuditSearchPane.2SearchARtoAudit"
+				tooltip="accounting:ARHomePageAuditSearchPane.2SearchARtoAudit"
+				action="CPS029" />
+			<menuitem action="CPS013" />
+			<menuitem action="CPS0210" />
+			<separator></separator>
+			<menuitem
+				text="manufacturing:WorkInstructionHomePageZeroRuntimeSeqSearchPane.Super"
+				tooltip="manufacturing:WorkInstructionHomePageZeroRuntimeSeqSearchPane.Super"
+				action="CPS0211" />
+			<menuitem
+				text="manufacturing:WorkCenterHomePage.2AuditWIAvgHours"
+				tooltip="manufacturing:WorkCenterHomePage.2AuditWIAvgHours"
+				action="CPS0212" />
+			<menuitem text="Purchasing:AuditOnDemandUI.AuditWIPYrUsage"
+				tooltip="Purchasing:AuditOnDemandUI.AuditWIPYrUsage"
+				action="CPS0213" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchPartOnHandLessThanMinQty.2SearchPartOnHandMinQty"
+				tooltip="warehouse:InventoryHomePageSearchPartOnHandLessThanMinQty.2SearchPartOnHandMinQty"
+				action="CPS0214" />
+			<menuitem text="warehouse:InvoiceItemUI.AuditLastInventory"
+				tooltip="warehouse:InvoiceItemUI.AuditLastInventory"
+				action="CPS0215" />
+			<separator></separator>
+			<menuitem
+				text="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.2SearchPartInventoryNeedtobeAudited"
+				tooltip="warehouse:InventoryHomePageSearchNeedtobeAuditReportPane.2SearchPartInventoryNeedtobeAudited"
+				action="CPS0216" />
+			<menuitem
+				text="warehouse:InventoryHomePageSearchInQANeedtobeAuditReportPane.title"
+				tooltip="warehouse:InventoryHomePageSearchInQANeedtobeAuditReportPane.title"
+				action="CPS0217" />
+		</menu>
+		<menu
+			text="companysettings:CompanySettingHomePage.CompanyUnit">
+			<menuitem
+				text="companysettings:CompanySettingHomePage.AddCompanyUnit"
+				tooltip="companysettings:CompanySettingHomePage.AddCompanyUnit"
+				action="CPA031" />
+			<menuitem
+				text="companysettings:HomepageCompanyUnitSearchAllPane.AllCompanyUnit"
+				tooltip="companysettings:HomepageCompanyUnitSearchAllPane.AllCompanyUnit"
+				action="CPS09" />
+			<menuitem
+				text="companysettings:HomePageCompanyUnitTopoSearchPane.Title"
+				tooltip="companysettings:HomePageCompanyUnitTopoSearchPane.Title"
+				action="CPS010" />
+			<menuitem
+				text="companysettings:HomepageCompanyUnitSearchPane.Search"
+				tooltip="companysettings:HomepageCompanyUnitSearchPane.Search"
+				action="CPS011" />
+		</menu>
+		<menu text="engineering:PartHomePage.InfoCenter">
+			<menuitem
+				text="management:ManagementHomePageSalesPane.SalesinfoBox"
+				tooltip="management:ManagementHomePageSalesPane.SalesinfoBox"
+				action="SS042" />
+			<menuitem action="ES0117" />
+			<menuitem
+				text="management:ManagementHomePageAccountingPane.AccountinginfoCenter"
+				tooltip="management:ManagementHomePageAccountingPane.AccountinginfoCenter"
+				action="AS09115" />
+			<menuitem action="WS054" />
+			<menuitem
+				text="management:ManagementHomePagePurchasingPane.PurchasinginfoBox"
+				tooltip="management:ManagementHomePagePurchasingPane.PurchasinginfoBox"
+				action="PS0146" />
+			<menuitem
+				text="management:ManagementHomePageQualityPane.QualityInfoBox"
+				tooltip="management:ManagementHomePageQualityPane.QualityInfoBox"
+				action="QS011" />
+			<menuitem
+				text="management:ManagementHomePageWarehousingPane.WarehousinginfoBox"
+				tooltip="management:ManagementHomePageWarehousingPane.WarehousinginfoBox"
+				action="WS20" />
+		</menu>
+		<menu text="general:General.UserGroup">
+			<menuitem text="" tooltip="" action="CPA032" />
+			<menuitem text="" tooltip="" action="CPS014" />
+			<separator></separator>
+			<menuitem
+				text="companysettings:AddSystemUserGroupPane.AddSystemUserGroup"
+				tooltip="companysettings:AddSystemUserGroupPane.AddSystemUserGroup"
+				action="CPA030" />
+			<menuitem
+				text="companysettings:HomePageAllSystemUserGroupPane.AllSystemUserGroup"
+				tooltip="companysettings:HomePageAllSystemUserGroupPane.AllSystemUserGroup"
+				action="CPS08" />
+		</menu>
+		<!--      
+			<menu text="companysettings:CompanySettingHomePage.PrintTemplate">
+			<menuitem text="companysettings:PrintTemplateAddPane.2AddPrintTemplate" tooltip="companysettings:PrintTemplateAddPane.2AddPrintTemplate"   action="CPA01"/>
+			<menuitem text="companysettings:CompanySettingHomePageSearchByPrintTemplatePane.2SearchPrintTemplate" tooltip="companysettings:CompanySettingHomePageSearchByPrintTemplatePane.2SearchPrintTemplate"   action="CPS01"/>
+			</menu>
+		-->
+		<menu
+			text="companysettings:CompanySettingHomePage.DocumentSettings">
+			<separator />
+			<menuitem text="documentcenter:DocumentHomePage.AddDoc"
+				tooltip="documentcenter:DocumentHomePage.AddDoc" action="CPA03" />
+			<menuitem
+				text="documentcenter:HomePageMiscDocumentSettingPane.2SearchAllDocumentTypeSetting"
+				tooltip="documentcenter:HomePageMiscDocumentSettingPane.2SearchAllDocumentTypeSetting"
+				action="CPS07" />
+			<menuitem
+				text="documentcenter:MiscDocLogHomePageByDateSearchPane.2SearchbyDate"
+				tooltip="documentcenter:MiscDocLogHomePageByDateSearchPane.2SearchbyDate"
+				action="CPS071" />
+		</menu>
+		<menu text="companysettings:CompanySettingHomePage.ImportData">
+		   <menuitem text="" tooltip="" action="IMPPart"/>
+           <menuitem text="" tooltip="" action="IMPBOM"/>
+           <menuitem text="" tooltip="" action="IMPInventory"/>
+           <menuitem text="" tooltip="" action="IMPNCCode"/>
+           <menuitem text="" tooltip="" action="IMPADDR"/>
+           <menuitem text="" tooltip="" action="IMPCustomer"/>
+           <menuitem text="" tooltip="" action="IMPVendor"/>
+           <menuitem text="" tooltip="" action="IMPDepart"/>           
+           <menuitem text="" tooltip="" action="IMPEMP"/>
+           <menuitem text="" tooltip="" action="IMPMF"/>
+           <menuitem text="" tooltip="" action="IMPMPN"/>
+           <menuitem text="" tooltip="" action="IMPMAT"/>
+           <menuitem text="" tooltip="" action="IMPPIB"/>
+           <menuitem text="" tooltip="" action="IMPTM"/>
+           <menuitem text="" tooltip="" action="IMPTI"/>
+		</menu>
+		<separator />	
+		<menu text="general:MainTreeHelper.AppManagement" id="app-management">
+		</menu>
+		<separator />
+		<menuitem text="companysettings:CompanySettingHomePage.About"
+			tooltip="companysettings:CompanySettingHomePage.About"
+			action="ABOUT" />
+	</menu>
+	<logo image="/free/images/2BizBox_right_up_logo.png"
+		tooltip="2BizBox" />
+</menubar>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<tree>
+	<node name="学生管理"
+		homeClass="kyHRUI.Student.SearchHome">
+		<node name="添加新的学生" homeClass="kyHRUI.Student.RegHome"/>
+		<node name="查找学生"
+			homeClass="kyHRUI.Student.SearchHome" />
+		<node name="接送卡注册"
+			homeClass="ManageUI.CardRegUI" />
+		<node name="全园出勤"
+			homeClass="kyHRUI.Student.kyUIHR" />
+		<node name="UNC3" homeClass="KYUI.BlankUI" invisible="true"/>
+		<node name="UNC4" homeClass="KYUI.BlankUI" invisible="true" />
+	</node>
+	<node name="员工管理" homeClass="kyHRUI.Stuff.SearchHome" invisible="false"></node>
+
+	<node name="财务"
+		homeClass="FinanceUI.Homepage">
+		<node name="录入收支"
+			homeClass="FinanceUI.Homepage" />
+		<node name="查找账目"
+			homeClass="FinanceUI.Homepage" ></node>
+		<node name="近期账目"
+			homeClass="FinanceUI.RecentRecords" />
+		<node name="学生收费"
+			homeClass="FinaceUI.Manege.paymentUI" />
+		<node name="UNC6" homeClass="FinanceUI.StatisticHomepage" invisible="true" />
+		<node name="UNC7" homeClass="KYUI.BlankUI" invisible="true" />
+	</node>
+
+	<node name="其他" homeClass="sale_network.xml">
+		<node name="请假"
+			homeClass="KYUI.AskForLeaveUI"></node>
+		<node name="绩效考核" homeClass="ManageUI.teacherExamineUI"/>
+		<node name="RMA" homeClass="bb.gui.sales.rma.RmaHomePage"
+			invisible="true" />
+		<!-- 
+			<node name="CRTV"
+			homeClass="bb.gui.sales.crtv.CrtvHomePage" />
+		-->
+		<node name="CustomerContract_Price"
+			homeClass="bb.gui.sales.ccp.ContractPriceHomePage" invisible="true" />
+	</node>
+</tree>
