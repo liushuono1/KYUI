@@ -2,6 +2,7 @@ package KYUI;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -36,16 +37,11 @@ class AePlayWave extends Thread {
     } 
  
     public void run() { 
- 
-        File soundFile = new File(AePlayWave.class.getResource(filename).getFile());
-        if (!soundFile.exists()) { 
-            System.err.println("Wave file not found: " + filename);
-            return;
-        } 
- 
+   
         AudioInputStream audioInputStream = null;
+       
         try { 
-            audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+            audioInputStream = AudioSystem.getAudioInputStream(AePlayWave.class.getResource(filename));
         } catch (UnsupportedAudioFileException e1) { 
             e1.printStackTrace();
             return;

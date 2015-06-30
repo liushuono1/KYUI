@@ -186,7 +186,7 @@ public class KYUITray implements ActionListener, MouseListener {
 	
 
 	public void play(String file){
-		(new Thread(new AePlayWave(file))).start();;
+		(new Thread(new AePlayWave(file))).start();
 	}
 	
 }

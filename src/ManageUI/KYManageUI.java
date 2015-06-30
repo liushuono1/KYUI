@@ -80,6 +80,7 @@ import Client4CLass.eastPanel;
 import KYUI.AskForLeaveUI;
 import KYUI.EastPanel;
 import KYUI.KYMainUI;
+import KYUI.KYUITray;
 import KYUI.MissionControl;
 import KYUI.MissionControlAction;
 import KYUI.RestoreWindow;
@@ -121,6 +122,8 @@ public class KYManageUI extends KYMainUI{
 		
 		replace_node_name();
 		System.err.println("kyui--->"+ KYMainUI.isInstanced());
+		
+		//KYUITray.getInstance().showTrayMsgDing("111","111");
 
 	}
 	

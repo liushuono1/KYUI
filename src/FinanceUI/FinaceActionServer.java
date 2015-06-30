@@ -93,7 +93,8 @@ public class FinaceActionServer {
 				for(int i=0;i<id_order.size();i++)
 				{
 					OneRecord re = id_record.get(id_order.get(i));
-					collectionRecord.add(re);
+					if(!re.getMark().contains("2"))
+					   collectionRecord.add(re);
 				}
 			}
 			r.close();
@@ -220,7 +221,8 @@ public class FinaceActionServer {
 				{
 					
 					OneRecord re = id_record.get(id_order.get(i));
-					collectionRecord.add(re);
+					if(!re.getMark().contains("2"))
+						collectionRecord.add(re);
 				}
 			}
 		} catch (ClassNotFoundException e) {

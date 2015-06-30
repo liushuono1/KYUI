@@ -68,7 +68,7 @@ public class KYClassUI extends KYMainUI{
 		
 		this.showTab(RollCallUI.getinstence());
 		
-		setupMissonControl();
+		//setupMissonControl();
 		
 		System.err.println(LoginUI.getInstance().isVisible());
 	}
@@ -84,6 +84,11 @@ public class KYClassUI extends KYMainUI{
 		return new eastPanel();
 	}
 	
+	
+	public void MCstart(String[] prams)
+	{
+		RegClient();
+	}
 	private void setupMissonControl() {
 		// TODO Auto-generated method stub
 		MissionControlAction action = new MissionControlAction(){

@@ -198,6 +198,17 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 		
 	}
 	
+	public void MCstart(String[] parms)
+	{
+		
+	}
+	
+	public void MCfinish(String[] parms)
+	{
+		
+	}
+	
+	
 	private void setupNoticeControl() {
 		// TODO Auto-generated method stub
 		
@@ -219,13 +230,14 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 			@Override
 			public void StratAction(String[] parms) {
 				// TODO Auto-generated method stub
-				
+				MCstart(parms);
 				
 			}
 
 			@Override
 			public void FinishAction(String[] parms) {
 				// TODO Auto-generated method stub
+				MCfinish(parms);
 				
 			}
 
@@ -262,15 +274,15 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 		 if(msg[0].equals("ADDMSG"))
 	        {
 	        	if(msg.length>1)
-	        		pushMsg(msg[2]);
+	        		pushMsg(msg);
 	        }else if(msg[0].equals("ADDNOTICE"))
 	        {
 	        	if(msg.length>1)
-	        		pushNotice(msg[2]);
+	        		pushNotice(msg);
 	        }else if(msg[0].equals("ADDONLYMSG"))
 	        {
 	        	//if(msg.length>1)
-	        		pushOnlyMsg(msg[2]);
+	        		pushOnlyMsg(msg);
 	        }else if(msg[0].equals("POPUPMSG"))
 	        {
 	        	if(msg.length>1)
@@ -299,25 +311,28 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 		  pushNotification(msg[1], msg[2]);
 		else
 		  pushNotification("", msg[1]);
+		
 	}
 	
-	public void pushMsg(String msg)
+	public void pushMsg(String[] msg)
 	{
-		System.out.println("MSG"+msg);
-		si.pushMsg(msg);
+		System.out.println("MSG"+msg[2]);
+		si.pushMsg(msg[2]);
+		PopupMsg(msg);
 	}
 	
 	
-	public void pushNotice(String msg)
+	public void pushNotice(String[] msg)
 	{
-		System.out.println("NOTSG"+msg);
-		si.pushNotice(msg);
+		System.out.println("NOTSG"+msg[2]);
+		si.pushNotice(msg[2]);
 	}
 	
-	public void pushOnlyMsg(String msg)
+	public void pushOnlyMsg(String[] msg)
 	{
-		System.out.println("OLMSG"+msg);
-		si.pushOnlyMsg(msg);
+		System.out.println("OLMSG"+msg[2]);
+		si.pushOnlyMsg(msg[2]);
+		PopupMsg(msg);
 	}
 	
 	
