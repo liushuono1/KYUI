@@ -593,7 +593,7 @@ public class paymentUI extends ClientUI implements NFCInterface {
 		    	{
 		    		tempstr1[0] = "ÕÀ‘”∑—";
 		    		tempstr1[1] = String.valueOf(-(int)(Double.valueOf(miscellaneousFee) - Double.valueOf(miscellaneousFee)/26*attendDays));
-		    		
+		    		tempstr[1]=String.valueOf(refund_meal);
 		    		if(attendDays == 0)
 		    		{
 		    			tempstr[1]=String.valueOf(-340);

@@ -70,7 +70,7 @@ public class KYClassUI extends KYMainUI{
 		
 		//setupMissonControl();
 		
-		System.err.println(LoginUI.getInstance().isVisible());
+		closeLoginUI();
 	}
 	
 	

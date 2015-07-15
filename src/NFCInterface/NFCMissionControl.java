@@ -279,7 +279,7 @@ public class NFCMissionControl extends MissionControl{
         	f.add(btn3);
         	f.add(btn4);
         	f.add(btn5);
-        	f.setVisible(true);
+        	//f.setVisible(true);
         
         	
         		

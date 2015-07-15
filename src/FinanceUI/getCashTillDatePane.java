@@ -20,8 +20,7 @@ public class getCashTillDatePane extends BasicActionPane{
 
 	public ClientUI getSearchResultUI() {
 		String date=JOptionPane.showInputDialog("输入结算的日期：(yyyy-mm-dd):");
-		FinanceUtil utl = new FinanceUtil();
-		Collection<OneRecord> records = utl.getCashRecords(date);
+		Collection<OneRecord> records = FinanceUtil.getRecordsByAccount(date,"现金");
 		final double balance = this.calculateBalance(records);
 		if(balance != 0)
 		{

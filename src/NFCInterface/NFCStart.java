@@ -100,6 +100,9 @@ public class NFCStart extends KYMainUI{
 		speakEngin.say("初始化完成");
 		
 		
+		closeLoginUI();
+		
+		
 	}
 	
 	
@@ -159,6 +162,11 @@ public class NFCStart extends KYMainUI{
 		Thread t = new Thread(NfcMC);
 		t.start();
 		
+		NFCMissionControl2 NfcMC2 = new NFCMissionControl2(this);
+		
+		NfcMC2.SwitchTimeLimite("ON");
+	
+		
 	}
 	
 	
@@ -170,15 +178,15 @@ public class NFCStart extends KYMainUI{
 		if(msg[0].equals("ADDMSG"))
         {
         	if(msg.length>1)
-        		pushMsg(msg[2]);
+        		pushMsg(msg);
         }else if(msg[0].equals("ADDNOTICE"))
         {
         	if(msg.length>1)
-        		pushNotice(msg[2]);
+        		pushNotice(msg);
         }else if(msg[0].equals("ADDONLYMSG"))
         {
         	//if(msg.length>1)
-        		pushOnlyMsg(msg[2]);
+        		pushOnlyMsg(msg);
         }else if(msg[0].equals("POPUPMSG"))
         {
         	if(msg.length>1)

@@ -73,27 +73,33 @@ public class FinaceActionServer {
 			{
 				OneRecord a_record = new OneRecord(r);
 				String id = a_record.getId();
-				if(!id_order.contains(Integer.parseInt(id)))
-				{
-					//System.err.println("id = "+id+"\t"+a_record);
-					id_order.add(Integer.parseInt(id));
-				}else
-				{
-					id_order.remove(id_order.indexOf(Integer.parseInt(id)));
-					id_order.add(Integer.parseInt(id));
-				}
+
 				if(status == 0)
 				{
 					collectionRecord.add(a_record);
 				}
-				id_record.put(Integer.parseInt(id), a_record);
+				
+				if(a_record.getMark().length()==9)//(earlierThan(id_record.get(Integer.parseInt(id)),a_record))
+				{
+					if(!id_order.contains(Integer.parseInt(id)))
+					{
+						//System.err.println("id = "+id+"\t"+a_record);
+						id_order.add(Integer.parseInt(id));
+					}else
+					{
+						id_order.remove(id_order.indexOf(Integer.parseInt(id)));
+						id_order.add(Integer.parseInt(id));
+					}
+					id_record.put(Integer.parseInt(id), a_record);
+				}
+				   
 			}
 			if(status == 1)
 			{
 				for(int i=0;i<id_order.size();i++)
 				{
 					OneRecord re = id_record.get(id_order.get(i));
-					if(!re.getMark().contains("2"))
+					if(!re.getMark().contains("2") && re.getMark().length()==9)
 					   collectionRecord.add(re);
 				}
 			}
@@ -198,21 +204,27 @@ public class FinaceActionServer {
 			{
 				OneRecord a_record = new OneRecord(r);
 				String id = a_record.getId();
-				if(!id_order.contains(Integer.parseInt(id)))
-				{
-					System.err.println("id = "+id+"\t"+a_record);
-					id_order.add(Integer.parseInt(id));
-				}else
-				{
-					id_order.remove(id_order.indexOf(Integer.parseInt(id)));
-					id_order.add(Integer.parseInt(id));
-				}
+				
 				
 				if(status == 0)
 				{
 					collectionRecord.add(a_record);
 				}
-				id_record.put(Integer.parseInt(id), a_record);
+				
+				
+				if(a_record.getMark().length()==9)//(earlierThan(id_record.get(Integer.parseInt(id)),a_record))
+				{
+					if(!id_order.contains(Integer.parseInt(id)))
+					{
+						//System.err.println("id = "+id+"\t"+a_record);
+						id_order.add(Integer.parseInt(id));
+					}else
+					{
+						id_order.remove(id_order.indexOf(Integer.parseInt(id)));
+						id_order.add(Integer.parseInt(id));
+					}
+					id_record.put(Integer.parseInt(id), a_record);
+				}
 			}
 			if(status == 1)
 			{
@@ -221,7 +233,7 @@ public class FinaceActionServer {
 				{
 					
 					OneRecord re = id_record.get(id_order.get(i));
-					if(!re.getMark().contains("2"))
+					if(!re.getMark().contains("2")&& re.getMark().length()==9)
 						collectionRecord.add(re);
 				}
 			}
@@ -257,27 +269,35 @@ public class FinaceActionServer {
 			{
 				OneRecord a_record = new OneRecord(r);
 				String id = a_record.getId();
-				if(!id_order.contains(Integer.parseInt(id)))
-				{
-					System.err.println("id = "+id+"\t"+a_record);
-					id_order.add(Integer.parseInt(id));
-				}else
-				{
-					id_order.remove(id_order.indexOf(Integer.parseInt(id)));
-					id_order.add(Integer.parseInt(id));
-				}
+				
 				if(status == 0)
 				{
 					collectionRecord.add(a_record);
 				}
-				id_record.put(Integer.parseInt(id), a_record);
+
+
+				if(a_record.getMark().length()==9)//(earlierThan(id_record.get(Integer.parseInt(id)),a_record))
+				{
+					if(!id_order.contains(Integer.parseInt(id)))
+					{
+						System.err.println("id = "+id+"\t"+a_record);
+						id_order.add(Integer.parseInt(id));
+					}else
+					{
+						id_order.remove(id_order.indexOf(Integer.parseInt(id)));
+						id_order.add(Integer.parseInt(id));
+					}
+					id_record.put(Integer.parseInt(id), a_record);
+				}
 			}
 			if(status == 1)
 			{
 				for(int i=0;i<id_order.size();i++)
 				{
 					OneRecord re = id_record.get(id_order.get(i));
-					collectionRecord.add(re);
+					if(!re.getMark().contains("2")&& re.getMark().length()==9)
+						collectionRecord.add(re);
+					
 				}
 			}
 			r.close();
@@ -312,7 +332,11 @@ public class FinaceActionServer {
 				//System.out.println(a_record);	
 				String id = a_record.getId();
 				//System.out.println("id: "+id+"\t"+r.getString("id")+"\t"+count);
-				id_record.put(Integer.parseInt(id), a_record);				
+				
+				if(a_record.getMark().length()==9)//(earlierThan(id_record.get(Integer.parseInt(id)),a_record))
+				{
+					id_record.put(Integer.parseInt(id), a_record);
+				}			
 			}
 			List<Integer> id_rank = new LinkedList<Integer>();
 			
@@ -363,7 +387,7 @@ public class FinaceActionServer {
 			
 			//------------------------get id;
 			int id=1;
-			p = conn.prepareStatement("SELECT  max(CAST(id as SIGNED))  from emp_finance;");
+			p = conn.prepareStatement("SELECT max(CAST(id as SIGNED))  from emp_finance;");
 			ResultSet rs =p.executeQuery();
 			if(rs.next())
 			{
@@ -416,10 +440,15 @@ public class FinaceActionServer {
 			{
 				for(OneRecord record:records)
 				{
+					p = conn.prepareStatement("UPDATE emp_finance set mark=concat(mark,'1')where id=? AND LENGTH(mark)=9;");
+					String Id = record.getId();//1
+					p.setString(1, Id);
+					p.execute();    // 被改动过的记录mark变为9位 ，正常查询不会被显示
+					
 					p = conn.prepareStatement("INSERT INTO emp_finance "
 							/*+"('id','f_date','f_time','f_type','detail', 'unit_price','amount','expense','income','account','comment','operator_id','operate_date','operate_time')"*/
 							+"VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
-					String Id = record.getId();//1
+					Id = record.getId();//1
 					Date date = record.getDate();//2
 					String itemType = record.getType();//3
 					String detail = record.getDetail();//4
@@ -490,7 +519,17 @@ public class FinaceActionServer {
 		return count_int;
 	}
 	
-	
+	private boolean earlierThan(OneRecord record1,OneRecord record2)
+	{
+		if(Integer.parseInt(record1.getOperateDate().replace("-", ""))<Integer.parseInt(record2.getOperateDate().replace("-", ""))
+				&& Integer.parseInt(record1.getOperateTime().replace(":", ""))<Integer.parseInt(record2.getOperateTime().replace(":", "")))
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
+	}
 
 	/**
 	 * initialize parameters
@@ -509,5 +548,7 @@ public class FinaceActionServer {
 			Instance =new FinaceActionServer();
 		return Instance;
 	}
+	
+	
 
 }

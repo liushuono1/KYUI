@@ -4,6 +4,7 @@ import java.util.List;
 
 public abstract class MissionControl implements Runnable {
 
+	static MissionControl instance=null;
 	MissionControlledObj Obj;
 	List<MissionControlAction> actions;
 	
@@ -11,12 +12,16 @@ public abstract class MissionControl implements Runnable {
 	{
 		this.Obj=Obj;
 		actions = this.Obj.getAction();
+		instance=this;
 	}
 	@Override
 	public void run() {
 	}
 	
-	
+	public static void Run()
+	{
+		instance.run();
+	}
 	public MissionControlledObj getControlledObject()
 	{
 		return Obj;

@@ -39,14 +39,19 @@ public class Homepage extends BaseHomePage {
 		group1.add(panel3);
 		
 		group1.addSearchPane(null,"查看现金余额");
-		JPanel panel5 = new GetCashTotalPane(null);
+		JPanel panel5 = new GetTotalPane("现金");
 		group1.add(panel5);
-		  
-		  
+		
+		group1.addSearchPane(null,"查看银行卡余额");
+		JPanel panel7 = new GetTotalPane("银行卡");
+		group1.add(panel7);
+		 
+		if(true)  //需要引入身份判定
+		{
 		group1.addSearchPane(null,"查看以前余额");
 		JPanel panel6 = new  getCashTillDatePane(null);
 		group1.add(panel6);  
-		 
+		}
 		
 	}
 }

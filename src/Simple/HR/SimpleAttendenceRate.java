@@ -300,6 +300,6 @@ public class SimpleAttendenceRate {
 	{
 		
 
-		SimpleAttendenceRate.getAttendenceRate("2015-01",bds);
+		SimpleAttendenceRate.getAttendenceRate("2015-06",bds);
 	}
 }

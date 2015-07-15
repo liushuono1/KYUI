@@ -73,7 +73,7 @@ public class RecentRecords extends ClientUI{
 	private void clearTable()
 	{
 		String attributeNames = FinanceAddUI.txt2String("/FinanceUI/attributes.txt");
-		String[] attributeArray = attributeNames.split(":");
+		String[] attributeArray = attributeNames.trim().split(":");
 		String[][] aaa= new String[1][attributeNames.length()];
 		
 		List<OneRecord> record_list = (List<OneRecord>) FinanceUtil.getLastTenRecords();
@@ -95,7 +95,7 @@ public class RecentRecords extends ClientUI{
 	private void refreashTable()
 	{
 		String attributeNames = FinanceAddUI.txt2String("/FinanceUI/attributes.txt");
-		String[] attributeArray = attributeNames.split(":");
+		String[] attributeArray = attributeNames.trim().split(":");
 		String[][] aaa= new String[1][attributeNames.length()];
 		
 		List<OneRecord> record_list = (List<OneRecord>) FinanceUtil.getLastTenRecords();
@@ -117,7 +117,7 @@ public class RecentRecords extends ClientUI{
 	private JTable createTable()
 	{
 		String attributeNames = FinanceAddUI.txt2String("/FinanceUI/attributes.txt");
-		String[] attributeArray = attributeNames.split(":");
+		String[] attributeArray = attributeNames.trim().split(":");
 		String[][] aaa= new String[1][attributeNames.length()];
 		
 		List<OneRecord> record_list = (List<OneRecord>) FinanceUtil.getLastTenRecords();

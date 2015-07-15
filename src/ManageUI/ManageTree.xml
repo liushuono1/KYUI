@@ -10,7 +10,7 @@
 			homeClass="ManageUI.CardRegUI" />
 		<node name="全园出勤"
 			homeClass="kyHRUI.Student.kyUIHR" />
-		<node name="UNC3" homeClass="KYUI.BlankUI" invisible="true"/>
+		<node name="UNC3" homeClass="KYUI.BlankUI" invisible="true"></node>
 		<node name="UNC4" homeClass="KYUI.BlankUI" invisible="true" />
 	</node>
 	<node name="员工管理" homeClass="kyHRUI.Stuff.SearchHome" invisible="false"></node>

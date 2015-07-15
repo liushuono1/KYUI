@@ -1,4 +1,4 @@
-package ManageUI;
+package Simple.HR;
 
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
@@ -37,13 +37,13 @@ import bb.common.EmployeeCardVO;
 import bb.gui.base.ClientUI;
 
 
-public class NotifyUI extends JPanel{
+public class SimpleNotifyUI extends JPanel{
 	LinkedList<Checkbox> box_list ;
 	JTextArea msgArea;
 	JComboBox JB;
 	CheckboxGroup cbg;
 	
-	NotifyUI(Object test) //测试目的的构造器
+	SimpleNotifyUI(Object test) //测试目的的构造器
 	{
 		JFrame f = new JFrame();
 		f.setSize(400, 300);
@@ -230,7 +230,7 @@ public class NotifyUI extends JPanel{
 	
 	public static void main(String[] args)
 	{
-		new NotifyUI(null);
+		new SimpleNotifyUI(null);
 	}
 	
 	

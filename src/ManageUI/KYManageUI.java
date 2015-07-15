@@ -123,7 +123,7 @@ public class KYManageUI extends KYMainUI{
 		replace_node_name();
 		System.err.println("kyui--->"+ KYMainUI.isInstanced());
 		
-		//KYUITray.getInstance().showTrayMsgDing("111","111");
+		closeLoginUI();
 
 	}
 	

@@ -192,10 +192,17 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 		
 		
 		setupNoticeControl();
+		
+		
+		
+	}
+	
+	
+	
+	public void closeLoginUI()
+	{
 		if(LoginUI.getInstance().isVisible())  //Òþ²ØµÇÂ½´°¿Ú 
 			LoginUI.getInstance().setVisible(false);
-		
-		
 	}
 	
 	public void MCstart(String[] parms)

@@ -109,10 +109,10 @@ public class FinanceUtil {
 		return record_collection;
 	}
 	
-	 public static Collection<OneRecord> getCashRecords(String date)
+	 public static Collection<OneRecord> getRecordsByAccount(String date,String account)
 	 {
 		 List<String[]>  constraints = new LinkedList<String[]> ();
-		 String[] constraintPair0 = {"account","=:"+"ож╫П"}; 
+		 String[] constraintPair0 = {"account","=:"+account}; 
 		 constraints.add(constraintPair0);
 		 String[] constraintPair1 = {"f_date","<=:"+date}; 
 		 constraints.add(constraintPair1);

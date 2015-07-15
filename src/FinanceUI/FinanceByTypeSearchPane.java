@@ -53,7 +53,7 @@ public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane{
 	 {
 		 JComboBox jb = new JComboBox();
 		 String types = txt2String("/FinanceUI/types.txt");
-		 String[] typeArray = types.split(":");
+		 String[] typeArray = types.trim().split(":");
 		 jb.addItem("");
 		 for(int i=0;i<typeArray.length;i++)
 		 {
@@ -69,7 +69,7 @@ public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane{
 		           //构造一个BufferedReader类来读取文件
 	            String s = null;
 	            while((s = br.readLine())!=null){//使用readLine方法，一次读一行
-	                result = result + "\n" +s;
+	                result += s+"\n" ;
 	            }
 	            br.close();    
 	        }catch(Exception e){

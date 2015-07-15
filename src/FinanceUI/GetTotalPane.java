@@ -10,24 +10,25 @@ import bb.common.EmployeeCardVO;
 import bb.gui.base.ClientUI;
 import kyHRUI.Student.BasicActionPane;
 
-public class GetCashTotalPane extends BasicActionPane{
-
-	public GetCashTotalPane(EmployeeCardVO vo) {
-		super(vo);
+public class GetTotalPane extends BasicActionPane{
+String account;
+	public GetTotalPane(String account) {
+		super(null);
+		this.account=account;
 		// TODO Auto-generated constructor stub
 	}
 
 	public ClientUI getSearchResultUI() {
-		FinanceUtil utl = new FinanceUtil();
-		Collection<OneRecord> records = utl.getCashRecords(new java.sql.Date(System.currentTimeMillis()).toString());
+		
+		Collection<OneRecord> records = FinanceUtil.getRecordsByAccount(new java.sql.Date(System.currentTimeMillis()).toString(),account);
 		final double balance = this.calculateBalance(records);
 		if(balance != 0)
 		{
-			JOptionPane.showMessageDialog(null, "现金余额为"+String.valueOf(balance)+"元");
+			JOptionPane.showMessageDialog(null, "余额为"+String.valueOf(balance)+"元");
 		}
 		else
 		{
-			JOptionPane.showMessageDialog(null, "没有现金记录!");
+			JOptionPane.showMessageDialog(null, "没有记录!");
 		}
 
 		return null;
@@ -65,6 +66,6 @@ public class GetCashTotalPane extends BasicActionPane{
 
 	
 	public String getButtonText() {
-		return "查询现金余额";
+		return "查询余额";
 	}
 }

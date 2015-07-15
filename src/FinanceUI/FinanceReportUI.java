@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Enumeration;
@@ -87,10 +88,10 @@ public class FinanceReportUI extends ClientUI {
 	
 	public JTable createTable()
 	{
-		String attributeNames = txt2String(new File("report_atts.txt"));
-		attributeArray = attributeNames.split(":");
-		String types = txt2String(new File("types.txt")).replace("\n", "");
-		String[] types_array = types.split(":");
+		String attributeNames = txt2String("/FinanceUI/report_atts.txt");
+		attributeArray = attributeNames.trim().split(":");
+		String types = txt2String("/FinanceUI/types.txt").replace("\n", "");
+		String[] types_array = types.trim().split(":");
 		double sum_income = 0;
 		double sum_expense = 0;
 		Hashtable<String, Double> types_sum_income = new Hashtable<String, Double>();
@@ -106,9 +107,9 @@ public class FinanceReportUI extends ClientUI {
 			double income = r.getIncome();
 			double expense = r.getExpense();
 			String type = r.getType();
-			//System.out.println("type =?? "+type);
-			//System.out.println("type :: "+types_sum_income.get(type));
-			//System.out.println("?????"+types_sum_income);
+			System.out.println(r+"type =?? "+type);
+			System.out.println("type :: "+types_sum_income.get(type));
+			System.out.println("?????"+types_sum_income);
 			types_sum_income.put(type, types_sum_income.get(type) + income- expense);
 		}
 		Hashtable<String, Double> item_cost = new Hashtable<String, Double>();
@@ -222,13 +223,15 @@ public class FinanceReportUI extends ClientUI {
 		 return new DefaultTableModel(items,Attributes);	
 	 }
 	
-	 public String txt2String(File file){
+	 public String txt2String(String file){
+		 
+		 
 	        String result = "";
 	        try{
-	            BufferedReader br = new BufferedReader(new FileReader(file));//构造一个BufferedReader类来读取文件
+	            BufferedReader br = new BufferedReader(new InputStreamReader(FinanceReportUI.class.getResourceAsStream(file)));//构造一个BufferedReader类来读取文件
 	            String s = null;
 	            while((s = br.readLine())!=null){//使用readLine方法，一次读一行
-	                result = result + "\n" +s;
+	                result +=  s+"\n";
 	            }
 	            br.close();    
 	        }catch(Exception e){
@@ -374,8 +377,8 @@ public class FinanceReportUI extends ClientUI {
 			    sheet.addCell(title);
 			    
 		    
-			    String attributeNames = txt2String(new File("attributes.txt"));
-				String[] attributeArray = attributeNames.split(":");
+			    String attributeNames = txt2String("/FinanceUI/attributes.txt");
+				String[] attributeArray = attributeNames.trim().split(":");
 			    for(int i=0;i<attributeArray.length;i++)
 			    {
 			    	sheet.setColumnView(i,15);

@@ -609,6 +609,8 @@ public class setFees extends JFrame{
 				{
 					//String[] child_care = get_child_care_typeFees(id);??
 					String child_care_type = child_care[0];//get child-care type!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					
+					//System.out.println(child_care_type);
 					sum.ChargeCode +=  Integer.toHexString(Integer.parseInt(child_care_type, 10));
 					String child_care_fee_str = child_care[1];//get child_care fee
 					int child_care_fee = Integer.parseInt(child_care_fee_str);
@@ -856,12 +858,17 @@ public class setFees extends JFrame{
 					refund_childCare = (int)(child_care_fee * refund_childCare_type /2); 
 					refund_fees = refund_meal + refund_childCare+52; 
 				}
-				else if(refund_childCare_type==1 && counter<=3)
+				else if(refund_childCare_type==1 && counter<=3 && counter>0)
 				{
-					refund_childCare_type=counter+2;
+					//refund_childCare_type=counter+2;
 					refund_childCare = (int)(child_care_fee *(1-counter/26)); 
 					refund_fees = refund_meal + refund_childCare+(int)((26-counter)/26*50);
-				}else
+				}else if(refund_childCare_type==1 && counter==0)
+				{
+					refund_childCare = (int)child_care_fee ; 
+					refund_fees = refund_meal + refund_childCare+50;
+				}
+				else 
 				{
 					refund_childCare = (int)(child_care_fee * refund_childCare_type /2); 
 					refund_fees = refund_meal + refund_childCare; 
@@ -1470,7 +1477,7 @@ public class setFees extends JFrame{
 			}else
 			{
 				String driver = "com.mysql.jdbc.Driver";
-				String url = "jdbc:mysql://192.168.1.104:3307/bb2_test";
+				String url = "jdbc:mysql://192.168.1.100:3307/bb2_test";
 				String user = "root"; 
 				String password = "root";
 		        Class.forName(driver);

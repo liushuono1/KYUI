@@ -294,7 +294,7 @@ public class FinanceSearchUI extends ClientUI {
 		JLabel typeL = new JLabel("类目(*):");
 		jb = new JComboBox();
 		String types = txt2String("/FinanceUI/types.txt");
-		String[] typeArray = types.split(":");
+		String[] typeArray = types.trim().split(":");
 		jb.addItem("");
 		for(int i=0;i<typeArray.length;i++)
 		{
@@ -772,7 +772,7 @@ public class FinanceSearchUI extends ClientUI {
 	public JTable createTable()
 	{
 		String attributeNames = txt2String("/FinanceUI/attributes.txt");
-		attributeArray = attributeNames.split(":");
+		attributeArray = attributeNames.trim().split(":");
 		String[][] aaa= new String[1][attributeNames.length()];
 		table = new JTable(MutliTableModel(aaa,attributeArray));
 		table.addMouseListener(new MouseAdapter(){
@@ -881,7 +881,7 @@ public class FinanceSearchUI extends ClientUI {
 	            BufferedReader br = new BufferedReader(new InputStreamReader(FinanceAddUI.class.getResourceAsStream(file)));//构造一个BufferedReader类来读取文件
 	            String s = null;
 	            while((s = br.readLine())!=null){//使用readLine方法，一次读一行
-	                result = result + "\n" +s;
+	                result += s+"\n";
 	            }
 	            br.close();    
 	        }catch(Exception e){

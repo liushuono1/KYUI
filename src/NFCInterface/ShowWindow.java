@@ -324,7 +324,7 @@ public class ShowWindow extends ClientUI {
 			}else if (status ==2 )
 			{
 				String time= (new java.sql.Time(System.currentTimeMillis())).toString();
-				String differ = String.valueOf(163000-Integer.parseInt(time.replace(":", ""))).substring(2,	 4);
+				String differ = String.valueOf(163000/100-Integer.parseInt(time.replace(":", ""))/100);
 				info = "<html><body>离刷卡开始还有 "+ differ +"分钟，<br>请耐心等待<body></html>";
 			}
 			int size=50;
