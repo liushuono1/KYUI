@@ -4,6 +4,7 @@ package Client4CLass;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -20,8 +21,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import kyHRUI.Student.RegHome;
-
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import bb.gui.AbstractMainUI;
@@ -32,7 +31,6 @@ import bb.gui.base.ClientUI;
 import bb.gui.i18n.BB2Translator;
 import bb.gui.main.ClientChecker;
 import bb.gui.main.MainUIActionManager;
-import bb.gui.server.CompanySettingServerActionManager;
 import bb.gui.swing.DetachUI;
 import free.FreeMenuBar;
 import free.FreeRootMenu;
@@ -58,7 +56,7 @@ public class KYClassUI extends KYMainUI{
 	{
 		//System.out.println(KYMainUI.SQLIP);
 		this.setClientLevel(0);
-		this.setExtendedState(JFrame.NORMAL); 
+		this.setExtendedState(Frame.NORMAL); 
 		setTitle(getTitle()+KYMainUI.department);
 		this.removeWindowListener(this.getWindowListeners()[0]);
 		
@@ -74,6 +72,7 @@ public class KYClassUI extends KYMainUI{
 	}
 	
 	
+	@Override
 	final public JPanel getEastPane()
 	{
 		if(getScrollInfoPane()==null)
@@ -85,6 +84,7 @@ public class KYClassUI extends KYMainUI{
 	}
 	
 	
+	@Override
 	public void MCstart(String[] prams)
 	{
 		RegClient();
@@ -152,12 +152,14 @@ public class KYClassUI extends KYMainUI{
 	}
 
 
+	@Override
 	public void refresh()
 	{
 		RollCallUI.getinstence().refresh();
 		EastPanel.getInstance().refresh();
 	}
 	
+	@Override
 	public boolean isDisplayTree() {
 		return false;
 	}
@@ -209,10 +211,12 @@ public class KYClassUI extends KYMainUI{
 		
 		addWindowListener(new java.awt.event.WindowListener() {
 
+			@Override
 			public void windowClosing(java.awt.event.WindowEvent e) {
 				WindowIconfied();
 			}
 
+			@Override
 			public void windowClosed(java.awt.event.WindowEvent e) {
 				/*//AbstractMainUI() = false;
 				if (AbstractMainUI.getInstance() != null) {
@@ -224,6 +228,7 @@ public class KYClassUI extends KYMainUI{
 				}*/
 			}
 
+			@Override
 			public void windowOpened(java.awt.event.WindowEvent e) {
 				ClientChecker.checkBB2(AbstractMainUI.getInstance());
 			}
@@ -260,23 +265,25 @@ public class KYClassUI extends KYMainUI{
 	private void WindowIconfied()
 	{
 		RestoreWindow.getInstance().setTitle(KYMainUI.department);
-		RestoreWindow.getInstance().setMainUI(KYClassUI.getInstance());
+		RestoreWindow.getInstance().setMainUI(KYMainUI.getInstance());
 		RestoreWindow.getInstance().setScrollInfoPane(getScrollInfoPane());
 		DetachUI s = RestoreWindow.getDetachRestoreWindow();
 		getScrollInfoPane().setLines(1);
 		getScrollInfoPane().setPreferredSize(new Dimension(EastPanel.getInstance().getSize().width,25));
 		s.setVisible(true);
 		
-		setExtendedState(JFrame.ICONIFIED);
+		setExtendedState(Frame.ICONIFIED);
 		setVisible(false);
 	}
 	
+	@Override
 	public void restore() {
 		// TODO Auto-generated method stub
 		getScrollInfoPane().setLines(2);
-		getScrollInfoPane().setPreferredSize(new Dimension(eastPanel.getInstance().getSize().width,100));
+		getScrollInfoPane().setPreferredSize(new Dimension(EastPanel.getInstance().getSize().width,100));
 		EastPanel.getInstance().getContentPane().add(BorderLayout.NORTH,getScrollInfoPane());
 	}
+	@Override
 	public FreeMenuBar getKYMenubar()
 	{
  
@@ -374,6 +381,7 @@ public class KYClassUI extends KYMainUI{
 	    return menu;
 	}
 	
+	@Override
 	public void closing() {
 		if (KYMainUI.getInstance().isCloseAble()) {
 			int answer = CommonUI.showWarningConfirm(this,
@@ -414,6 +422,7 @@ public class KYClassUI extends KYMainUI{
 	    menu.add(item);
 	    return menu;
 	}
+	@Override
 	public void refresh(String msg[])
 	{
 		RollCallUI.getinstence().refresh();

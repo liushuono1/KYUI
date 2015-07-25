@@ -1,18 +1,10 @@
 package kyHRUI.Stuff;
 
 import java.util.Collection;
-import java.util.List;
-
 import KYUI.KYMainUI;
 import bb.gui.base.BaseHomePage;
 import bb.gui.base.ClientUI;
-import bb.gui.hr.EmployeeHomePageByLastNameSearchPane;
-import bb.gui.hr.EmployeeHomePageLookupSearchPane;
-import bb.gui.hr.EmployeeHomePageTrainingSearchPane;
-import bb.gui.hr.HumanResourceUtil;
-import bb.gui.swing.MulHomePage;
 import bb.gui.swing.homepage.HomePageGroupPane;
-import bb.gui.ware.label.LabelHomePageMakeEmployeeLabels;
 
 
 
@@ -24,6 +16,7 @@ public class RegHome extends BaseHomePage {
 		HomePageGroupPane group = getTabPane(0).getGroupPane(0);
 		newStuff ui= new newStuff(KYMainUI.department)
 		{
+			@Override
 			public String getButtonText() {
 				return "添加新的"+KYMainUI.department+"员工";
 			}
@@ -54,6 +47,7 @@ public class RegHome extends BaseHomePage {
 	
 			newStuff ui= new newStuff("教工部")
 			{
+				@Override
 				public String getButtonText() {
 					return "添加新的员工";
 				}

@@ -3,7 +3,7 @@ package kyHRUI.Stuff;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.lang.ref.WeakReference;
-import java.sql.SQLException;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
@@ -12,9 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import Client4CLass.KYClassUI;
-import FinaceUI.Manege.FeesUtils;
-import KYUI.KYMainUI;
 import bb.common.CompanyVO;
 import bb.common.EmployeeCardVO;
 import bb.common.VO;
@@ -24,7 +21,6 @@ import bb.gui.ServerActionException;
 import bb.gui.base.AddActionPane;
 import bb.gui.base.ClientUI;
 import bb.gui.hr.EmployeeActionManager;
-import bb.gui.hr.EmployeeUI;
 import bb.gui.hr.HumanResourceUtil;
 import bb.gui.server.CompanySettingServerActionManager;
 import bb.gui.server.HRServerActionManager;
@@ -34,7 +30,6 @@ import bb.gui.swing.UWCustomPropertiesPane;
 import bb.gui.swing.UpdateFinishAction;
 import bb.gui.swing.UpdatePane;
 import bb.gui.swing.UpdateStep;
-import bb.gui.swing.UpdateUIFactory;
 
 
 public class StuffAddPane extends AddActionPane {
@@ -65,7 +60,7 @@ public class StuffAddPane extends AddActionPane {
 
 	
 	public StuffAddPane(String id,String classtype) {
-		this.classType=classtype;
+		StuffAddPane.classType=classtype;
 		this.stuID=id;
 		borderLayout1 = new TableLayout(5, 5);
 		jLabel1 = new JLabel();
@@ -116,6 +111,7 @@ public class StuffAddPane extends AddActionPane {
 		ClientUtil.setRequisiteLabel(jLabe4);
 	}
 
+	@Override
 	public boolean add() throws Exception {
 		ClientUtil.trimWindowTextFields(this);
 		String id = txtId.getText().trim();
@@ -193,6 +189,7 @@ public class StuffAddPane extends AddActionPane {
 		return false;
 	}
 	
+	@Override
 	public ClientUI getFollowingUI() throws Exception {
 		if (empId != null) {
 			return createUpdateUI(this, empId);
@@ -231,6 +228,7 @@ public class StuffAddPane extends AddActionPane {
 			bb.gui.swing.UpdateFinishAction finishAction = new AbstractFinishAction(
 					vo, parent) {
 
+				@Override
 				public Object submitToServer() throws ServerActionException {
 					String employeeId = HRServerActionManager.getInstance()
 							.updateEmployeeCard((EmployeeCardVO) vo);
@@ -238,6 +236,7 @@ public class StuffAddPane extends AddActionPane {
 							.getEmployeeCardById(employeeId);
 				}
 
+				@Override
 				public ClientUI getDetailUI() {
 					return new StuffUI();
 				}

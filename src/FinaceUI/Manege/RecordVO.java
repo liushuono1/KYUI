@@ -3,7 +3,6 @@ package FinaceUI.Manege;
 import java.sql.Date;
 import java.sql.Time;
 
-import bb.common.EmployeeCardVO;
 import bb.common.VO;
 
 public class RecordVO extends VO{

@@ -67,6 +67,7 @@ public class NFCreader implements Runnable{
 		this.run();
 	}
 	
+	@Override
 	public void run()
 	{
 		TempShow.setVisible(true);

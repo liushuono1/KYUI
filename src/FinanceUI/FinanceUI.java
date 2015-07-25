@@ -1,6 +1,7 @@
 package FinanceUI;
 
 
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -57,7 +58,7 @@ public class FinanceUI extends KYMainUI{
 	public FinanceUI()
 	{
 		setConnectingUrl();
-		this.setExtendedState(JFrame.NORMAL); 
+		this.setExtendedState(Frame.NORMAL); 
 		setTitle(getTitle()+KYMainUI.department);
 	}
 	
@@ -65,11 +66,13 @@ public class FinanceUI extends KYMainUI{
 	{
 		bds.setUrl("jdbc:mysql://"+KYMainUI.SQLIP+":3307/bb2_"+KYMainUI.DBStr);//数据库的路径，
 	}
+	@Override
 	public boolean isDisplayTree() {
 		return true;
 	}
 	
 	
+	@Override
 	public FreeMenuBar getKYMenubar()
 	{
 		FreeMenuBar menubar = getFreeMenuBar();
@@ -103,6 +106,7 @@ public class FinanceUI extends KYMainUI{
 	    return menu;
 	}
 	
+	@Override
 	public void closing() {
 		if (KYMainUI.getInstance().isCloseAble()) {
 			int answer = CommonUI.showWarningConfirm(this,

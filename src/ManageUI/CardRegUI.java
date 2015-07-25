@@ -6,14 +6,10 @@ import AuthModule.CardInfo;
 
 
 
-import FinaceUI.Manege.FeesUtils;
-import KYUI.KYMainUI;
-
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -57,6 +53,7 @@ public class CardRegUI extends ClientUI{
 		this.add(baseRegPanel());
 		this.add(new JLabel());
 	}
+	@Override
 	public String getTitle()
 	{
 		return "×¢²á½ÓËÍ/¿¼ÇÚ¿¨";

@@ -22,12 +22,14 @@ public class FinanceAddButton extends HomePageAddPane{
 		else
 			return new FinanceAddUI(){
 			
+			@Override
 			public JPanel getInputPanel()
 			{
 				return new KYUI.BlankUI("ÇëÉêÇëÈ¨ÏÞ£¡£¡£¡");
 			}
 			
 			
+			@Override
 			public JPanel getShowPanel()
 			{
 				return new KYUI.BlankUI("ÇëÉêÇëÈ¨ÏÞ£¡£¡£¡");
@@ -41,7 +43,8 @@ public class FinanceAddButton extends HomePageAddPane{
 		return "";
 	}
 	
-	 public String getButtonText()
+	 @Override
+	public String getButtonText()
 	 {
 		 return "Ìí¼Ó¼ÇÂ¼";
 	 }

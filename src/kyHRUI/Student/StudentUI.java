@@ -56,15 +56,18 @@ public class StudentUI extends ClientUI implements UpdateableUI,
 		ClientUtil.setHighlightComponent(generalPane.txtID);
 	}
 
+	@Override
 	public PrintSettingPane getConcretSettingPane() {
 		PrintSettingPane = new EmployeePrintSettingPane(this, showTrain, vo);
 		return PrintSettingPane;
 	}
 
+	@Override
 	public TemplateGenerator getConcretGenerator() {
 		return new EmployeePrintGenerator(PrintSettingPane);
 	}
 
+	@Override
 	public Object retrieveVO(Object key) throws ServerActionException {
 		String pk = null;
 		if (key == null)
@@ -81,6 +84,7 @@ public class StudentUI extends ClientUI implements UpdateableUI,
 		}
 	}
 
+	@Override
 	public Object getLookUpPK(String text) {
 		return text;
 	}
@@ -168,6 +172,7 @@ public class StudentUI extends ClientUI implements UpdateableUI,
 					.getListInAddressBook());
 			btnShowHome.addActionListener(new ActionListener() {
 
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					try {
 						EmployeeHomeVO homeInfoVO = HRServerActionManager
@@ -188,6 +193,7 @@ public class StudentUI extends ClientUI implements UpdateableUI,
 			});
 			btnShowTrain.addActionListener(new ActionListener() {
 
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					try {
 						java.util.Collection train = HRServerActionManager
@@ -242,6 +248,7 @@ public class StudentUI extends ClientUI implements UpdateableUI,
 				.getString("Employee.ChangeToTemporaryWorker"));
 		btnAddtoTemp.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				String id = "";
 				try {
@@ -263,15 +270,18 @@ public class StudentUI extends ClientUI implements UpdateableUI,
 			windowButtonPane.getLeftButtonPane().add(btnAddtoTemp);
 	}
 
+	@Override
 	public ClientUI getUpdateUI() {
 		return StudentActionManager.createUpdateUI(this, vo.getId());
 	}
 
+	@Override
 	public ClientUI getAddUI() {
 		return AddUI.createAddDialog(new StudentAddPane(), HumanResourceUtil
 				.getString("EmployeeActionManager.AddanEmployeeCard"));
 	}
 
+	@Override
 	public Object[] getTemplatePrintData() {
 		return (new Object[] { vo });
 	}

@@ -1,19 +1,11 @@
 package kyHRUI.Student;
 
 import java.util.Collection;
-import java.util.List;
-
 import KYUI.KYMainUI;
 import bb.gui.base.BaseHomePage;
 import bb.gui.base.ClientUI;
 import bb.gui.hr.EmployeeActionManager;
-import bb.gui.hr.EmployeeHomePageByLastNameSearchPane;
-import bb.gui.hr.EmployeeHomePageLookupSearchPane;
-import bb.gui.hr.EmployeeHomePageTrainingSearchPane;
-import bb.gui.hr.HumanResourceUtil;
-import bb.gui.swing.MulHomePage;
 import bb.gui.swing.homepage.HomePageGroupPane;
-import bb.gui.ware.label.LabelHomePageMakeEmployeeLabels;
 
 
 
@@ -40,6 +32,7 @@ public class RegHome extends BaseHomePage {
 					{
 						newStu ui= new newStu(dept)
 						{
+							@Override
 							public String getButtonText() {
 								return "添加新的"+dept+"学生";
 							}
@@ -54,6 +47,7 @@ public class RegHome extends BaseHomePage {
 			HomePageGroupPane group = getTabPane(0).getGroupPane(0);
 			newStu ui= new newStu(KYMainUI.department)
 			{
+				@Override
 				public String getButtonText() {
 					return "添加新的"+KYMainUI.department+"学生";
 				}

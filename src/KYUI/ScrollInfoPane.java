@@ -14,7 +14,6 @@ import java.util.Queue;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class ScrollInfoPane extends JButton implements Runnable{
 
@@ -113,7 +112,8 @@ public class ScrollInfoPane extends JButton implements Runnable{
 		System.out.println(getSize().height +"    "+getSize().width);
 	}
 	
-	 public void run()
+	 @Override
+	public void run()
 	    {
 		
 	    	while (true)
@@ -155,7 +155,8 @@ public class ScrollInfoPane extends JButton implements Runnable{
 	    	}
 	    }
 
-	    public void paint(Graphics comp)
+	    @Override
+		public void paint(Graphics comp)
 	    {
     		Graphics2D com2D = (Graphics2D) comp;
 	        Font type = new Font("monospaced", Font.BOLD, fontsize);

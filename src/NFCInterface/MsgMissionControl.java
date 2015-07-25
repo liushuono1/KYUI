@@ -8,11 +8,6 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Timer;
-import java.util.TimerTask;
-
-//import KYUI.AePlayWave;
-import KYUI.KYMainUI;
 import KYUI.MissionControl;
 import KYUI.MissionControlAction;
 import KYUI.MissionControlledObj;
@@ -40,6 +35,7 @@ class MsgMissionControl extends MissionControl
 		 timer.schedule(task, 0, 3600*1000);*/
 	}
 	
+	@Override
 	public void run()
 	{
 		 try {
@@ -74,7 +70,8 @@ class EchoThread extends Thread {
         s = incoming;
         n = missionControlAction;
     }
-    public void run() {
+    @Override
+	public void run() {
     	String recivedTxt="";
     	
         try {

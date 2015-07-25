@@ -34,11 +34,13 @@ public class EmpHomeSearchByDepartmnet extends
 		
 	}
 
+	@Override
 	public ClientUI getSearchResultUI() throws ServerActionException {
 		final String input = ((DepartmentComboBox) getInputComponent(0))
 				.getSelectedItem().toString();
 		EmployeeListUI ui = new EmployeeListUI() {
 
+			@Override
 			public Collection getDataOnQuickSearch(String searchText,
 					int firstIndex, int length) throws ServerActionException {
 				return HRServerActionManager.getInstance()
@@ -46,6 +48,7 @@ public class EmpHomeSearchByDepartmnet extends
 								firstIndex, length);
 			}
 
+			@Override
 			public int getCountOnQuickSearch(String searchText)
 					throws ServerActionException {
 				return HRServerActionManager.getInstance()
@@ -56,6 +59,7 @@ public class EmpHomeSearchByDepartmnet extends
 				return (String) getValue(0);
 			}
 
+			@Override
 			public Collection queryFromServer(int firstIndex, int maxLength)
 					throws ServerActionException {
 				return HRServerActionManager.getInstance()
@@ -63,12 +67,14 @@ public class EmpHomeSearchByDepartmnet extends
 								firstIndex, maxLength);
 			}
 
+			@Override
 			public int getTotalCount() throws ServerActionException {
 				return HRServerActionManager.getInstance()
 						.getEmployeeCardsByDepartmentCount(getDepartment(),
 								false);
 			}
 
+			@Override
 			public String getQuickSearchTitle(String searchText) {
 				return HumanResourceUtil.getString(
 						"EmployeeHomePageByDepartmentSearchPane.Header",

@@ -1,9 +1,6 @@
 package FinaceUI.Manege;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -509,6 +506,7 @@ public class setFees extends JFrame{
 		{
 			public double sum;
 			public String ChargeCode;
+			@Override
 			public String toString()
 			{
 				return sum + "  "+  ChargeCode;
@@ -861,11 +859,11 @@ public class setFees extends JFrame{
 				else if(refund_childCare_type==1 && counter<=3 && counter>0)
 				{
 					//refund_childCare_type=counter+2;
-					refund_childCare = (int)(child_care_fee *(1-counter/26)); 
-					refund_fees = refund_meal + refund_childCare+(int)((26-counter)/26*50);
+					refund_childCare = child_care_fee *(1-counter/26); 
+					refund_fees = refund_meal + refund_childCare+(26-counter)/26*50;
 				}else if(refund_childCare_type==1 && counter==0)
 				{
-					refund_childCare = (int)child_care_fee ; 
+					refund_childCare = child_care_fee ; 
 					refund_fees = refund_meal + refund_childCare+50;
 				}
 				else 
@@ -1193,8 +1191,8 @@ public class setFees extends JFrame{
 			Calendar calendar=Calendar.getInstance();
 			calendar.set(Calendar.YEAR, year);
 			calendar.set(Calendar.MONTH, month);//某一月(1月份是0));
-			int end=calendar.getActualMaximum(calendar.DAY_OF_MONTH);
-			int begin=calendar.getActualMinimum(calendar.DAY_OF_MONTH);
+			int end=calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+			int begin=calendar.getActualMinimum(Calendar.DAY_OF_MONTH);
 			System.out.println("end = "+end);
 			String begin_date = String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(begin);
 			String end_date = String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(end);

@@ -29,7 +29,8 @@ class ClsMissionControl extends MissionControl
 		this.getAction("Class action1").StratAction(null);
 		TimerTask task = new TimerTask()
 		 {
-			 public void run() 
+			 @Override
+			public void run() 
 			 {
 				 getAction("Class action1").TimeRepeatAction(null);
 				 getAction("Class action1").RepeatAction(null);
@@ -40,6 +41,7 @@ class ClsMissionControl extends MissionControl
 		 timer.schedule(task, 0, 3600*1000);
 	}
 	
+	@Override
 	public void run()
 	{
 		 try {
@@ -74,7 +76,8 @@ class EchoThread extends Thread {
         s = incoming;
         n = missionControlAction;
     }
-    public void run() {
+    @Override
+	public void run() {
     	String recivedTxt="";
     	
         try {

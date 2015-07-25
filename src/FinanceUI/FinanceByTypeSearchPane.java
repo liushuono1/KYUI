@@ -1,13 +1,8 @@
 package FinanceUI;
 
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.JComboBox;
@@ -16,12 +11,8 @@ import javax.swing.JComponent;
 import AuthModule.CardAuth;
 import KYUI.KYMainUI;
 import bb.gui.ServerActionException;
-import bb.gui.base.AddActionPane;
 import bb.gui.base.ClientUI;
-import bb.gui.hr.HumanResourceUtil;
-import bb.gui.swing.homepage.HomePageAddPane;
 import bb.gui.swing.homepage.HomePageMultiRowSearchPane;
-import bb.gui.swing.homepage.HomePageSingleTextFieldSearchPane;
 
 public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane{
 
@@ -33,7 +24,8 @@ public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane{
 		        }, "°´Àà±ðËÑË÷");
 	}
 	
-	  public ClientUI getSearchResultUI()       throws ServerActionException
+	  @Override
+	public ClientUI getSearchResultUI()       throws ServerActionException
 	  {
 		  if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)==1)
 		  {		

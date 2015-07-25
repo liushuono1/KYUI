@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import kyHRUI.Student.StudentAddPane;
-import bb.gui.ClientConst;
 import bb.gui.base.AddActionPane;
 import bb.gui.hr.HumanResourceUtil;
 import bb.gui.swing.homepage.HomePageAddPane;
@@ -36,6 +35,7 @@ public newStu(int ClassType) {
 }
 
 
+@Override
 public AddActionPane getAddActionPane() {
 	return new StudentAddPane(geneID(),""); //错误的
 }
@@ -106,11 +106,13 @@ public String geneID()
 	return id;
 }
 
+@Override
 public String getAddUiTitle() {
 	return HumanResourceUtil
 			.getString("EmployeeActionManager.AddanEmployeeCard");
 }
 
+@Override
 public String getButtonText() {
 	return "添加新的学生";
 }

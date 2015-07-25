@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,6 +33,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.WindowConstants;
 
 import KYUI.KYMainUI;
 
@@ -239,7 +239,7 @@ public class rollCall extends JFrame implements Runnable{
 	private void namePressed(JButton btn) {
 
 		
-		String login_name=id_name.get(this.id_list.get(buttonArray.indexOf(btn)));
+		String login_name=id_name.get(rollCall.id_list.get(buttonArray.indexOf(btn)));
 		final String login_id=id_list.get(buttonArray.indexOf(btn));
 		
 		Point localtion =MouseInfo.getPointerInfo().getLocation();
@@ -253,7 +253,7 @@ public class rollCall extends JFrame implements Runnable{
 		btnFrame.setLayout(new FlowLayout());
 		
 		btnFrame.setLocation(localtion);
-		btnFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		btnFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		
 		btnFrame.add(new JLabel("…Ì∏ﬂ(cm)"));
 		final JTextField Hight = new JTextField();

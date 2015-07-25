@@ -132,6 +132,7 @@ public class Record {
 		this.comment = comment;
 		itemList.add(comment);
 	}
+	@Override
 	public String toString()
 	{
 		String str = "";

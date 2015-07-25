@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.util.Hashtable;
-//import java.util.Properties;
-import java.util.LinkedList;
 
 
 public class OneRecord {
@@ -89,20 +87,20 @@ public class OneRecord {
 	
 	public OneRecord(ResultSet item_value) throws SQLException
 	{
-		this.setID((String) item_value.getString("id"));
-		this.setDate( (Date) item_value.getDate("f_date"));
-		this.setType((String) item_value.getString("f_type"));
-		this.setDetail((String) item_value.getString("detail"));
-		this.setUnitPrice((double) item_value.getDouble("unit_price"));
-		this.setAmount((double) item_value.getDouble("amount"));
-		this.setExpense((double) item_value.getDouble("expense"));
-		this.setIncome((double) item_value.getDouble("income"));
-		this.setAccount((String) item_value.getString("account"));
-		this.setComment((String) item_value.getString("comment"));
-		this.setOperatorID((String) item_value.getString("operator_id"));
-		this.setOperatDate((Date) item_value.getDate("operate_date"));
-		this.setOperatTime(op_time = (Time) item_value.getTime("operate_time"));
-		this.setMark((String) item_value.getString("mark"));
+		this.setID(item_value.getString("id"));
+		this.setDate( item_value.getDate("f_date"));
+		this.setType(item_value.getString("f_type"));
+		this.setDetail(item_value.getString("detail"));
+		this.setUnitPrice(item_value.getDouble("unit_price"));
+		this.setAmount(item_value.getDouble("amount"));
+		this.setExpense(item_value.getDouble("expense"));
+		this.setIncome(item_value.getDouble("income"));
+		this.setAccount(item_value.getString("account"));
+		this.setComment(item_value.getString("comment"));
+		this.setOperatorID(item_value.getString("operator_id"));
+		this.setOperatDate(item_value.getDate("operate_date"));
+		this.setOperatTime(op_time = item_value.getTime("operate_time"));
+		this.setMark(item_value.getString("mark"));
 	}
 	
 	public OneRecord(Date date, String type, String detail, double unitPrice, double amount, double expense, 
@@ -168,7 +166,7 @@ public class OneRecord {
 	}
 	public String getString(int idx)
 	{
-		Object r = this.item_value.get(this.attList[idx]);
+		Object r = this.item_value.get(OneRecord.attList[idx]);
 		if(r!=null)
 			return r.toString();
 		else
@@ -359,6 +357,7 @@ public class OneRecord {
 	}
 	
 	
+	@Override
 	public String toString()
 	{
 		return this.id+"\t"+ this.account+"\t"+this.detail+"\t"+this.unit_price;

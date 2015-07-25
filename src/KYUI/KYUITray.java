@@ -3,6 +3,7 @@ package KYUI;
 
 
 import java.awt.AWTException;
+import java.awt.Frame;
 import java.awt.Image;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
@@ -69,7 +70,7 @@ public class KYUITray implements ActionListener, MouseListener {
 		}else if (e.getSource() == open) {
 			//displayInfo();
 			//JOptionPane.showMessageDialog(null,"this is open");
-			mainUI.setExtendedState(JFrame.NORMAL);
+			mainUI.setExtendedState(Frame.NORMAL);
 			mainUI.setVisible(true);
 			//friendListSet(true);
 			
@@ -82,7 +83,7 @@ public class KYUITray implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		if (e.getClickCount() == 1 && e.getButton() != MouseEvent.BUTTON3) {
 			
-			mainUI.setExtendedState(JFrame.NORMAL);
+			mainUI.setExtendedState(Frame.NORMAL);
 			mainUI.setVisible(true);
 
 		}
@@ -126,6 +127,7 @@ public class KYUITray implements ActionListener, MouseListener {
 	
 	public void displayInfoListener() {
 		new Thread(new Runnable() {// 
+					@Override
 					public void run() {
 						while (true) {
 							try {

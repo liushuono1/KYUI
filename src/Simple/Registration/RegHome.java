@@ -2,13 +2,7 @@ package Simple.Registration;
 
 import bb.gui.base.BaseHomePage;
 import bb.gui.base.ClientUI;
-import bb.gui.hr.EmployeeHomePageByLastNameSearchPane;
-import bb.gui.hr.EmployeeHomePageLookupSearchPane;
-import bb.gui.hr.EmployeeHomePageTrainingSearchPane;
-import bb.gui.hr.HumanResourceUtil;
-import bb.gui.swing.MulHomePage;
 import bb.gui.swing.homepage.HomePageGroupPane;
-import bb.gui.ware.label.LabelHomePageMakeEmployeeLabels;
 
 
 
@@ -20,6 +14,7 @@ public class RegHome extends BaseHomePage {
 		HomePageGroupPane group = getTabPane(0).getGroupPane(0);
 		newStu ui= new  newStu(0)
 		{
+			@Override
 			public String getButtonText() {
 				return "添加新的宝一班学生";
 			}
@@ -28,6 +23,7 @@ public class RegHome extends BaseHomePage {
 		
 		 ui= new  newStu(1)
 		{
+			@Override
 			public String getButtonText() {
 				return "添加新的宝二班学生";
 			}
@@ -36,6 +32,7 @@ public class RegHome extends BaseHomePage {
 		
 		 ui= new  newStu(2)
 		{
+			@Override
 			public String getButtonText() {
 				return "添加新的小一班学生";
 			}
@@ -43,6 +40,7 @@ public class RegHome extends BaseHomePage {
 		group.addSearchPane(ui);
 		 ui= new  newStu(3)
 		{
+			@Override
 			public String getButtonText() {
 				return "添加新的小二班学生";
 			}
@@ -51,6 +49,7 @@ public class RegHome extends BaseHomePage {
 		
 		 ui= new  newStu(4)
 		{
+			@Override
 			public String getButtonText() {
 				return "添加新的中班学生";
 			}
@@ -59,6 +58,7 @@ public class RegHome extends BaseHomePage {
 		
 		 ui= new  newStu(5)
 		{
+			@Override
 			public String getButtonText() {
 				return "添加新的大班学生";
 			}

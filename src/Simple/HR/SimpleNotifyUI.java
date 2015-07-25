@@ -32,10 +32,6 @@ import javax.swing.JTextArea;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 
-import KYUI.KYMainUI;
-import bb.common.EmployeeCardVO;
-import bb.gui.base.ClientUI;
-
 
 public class SimpleNotifyUI extends JPanel{
 	LinkedList<Checkbox> box_list ;
@@ -143,6 +139,7 @@ public class SimpleNotifyUI extends JPanel{
 		int SERVERPORT=990;
 		String ClientIP =client.ClientIP;
 		
+		@Override
 		public void run(){
 			if(ClientIP.contains("0.0.0.0"))
 				return;
@@ -269,6 +266,7 @@ class NotifyClient
 	public java.sql.Timestamp Reg_Date;
 	public java.sql.Time Reg_Time;
 	public boolean online;
+	@Override
 	public String toString()
 	{
 		return  ClientID+" "+OP_ID+" "+ClientIP+"  "+online;

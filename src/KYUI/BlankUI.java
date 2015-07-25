@@ -29,6 +29,7 @@ public class BlankUI extends ClientUI {
 	}
 
 
+	@Override
 	public String getTitle()
 	{
 		return Title;

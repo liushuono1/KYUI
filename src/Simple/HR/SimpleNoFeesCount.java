@@ -11,7 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-
+import javax.swing.ScrollPaneConstants;
+import javax.swing.WindowConstants;
 
 import KYUI.KYMainUI;
 
@@ -65,9 +66,9 @@ public class SimpleNoFeesCount extends JFrame{
 		JTextArea area = new JTextArea(output);
 		area.setText(output);
 		JScrollPane jsp=new JScrollPane(area);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		this.getContentPane().add(BorderLayout.CENTER,jsp);
-		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 		
 		
 	}

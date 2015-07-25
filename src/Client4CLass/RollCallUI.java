@@ -9,7 +9,6 @@ import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -220,8 +219,8 @@ public class RollCallUI extends ClientUI implements KYRefreshable{
 		Collection<EmployeeCardVO> temp=null,ret=null;
 		try {
 			EmployeeCardVO user =HRServerActionManager.getInstance().getEmployeeSelf();
-			temp= HRServerActionManager.getInstance().findEmployeeCardsByDepartment(user.getDepartment(), false, 0, this.classMax);
-			ret= HRServerActionManager.getInstance().findEmployeeCardsByDepartment(user.getDepartment(), false, 0, this.classMax);
+			temp= HRServerActionManager.getInstance().findEmployeeCardsByDepartment(user.getDepartment(), false, 0, RollCallUI.classMax);
+			ret= HRServerActionManager.getInstance().findEmployeeCardsByDepartment(user.getDepartment(), false, 0, RollCallUI.classMax);
 			ret.removeAll(temp);
 		} catch (ServerActionException e) {
 			// TODO Auto-generated catch block
@@ -256,6 +255,7 @@ public class RollCallUI extends ClientUI implements KYRefreshable{
 	
 	
 
+	@Override
 	public String getTitle()
 	{
 		return classType+"学生名单";
@@ -273,7 +273,7 @@ public class RollCallUI extends ClientUI implements KYRefreshable{
 		if(max<20)
 		{
 			this.column=5;
-			this.row=(int)max/5 +1;
+			this.row=max/5 +1;
 			return;
 		}
 		for(int i=5;i<10;i++)
@@ -404,6 +404,7 @@ public class RollCallUI extends ClientUI implements KYRefreshable{
 		
 	}
 	
+	@Override
 	public void refresh()
 	{
 		getStatusDatebase();

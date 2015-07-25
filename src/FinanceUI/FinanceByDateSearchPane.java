@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
 
 import AuthModule.CardAuth;
@@ -25,7 +24,8 @@ public class FinanceByDateSearchPane extends HomePageMultiRowSearchPane {
 
 	 }
 	 
-	 public ClientUI getSearchResultUI()
+	 @Override
+	public ClientUI getSearchResultUI()
      throws ServerActionException
      {
 		 

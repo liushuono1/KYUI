@@ -1,19 +1,7 @@
 package kyHRUI.Stuff;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Collection;
-import java.util.Properties;
-
-import Client4CLass.RollCallUI;
-import FinaceUI.Manege.FeesUtils;
-import FinaceUI.Manege.setFees.one_fee;
-import KYUI.KYMainUI;
 import bb.common.EmployeeCardVO;
-import bb.gui.ClientConst;
 import bb.gui.ServerActionException;
 import bb.gui.base.AddActionPane;
 import bb.gui.hr.HumanResourceUtil;
@@ -35,6 +23,7 @@ public newStuff(String ClassType) {
 }
 
 
+@Override
 public AddActionPane getAddActionPane() {
 	
 	String id=geneID();
@@ -107,11 +96,13 @@ public String firstIDbyType(String classtype)
 }
 
 
+@Override
 public String getAddUiTitle() {
 	return HumanResourceUtil
 			.getString("EmployeeActionManager.AddanEmployeeCard");
 }
 
+@Override
 public String getButtonText() {
 	return "添加新的学生";
 }

@@ -33,7 +33,8 @@ class NFCWaitingThread extends Thread
 		}
     }
         
-    public void run()
+    @Override
+	public void run()
     {
 		String fileName,fileName2;
 		String cardID="";

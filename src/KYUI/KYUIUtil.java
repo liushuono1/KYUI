@@ -20,10 +20,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import twaver.TWaverUtil;
-import bb.gui.ClientConst;
-import bb.gui.ClientContext;
 import bb.gui.company.app.AppUtil;
-import bb.gui.conf.ConfigurationBuilder;
 import free.FreeMainUILogo;
 import free.FreeMenu;
 import free.FreeMenuBar;
@@ -128,7 +125,7 @@ public class KYUIUtil {
 				Icon icon = getIconAttribute(itemNode, "icon");
 				String command = FreeUtil.getStringAttribute(itemNode, "action");
 				String id = FreeUtil.getStringAttribute(itemNode, "id");
-				OperateCode code = (OperateCode) OperateCodeManager.operateCodeMap
+				OperateCode code = OperateCodeManager.operateCodeMap
 						.get(command);
 				visible = code != null ? code.isVisible() : true;
 				if (!visible)

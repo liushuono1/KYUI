@@ -42,7 +42,8 @@ public class StatisticByMonthPane extends HomePageMultiRowSearchPane {
 		 return jb;
 	 }
 	 
-	  public ClientUI getSearchResultUI()       
+	  @Override
+	public ClientUI getSearchResultUI()       
 	  		throws ServerActionException
 	  {
 		  final String input = ((JComboBox)getInputComponent(0)).getSelectedItem().toString();

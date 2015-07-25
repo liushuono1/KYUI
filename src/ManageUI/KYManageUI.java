@@ -2,73 +2,47 @@ package ManageUI;
 
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Toolkit;
-import java.awt.Window;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import kyHRUI.Student.RegHome;
 import kyHRUI.Student.SearchHome;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import twaver.Node;
-import twaver.TDataBox;
 import twaver.tree.TTree;
-import bb.common.CompanyVO;
 import bb.gui.AbstractMainUI;
 import bb.gui.BBConfiguration;
 import bb.gui.ClientConst;
 import bb.gui.CommonUI;
 import bb.gui.Main;
-import bb.gui.ServerActionException;
 import bb.gui.base.ClientUI;
 import bb.gui.base.CompanyComboBox;
 import bb.gui.base.LanguageComboBox;
 import bb.gui.base.ServerComboBox;
-import bb.gui.conf.MainTreeHelper;
-import bb.gui.hr.EmployeeActionManager;
 import bb.gui.i18n.BB2Translator;
 import bb.gui.main.ClientChecker;
 import bb.gui.main.MainUIActionManager;
 import bb.gui.message.notice.NoticeTreeNode;
-import bb.gui.server.CompanySettingServerActionManager;
-import bb.gui.server.HRServerActionManager;
 import bb.gui.swing.DetachUI;
 import free.FreeMenuBar;
 import free.FreeRootMenu;
@@ -76,15 +50,16 @@ import free.FreeTextField;
 import free.FreeUtil;
 import free.LoginUI;
 import AuthModule.CardAuth;
+import AuthModule.CardUtils;
 import Client4CLass.eastPanel;
 import KYUI.AskForLeaveUI;
 import KYUI.EastPanel;
 import KYUI.KYMainUI;
-import KYUI.KYUITray;
 import KYUI.MissionControl;
 import KYUI.MissionControlAction;
 import KYUI.RestoreWindow;
 import KYUI.ScrollInfoPane;
+import Simple.CardsLib;
 import Simple.HR.SimpleNoFeesCount;
 
 
@@ -101,10 +76,10 @@ public class KYManageUI extends KYMainUI{
 	
 	public KYManageUI()
 	{
-		KYManageUI.getInstance();
+		KYMainUI.getInstance();
 		//System.out.println(KYMainUI.SQLIP);
 		this.setClientLevel(1);
-		this.setExtendedState(JFrame.NORMAL); 
+		this.setExtendedState(Frame.NORMAL); 
 		setTitle(getTitle()+KYMainUI.department);
 		this.removeWindowListener(this.getWindowListeners()[0]);
 		
@@ -121,7 +96,7 @@ public class KYManageUI extends KYMainUI{
 		showTab(new bb.gui.company.homepage.CompanyHomepageUI());
 		
 		replace_node_name();
-		System.err.println("kyui--->"+ KYMainUI.isInstanced());
+		System.err.println("kyui--->"+ AbstractMainUI.isInstanced());
 		
 		closeLoginUI();
 
@@ -208,15 +183,18 @@ public class KYManageUI extends KYMainUI{
 		
 	}
 
+	@Override
 	public boolean isDisplayTree() {
 		return true;
 	}
 	
 	
+	@Override
 	public String getMainTreeXML() {
 		return "/ManageUI/ManageTree.xml";
 	}
 	
+	@Override
 	final public JPanel getEastPane()
 	{
 		if(getScrollInfoPane()==null)
@@ -306,10 +284,12 @@ public class KYManageUI extends KYMainUI{
 		
 		addWindowListener(new java.awt.event.WindowListener() {
 
+			@Override
 			public void windowClosing(java.awt.event.WindowEvent e) {
 				WindowIconfied();
 			}
 
+			@Override
 			public void windowClosed(java.awt.event.WindowEvent e) {
 				/*//AbstractMainUI() = false;
 				if (AbstractMainUI.getInstance() != null) {
@@ -321,6 +301,7 @@ public class KYManageUI extends KYMainUI{
 				}*/
 			}
 
+			@Override
 			public void windowOpened(java.awt.event.WindowEvent e) {
 				ClientChecker.checkBB2(AbstractMainUI.getInstance());
 			}
@@ -357,18 +338,19 @@ public class KYManageUI extends KYMainUI{
 	private void WindowIconfied()
 	{
 		RestoreWindow.getInstance().setTitle(KYMainUI.department);
-		RestoreWindow.getInstance().setMainUI(KYManageUI.getInstance());
+		RestoreWindow.getInstance().setMainUI(KYMainUI.getInstance());
 		RestoreWindow.getInstance().setScrollInfoPane(getScrollInfoPane());
 		DetachUI s = RestoreWindow.getDetachRestoreWindow();
 		if(getScrollInfoPane()!=null){
 			getScrollInfoPane().setLines(1);
-			getScrollInfoPane().setPreferredSize(new Dimension(eastPanel.getInstance().getSize().width,25));
+			getScrollInfoPane().setPreferredSize(new Dimension(EastPanel.getInstance().getSize().width,25));
 		}
 		s.setVisible(true);
-		setExtendedState(JFrame.ICONIFIED);
+		setExtendedState(Frame.ICONIFIED);
 		setVisible(false);
 	}
 	
+	@Override
 	public void restore() {
 		// TODO Auto-generated method stub
 		if(getScrollInfoPane()!=null){
@@ -379,6 +361,7 @@ public class KYManageUI extends KYMainUI{
 	}
 	
 	
+	@Override
 	public FreeMenuBar getKYMenubar()
 	{
  
@@ -466,11 +449,27 @@ public class KYManageUI extends KYMainUI{
 	        }
 	    });
 	    menu.add(item);
+	    
+	    item = new JMenuItem("≤È’“µÁÃ›ø®");
+	    item.addActionListener(new ActionListener() {
+	 
+
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+
+		    	
+	        	CardsLib cl=CardsLib.getInstance();
+	        	
+	        	JOptionPane.showMessageDialog(null,cl.getInfo(CardUtils.GetCardIDn().substring(0, 8)));
+	        }
+	    });
+	    menu.add(item);
 	    return menu;
 	}
 	
 	
 	
+	@Override
 	public void closing() {
 		if (KYMainUI.getInstance().isCloseAble()) {
 			int answer = CommonUI.showWarningConfirm(this,
@@ -511,6 +510,7 @@ public class KYManageUI extends KYMainUI{
 	    menu.add(item);
 	    return menu;
 	}
+	@Override
 	public void refresh()
 	{
 		EastPanel.getInstance().refresh();
@@ -586,6 +586,7 @@ public class KYManageUI extends KYMainUI{
 		
 		ActionListener loginactionListener =new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 
 				boolean valid= CardAuth.Logon_Auth(login,getRequiredLevel());

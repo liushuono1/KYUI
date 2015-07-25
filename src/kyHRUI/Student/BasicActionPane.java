@@ -31,6 +31,7 @@ public class BasicActionPane extends HomePageBaseSearchPane {
 		return "";
 	};
 	
+	@Override
 	public ClientUI getSearchResultUI() {
 		
 		return null;

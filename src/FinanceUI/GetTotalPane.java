@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import bb.common.EmployeeCardVO;
 import bb.gui.base.ClientUI;
 import kyHRUI.Student.BasicActionPane;
 
@@ -18,6 +17,7 @@ String account;
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	public ClientUI getSearchResultUI() {
 		
 		Collection<OneRecord> records = FinanceUtil.getRecordsByAccount(new java.sql.Date(System.currentTimeMillis()).toString(),account);
@@ -65,6 +65,7 @@ String account;
 	}
 
 	
+	@Override
 	public String getButtonText() {
 		return "≤È—Ø”‡∂Ó";
 	}

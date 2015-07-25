@@ -1,7 +1,5 @@
 package kyHRUI.Student;
 
-import bb.gui.base.*;
-
 import bb.gui.hr.EmployeeListUI;
 
 

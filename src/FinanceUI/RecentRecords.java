@@ -3,10 +3,6 @@ package FinanceUI;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.File;
-import java.util.Hashtable;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -14,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
 
 import AuthModule.CardAuth;
@@ -34,8 +31,8 @@ public class RecentRecords extends ClientUI{
 			
 			//table.setSize(panel.getWidth(), panel.getHeight());
 			JScrollPane ScrollBtnPanel = new JScrollPane(table);
-			ScrollBtnPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-			ScrollBtnPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+			ScrollBtnPanel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+			ScrollBtnPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 			panel.add(BorderLayout.CENTER,ScrollBtnPanel);
 			panel.add(BorderLayout.SOUTH,refreashBtn());
 			

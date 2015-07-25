@@ -3,6 +3,7 @@ package KYUI;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import AuthModule.CardAuth;
 import bb.gui.base.ClientUI;
@@ -84,7 +86,7 @@ public class RestoreWindow extends ClientUI {
 				y = Toolkit.getDefaultToolkit().getScreenSize().height ;
 				outFrame.setLocation(x-170,y-190);
 				outFrame.setType(Window.Type.UTILITY);
-				outFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+				outFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 				outFrame.setUndecorated(true);
 				outFrame.setAlwaysOnTop(true);
 			}else
@@ -95,7 +97,7 @@ public class RestoreWindow extends ClientUI {
 				y = Toolkit.getDefaultToolkit().getScreenSize().height ;
 				outFrame.setLocation(x-170,y-215);
 				outFrame.setType(Window.Type.UTILITY);
-				outFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+				outFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 				outFrame.setUndecorated(true);
 				outFrame.setAlwaysOnTop(true);
 				
@@ -126,7 +128,7 @@ public class RestoreWindow extends ClientUI {
 		}
 		if(mainUI!=null)
 		{
-			mainUI.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			mainUI.setExtendedState(Frame.MAXIMIZED_BOTH);
 			mainUI.setVisible(true);
 			outFrame.setVisible(false);
 				

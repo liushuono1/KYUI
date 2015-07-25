@@ -36,14 +36,16 @@ public class StuProceedUI extends BaseHomePage {
 		
 		group.addSearchPane(null,"查找");
 		MulHomePage lookUpAndSearchPane = new MulHomePage();
-		javax.swing.JPanel pane  = (JPanel) new BasicActionPane(VO)
+		javax.swing.JPanel pane  = new BasicActionPane(VO)
 		{
 			
+			@Override
 			public  String getAddUiTitle()
 			{
 				return "查看详细信息";
 			};
 			
+			@Override
 			public ClientUI getSearchResultUI() {
 				StudentUI ui = new StudentUI();
 				ui.setVO(VO);
@@ -55,14 +57,16 @@ public class StuProceedUI extends BaseHomePage {
 		
 		
 		lookUpAndSearchPane = new MulHomePage();
-		pane  = (JPanel) new BasicActionPane(VO)
+		pane  = new BasicActionPane(VO)
 			{
 				
+				@Override
 				public  String getAddUiTitle()
 				{
 					return "接送卡注册";
 				};
 				
+				@Override
 				public ClientUI getSearchResultUI() {
 					CardRegUI ui = new CardRegUI(VO.getId());
 					return  ui;
@@ -73,14 +77,16 @@ public class StuProceedUI extends BaseHomePage {
 			
 			
 			lookUpAndSearchPane = new MulHomePage();
-			pane  = (JPanel) new BasicActionPane(VO)
+			pane  = new BasicActionPane(VO)
 				{
 					
+					@Override
 					public  String getAddUiTitle()
 					{
 						return "园费缴纳";
 					};
 					
+					@Override
 					public ClientUI getSearchResultUI() {
 						paymentUI ui = new paymentUI(VO);
 						return  ui;

@@ -18,6 +18,7 @@ public class getCashTillDatePane extends BasicActionPane{
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	public ClientUI getSearchResultUI() {
 		String date=JOptionPane.showInputDialog("输入结算的日期：(yyyy-mm-dd):");
 		Collection<OneRecord> records = FinanceUtil.getRecordsByAccount(date,"现金");
@@ -65,6 +66,7 @@ public class getCashTillDatePane extends BasicActionPane{
 	}
 
 	
+	@Override
 	public String getButtonText() {
 		return "查询过往现金余额";
 	}

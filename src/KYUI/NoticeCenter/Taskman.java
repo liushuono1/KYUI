@@ -6,8 +6,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Timer;
-
 import KYUI.KYMainUI;
 
 public class Taskman {

@@ -6,10 +6,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Hashtable;
@@ -22,6 +20,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import KYUI.KYMainUI;
 import KYUI.ScrollInfoPane;
@@ -55,7 +54,7 @@ public class ShowWindow extends ClientUI {
 	public ShowWindow(KYMainUI mainUI)
 	{
 		instence=this;
-		this.mainUI=mainUI;
+		ShowWindow.mainUI=mainUI;
 		
 		try {
 			Thread.sleep(5000);
@@ -66,7 +65,7 @@ public class ShowWindow extends ClientUI {
 		
 		initSwing();
 		
-		this.mainUI.setVisible(false);
+		ShowWindow.mainUI.setVisible(false);
 	}
 	
 	public void reinstance()
@@ -125,7 +124,7 @@ public class ShowWindow extends ClientUI {
 			info = welcomeinfo();
 		}
 		  
-		infoLabel = new JLabel(info,JLabel.CENTER);
+		infoLabel = new JLabel(info,SwingConstants.CENTER);
 		infoLabel.setForeground(Color.MAGENTA);
 		int size;
 		Color c;
@@ -145,7 +144,8 @@ public class ShowWindow extends ClientUI {
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask()
 		 {
-			 public void run() 
+			 @Override
+			public void run() 
 			 {
 				 updateTimeLable();
 				
@@ -164,11 +164,11 @@ public class ShowWindow extends ClientUI {
 		
 		base.setBackground(Color.BLACK);
 		
-		timeLabel = new JLabel(currentTime, JLabel.CENTER);
+		timeLabel = new JLabel(currentTime, SwingConstants.CENTER);
 		timeLabel.setForeground(Color.LIGHT_GRAY);
 		timeLabel.setFont(new java.awt.Font("SimHei",   1,  140));
 		
-		timeLabel2 = new JLabel(currentTime, JLabel.CENTER);
+		timeLabel2 = new JLabel(currentTime, SwingConstants.CENTER);
 		timeLabel2.setForeground(Color.LIGHT_GRAY);
 		timeLabel2.setFont(new java.awt.Font("SimHei",   1,   40));
 		
@@ -198,6 +198,7 @@ public class ShowWindow extends ClientUI {
 	{
 		JPanel drawPanel = new JPanel()
 		{
+			@Override
 			public void paintComponent(Graphics g)
 			{
 				g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);

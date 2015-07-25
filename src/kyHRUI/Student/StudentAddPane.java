@@ -9,11 +9,8 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import Client4CLass.KYClassUI;
-import FinaceUI.Manege.FeesUtils;
 import KYUI.KYMainUI;
 import bb.common.CompanyVO;
 import bb.common.EmployeeCardVO;
@@ -24,7 +21,6 @@ import bb.gui.ServerActionException;
 import bb.gui.base.AddActionPane;
 import bb.gui.base.ClientUI;
 import bb.gui.hr.EmployeeActionManager;
-import bb.gui.hr.EmployeeUI;
 import bb.gui.hr.HumanResourceUtil;
 import bb.gui.server.CompanySettingServerActionManager;
 import bb.gui.server.HRServerActionManager;
@@ -34,7 +30,6 @@ import bb.gui.swing.UWCustomPropertiesPane;
 import bb.gui.swing.UpdateFinishAction;
 import bb.gui.swing.UpdatePane;
 import bb.gui.swing.UpdateStep;
-import bb.gui.swing.UpdateUIFactory;
 
 
 public class StudentAddPane extends AddActionPane {
@@ -65,7 +60,7 @@ public class StudentAddPane extends AddActionPane {
 
 	
 	public StudentAddPane(String id,String classtype) {
-		this.classType=classtype;
+		StudentAddPane.classType=classtype;
 		this.stuID=id;
 		borderLayout1 = new TableLayout(5, 5);
 		jLabel1 = new JLabel();
@@ -116,6 +111,7 @@ public class StudentAddPane extends AddActionPane {
 		ClientUtil.setRequisiteLabel(jLabe4);
 	}
 
+	@Override
 	public boolean add() throws Exception {
 		ClientUtil.trimWindowTextFields(this);
 		String id = txtId.getText().trim();
@@ -195,6 +191,7 @@ public class StudentAddPane extends AddActionPane {
 		return false;*/
 	}
 	
+	@Override
 	public ClientUI getFollowingUI() throws Exception {
 		if (empId != null) {
 			return createUpdateUI(this, empId);
@@ -233,6 +230,7 @@ public class StudentAddPane extends AddActionPane {
 			bb.gui.swing.UpdateFinishAction finishAction = new AbstractFinishAction(
 					vo, parent) {
 
+				@Override
 				public Object submitToServer() throws ServerActionException {
 					
 					//   应该在这里插入新学生费用
@@ -244,6 +242,7 @@ public class StudentAddPane extends AddActionPane {
 							.getEmployeeCardById(employeeId);
 				}
 
+				@Override
 				public ClientUI getDetailUI() {
 					StuProceedUI ui =new StuProceedUI();
 					return ui;

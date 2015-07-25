@@ -9,9 +9,7 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -37,6 +35,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import KYUI.KYMainUI;
@@ -102,7 +102,7 @@ public class Attendance extends JFrame{
 		
 		JPanel classPanel = new JPanel();
 		classPanel.setLayout(new GridLayout(2,4));
-		JLabel label = new JLabel("班级:",JLabel.CENTER);
+		JLabel label = new JLabel("班级:",SwingConstants.CENTER);
 		label.setFont(font1);
 		//classField = new JTextField();
 		//classField.setFont(font1);
@@ -184,7 +184,7 @@ public class Attendance extends JFrame{
 		classPanel.add(classDayButton);//3
 		classPanel.add(classMonthButton);//4
 		
-		JLabel studentLabel = new JLabel("学生: ", JLabel.CENTER);
+		JLabel studentLabel = new JLabel("学生: ", SwingConstants.CENTER);
 		studentLabel.setFont(font1);
 		JButton studentMonth = new JButton("月出勤率");
 		studentMonth.setFont(font1);
@@ -216,8 +216,8 @@ public class Attendance extends JFrame{
 		area.setBackground(Color.LIGHT_GRAY);
 		area.setForeground(Color.BLACK);
 		JScrollPane jsp = new JScrollPane(area);
-		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		
 		JPanel southPanel = new JPanel();
 		southPanel.setLayout(new GridLayout(1, 2));
@@ -419,7 +419,7 @@ public class Attendance extends JFrame{
 		//SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
 		//currentDate = df.format(new Date());// new Date()为获取当前系统时间
 		splitCurrentDate();
-		Enumeration myEnumerate  = (Enumeration) idDate_str.keys();
+		Enumeration myEnumerate  = idDate_str.keys();
 		int counter = 0;
 		while(myEnumerate.hasMoreElements())
 		{
@@ -452,7 +452,7 @@ public class Attendance extends JFrame{
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
 		currentDate = df.format(new Date());// new Date()为获取当前系统时间
 		this.splitCurrentDate();
-		Enumeration myEnumerate  = (Enumeration) idDate_str.keys();
+		Enumeration myEnumerate  = idDate_str.keys();
 		while(myEnumerate.hasMoreElements())
 		{
 			List<String> id_date = (List<String>) myEnumerate.nextElement();
@@ -476,7 +476,7 @@ public class Attendance extends JFrame{
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
 		currentDate = df.format(new Date());// new Date()为获取当前系统时间
 		this.splitCurrentDate();
-		Enumeration myEnumerate  = (Enumeration) stuIdDate_str.keys();
+		Enumeration myEnumerate  = stuIdDate_str.keys();
 		
 		int counter = 0;
 		while(myEnumerate.hasMoreElements())

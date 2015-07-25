@@ -19,7 +19,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 
 import bb.common.EmployeeCardVO;
 import KYUI.EastPanel;
@@ -37,7 +37,7 @@ public class eastPanel extends EastPanel {
 		super();
 		getContentPane().setLayout(new BorderLayout());
 		
-		ScrollInfoPane si=KYClassUI.getInstance().getScrollInfoPane();
+		ScrollInfoPane si=KYMainUI.getInstance().getScrollInfoPane();
 		si.setPreferredSize(new Dimension(getSize().width,100));
 		getContentPane().add(BorderLayout.NORTH,si);
 		getContentPane().add(BorderLayout.CENTER,getAbsentPane());
@@ -90,8 +90,8 @@ public class eastPanel extends EastPanel {
 		
 		
 		JScrollPane jsp = new JScrollPane(buttonPanel);
-		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		//jsp.setPreferredSize(new Dimension(300,300));
 		
 		AbsentPane.add(Lbl,BorderLayout.NORTH);
@@ -176,8 +176,8 @@ public class eastPanel extends EastPanel {
 		medPane.add(medLbl,BorderLayout.NORTH);
 		
 		JScrollPane jsp = new JScrollPane(medTxt);
-		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		jsp.setPreferredSize(new Dimension(300,300));
 		medPane.add(jsp,BorderLayout.CENTER);
 		
@@ -185,6 +185,7 @@ public class eastPanel extends EastPanel {
 		return medPane;
 	}
 	
+	@Override
 	public void refresh()
 	{
 		medTxt.refresh();

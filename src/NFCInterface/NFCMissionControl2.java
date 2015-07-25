@@ -2,27 +2,11 @@ package NFCInterface;
 
 
 import java.awt.AWTEvent;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.AWTEventListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.smartcardio.Card;
-import javax.smartcardio.CardChannel;
-import javax.smartcardio.CardException;
-import javax.smartcardio.CardTerminal;
-import javax.smartcardio.CommandAPDU;
-import javax.smartcardio.ResponseAPDU;
-import javax.smartcardio.TerminalFactory;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 
 import KYUI.MissionControl;
 
@@ -40,7 +24,8 @@ public class NFCMissionControl2 extends MissionControl{
 		this.getAction("NFCControl").StratAction(null);
 		TimerTask task = new TimerTask()
 		 {
-			 public void run() 
+			 @Override
+			public void run() 
 			 {
 				 getAction("NFCControl").TimeRepeatAction(null);;
 				
@@ -85,6 +70,7 @@ public class NFCMissionControl2 extends MissionControl{
 			return this.timelimite;
 	}
 	
+	@Override
 	public void run()
 	{
       		
@@ -111,7 +97,8 @@ public class NFCMissionControl2 extends MissionControl{
     					
 		TimerTask task = new TimerTask()
 		{
-			 public void run() 
+			 @Override
+			public void run() 
 			 { 
 				 String prams[]={"WAITNEXT"};
 				 getAction("NFCControl").RepeatAction(prams);
@@ -140,7 +127,7 @@ class keyReceiver
     		System.out.println(keyStor);
     		System.out.println(codeTrans(keyStor));
     		NFCMissionControl2.cardID=codeTrans(keyStor)+"900";
-    		NFCMissionControl2.Run();
+    		MissionControl.Run();
     		keyStor="";
     	}
     	else
@@ -151,18 +138,24 @@ class keyReceiver
     }
 	public static String codeTrans(String code)
 	{
-		long ori=Long.parseLong(code);
-		
-		String s= Long.toHexString(ori);
-		System.out.println(s);
-		s=("0000"+s).substring(s.length()-4,s.length()+4);
-		System.out.println(s);
-		if(s.length()==8)
+		try{
+		    long ori=Long.parseLong(code);
+		    
+		    String s= Long.toHexString(ori);
+		    System.out.println(s);
+		    s=("0000"+s).substring(s.length()-4,s.length()+4);
+		    System.out.println(s);
+		    if(s.length()==8)
+		    {
+		    	return (c(s.substring(6,8))+c(s.substring(4,6))+c(s.substring(2,4))+c(s.substring(0,2))).toUpperCase();
+		    }else
+		    {
+		    	return "00000000";
+		    }
+		}catch(Exception e)
 		{
-			return (c(s.substring(6,8))+c(s.substring(4,6))+c(s.substring(2,4))+c(s.substring(0,2))).toUpperCase();
-		}else
-		{
-			return "00000000";
+			e.printStackTrace();
+			return "CARDERROR";
 		}
 		
 	}

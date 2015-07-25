@@ -13,7 +13,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,10 +30,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 
 import Client4CLass.CalendarPop;
-import Client4CLass.KYClassUI;
 import bb.gui.base.ClientUI;
 
 public class AskForLeaveUI extends ClientUI{
@@ -86,8 +86,8 @@ public class AskForLeaveUI extends ClientUI{
 		showArea = new JTextArea();
 		showArea.setEditable(false);
 		jsp = new JScrollPane(showArea);
-		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		showAllRecords();
 		
 		JPanel refreshPanel = new JPanel();
@@ -775,7 +775,7 @@ public class AskForLeaveUI extends ClientUI{
 			f.setLocation((a10 - 600) / 2, (b10 - 500) / 2); // 设定位置（屏幕中心）
 			f.setSize(300, 280); // 设定大小
 			f.setVisible(true); // 设定不能缩放
-			f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		
 	}
 	

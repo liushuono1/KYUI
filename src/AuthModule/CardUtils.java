@@ -1,8 +1,6 @@
 package AuthModule;
 
 import java.awt.BorderLayout;
-import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.smartcardio.Card;
@@ -14,7 +12,6 @@ import javax.smartcardio.ResponseAPDU;
 import javax.smartcardio.TerminalFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class CardUtils {
@@ -132,6 +129,8 @@ public class CardUtils {
 	}
 	
 	
+	
+	
 	public static String GetID(CardChannel channel) throws CardException
 	{
 		String response="";
@@ -149,6 +148,105 @@ public class CardUtils {
 		return response;
 		
 
+	}
+	
+	public static String GetIDn(CardChannel channel) throws CardException
+	{
+		String response="";
+		String s = "FFCA000000"; 
+		ResponseAPDU answer = channel.transmit(new CommandAPDU(hexStringToBytes(s)) );
+		
+		//byte[] uid = answer.getData();
+		byte[] uid = answer.getBytes();
+		for(int i=0;i<uid.length;i++)
+		{
+			
+			
+			System.out.print(Integer.toHexString(uid[i] & 0xFF)+" ");
+			if(Integer.toHexString(uid[i] & 0xFF).length()==2)
+				response+=(Integer.toHexString(uid[i] & 0xFF));
+			else
+				response+=("0"+(Integer.toHexString(uid[i] & 0xFF)));
+		}
+		System.out.println();
+		return response;
+		
+
+	}
+	
+	
+
+	public static String GetCardIDn()
+	{
+		if(!CardUtils.getTerminal)
+		{
+			return null;  //没有读卡器的时候，需要替代认证方法，未完成
+		}
+		
+		JFrame TempShow =new TempShowWindow("请把卡放到读卡器上！");
+		TempShow.setVisible(true);
+		String cardID= "";
+	
+				int retry=0;
+				boolean successful = false;
+				while((retry++)<3 && !successful)
+				{
+					try {
+						
+						//System.out.println(terminals.get(0).getName());
+						CardTerminal terminal = terminals.get(0);
+
+						if (terminal.waitForCardPresent(5000)) {
+							
+							TempShow.dispose();
+							Card card = terminal.connect("*");
+							CardChannel channel = card.getBasicChannel();
+							System.out.println(card.getATR().toString());
+							cardID=(CardUtils.GetIDn(channel));
+						}
+						
+						
+						
+						
+						if(!cardID.equals("") && !cardID.equals("630"))
+						{
+							successful=true;
+							System.out.println(">>>>>"+cardID);
+						}else
+						{
+							if(!TempShow.isVisible())
+							{
+								TempShow =new TempShowWindow("读卡失败，请把卡放到读卡器上！");
+								TempShow.setVisible(true);
+							}
+						}
+					
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						if(!TempShow.isVisible())
+						{
+							
+							TempShow =new TempShowWindow("读卡失败，请把卡放到读卡器上！");
+							TempShow.setVisible(true);
+						}
+					}
+				
+				}
+			
+		
+		
+		if(TempShow.isVisible())
+		{
+			JOptionPane.showConfirmDialog(null, "卡读取失败！！");
+			TempShow.setVisible(false);
+			return null;
+		}
+		
+		
+		System.out.println("<<<<<<<"+cardID);
+		return cardID.toUpperCase();
+		
 	}
 	
 	

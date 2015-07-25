@@ -28,6 +28,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import jxl.Workbook;
@@ -168,7 +169,7 @@ public class MorningNoonCheck {
 			f.setLocation((a10 - 600) / 2, (b10 - 500) / 2); // 设定位置（屏幕中心）
 			f.setSize(300, 280); // 设定大小
 			f.setVisible(true); // 设定不能缩放
-			f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			//Continue = true;
 		}
 		///return menu;

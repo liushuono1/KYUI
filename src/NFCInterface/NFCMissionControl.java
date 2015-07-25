@@ -33,7 +33,8 @@ public class NFCMissionControl extends MissionControl{
 		this.getAction("NFCControl").StratAction(null);
 		TimerTask task = new TimerTask()
 		 {
-			 public void run() 
+			 @Override
+			public void run() 
 			 {
 				 getAction("NFCControl").TimeRepeatAction(null);;
 				
@@ -103,6 +104,7 @@ public class NFCMissionControl extends MissionControl{
 			return this.timelimite;
 	}
 	
+	@Override
 	public void run()
 	{
 		String cardID="";

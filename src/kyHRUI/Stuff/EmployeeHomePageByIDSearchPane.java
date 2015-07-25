@@ -3,7 +3,6 @@ package kyHRUI.Stuff;
 import bb.gui.ServerActionException;
 import bb.gui.base.AbstractActionManager;
 import bb.gui.base.ClientUI;
-import bb.gui.base.ListOperationPane;
 import bb.gui.hr.EmployeeListUI;
 import bb.gui.hr.HumanResourceUtil;
 import bb.gui.server.HRServerActionManager;
@@ -11,8 +10,6 @@ import bb.gui.swing.homepage.HomePageSingleTextFieldSearchPane;
 
 import java.util.Collection;
 
-import kyHRUI.Student.StudentActionManager;
-import kyHRUI.Student.StudentListUI;
 
 // Referenced classes of package bb.gui.hr:
 //            HumanResourceUtil, EmployeeListUI
@@ -27,27 +24,31 @@ public class EmployeeHomePageByIDSearchPane extends
 				true);*/
 	}
 
+	@Override
 	protected ClientUI getSearchResultUI(final String input)
 			throws ServerActionException {
 		    EmployeeListUI ui = new EmployeeListUI() {
 			
+			@Override
 			protected AbstractActionManager createActionManager() {
 				
 				System.out.println("Self action added");
 				
 				//System.out.println(getActionManager());
 				
-				AbstractActionManager action = new StudentActionManager(this);
+				AbstractActionManager action = new StuffActionManager(this);
 				return action;
 			}
 
 			
+			@Override
 			public String getTitle()
 			{
 				return "±¦±¦Ãûµ¥";
 				
 			}
 
+			@Override
 			public Collection getDataOnQuickSearch(String searchText,
 					int firstIndex, int length) throws ServerActionException {
 
@@ -56,12 +57,14 @@ public class EmployeeHomePageByIDSearchPane extends
 								firstIndex, length);
 			}
 
+			@Override
 			public int getCountOnQuickSearch(String searchText)
 					throws ServerActionException {
 				return HRServerActionManager.getInstance()
 						.getEmployeeCardsCountByEmployeeId(searchText, false);
 			}
 
+			@Override
 			public Collection queryFromServer(int firstIndex, int maxLength)
 					throws ServerActionException {
 				return HRServerActionManager.getInstance()
@@ -69,11 +72,13 @@ public class EmployeeHomePageByIDSearchPane extends
 								firstIndex, maxLength);
 			}
 
+			@Override
 			public int getTotalCount() throws ServerActionException {
 				return HRServerActionManager.getInstance()
 						.getEmployeeCardsCountByEmployeeId(input, false);
 			}
 
+			@Override
 			public String getQuickSearchTitle(String searchText) {
 				return HumanResourceUtil.getString(
 						"EmployeeHomePageByEmployeeIDSearchPane.Header",

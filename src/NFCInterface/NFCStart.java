@@ -1,6 +1,7 @@
 package NFCInterface;
 
 
+import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -21,10 +22,6 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Properties;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import javax.security.auth.RefreshFailedException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
@@ -89,7 +86,7 @@ public class NFCStart extends KYMainUI{
 		initSpeakEngin();
 		SW=ShowWindow.getinstence(this);
 		DetachUI showUI= new DetachUI(SW);
-		this.setExtendedState(JFrame.ICONIFIED);
+		this.setExtendedState(Frame.ICONIFIED);
 		setFullView(showUI);
 		showUI.setVisible(true);
 		
@@ -157,7 +154,7 @@ public class NFCStart extends KYMainUI{
 		action.setname("NFCControl");
 		this.addAction(action);
 		NFCMissionControl NfcMC = new NFCMissionControl(this);
-		this.NMC=NfcMC;
+		NFCStart.NMC=NfcMC;
 		NMC.SwitchTimeLimite("ON");
 		Thread t = new Thread(NfcMC);
 		t.start();
@@ -172,6 +169,7 @@ public class NFCStart extends KYMainUI{
 	
 	
 
+	@Override
 	public void DealMsg(String[] msg)
 	{
 		System.out.println("here\n"+"\n"+msg[1]+"\nend");
@@ -222,6 +220,7 @@ public class NFCStart extends KYMainUI{
 
 	
 
+	@Override
 	public void closing() {
 		if (this.isCloseAble()) {
 			int answer = CommonUI.showWarningConfirm(this,
@@ -255,22 +254,26 @@ public class NFCStart extends KYMainUI{
 		frame.setType(Window.Type.UTILITY);
 	}
 	
+	@Override
 	public boolean isDisplayEastPane()
 	{
 		return false;
 	}
 	
+	@Override
 	public boolean isDisplayNoticePane()
 	{
 		return false;
 	}
 	
 	
+	@Override
 	public boolean isDisplayTree() {
 		return false;
 	} 
 	
 	
+	@Override
 	public FreeMenuBar getKYMenubar()
 	{
 		
@@ -296,11 +299,11 @@ public class NFCStart extends KYMainUI{
 	        		ui=ShowWindow.getinstence();
 	        	}catch(Exception ex)
 	        	{
-	        		ui=ShowWindow.getinstence(NFCStart.getInstance());
+	        		ui=ShowWindow.getinstence(KYMainUI.getInstance());
 	        	}
 	        	
 	    		DetachUI showUI= new DetachUI(ui);
-	    		NFCStart.getInstance().setExtendedState(JFrame.ICONIFIED);
+	    		KYMainUI.getInstance().setExtendedState(Frame.ICONIFIED);
 	    		setFullView(showUI);
 	    		showUI.setVisible(true);
 	        }
@@ -523,6 +526,7 @@ public class NFCStart extends KYMainUI{
 		int SERVERPORT=990;
 		String ClientIP= getClientIP(Emp);
 		
+		@Override
 		public void run(){
 			if(ClientIP.contains("0.0.0.0"))
 				return;
@@ -790,16 +794,16 @@ public class NFCStart extends KYMainUI{
 		// TODO Auto-generated method stub
   		if(emp.getSecurityLevel().contains("LEVEL 5") || emp.getSecurityLevel().contains("LEVEL 4"))
   		{
-  			this.speakEngin.say(emp.getCompanyAddressBookName()+"Ð¡ÅóÓÑ");
+  			NFCStart.speakEngin.say(emp.getCompanyAddressBookName()+"Ð¡ÅóÓÑ");
   		
   		}
   		
   		else
   		{
   			if(Integer.parseInt(status)%2==1)
-  				this.speakEngin.say("Miss "+emp.getCompanyAddressBookName().charAt(0)+",ÔÙ¼û");
+  				NFCStart.speakEngin.say("Miss "+emp.getCompanyAddressBookName().charAt(0)+",ÔÙ¼û");
   			else
-  				this.speakEngin.say("»¶Ó­Äã£¬ Miss "+emp.getCompanyAddressBookName().charAt(0));
+  				NFCStart.speakEngin.say("»¶Ó­Äã£¬ Miss "+emp.getCompanyAddressBookName().charAt(0));
   		}
   		
 	}

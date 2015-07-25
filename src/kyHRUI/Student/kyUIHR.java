@@ -28,6 +28,7 @@ public class kyUIHR extends ClientUI {
 		this.setVisible(true);
 	}
 	
+	@Override
 	public String getTitle()
 	{
 		return "È«Ô±³öÇÚ";

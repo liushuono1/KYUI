@@ -3,9 +3,6 @@ package FinanceUI;
 import javax.swing.JPanel;
 
 import bb.gui.base.BaseHomePage;
-import bb.gui.hr.EmployeeHomePageByEmployeeIDSearchPane;
-import bb.gui.hr.EmployeeHomePageByLastNameSearchPane;
-import bb.gui.swing.MulHomePage;
 import bb.gui.swing.homepage.HomePageGroupPane;
 
 public class Homepage extends BaseHomePage {

@@ -4,7 +4,6 @@ import bb.common.EmployeeCardVO;
 import bb.gui.ServerActionException;
 import bb.gui.base.AbstractActionManager;
 import bb.gui.base.ClientUI;
-import bb.gui.base.ListOperationPane;
 import bb.gui.hr.EmployeeListUI;
 import bb.gui.hr.HumanResourceUtil;
 import bb.gui.server.HRServerActionManager;
@@ -14,7 +13,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import kyHRUI.Student.StudentActionManager;
-import kyHRUI.Student.StudentListUI;
 
 // Referenced classes of package bb.gui.hr:
 //            HumanResourceUtil, EmployeeListUI
@@ -29,10 +27,12 @@ public class EmployeeHomePageByIDSearchPane extends
 				true);*/
 	}
 
+	@Override
 	protected ClientUI getSearchResultUI(final String input)
 			throws ServerActionException {
 		    EmployeeListUI ui = new EmployeeListUI() {
 			
+			@Override
 			protected AbstractActionManager createActionManager() {
 				
 				System.out.println("Self action added");
@@ -44,12 +44,14 @@ public class EmployeeHomePageByIDSearchPane extends
 			}
 
 			
+			@Override
 			public String getTitle()
 			{
 				return "±¦±¦Ãûµ¥";
 				
 			}
 
+			@Override
 			public Collection getDataOnQuickSearch(String searchText,
 					int firstIndex, int length) throws ServerActionException {
 
@@ -57,6 +59,7 @@ public class EmployeeHomePageByIDSearchPane extends
 				return ret;
 			}
 
+			@Override
 			public int getCountOnQuickSearch(String searchText)
 					throws ServerActionException {
 				//return HRServerActionManager.getInstance()
@@ -67,12 +70,14 @@ public class EmployeeHomePageByIDSearchPane extends
 				return this.getStudentcount(searchText);
 			}
 
+			@Override
 			public Collection queryFromServer(int firstIndex, int maxLength)
 					throws ServerActionException {
 				Collection<EmployeeCardVO> ret = this.findStudentCardsByEmployeeId(searchText, firstIndex, maxLength);
 				return ret;
 			}
 
+			@Override
 			public int getTotalCount() throws ServerActionException {
 				//return HRServerActionManager.getInstance()
 				//		.getEmployeeCardsCountByEmployeeId(input, false);
@@ -81,6 +86,7 @@ public class EmployeeHomePageByIDSearchPane extends
 				return this.getStudentcount(input);
 			}
 
+			@Override
 			public String getQuickSearchTitle(String searchText) {
 				return HumanResourceUtil.getString(
 						"EmployeeHomePageByEmployeeIDSearchPane.Header",

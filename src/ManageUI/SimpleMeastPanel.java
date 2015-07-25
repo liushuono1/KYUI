@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -20,12 +19,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 
 import bb.common.EmployeeCardVO;
 import bb.gui.ServerActionException;
 import bb.gui.server.HRServerActionManager;
-import Client4CLass.KYClassUI;
 import Client4CLass.sqlQueryArea;
 import KYUI.EastPanel;
 import KYUI.KYMainUI;
@@ -42,7 +40,7 @@ public class SimpleMeastPanel extends EastPanel{
 		super();
 		this.setLayout(new BorderLayout());
 		
-		ScrollInfoPane si=KYClassUI.getInstance().getScrollInfoPane();
+		ScrollInfoPane si=KYMainUI.getInstance().getScrollInfoPane();
 		si.setPreferredSize(new Dimension(getSize().width,100));   ///此处代码需要统一为eastPanewidget
 		
 		this.add(BorderLayout.CENTER,getTeacherPane());
@@ -144,8 +142,8 @@ public class SimpleMeastPanel extends EastPanel{
 		
 		
 		JScrollPane jsp = new JScrollPane(buttonPanel);
-		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		jsp.setPreferredSize(new Dimension(300,300));
 		
 		AbsentPane.add(Lbl,BorderLayout.NORTH);
@@ -156,6 +154,7 @@ public class SimpleMeastPanel extends EastPanel{
 	
 	
 	
+	@Override
 	public void refresh()
 	{
 		
@@ -307,8 +306,8 @@ public class SimpleMeastPanel extends EastPanel{
 		medPane.add(medLbl,BorderLayout.NORTH);
 		
 		JScrollPane jsp = new JScrollPane(medTxt);
-		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		//jsp.setPreferredSize(new Dimension(300,300));
 		medPane.add(jsp,BorderLayout.CENTER);
 		

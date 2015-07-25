@@ -26,12 +26,13 @@ public class NoticeControl extends MissionControl{
 	public NoticeControl(MissionControlledObj Obj) {
 		super(Obj);
 		SI =((KYMainUI)Obj).getScrollInfoPane();
-		SE=((KYMainUI)Obj).getSpeakEngin();
+		SE=KYMainUI.getSpeakEngin();
 		
 		getAction("NoticeAction").StratAction(null);
 		TimerTask task = new TimerTask()
 		 {
-			 public void run() 
+			 @Override
+			public void run() 
 			 {
 				 getAction("NoticeAction").TimeRepeatAction(null);
 				
@@ -41,6 +42,7 @@ public class NoticeControl extends MissionControl{
 		 timer.schedule(task, 0, 3600*1000);
 	}
 	
+	@Override
 	public void run()
 	{
 		try {
@@ -76,7 +78,8 @@ class EchoThread extends Thread {
         s = incoming;
         n = missionControlAction;
     }
-    public void run() {
+    @Override
+	public void run() {
     	String recivedTxt="";
     	
         try {

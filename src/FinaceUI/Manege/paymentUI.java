@@ -8,7 +8,6 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,13 +26,13 @@ import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 import bb.common.EmployeeCardVO;
 import bb.gui.base.ClientUI;
@@ -130,6 +129,7 @@ public class paymentUI extends ClientUI implements NFCInterface {
 	}
 	
 	
+	@Override
 	public String getTitle()
 	{
 		return "学生缴费";
@@ -1103,8 +1103,8 @@ public class paymentUI extends ClientUI implements NFCInterface {
 		Calendar calendar=Calendar.getInstance();
 		calendar.set(Calendar.YEAR, year);
 		calendar.set(Calendar.MONTH, month);//某一月(1月份是0));
-		int end=calendar.getActualMaximum(calendar.DAY_OF_MONTH);
-		int begin=calendar.getActualMinimum(calendar.DAY_OF_MONTH);
+		int end=calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+		int begin=calendar.getActualMinimum(Calendar.DAY_OF_MONTH);
 		String begin_date = String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(begin);
 		String end_date = String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(end);
 		String[] ret = new String[2];
@@ -1570,8 +1570,8 @@ public class paymentUI extends ClientUI implements NFCInterface {
 		area.setFont( new Font("标楷体",Font.BOLD,25));
 		area.setBackground(Color.LIGHT_GRAY);
 		JScrollPane jsp = new JScrollPane(area);
-		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		jsp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		
 		detaiPanle.add(jsp);
 		return jsp; 

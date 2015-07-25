@@ -4,23 +4,17 @@ package AuthModule;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.smartcardio.Card;
 import javax.smartcardio.CardChannel;
-import javax.smartcardio.CardException;
 import javax.smartcardio.CardTerminal;
-import javax.smartcardio.CommandAPDU;
-import javax.smartcardio.ResponseAPDU;
-import javax.smartcardio.TerminalFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -45,7 +39,7 @@ public class CardAuth {
 	
 	public static void CardAuth(KYMainUI hostUI)
 	{
-		System.out.println(">>>>"+hostUI.getClass().getName()+"  "+hostUI.logonUser.getId());
+		System.out.println(">>>>"+hostUI.getClass().getName()+"  "+KYMainUI.logonUser.getId());
 		
 		StackTraceElement[] stack = (new Throwable()).getStackTrace();
 
@@ -486,7 +480,7 @@ public class CardAuth {
 			if(KYMainUI.clientLevel()==0)   //比较乱，需要重写！！！！
 				return 1;
 			
-			if(ValidPositionType(hostUI.logonUser.getPosition())==2)
+			if(ValidPositionType(KYMainUI.logonUser.getPosition())==2)
 					return 1;
 			
 			
@@ -524,7 +518,7 @@ public class CardAuth {
         	if(isManageCard(CARD.CardID))
         		return 1;
         	
-        	if(CARD.getID().equals(hostUI.logonUser.getId()))
+        	if(CARD.getID().equals(KYMainUI.logonUser.getId()))
         		return 1;
 		
         }else if(mode==2)

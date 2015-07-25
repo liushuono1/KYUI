@@ -22,6 +22,8 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 import KYUI.KYMainUI;
 import bb.common.EmployeeCardVO;
@@ -120,7 +122,8 @@ public class allCheck extends JFrame{
          JPanel buttonPanel = new JPanel();
          JButton cbtn=new JButton("晨、午检");
          cbtn.addActionListener(new ActionListener(){
-             public void actionPerformed(ActionEvent e) {
+             @Override
+			public void actionPerformed(ActionEvent e) {
                  //当按下Change按钮时，显示second 对应的JPanel p2
                  ((CardLayout)p.getLayout()).show(p, "first");
              }            
@@ -129,7 +132,8 @@ public class allCheck extends JFrame{
          buttonPanel.add(cbtn);
          buttonPanel.add(medcine);
          medcine.addActionListener(new ActionListener(){
-             public void actionPerformed(ActionEvent e) {
+             @Override
+			public void actionPerformed(ActionEvent e) {
                  //当按下Change按钮时，显示second 对应的JPanel p2
                  ((CardLayout)p.getLayout()).show(p, "second");
              }            
@@ -139,7 +143,7 @@ public class allCheck extends JFrame{
          this.add(p,BorderLayout.CENTER);
          this.setSize(420,350);
          this.setVisible(true);
-         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+         this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
     }
    
     public JPanel zeroPanel()
@@ -187,7 +191,7 @@ public class allCheck extends JFrame{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				 KYClassUI.getInstance().getAction().get(0).RepeatAction(null);
+				 KYMainUI.getInstance().getAction().get(0).RepeatAction(null);
 				instence.dispose();
 			}
     		

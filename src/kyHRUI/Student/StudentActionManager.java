@@ -11,9 +11,7 @@ import bb.gui.base.AddUI;
 import bb.gui.base.ClientUI;
 import bb.gui.hr.EmployeeActionManager;
 import bb.gui.hr.EmployeeListUI;
-import bb.gui.hr.EmployeeUI;
 import bb.gui.hr.HumanResourceUtil;
-import bb.gui.hr.UWEmployeeGeneralPane;
 import bb.gui.server.HRServerActionManager;
 import bb.gui.swing.AbstractFinishAction;
 import bb.gui.swing.UpdateUIFactory;
@@ -32,17 +30,20 @@ public class StudentActionManager extends EmployeeActionManager {
 	}
 
 
+	@Override
 	protected ClientUI getAddUI() {
 		System.out.println("Runhere ----------------------1");
 		return AddUI.createAddDialog(new StudentAddPane(), HumanResourceUtil
 				.getString("EmployeeActionManager.AddanEmployeeCard"));
 	}
 
+	@Override
 	protected ClientUI getEditUI(Object vo) {
 		EmployeeCardVO emp = (EmployeeCardVO) vo;
 		return createUpdateUI(getListUI(), emp.getId());
 	}
 	
+	@Override
 	protected ClientUI getDetailUI(Object o) throws ServerActionException {
 		EmployeeCardVO infoVO = (EmployeeCardVO) o;
 		EmployeeCardVO vo = HRServerActionManager.getInstance()
@@ -65,6 +66,7 @@ public class StudentActionManager extends EmployeeActionManager {
 			bb.gui.swing.UpdateFinishAction finishAction = new AbstractFinishAction(
 					vo, parent) {
 
+				@Override
 				public Object submitToServer() throws ServerActionException {
 					String employeeId = HRServerActionManager.getInstance()
 							.updateEmployeeCard((EmployeeCardVO) vo);
@@ -72,6 +74,7 @@ public class StudentActionManager extends EmployeeActionManager {
 							.getEmployeeCardById(employeeId);
 				}
 
+				@Override
 				public ClientUI getDetailUI() {
 					return new StudentUI();
 				}

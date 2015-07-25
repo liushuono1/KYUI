@@ -1,7 +1,5 @@
 package FinanceUI;
 
-import javax.swing.JPanel;
-
 import bb.gui.base.BaseHomePage;
 import bb.gui.swing.homepage.HomePageGroupPane;
 

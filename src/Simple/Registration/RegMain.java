@@ -68,20 +68,24 @@ public class RegMain extends AppMainUI {
 		return node;
 	}
 
+	@Override
 	public boolean isDisplayTree() {
 		return false;
 	}
 
+	@Override
 	protected String getProductName() {
 		return "2BizBox Studio";
 	}
 
 
+	@Override
 	public String getMainTreeXML()
 	  {
 	    return "/bb/gui/conf/MainTreeKY.xml";
 	  }
 	
+	@Override
 	public String getMenuBarXML() {
 		return "/KYUI/menubar.xml";
 	}
@@ -151,6 +155,7 @@ public class RegMain extends AppMainUI {
 	}
 	
 	
+	@Override
 	public void closing() {
 
 			int answer = CommonUI.showWarningConfirm(this,

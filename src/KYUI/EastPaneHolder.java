@@ -2,6 +2,7 @@
 
 package KYUI;
 
+import bb.gui.AbstractMainUI;
 import bb.gui.ClientUtil;
 
 import bb.gui.message.notice.NoticeCenterUI;
@@ -25,6 +26,7 @@ public class EastPaneHolder extends JPanel {
 	public EastPaneHolder(String xml_name) {
 		header = new FreeOutlookHeader() {
 
+			@Override
 			protected void updateDock(boolean dock) {
 				if (dock)
 					EastPaneHolder.this.dock();
@@ -58,6 +60,7 @@ public class EastPaneHolder extends JPanel {
 		split.addMouseMotionListener(splitListener);
 		split.addMouseListener(new MouseAdapter() {
 
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() > 1)
 					header.changeShrink();
@@ -66,6 +69,7 @@ public class EastPaneHolder extends JPanel {
 		});
 		split.getHandlerButton().addMouseListener(new MouseAdapter() {
 
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				header.changeShrink();
 			}
@@ -84,6 +88,7 @@ public class EastPaneHolder extends JPanel {
 		centerPane.add(headerPane, "North");
 		split.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (header.isShrinked())
 					header.changeShrink();
@@ -91,26 +96,32 @@ public class EastPaneHolder extends JPanel {
 		});
 		MouseAdapter splitMouseHandler = new MouseAdapter() {
 
+			@Override
 			public void mouseEntered(MouseEvent e) {
 				splitMouseOver = true;
 			}
 
+			@Override
 			public void mouseExited(MouseEvent e) {
 				splitMouseOver = false;
 			}
 
+			@Override
 			public void mouseMoved(MouseEvent e) {
 				splitLastMoveTime = System.currentTimeMillis();
 			}
 
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				splitLastMoveTime = System.currentTimeMillis();
 			}
 
+			@Override
 			public void mousePressed(MouseEvent e) {
 				splitLastMoveTime = System.currentTimeMillis();
 			}
 
+			@Override
 			public void mouseReleased(MouseEvent e) {
 				splitLastMoveTime = System.currentTimeMillis();
 			}
@@ -121,11 +132,12 @@ public class EastPaneHolder extends JPanel {
 		split.addMouseMotionListener(splitMouseHandler);
 		ActionListener popupTreeAction = new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent evt) {
 				if (needPopup && splitMouseOver && !centerPane.isShowing()) {
 					long now = System.currentTimeMillis();
 					long time = now - splitLastMoveTime;
-					if (time > (long) mouseDelay)
+					if (time > mouseDelay)
 						popupTree();
 				}
 			}
@@ -135,10 +147,12 @@ public class EastPaneHolder extends JPanel {
 		(new Timer(mouseDelay, popupTreeAction)).start();
 		MouseAdapter popupMouseHandler = new MouseAdapter() {
 
+			@Override
 			public void mouseEntered(MouseEvent e) {
 				hideTree();
 			}
 
+			@Override
 			public void mouseMoved(MouseEvent e) {
 				hideTree();
 			}
@@ -150,7 +164,7 @@ public class EastPaneHolder extends JPanel {
 		popupPane.setOpaque(false);
 		popupPane.setBorder(BorderFactory.createEmptyBorder(42, 0, 25, 200));
 		popupPane.setLayout(new BorderLayout());
-		MainUI.getInstance().getLayeredPane().add(popupPane, JLayeredPane.DRAG_LAYER);
+		AbstractMainUI.getInstance().getLayeredPane().add(popupPane, JLayeredPane.DRAG_LAYER);
 	}
 
 	public FreeOutlookHeader getHeader() {
@@ -200,10 +214,10 @@ public class EastPaneHolder extends JPanel {
 
 	private void popupTree() {
 		if (needPopup) {
-			int x =  MainUI.getInstance().getContentPane().getWidth()-centerPane.getWidth();
+			int x =  AbstractMainUI.getInstance().getContentPane().getWidth()-centerPane.getWidth();
 			int y = 0;
 			int width = 500;
-			int height = MainUI.getInstance().getContentPane().getHeight();
+			int height = AbstractMainUI.getInstance().getContentPane().getHeight();
 			popupPane.setBounds(x, y, width, height);
 			mainPane.setOpaque(false);
 			popupPane.add(mainPane, "Center");

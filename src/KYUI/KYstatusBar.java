@@ -11,7 +11,6 @@ import bb.gui.server.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.reflect.Method;
-import java.util.Locale;
 import java.util.StringTokenizer;
 
 import javax.swing.*;
@@ -87,6 +86,7 @@ public class KYstatusBar extends MainUIStatusBar {
 						.getString("FreeStatusBar.UnregisterUserTooltip"));
 				btnRegister.addActionListener(new ActionListener() {
 
+					@Override
 					public void actionPerformed(ActionEvent e) {
 						ClientUtil.openHttpUrl(KYstatusBar.this,
 								"http://www.2bizbox.cn/v");
@@ -121,6 +121,7 @@ public class KYstatusBar extends MainUIStatusBar {
 		getRightPane().add(btnPoweredby);
 		btnPoweredby.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				OperateCodeManager.about();
 			}
@@ -135,6 +136,7 @@ public class KYstatusBar extends MainUIStatusBar {
 		getRightPane().add(btnWebsite);
 		btnWebsite.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				ClientUtil.openHttpUrl(KYstatusBar.this,
 						(new StringBuilder()).append("http://").append(website)
@@ -145,10 +147,12 @@ public class KYstatusBar extends MainUIStatusBar {
 		});
 		btnWebsite.addMouseListener(new MouseAdapter() {
 
+			@Override
 			public void mouseEntered(MouseEvent e) {
 				setCursor(Cursor.getPredefinedCursor(12));
 			}
 
+			@Override
 			public void mouseExited(MouseEvent e) {
 				setCursor(Cursor.getPredefinedCursor(0));
 			}
@@ -161,6 +165,7 @@ public class KYstatusBar extends MainUIStatusBar {
 				.toString());
 		btnUser.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				showUserDetail();
 			}
@@ -185,6 +190,7 @@ public class KYstatusBar extends MainUIStatusBar {
 		rightPane.setOpaque(false);
 	}
 
+	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
@@ -207,23 +213,28 @@ public class KYstatusBar extends MainUIStatusBar {
 		rightPane.add(new FreeStatusSeparator());
 	}
 
+	@Override
 	public Dimension getPreferredSize() {
 		return new Dimension(super.getPreferredSize().width,
 				backgroundImageIcon.getIconHeight());
 	}
 
+	@Override
 	public void showMessage(String message) {
 		lbStatusMessage.setText(message);
 	}
 
+	@Override
 	public void showTooltipMessage(String message) {
 		lbStatusMessage.setToolTipText(message);
 	}
 
+	@Override
 	public JLabel getVersionLabel() {
 		return lbVersion;
 	}
 
+	@Override
 	public MemoryBarChart getMemoryBar() {
 		return null;
 	}

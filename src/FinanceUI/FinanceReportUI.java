@@ -3,11 +3,8 @@ package FinanceUI;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
@@ -23,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
@@ -71,8 +69,8 @@ public class FinanceReportUI extends ClientUI {
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		JScrollPane ScrollBtnPanel = new JScrollPane(createTable());
-		ScrollBtnPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		ScrollBtnPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		ScrollBtnPanel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		ScrollBtnPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		panel.add(ScrollBtnPanel);
 		panel.add(BorderLayout.SOUTH, btnPanel());
 		return panel;
@@ -163,7 +161,7 @@ public class FinanceReportUI extends ClientUI {
 		}
 		
 		
-		Enumeration e = (Enumeration) item_cost.keys();
+		Enumeration e = item_cost.keys();
 		int k = 0;
 		while(e.hasMoreElements())
 		{

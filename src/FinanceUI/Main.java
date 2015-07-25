@@ -20,7 +20,8 @@ public class Main extends JFrame {
     System.out.println("#items=" + combo.getItemCount());
 
     combo.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
+      @Override
+	public void actionPerformed(ActionEvent e) {
         System.out.println("Selected index=" + combo.getSelectedIndex()
             + " Selected item=" + combo.getSelectedItem());
       }

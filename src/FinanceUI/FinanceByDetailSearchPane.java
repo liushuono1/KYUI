@@ -1,15 +1,12 @@
 package FinanceUI;
 
 import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import AuthModule.CardAuth;
 import KYUI.KYMainUI;
 import bb.gui.ServerActionException;
 import bb.gui.base.ClientUI;
-import bb.gui.swing.JDatePicker;
 import bb.gui.swing.homepage.HomePageSingleTextFieldSearchPane;
 
 public class FinanceByDetailSearchPane extends HomePageSingleTextFieldSearchPane {
@@ -19,7 +16,8 @@ public class FinanceByDetailSearchPane extends HomePageSingleTextFieldSearchPane
 		super("°´ÏêÇéËÑË÷", true);
 	}
 	
-	 protected ClientUI getSearchResultUI(final String input)
+	 @Override
+	protected ClientUI getSearchResultUI(final String input)
      throws ServerActionException
      {
 		 

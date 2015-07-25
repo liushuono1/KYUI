@@ -168,6 +168,7 @@ class TimeRecord
 		 this.status=status;
 		 this.name=name;
 	}
+	@Override
 	public String toString()
 	{
 		return id+"\t"+date+"\t"+name+"\t"+stime+"--"+etime+"\t"+status;

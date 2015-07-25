@@ -12,8 +12,6 @@ import bb.gui.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
-
 import javax.swing.*;
 
 // Referenced classes of package bb.gui.hr:
@@ -240,6 +238,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		createPane();
 	}
 
+	@Override
 	public void afterActive() {
 	}
 
@@ -248,6 +247,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		return answer == 0;
 	}
 
+	@Override
 	public boolean beforeFinish() {
 		return true;
 	}
@@ -262,13 +262,16 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		return "ÃÓ–¥±¶±¶œÍœ∏–≈œ¢";//HumanResourceUtil.getString("UWEmployeeGeneralPane.EmployeeGeneralInformation");
 	}
 
+	@Override
 	public void doHelp() {
 	}
 
+	@Override
 	public boolean isCancelable() {
 		return true;
 	}
 
+	@Override
 	public boolean isFinishable() {
 		return true;
 	}
@@ -385,6 +388,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		centerPanel.add(new JScrollPane(txtComments), "1,16,3,16");
 		buttonPicDelete.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				buttonPicDelete_click();
 			}
@@ -393,6 +397,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		});
 		btnUploadPicture.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				icon = FileChooserManager.getSelectedImageIcon(mainPane);
 				if (icon != null) {
@@ -407,6 +412,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		});
 		txtStatus.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				if ("TERMINATED".equals(txtStatus.getSelectedItem()))
 					setTerminatedDate();
@@ -416,6 +422,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		});
 		txtListInCompanyAddressBook.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				setCompanyAddressBookEnabled();
 			}
@@ -433,6 +440,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		icon = null;
 	}
 
+	@Override
 	public boolean beforeLeave() {
 		ClientUtil.trimWindowTextFields(this);
 		if (ClientUtil.isNullString(

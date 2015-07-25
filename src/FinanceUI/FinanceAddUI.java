@@ -15,8 +15,6 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.sql.Date;
 import java.sql.Time;
@@ -34,9 +32,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-
 import bb.common.EmployeeCardVO;
 import bb.gui.ServerActionException;
 import bb.gui.base.AddActionPane;
@@ -91,8 +89,8 @@ public class FinanceAddUI extends AddActionPane {
 		
 		//table.setSize(panel.getWidth(), panel.getHeight());
 		JScrollPane ScrollBtnPanel = new JScrollPane(table);
-		ScrollBtnPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		ScrollBtnPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		ScrollBtnPanel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		ScrollBtnPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		
 		JPanel btnPanel = new JPanel();
 		//btnPanel.setLayout(new BorderLayout());
@@ -795,7 +793,8 @@ public class FinanceAddUI extends AddActionPane {
 			record_list.add(a_record);
 		}
 		int rows = record_list.size();
-		 int columns = record_list.get(0).showList.length;
+		 record_list.get(0);
+		int columns = OneRecord.showList.length;
 		 Object[][] records = new Object[rows][columns];
 		 for(int i=0;i<rows;i++)
 		 {
@@ -826,7 +825,7 @@ public class FinanceAddUI extends AddActionPane {
 	{
 
 		boolean flag = true;
-		for(int i=0;i<r1.showList.length;i++)
+		for(int i=0;i<OneRecord.showList.length;i++)
 		{
 			if(!r1.getString(i).equals(r2.getString(i)))
 			{
@@ -850,7 +849,7 @@ public class FinanceAddUI extends AddActionPane {
 		f.setLocation((a10 - 600) / 2, (b10 - 500) / 2); // 设定位置（屏幕中心）
 		f.setSize(300, 280); // 设定大小
 		f.setVisible(true); // 设定不能缩放
-		f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		//f.dispose();
 	}
 	
@@ -874,6 +873,7 @@ public class FinanceAddUI extends AddActionPane {
 		
 		table.addMouseListener(new MouseAdapter()
 		{
+			@Override
 			public void mouseClicked(MouseEvent e)
 			{
 				//System.err.println(table.getSelectedRow()+" nnnn "+table.getSelectedRowCount());

@@ -1,10 +1,6 @@
 package KYUI;
 
-import java.awt.Container;
-
 import javax.swing.JPanel;
-
-import bb.gui.AbstractMainUI;
 
 public class EastPanel extends JPanel implements KYRefreshable{
 

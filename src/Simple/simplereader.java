@@ -4,8 +4,6 @@ import java.awt.AWTEvent;
 import java.awt.Toolkit;
 import java.awt.event.AWTEventListener;
 import java.awt.event.KeyEvent;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
 
 public class simplereader {

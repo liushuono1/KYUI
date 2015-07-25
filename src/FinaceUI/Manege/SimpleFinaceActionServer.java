@@ -48,7 +48,7 @@ public class SimpleFinaceActionServer {
     
     public SimpleFinaceActionServer()
     {
-    	this.instance=this;
+    	SimpleFinaceActionServer.instance=this;
     }
     
     

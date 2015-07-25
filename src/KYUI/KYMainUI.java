@@ -4,7 +4,6 @@ package KYUI;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -14,12 +13,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
-import javax.security.auth.RefreshFailedException;
-import javax.security.auth.Refreshable;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -30,10 +26,10 @@ import free.AppMainUI;
 import free.FreeMenuBar;
 import free.FreeRootMenu;
 import free.LoginUI;
-import Client4CLass.KYClassUI;
 import KYUI.NoticeCenter.NoticeControl;
 import bb.common.CompanyVO;
 import bb.common.EmployeeCardVO;
+import bb.gui.AbstractMainUI;
 import bb.gui.ClientConst;
 import bb.gui.ClientContext;
 import bb.gui.ClientUtil;
@@ -41,7 +37,6 @@ import bb.gui.Main;
 import bb.gui.ServerActionException;
 import bb.gui.base.BB2Node;
 import bb.gui.message.notice.NoticeCenterUI;
-import bb.gui.message.notice.NoticeTreeNode;
 import bb.gui.server.CompanySettingServerActionManager;
 import bb.gui.server.HRServerActionManager;
 
@@ -158,7 +153,7 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 		setConnectingUrl();
 		readKYProperties();
 		MainView=this.getContentPane();
-		this.missionControlAction=((MissionControlledObj)this).missionControlAction;
+		this.missionControlAction=MissionControlledObj.missionControlAction;
 
 		if(!isDisplayTree() && isDisplayNoticePane())
 		{
@@ -460,6 +455,7 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 		
 	}
 	
+	@Override
 	public boolean isDisplayTree() {
 		return true;
 	}
@@ -477,6 +473,7 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 		return true;
 	}
 	
+	@Override
 	public String getMainTreeXML()
 	  {
 	    return "/bb/gui/conf/MainTreeKY.xml";
@@ -486,6 +483,7 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 	{
 		ActionListener defaultAction = new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				String action = e.getActionCommand();
 				command(action);
@@ -505,7 +503,8 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
            
 	}
    	
-    public String getTitle() {
+    @Override
+	public String getTitle() {
     	String returnTxt="";
     	try {
 			CompanyVO vo = CompanySettingServerActionManager.getInstance()
@@ -522,6 +521,7 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
     }
 	
 	
+	@Override
 	public String getMenuBarXML() {
 		return "/KYUI/menubar.xml";
 	}
@@ -537,7 +537,7 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
     public static KYMainUI getInstance()
     {
     	
-    	return (KYMainUI) AppMainUI.getInstance();
+    	return (KYMainUI) AbstractMainUI.getInstance();
     }
 	
 	public static void main(String[] args) {
@@ -602,6 +602,7 @@ public class KYMainUI extends AppMainUI implements MissionControlledObj,KYRefres
 
 
 
+	@Override
 	public void refresh(){
 		// TODO Auto-generated method stub
 		
