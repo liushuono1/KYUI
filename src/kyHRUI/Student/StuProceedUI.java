@@ -3,6 +3,7 @@ package kyHRUI.Student;
 import javax.swing.JPanel;
 
 import FinaceUI.Manege.paymentUI;
+import FinaceUI.Manege.setFees;
 import ManageUI.CardRegUI;
 import bb.common.EmployeeCardVO;
 import bb.gui.base.BaseHomePage;
@@ -94,6 +95,29 @@ public class StuProceedUI extends BaseHomePage {
 				};
 				lookUpAndSearchPane.add(pane);
 				group.addSearchPane(lookUpAndSearchPane);
+  //-------------------------------
+				
+				
+				lookUpAndSearchPane = new MulHomePage();
+				pane  = new BasicActionPane(VO)
+					{
+						
+						@Override
+						public  String getAddUiTitle()
+						{
+							return "∞Ï¿ÌÕÀ‘∞";
+						};
+						
+						@Override
+						public ClientUI getSearchResultUI() {
+							setFees.chargeFinalFees(VO.getId());
+							
+							paymentUI ui = new paymentUI(VO);
+							return  ui;
+						}
+					};
+					lookUpAndSearchPane.add(pane);
+					group.addSearchPane(lookUpAndSearchPane);
 
 	}
 }

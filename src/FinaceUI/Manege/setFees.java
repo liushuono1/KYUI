@@ -34,6 +34,8 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import KYUI.KYMainUI;
+
 public class setFees extends JFrame{
 	public JFrame frame; 
 	private JTable table1;
@@ -47,31 +49,31 @@ public class setFees extends JFrame{
 	public List<String> discountItems;
 	public JPanel oneTimepanel;
 	public JPanel discountPanel;
-	public Hashtable<String, String> id_typeItemID;
-	public List<String> class_mini;
-	public List<String> class_small;
-	public List<String> class_middle;
-	public List<String> class_big;
+	public static Hashtable<String, String> id_typeItemID;
+	public static List<String> class_mini;
+	public static List<String> class_small;
+	public static List<String> class_middle;
+	public static List<String> class_big;
 	public String payFeesCodes;
 	
 	public String mealUnitFee;
-	public List<String> discount_id_list;
+	public static List<String> discount_id_list;
 	public int attend_days; 
-	public Hashtable<String, String> type_price;
+	public static Hashtable<String, String> type_price;
 	public String year_month;
-	public List<List<String>> record_list1;
-	public List<FeeRecord> record_list;
-	public String[] regularItems = {"保育费","饭费","杂费","退饭费","退保育费"};
+	public static List<List<String>> record_list1;
+	public static List<FeeRecord> record_list;
+	public static String[] regularItems = {"保育费","饭费","杂费","退饭费","退保育费"};
 	public List<JCheckBox> box_list;
-	public List<String> selection;
+	public static List<String> selection;
 	
 	//thest variables are defined for simplifying the SL loop
 	
-	Hashtable<String, String> all_fees;
-	String unit_meal_fees;
-	String miscellaneousFee;
-	workingdays workingDays;
-	Hashtable<String,List> ondutyofmonth;
+	static Hashtable<String, String> all_fees;
+	static String unit_meal_fees;
+	static String miscellaneousFee;
+	static workingdays workingDays;
+	static Hashtable<String,List> ondutyofmonth;
 	setStuRange setRange;
 	static Connection conn=null;
 	public setFees()
@@ -144,7 +146,7 @@ public class setFees extends JFrame{
 		frame.add(mainPanel);
 		frame.add(BorderLayout.SOUTH, btnPanel);
 		frame.setVisible(true);
-		getEachClassID();
+		
 	}
 	
 	private void setRangeHandler() {
@@ -485,14 +487,44 @@ public class setFees extends JFrame{
 				for(int i=0;i<selection.size();i++)//selection.size();
 				{
 					String id = selection.get(i);
-					one_fee sum = checkFees(id,selectedItems,Integer.valueOf(year),Integer.valueOf(month));
+					one_fee sum = checkFees(id,selectedItems,Integer.valueOf(year),Integer.valueOf(month),false);
 					System.out.println(id+"   "+sum);
 					chargeRegularFee(id, sum);//charge this id
 				}
 			}
 		}
 		
-		private void initVariables() {
+		
+		
+		public static void chargeFinalFees(String id)
+		{
+			initVariables();
+			
+			List<String> selectedItems = new LinkedList<String>();
+
+			selectedItems.add("退饭费");
+			selectedItems.add("退保育费");
+			
+			System.out.println(selectedItems);
+			java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+			String year_month = "";
+			String year;
+			String month;
+			year = String.valueOf(date.getYear()+ 1900);
+			month = String.valueOf(date.getMonth() + 1);
+			year_month = String.valueOf(year) + "-"+String.valueOf(month);
+			
+			int confirm = JOptionPane.showConfirmDialog(null, "请确认退费月份是"+year+"年"+month+"月!");
+			if(confirm == 0)
+			{
+					one_fee sum = checkFees(id,selectedItems,Integer.valueOf(year),Integer.valueOf(month),true);
+					System.out.println(id+"   "+sum);
+					chargeRegularFee(id, sum);//charge this id
+					chargeRegularFee(id, new one_fee("FinalFees"));
+			}
+		}
+		
+		private static void initVariables() {
 			// TODO Auto-generated method stub
 			all_fees=null;
 			miscellaneousFee=null;
@@ -500,9 +532,10 @@ public class setFees extends JFrame{
 			miscellaneousFee=null;
 			workingDays=null;
 			ondutyofmonth=null;
+			getEachClassID();
 		}
 
-		public class one_fee
+		public static class one_fee
 		{
 			public double sum;
 			public String ChargeCode;
@@ -511,9 +544,23 @@ public class setFees extends JFrame{
 			{
 				return sum + "  "+  ChargeCode;
 			}
+			
+			public one_fee()
+			{
+				
+			}
+			public one_fee(String type)
+			{
+				if(type.equals("FinalFees"))
+				{
+					sum=200;
+					ChargeCode="refund:退还入园押金:200";
+				}
+			}
+			
 		}
 		
-		public void chargeRegularFee(String id, one_fee sum)
+		public static void chargeRegularFee(String id, one_fee sum)
 		{
 			record_list = new LinkedList<FeeRecord>();
 			record_list1 = new LinkedList<List<String>>();
@@ -548,8 +595,16 @@ public class setFees extends JFrame{
 					p.setDate(2, currentDate);
 					p.setTime(3, currentTime);
 					p.setString(4, sum.ChargeCode);
-					p.setString(5, "");
-					p.setString(6, String.valueOf(sum.sum));
+					if(!sum.ChargeCode.contains("refund"))
+					{
+						p.setString(5, "");
+						p.setString(6, String.valueOf(sum.sum));
+					}else
+					{
+						p.setString(6, "");
+						p.setString(5, String.valueOf(sum.sum));
+					}
+					
 					p.setString(7, "");
 					p.setString(8, "");
 					//p.setString(9, "");
@@ -595,7 +650,7 @@ public class setFees extends JFrame{
 			return id_list;
 		}
 		
-		public one_fee checkFees(String id, List<String> selectedItems , int year,int month)
+		public static one_fee checkFees(String id, List<String> selectedItems , int year,int month,boolean final_fees)
 		{
 			one_fee sum = new one_fee();
 			String[] child_care = get_child_care_typeFees(id);
@@ -667,11 +722,11 @@ public class setFees extends JFrame{
 					String[] passedCode =new String[]{sum.ChargeCode};
 					if(selectedItems.contains(regularItems[4]))//refund childCare Fee
 					{
-						refund_fee = getRefundFees(id, child_care_fee, 0,passedCode,String.valueOf(year),String.valueOf(month));//refund fee
+						refund_fee = getRefundFees(id, child_care_fee, 0,passedCode,String.valueOf(year),String.valueOf(month),final_fees);//refund fee
 					}
 					else//not having childcareFee
 					{
-						refund_fee = getRefundFees(id, child_care_fee, 1,passedCode,String.valueOf(year),String.valueOf(month));//refund fees
+						refund_fee = getRefundFees(id, child_care_fee, 1,passedCode,String.valueOf(year),String.valueOf(month),final_fees);//refund fees
 						//JOptionPane.showMessageDialog(null, "只退保育费,不退饭费的情况不可能发生, 请重新确认缴费/退费项目!");
 					}
 					sum.sum += (0 - refund_fee);
@@ -723,7 +778,7 @@ public class setFees extends JFrame{
 		/*
 		 * This function return the "discount fees" if having one
 		 */
-		public List getDiscountFee(String id, String child_care_str)
+		public static List getDiscountFee(String id, String child_care_str)
 		{
 			int fee = 0;
 			List<String> discount_id_list= getDiscountDeatails();
@@ -751,12 +806,15 @@ public class setFees extends JFrame{
 			return type_and_fee;
 		}
 		
-		public int getRefundFees(String id, int child_care_fee, int status,String[] PayFeesCodes,String year,String month)
+		public static int getRefundFees(String id, int child_care_fee, int status,String[] PayFeesCodes,String year,String month,boolean final_fees)
 		{
 			int refund_fees = 0;
 			double refund_childCare_type;
-			String prev_date =year+"-"+month;
-			prev_date= getPreviousYear_month(year+"-"+month);//the "year" & "month" of the previous month
+			String prev_date;
+			if(final_fees)
+				prev_date =year+"-"+month;
+			else
+				prev_date= getPreviousYear_month(year+"-"+month);//the "year" & "month" of the previous month
 			String[] array = prev_date.split("-");
 			String[] first_last_day = lastDate(Integer.parseInt(array[0]), Integer.parseInt(array[1]));//last date of the previous month
 			String first_date = first_last_day[0];
@@ -765,7 +823,7 @@ public class setFees extends JFrame{
 			List<String> abscent_days = new LinkedList<String>();
 			List<String> come_days = new LinkedList<String>();
 			List<String> off_days = new LinkedList<String>();
-			List<String> shouldWork_days = this.WorkingDaysofMonth(prev_date.split("-")[0], prev_date.split("-")[1]);
+			List<String> shouldWork_days = WorkingDaysofMonth(prev_date.split("-")[0], prev_date.split("-")[1]);
 			int unit_meal_fee = Integer.parseInt(getUnitMealFees());
 			int counter = 0;
 			String temp_date = first_date;
@@ -809,9 +867,9 @@ public class setFees extends JFrame{
 			
 			
 			System.err.println("counter = "+counter+"  abscentCount = "+abscentCount);
-			int refund_meal = (26-counter) * Integer.parseInt(this.getUnitMealFees()) ;
+			int refund_meal = (26-counter) * Integer.parseInt(getUnitMealFees()) ;
 			//CODE
-			PayFeesCodes[0] += this.decimalToHex(26-counter+16);
+			PayFeesCodes[0] += decimalToHex(26-counter+16);
 			System.out.println("after refund code:"+ PayFeesCodes[0]);
 			int refund_childCare =0;
 			//-------------correct childfees with longterm discount-------------------------
@@ -941,7 +999,7 @@ public class setFees extends JFrame{
 			return dayAfter; 
 		} 
 		
-		public String getUnitMealFees()
+		public static String getUnitMealFees()
 		{
 			if(unit_meal_fees == null)
 			{
@@ -971,7 +1029,7 @@ public class setFees extends JFrame{
 			}
 			return unit_meal_fees;
 		}
-		public String getMiscFees()
+		public static String getMiscFees()
 		{
 			if(miscellaneousFee == null)
 			{
@@ -998,7 +1056,7 @@ public class setFees extends JFrame{
 			return miscellaneousFee;
 		}
 		
-		public String[] get_child_care_typeFees(String id)
+		public static String[] get_child_care_typeFees(String id)
 		{
 			String[] ret = new String[2];
 			String fee = null;
@@ -1029,8 +1087,11 @@ public class setFees extends JFrame{
 			return ret;
 		}
 		
-		public void getEachClassID()
+		public static void getEachClassID()
 		{
+			if(class_mini==null || class_small==null 
+					|| class_middle==null || class_big==null)
+			{
 			class_mini = new LinkedList<String>();
 			class_small = new LinkedList<String>();
 			class_middle = new LinkedList<String>();
@@ -1081,13 +1142,14 @@ public class setFees extends JFrame{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			}
 		}
 
 		
 		/*
 		 * Get the fees of each class-level
 		 */
-		public Hashtable<String,String> getFees(){
+		public static Hashtable<String,String> getFees(){
 			
 			if (all_fees== null){
 				all_fees = new Hashtable<String,String>();
@@ -1118,7 +1180,7 @@ public class setFees extends JFrame{
 		
 
 		
-		public List<String> getDiscountDeatails()
+		public static List<String> getDiscountDeatails()
 		{
 			if(discount_id_list != null){
 				return discount_id_list;
@@ -1164,7 +1226,7 @@ public class setFees extends JFrame{
 			return discount_id_list;
 		}
 		
-		public String getPreviousYear_month(String date)
+		public static String getPreviousYear_month(String date)
 		{
 			String[] array = date.split("-");
 			int year = Integer.parseInt(array[0]);
@@ -1185,7 +1247,7 @@ public class setFees extends JFrame{
 		/*
 		 * This method returns the 1st & last date of the specified "Month"
 		 */
-		public String[] lastDate(int year, int month)
+		public static String[] lastDate(int year, int month)
 		{
 			System.out.println("year = "+year +"  month = "+month);
 			Calendar calendar=Calendar.getInstance();
@@ -1202,14 +1264,14 @@ public class setFees extends JFrame{
 			ret[1] = end_date;
 			return ret;
 		}
-		public Hashtable<String,List> onDutyofMonth(String date)
+		public static Hashtable<String,List> onDutyofMonth(String date)
 		{
 			int year = Integer.parseInt(date.split("-")[0]);
 			int month = Integer.parseInt(date.split("-")[1]);
 			return onDutyofMonth(year,month);
 		}
 		
-		public Hashtable<String,List> onDutyofMonth(int year ,int month)
+		public static Hashtable<String,List> onDutyofMonth(int year ,int month)
 		{
 			String monthStr =("0"+String.valueOf(month));
 		//	System.out.println(" dddddd->"+ondutyofmonth+"  "+year+"  "+month);
@@ -1240,7 +1302,7 @@ public class setFees extends JFrame{
 		}
 		
 		
-		public List<String> WorkingDaysofMonth(String date)
+		public static List<String> WorkingDaysofMonth(String date)
 		{
 			String year = date.split("-")[0];
 			String month = date.split("-")[1];
@@ -1248,7 +1310,7 @@ public class setFees extends JFrame{
 		}
 		
 		
-		public List<String> WorkingDaysofMonth(String yearS ,String monthS)
+		public static List<String> WorkingDaysofMonth(String yearS ,String monthS)
 		{
 		    int year = Integer.parseInt(yearS);	
 		    int month = Integer.parseInt(monthS);
@@ -1263,7 +1325,7 @@ public class setFees extends JFrame{
 				Connection conn = connect();
 				PreparedStatement p = null;
 				ResultSet rs = null;
-				p = conn.prepareStatement("select distinct(L_date) from emp_logginrecordall l join emp_id i on l.id=i.id where i.security_level='level 5' and l.L_date like ? order by L_date;" );
+				p = conn.prepareStatement("select distinct(L_date) from emp_logginrecordall l join emp_id i on l.id=i.id where (i.security_level='level 5' OR i.security_level = 'LEVEL 4') and l.L_date like ? order by L_date;" );
 				
 				String monthStr =("0"+String.valueOf(month));
 				
@@ -1288,7 +1350,7 @@ public class setFees extends JFrame{
 			
 		}
 		
-		private class workingdays
+		public static class workingdays
 		{
 			public int year=0;
 			public int month =0;
@@ -1301,7 +1363,7 @@ public class setFees extends JFrame{
 			}
 		}
 		
-		public List<String> onDuty(String date)
+		public static List<String> onDuty(String date)
 		{
 			List<String> onDuty_id_list = new LinkedList<String>();
 			try {
@@ -1374,7 +1436,7 @@ public class setFees extends JFrame{
 			return flag;
 		}
 		
-		public double continueAbsence(List<String> Absenct_days, List<String> workingDays)
+		public static double continueAbsence(List<String> Absenct_days, List<String> workingDays)
 		{
 			int ret = 0;
 			if(workingDays.size() == 0)
@@ -1454,7 +1516,7 @@ public class setFees extends JFrame{
 			}
 		}
 		
-		public String decimalToHex(int value)
+		public static String decimalToHex(int value)
 		{
 			System.out.println("10 to 16 : from " + value);
 			String str = "";
@@ -1469,6 +1531,12 @@ public class setFees extends JFrame{
 		
 		public static Connection connect() throws ClassNotFoundException, SQLException
 		{
+			if(KYMainUI.isInstanced())
+				return KYMainUI.bds.getConnection();
+			else
+			{
+			
+			
 			if(conn!=null && !conn.isClosed())
 			{
 				return conn;
@@ -1483,6 +1551,7 @@ public class setFees extends JFrame{
 	        //if(!conn.isClosed()) 
 	        	//System.out.println("Succeeded connecting to the Database!");
 	        	return conn;
+			}
 			}
 		}
 	

@@ -61,6 +61,7 @@ import KYUI.RestoreWindow;
 import KYUI.ScrollInfoPane;
 import Simple.CardsLib;
 import Simple.HR.SimpleNoFeesCount;
+import Simple.HR.SimpleStuAtt;
 
 
 public class KYManageUI extends KYMainUI{
@@ -435,7 +436,7 @@ public class KYManageUI extends KYMainUI{
 	    menu.add(new free.FreeSeparator());
 	    menu.add(item);
 	    
-	    item = new JMenuItem("查看未缴费名单");
+	    item = new JMenuItem("查看本月出勤日期");
 	    item.addActionListener(new ActionListener() {
 	 
 
@@ -449,6 +450,24 @@ public class KYManageUI extends KYMainUI{
 	        }
 	    });
 	    menu.add(item);
+	    
+	    
+	    item = new JMenuItem("查看未缴费名单");
+	    item.addActionListener(new ActionListener() {
+	 
+
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+
+		    	
+	        	 JFrame nofees = new SimpleStuAtt();
+	        	 
+		         nofees.setVisible(true);
+	        }
+	    });
+	    menu.add(item);
+	    
+	    
 	    
 	    item = new JMenuItem("查找电梯卡");
 	    item.addActionListener(new ActionListener() {

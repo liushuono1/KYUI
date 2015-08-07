@@ -163,7 +163,8 @@ public class NFCStart extends KYMainUI{
 		
 		NfcMC2.SwitchTimeLimite("ON");
 	
-		
+		Thread t1 = new Thread(NfcMC2);
+		t1.start();
 	}
 	
 	
@@ -894,6 +895,7 @@ public class NFCStart extends KYMainUI{
 	public static void main(String[] args)
 	{
 		bb.gui.BBConfiguration.initConfiguration("/KYUI/conf/Client.properties");
+		System.out.println(System.getProperty("java.library.path"));
 		boolean autoLogon=false;
     	if(args.length!=0)
     	{

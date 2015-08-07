@@ -16,6 +16,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -35,7 +36,9 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
 import bb.common.EmployeeCardVO;
+import bb.gui.ServerActionException;
 import bb.gui.base.ClientUI;
+import bb.gui.server.HRServerActionManager;
 import KYUI.KYMainUI;
 import KYUI.NFCInterface;
 import KYUI.NFCreader;
@@ -55,6 +58,7 @@ public class paymentUI extends ClientUI implements NFCInterface {
 	public Hashtable<String, String> type_price;
 	public JTextArea area;
 	public String output = "";
+	static String[] class_int_type={"宝","小","中","大"};
 	public Hashtable<String, String> id_name;
 	public List<String> id_list;
 	public JTextField payField;
@@ -125,7 +129,8 @@ public class paymentUI extends ClientUI implements NFCInterface {
 		frame.add(BorderLayout.SOUTH, this.getQuitPanel());
 		frame.setVisible(true);
 		f = new Font("SimHei",0,30);
-		checkHandler(vo.getId());
+		checkHandler(vo);
+		
 	}
 	
 	
@@ -160,7 +165,7 @@ public class paymentUI extends ClientUI implements NFCInterface {
 			Connection conn = connect();
 			PreparedStatement p = null;
 			ResultSet r = null;
-			p = conn.prepareStatement("select * from emp_id where security_level = 'level 5'");
+			p = conn.prepareStatement("select * from emp_id where security_level = 'level 5' OR security_level = 'level 4'");
 			r = p.executeQuery();
 			while(r.next())
 			{
@@ -214,9 +219,24 @@ public class paymentUI extends ClientUI implements NFCInterface {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				id_field.setText(id_field.getText().toUpperCase());
-				checkHandler(id_field.getText());
-				payBtn.setEnabled(true);
-				payCurMonBtn.setEnabled(true);
+				
+				List<EmployeeCardVO> vo;
+				try {
+					vo = (List<EmployeeCardVO>) HRServerActionManager.getInstance()
+						.findEmployeeCardsByEmployeeId(id_field.getText(), false,0, 10);
+					if(vo.size()==0)
+						return;
+					else
+					{
+						checkHandler(vo.get(0));
+						payBtn.setEnabled(true);
+						payCurMonBtn.setEnabled(true);
+					}
+				} catch (ServerActionException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 
@@ -276,8 +296,11 @@ public class paymentUI extends ClientUI implements NFCInterface {
 		return this;
 	}
 	
-	public void checkHandler(String id)
+	public void checkHandler(EmployeeCardVO vo)
 	{
+		String id= vo.getId();
+		
+		
 		sum = 0;
 		if(id.equals(""))
 		{
@@ -297,7 +320,7 @@ public class paymentUI extends ClientUI implements NFCInterface {
 			{
 				
 				List<String> codeStr_list = readCode(id);
-				List<String[]> name_price = decode(codeStr_list);
+				List<String[]> name_price = decode(codeStr_list,vo);
 				for(String[] one_item:name_price)
 				{
 					output+= one_item[0]+":\t"+one_item[1]+"元";
@@ -339,7 +362,7 @@ public class paymentUI extends ClientUI implements NFCInterface {
 			else if(balance < 0)
 			{
 				List<String> codeStr_list = readCode(id);
-				List<String[]> name_price = decode(codeStr_list);
+				List<String[]> name_price = decode(codeStr_list,vo);
 				
 				for(String[] one_item:name_price)
 				{
@@ -520,7 +543,7 @@ public class paymentUI extends ClientUI implements NFCInterface {
 		return ret_fee;
 	}
 	
-	private List<String[]> decode(List<String> codeList)
+	private List<String[]> decode(List<String> codeList,EmployeeCardVO vo)
 	{
 		
 		List<String[]> ret =new LinkedList<String[]>();
@@ -631,7 +654,8 @@ public class paymentUI extends ClientUI implements NFCInterface {
 			if(Integer.parseInt(cutCode.get(4),16) != 0)
 			{	
 				Hashtable<String, String> type_childCarefees = getFees();
-				double child_care_fee = Integer.parseInt(type_childCarefees.get(String.valueOf(Integer.parseInt(cutCode.get(0),16))));
+				System.out.println(type_childCarefees);
+				double child_care_fee = Integer.parseInt(type_childCarefees.get(String.valueOf(get_class_type_int(vo.getDepartment()))));
 				//-----------------correct childCarefees with discount----------------
 				child_care_fee =child_care_fee +discount;
 				
@@ -1679,7 +1703,36 @@ public class paymentUI extends ClientUI implements NFCInterface {
 			e.printStackTrace();
 		}
 		this.id_field.setText(id.toUpperCase());
-		this.checkHandler(id.toUpperCase());
+		
+		try {
+			List<EmployeeCardVO> vo = (List<EmployeeCardVO>) HRServerActionManager.getInstance()
+				.findEmployeeCardsByEmployeeId(id_field.getText(), false,0, 10);
+			if(vo.size()==0)
+				return;
+			else
+			{
+				checkHandler(vo.get(0));
+			}
+		} catch (ServerActionException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		//this.checkHandler(id.toUpperCase());
+	}
+	public static int get_class_type_int(String class_name)
+	{
+		int ret= 1;
+		for(int i=0;i<class_int_type.length;i++)
+		{
+			if(class_name.contains(class_int_type[i]))
+				{
+					ret+=i;
+					break;
+				}
+		}
+		
+		return ret;
 	}
 	
 	public static void main(String[] args)

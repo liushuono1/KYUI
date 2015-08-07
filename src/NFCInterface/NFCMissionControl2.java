@@ -1,20 +1,18 @@
 package NFCInterface;
 
 
-import java.awt.AWTEvent;
-import java.awt.Toolkit;
-import java.awt.event.AWTEventListener;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import KYUI.MissionControl;
+import jni.KeyMouseListener;
 
 
 public class NFCMissionControl2 extends MissionControl{
 
 	public boolean Timeswitch=true,timelimite=true,terminalAvailable=true;
-	
+	private KeyMouseListener kml;
 	static String cardID;
 	Timer waittimer = new Timer();
 
@@ -43,17 +41,7 @@ public class NFCMissionControl2 extends MissionControl{
 	
 	public void initCardTerminal()
 	{
-		Toolkit.getDefaultToolkit().addAWTEventListener(new AWTEventListener() {
-			
-			@Override
-			public void eventDispatched(AWTEvent event) {
-				// TODO Auto-generated method stub
-				if(((KeyEvent)event).getID()==KeyEvent.KEY_TYPED){
-					//System.out.print(((KeyEvent)event).getKeyChar());
-					keyReceiver.get(((KeyEvent)event).getKeyChar());
-				}
-			}
-		}, AWTEvent.KEY_EVENT_MASK);
+		kml = new KeyMouseListener();
 	}
 
 	
@@ -70,72 +58,6 @@ public class NFCMissionControl2 extends MissionControl{
 			return this.timelimite;
 	}
 	
-	@Override
-	public void run()
-	{
-      		
-		if( cardID.endsWith("adae1526900"))
-    	{
-    			//JOptionPane.showMessageDialog(null,"into manage");
-    			//resetconnections();
-    	}else if (!cardID.equals(""))
-    	{
-    			
-    		String prams[]={cardID.toUpperCase()};
-    		java.sql.Time tt= new java.sql.Time(System.currentTimeMillis());
-    		int timeint = Integer.parseInt(tt.toString().replace(":",""));		
-    		System.out.println("time-----------"+timeint);
-    		if( this.timelimite && timeint>161000 && timeint<163000)
-    			prams[0]="TIMELIMIT";
-    		this.getAction("NFCControl").RepeatAction(prams);
-    	}
-    	else
-    	{
-    		String prams[]={""};
-    		this.getAction("NFCControl").RepeatAction(prams);
-    	}
-    					
-		TimerTask task = new TimerTask()
-		{
-			 @Override
-			public void run() 
-			 { 
-				 String prams[]={"WAITNEXT"};
-				 getAction("NFCControl").RepeatAction(prams);
-				 cardID="";
-			 }
-		 };
-		 waittimer.cancel();
-		 waittimer =new Timer();
-		 waittimer.schedule(task,3*1000);
-    
-    			
-
-    }
-        
-	
-
-}
-
-class keyReceiver
-{
-	static String keyStor="";
-    public static void get(char s)
-    {
-    	if(s=='\n')
-    	{
-    		System.out.println(keyStor);
-    		System.out.println(codeTrans(keyStor));
-    		NFCMissionControl2.cardID=codeTrans(keyStor)+"900";
-    		MissionControl.Run();
-    		keyStor="";
-    	}
-    	else
-    	{
-    		keyStor+=s;
-    	}
-
-    }
 	public static String codeTrans(String code)
 	{
 		try{
@@ -159,7 +81,6 @@ class keyReceiver
 		}
 		
 	}
-	
 	public static String c(String code)
 	{
 		if(code.charAt(0)=='0')
@@ -168,8 +89,75 @@ class keyReceiver
 			
 			return code;
 	}
+	
+	@Override
+	public void run()
+	{
+		while(Timeswitch)
+		{
+		        String directKEY="";
+		        int[] key = kml.getKeyCodes();
+		        
+		        for(int i=0;i<key.length;i++){
+		        	if(key[i]==13)
+		        		break;
+		        	else
+		        	{
+		        		
+		        		directKEY+=KeyEvent.getKeyText(key[i]);
+		        	}
+		        }
+		        if(!directKEY.equals("000000000000"))
+		        {
+		             cardID=codeTrans(directKEY)+"900";
+      	             	
+		             if( cardID.endsWith("adae1526900"))
+    	             {
+    	             		//JOptionPane.showMessageDialog(null,"into manage");
+    	             		//resetconnections();
+    	             }else if (!cardID.equals(""))
+    	             {
+    	             		
+    	             	String prams[]={cardID.toUpperCase()};
+    	             	java.sql.Time tt= new java.sql.Time(System.currentTimeMillis());
+    	             	int timeint = Integer.parseInt(tt.toString().replace(":",""));		
+    	             	System.out.println("time-----------"+timeint);
+    	             	if( this.timelimite && timeint>161000 && timeint<163000)
+    	             		prams[0]="TIMELIMIT";
+    	             	this.getAction("NFCControl").RepeatAction(prams);
+    	             }
+    	             else
+    	             {
+    	             	String prams[]={""};
+    	             	this.getAction("NFCControl").RepeatAction(prams);
+    	             }
+    	             				
+		             TimerTask task = new TimerTask()
+		             {
+		             	 @Override
+		             	public void run() 
+		             	 { 
+		             		 
+		             		 String prams[]={"WAITNEXT"};
+		             		 getAction("NFCControl").RepeatAction(prams);
+		             		 cardID="";
+		             	 }
+		              };
+		              waittimer.cancel();
+		              waittimer =new Timer();
+		              waittimer.schedule(task,3*1000);
+                     
+    	             		
+                     
+		        }
+		        try{
+		        	Thread.sleep(500);
+		        }catch(Exception e)
+		        {}
+		}
+    }
+        
+	
 
 }
-
-
 

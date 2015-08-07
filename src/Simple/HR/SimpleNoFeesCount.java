@@ -23,33 +23,17 @@ public class SimpleNoFeesCount extends JFrame{
 		String output="";
 		try {
 			Connection conn =KYMainUI.bds.getConnection();
-			PreparedStatement p= conn.prepareStatement("select distinct(P_date) from emp_charge_refund_pay where charge <>'' order by P_date desc limit 10;");
-			//p.setString(2, KYMainUI.department);
+			String input=(String) JOptionPane.showInputDialog(this,"请输入学生学号:");
+			String date= (new java.sql.Date(System.currentTimeMillis())).toString();
+			String year_month=date.split("-")[0]+"-"+date.split("-")[1];
+			PreparedStatement p= conn.prepareStatement("select L_time,L_date,L_name from emp_logginrecordall where  id='"+input+"' and L_date like '"+year_month+"%"+"';");
 
-			ResultSet rs = p.executeQuery();
-			rs.last();
-			int count =rs.getRow();
-			rs.beforeFirst();
-			String[] dates =new String[count];
-			int i=0;
-			while(rs.next())
-			{
-				dates[i++]=rs.getString("P_date");
-			}
-			
-			String input=(String) JOptionPane.showInputDialog(this,"请选择本月的第一个计费日期：","选择起始日",JOptionPane.INFORMATION_MESSAGE
-					,null,dates,"");
-			
-			
-			p= conn.prepareStatement("select department,emp_charge_refund_pay.id,emp_id.name_company_address_book,emp_charge_refund_pay.charge from emp_charge_refund_pay join emp_id on emp_charge_refund_pay.id =emp_id.id where P_date>=? and  charge<>'' and  emp_charge_refund_pay.id not in (select id from emp_charge_refund_pay where P_date>=? and (pay<>'' and pay <>'0')) order by department;");
-			p.setString(1, input);
-			p.setString(2, input);
 			System.out.println(p);
+			ResultSet rs=p.executeQuery();
 			rs = p.executeQuery();
 			while(rs.next())
 			{
-				output+=(rs.getString("department")+"\t"+rs.getString("id")+"\t"+rs.getString("name_company_address_book")+"\t"+rs.getString("charge")+"\n");
-				
+				output+=(rs.getString("L_name")+"\t"+rs.getString("L_date")+"\t"+rs.getString("L_time")+"\n");
 			}
 			System.out.println(output);
 			rs.close();
@@ -60,7 +44,7 @@ public class SimpleNoFeesCount extends JFrame{
 			e.printStackTrace();
 		}
 		
-		this.setTitle("未缴费名单");
+		this.setTitle("本月出勤");
 		this.setSize(400, 800);
 		this.setLayout(new BorderLayout());
 		JTextArea area = new JTextArea(output);
@@ -72,5 +56,10 @@ public class SimpleNoFeesCount extends JFrame{
 		
 		
 	}
+	
+    public static void main(String[] args)
+    {
+    	new SimpleNoFeesCount();
+    }
 	
 }
