@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/commons-dbcp2-2.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/commons-pool2-2.2.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/components.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/gui.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/icepdf-core.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/icepdf-viewer.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/idw-gpl.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/itext-2.0.2.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/iTextAsian.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/jxl.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/log4j.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/looks.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/org.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/jsr-113-0.5.1/jsr113.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/jacob-1.18-M2/jacob.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/workspace/libs/jacob-1.18-M2"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/GloKey.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/workspace/libs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/workspace/libs/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/libs/swingx.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
