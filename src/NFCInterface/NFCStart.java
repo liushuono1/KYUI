@@ -574,8 +574,8 @@ public class NFCStart extends KYMainUI{
 	private String getClientIP(EmployeeCardVO Emp)
 	{
 		String ClientIP="0.0.0.0";
-		java.sql.Date date=new java.sql.Date(System.currentTimeMillis());
-		java.sql.Time time=new java.sql.Time(System.currentTimeMillis());
+		java.sql.Timestamp date=new java.sql.Timestamp(System.currentTimeMillis());
+		//java.sql.Time time=new java.sql.Time(System.currentTimeMillis());
 		try 
 		{
 			
@@ -583,14 +583,14 @@ public class NFCStart extends KYMainUI{
 			PreparedStatement pstmt =null;
 	        ResultSet rs=null;
 	        
-	        pstmt=conn.prepareStatement("SELECT * FROM ky_clientregiest WHERE ClientID=?;");
+	        pstmt=conn.prepareStatement("select ip,last_login from bizbox_user join emp_id on emp_id.id=bizbox_user.ref_id where job_id=?;");
 	       	pstmt.setString(1, Emp.getDepartment());
 	       	rs=  pstmt.executeQuery();
 	       	while(rs.next())
 	       	{
-	       		 ClientIP= rs.getString("ClientIP");
-	       		 date=rs.getDate("Reg_Date");
-	       		 time=rs.getTime("Reg_Time");
+	       		 ClientIP= rs.getString("ip");
+	       		 date=rs.getTimestamp("lsat_login");
+	       		 
 	       	}
 	       	rs.close();
 	       	pstmt.close();
@@ -600,11 +600,11 @@ public class NFCStart extends KYMainUI{
 			e.printStackTrace();
 		}
 		
-		System.out.println(date+"  "+time);
+		System.out.println(date);
 		
 		java.sql.Date Nowdate=new java.sql.Date(System.currentTimeMillis());
 		java.sql.Time Nowtime=new java.sql.Time(System.currentTimeMillis());
-		System.out.println(Nowdate+"  "+Nowtime+"   "+(time.getTime()-Nowtime.getTime()));
+		//System.out.println(Nowdate+"  "+Nowtime+"   "-Nowtime.getTime()));
 	//	if((-time.getTime()+Nowtime.getTime())<=1000*60*60)
 		{
 			System.out.println("Client "+Emp.getDepartment()+ClientIP+" found.");

@@ -1,9 +1,12 @@
 package ManageUI;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,6 +23,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -36,12 +40,19 @@ import jxl.write.biff.RowsExceededException;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
+import AuthModule.AuthLV2;
+import AuthModule.CardAuth;
 
-public class TeacherExaminePanel{
+
+public class TeacherExaminePanel implements AuthLV2{
+	TeacherExaminePanel instance;
 	public List<String> itemList;
+	public List<String> itemList_award;
 	public JTextField field_item;
 	public Hashtable<String, String> title_type;
+	public Hashtable<String, String> title_type_award;
 	public JComboBox jb_item;
+	public JComboBox jb_award;
 	public JComboBox jb_teacher;
 	public Hashtable<String, String> name_id;
 	public List<String> className_list;
@@ -50,17 +61,22 @@ public class TeacherExaminePanel{
 	public JPanel examinePanel;
 	public JTextField describeF;
 	public Hashtable<String, String> type_score;
+	public Hashtable<String, String> type_score_award;
 	public JTable table;
 	public JPanel southPanel;
-	public String[] attributeArray = new String[] {"工号","姓名","日期","考核项目","扣绩效点"};
-	
+	public String[] attributeArray = new String[] {"序号","工号","姓名","日期","项目","绩效点","说明"};
+	public String counter;
+	public List<List<String>> all_records;
+	public int rowNumber;
 	public TeacherExaminePanel()
 	{
+		instance =this;
 		getTeachers();
 		examinePanel = new JPanel();
 		examinePanel.setLayout(new BorderLayout());
+		//examinePanel.setPreferredSize(new Dimension(1000, 850));
 		JPanel northPanel = new JPanel();
-		northPanel.setLayout(new GridLayout(4,2));
+		northPanel.setLayout(new GridLayout(5,2));
 		southPanel = new JPanel();
 		JLabel label = new JLabel("人员:");
 		
@@ -76,15 +92,27 @@ public class TeacherExaminePanel{
 		
 		JPanel panel_item = new JPanel();
 		panel_item.setLayout(new GridLayout(1,4));
-		JLabel label_item = new JLabel("考核项目:");
-		jb_item = new JComboBox();
+		JLabel label_item = new JLabel("违规项目(扣除绩效):");
+		jb_item = new JComboBox(); jb_item.addItem("");
+		
+		JLabel award_item_label = new JLabel("奖励项目(增加绩效):");
+		jb_award = new JComboBox(); jb_award.addItem("");
+		
 		
 		itemList = new LinkedList<String>();
+		itemList_award = new LinkedList<String>();
 		getItems();
+		getItemsAward();
 		for(int i=0;i<itemList.size();i++)
 		{
 			String a_className = itemList.get(i);
 			jb_item.addItem(a_className);
+		}
+		
+		for(int i=0;i<itemList_award.size();i++)
+		{
+			String a_item = itemList_award.get(i);
+			jb_award.addItem(a_item);
 		}
 		JButton btn_submit = new JButton("提交");
 		btn_submit.addActionListener(new ActionListener(){
@@ -92,8 +120,8 @@ public class TeacherExaminePanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
 				submitHandler();
+				checkHandler();
 			}
 		});
 		
@@ -103,11 +131,16 @@ public class TeacherExaminePanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				confirmHandler();
+				checkHandler();
 			}
 		});
 		northPanel.add(label_item);
 		northPanel.add(jb_item);
+		
+		northPanel.add(award_item_label);
+		northPanel.add(jb_award);
+		
+		
 		northPanel.add(new JLabel("说明:"));
 		describeF = new JTextField();
 		
@@ -118,12 +151,148 @@ public class TeacherExaminePanel{
 		JScrollPane ScrollBtnPanel = new JScrollPane(createTable());
 		ScrollBtnPanel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		ScrollBtnPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		
+		JPanel deletePane = new JPanel();
+		JButton delBtn = new JButton("删除");
+		delBtn.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				 if(CardAuth.ID_Auth(instance, 0)==1)
+				  {	
+					 deleteHandler();
+				  }else
+				  {
+					  JOptionPane.showMessageDialog(null, "请申请权限");
+				  }
+			}			
+		});
+		deletePane.add(delBtn);
+		
 		southPanel.add(ScrollBtnPanel);
-		examinePanel.add(BorderLayout.SOUTH,southPanel);
+		//southPanel.add(new BorderLayout().SOUTH, deletePane);
+		
+		examinePanel.add(BorderLayout.CENTER,southPanel);
+		examinePanel.add(BorderLayout.SOUTH,deletePane);
 		examinePanel.setVisible(true);
 	}
+	
+	public void deleteHandler()
+	{
+		int ret = JOptionPane.showConfirmDialog(null, "确定要删除吗?");
+		if(ret == 0)
+		{
+			System.err.println("----------------rowNumber = "+rowNumber);
+			getAllRecords();
+			//all_records.remove(rowNumber);
+			int item_id = Integer.parseInt(all_records.get(rowNumber).get(0));
+			System.err.println("????????????"+item_id);
+			deleteRecord(item_id);
+			checkHandler();
+			System.err.println("have "+all_records.size()+" records");
+			//showAllRecords();
+		}
+		else
+		{
+			
+		}
+	}
+	
+	public void deleteRecord(int item_id)
+	{
+		try {
+			Connection conn = this.connect();
+			PreparedStatement p = conn.prepareStatement("delete from emp_teacherexamine where item_id = '"+item_id+"';");
+			p.execute();
+			
+			p.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void getAllRecords()
+	{
+		Connection conn;
+		try {
+			conn = this.connect();
+			PreparedStatement p = null;
+			ResultSet r = null;
+			p = conn.prepareStatement("select * from emp_teacherexamine;");
+			r = p.executeQuery();
+			all_records = new LinkedList<List<String>>();
+			while(r.next())
+			{
+				List<String> a_record = new LinkedList<String>();
+				counter = r.getString("item_id");
+				String id = r.getString("id");
+				String name = id_name.get(id);
+				Date date = r.getDate("e_date");
+				String item = r.getString("e_title");
+				String comment = r.getString("comment");
+				int category = r.getInt("category");
+				String score;
+				if(category == -1)
+				{
+					System.out.println("item = "+item);
+					System.out.println("title_type.get(item) = "+title_type.get(item));
+					System.out.println("type_score.get(title_type.get(item)) = "+type_score.get(title_type.get(item)));
+					score = type_score.get(title_type.get(item));
+				}
+				else
+				{
+					score = type_score_award.get(title_type_award.get(item));
+				}
+				
+				//String score = type_score.get(title_type.get(item));
+				a_record.add(counter);
+				a_record.add(id);
+				a_record.add(name);
+				a_record.add(date.toString());
+				a_record.add(item);
+				a_record.add(score);
+				a_record.add(comment);
+				all_records.add(a_record);
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//return all_records;
+	}
+	public void showAllRecords()
+	{	
+		int row = all_records.size();
+		int col = this.attributeArray.length;
+		Object[][] records = new Object[row][col];
+		for(int i=0;i<row;i++)
+		{
+			List<String> a_record = all_records.get(i);
+			for(int j=0;j<col;j++)
+			{
+				records[i][j] = a_record.get(j);//row*column
+		    }	
+		}
+		table.setModel(MutliTableModel(records, attributeArray));
+		DefaultTableCellRenderer render = new DefaultTableCellRenderer();
+	    render.setHorizontalAlignment(SwingConstants.CENTER);
+	    for(int i=0;i<this.attributeArray.length;i++)
+	    {
+		    table.getColumn(attributeArray[i]).setCellRenderer(render);
+	    }
+	}
 
-	public void confirmHandler()
+	public void checkHandler()
 	{
 		Connection conn;
 		try {
@@ -136,18 +305,33 @@ public class TeacherExaminePanel{
 			while(r.next())
 			{
 				List<String> a_record = new LinkedList<String>();
+				counter = r.getString("item_id");
 				String id = r.getString("id");
 				String name = id_name.get(id);
 				Date date = r.getDate("e_date");
 				String item = r.getString("e_title");
-				
 				String comment = r.getString("comment");
-				String score = type_score.get(title_type.get(item));
+				int category = r.getInt("category");
+				String score;
+				if(category == -1)
+				{
+					System.out.println("item = "+item);
+					System.out.println("title_type.get(item) = "+title_type.get(item));
+					System.out.println("type_score.get(title_type.get(item)) = "+type_score.get(title_type.get(item)));
+					score = type_score.get(title_type.get(item));
+				}
+				else
+				{
+					score = type_score_award.get(title_type_award.get(item));
+				}
+				a_record.add(counter);
 				a_record.add(id);
 				a_record.add(name);
 				a_record.add(date.toString());
 				a_record.add(item);
 				a_record.add(score);
+				a_record.add(comment);
+				a_record.add(String.valueOf(category));
 				all_records.add(a_record);
 			}
 			int row = all_records.size();
@@ -184,6 +368,71 @@ public class TeacherExaminePanel{
 		//attributeArray = attributeNames.split(":");
 		String[][] aaa = new String[1][attributeArray.length];
 		table = new JTable(MutliTableModel(aaa,attributeArray));
+		table.addMouseListener(new MouseAdapter(){
+		});
+		this.getAllRecords();
+		showAllRecords();
+		
+		table.addMouseListener(new MouseAdapter()
+		{
+			@Override
+			public void mouseClicked(MouseEvent e)
+			{
+				if(table.getSelectedRow()==-1)
+				{
+					if(table.getRowCount()==0)
+						return;
+					else
+					{
+						table.setRowSelectionInterval(0, 0);
+					}
+				}
+				if(e.getClickCount() == 1)// && e.getButton() == MouseEvent.BUTTON1)
+				{
+					rowNumber = table.getSelectedRow();
+					/*
+					List<List<String>> all_records = new LinkedList<List<String>>();
+					Connection conn;
+					try {
+						conn = connect();
+						PreparedStatement p = null;
+						ResultSet r = null;
+						p = conn.prepareStatement("select * from emp_teacherexamine;");
+						r = p.executeQuery();
+						while(r.next())
+						{
+							List<String> a_record = new LinkedList<String>();
+							counter = r.getString("item_id");
+							String id = r.getString("id");
+							String name = id_name.get(id);
+							Date date = r.getDate("e_date");
+							String item = r.getString("e_title");
+							String comment = r.getString("comment");
+							System.out.println(item);
+							System.out.println(title_type.get(item));
+							System.out.println(type_score.get(title_type.get(item)));
+							
+							String score = type_score.get(title_type.get(item));
+							a_record.add(counter);
+							a_record.add(id);
+							a_record.add(name);
+							a_record.add(date.toString());
+							a_record.add(item);
+							a_record.add(score);
+							a_record.add(comment);
+							all_records.add(a_record);
+						}
+						all_records.remove(rowNumber);						
+					} catch (ClassNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}*/
+				}
+			}
+		});
 		return table;
 	}
 	
@@ -202,39 +451,89 @@ public class TeacherExaminePanel{
 		String strDate = date.format(c.getTime()); 
 		String strTime = c.get(Calendar.HOUR)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
 		
-		String itemTitle = jb_item.getSelectedItem().toString();
-		String itemType = title_type.get(itemTitle);
+		//String itemTitle = jb_item.getSelectedItem().toString();
+		String negative_item = jb_item.getSelectedItem().toString();
+		String positive_item = jb_award.getSelectedItem().toString();
+		String itemType_negative = title_type.get(negative_item);
+		String itemType_positive = title_type_award.get(positive_item);
+		
 		String teacherName = jb_teacher.getSelectedItem().toString();
-		String teacherID = name_id.get(teacherName);
-		try {
-			Connection conn = connect();
-			PreparedStatement pstmt = null;
-			if(className_list.contains(teacherName))
-			{
-				List<String> relatedTeachers = correspondingTeachers(teacherName);
-				for(int i=0;i<relatedTeachers.size();i++)
+		String comment = describeF.getText();
+		if(teacherName.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "请选择员工");
+			return;
+		}
+		else if(negative_item.equals("") && positive_item.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "请选择扣除或增加绩效项目");
+			return;
+		}
+		else if(!negative_item.equals("") && !positive_item.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "只能选择扣除或者增加的一种");
+			return;
+		}
+		else if(comment.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "请填写增加或者扣除绩效点原因");
+			return;
+		}
+		else
+		{
+			String teacherID = name_id.get(teacherName);
+			
+			try {
+				Connection conn = connect();
+				PreparedStatement pstmt = null;
+				String a_counter = String.valueOf(Integer.parseInt(counter)+1);
+				if(className_list.contains(teacherName))
 				{
-					String a_teacher = relatedTeachers.get(i);
-					String a_id = id_name.get(a_teacher);
-					pstmt = conn.prepareStatement("insert into emp_teacherExamine  values " +
-							"('"+a_id+"','"+strDate+"','"+strTime+"','"+itemType+"','"+itemTitle+"','"+describeF.getText()+"');");
+					List<String> relatedTeachers = correspondingTeachers(teacherName);
+					for(int i=0;i<relatedTeachers.size();i++)
+					{
+						String a_teacher = relatedTeachers.get(i);
+						String a_id = id_name.get(a_teacher);
+						if(!negative_item.equals(""))//reduce  points
+						{
+							pstmt = conn.prepareStatement("insert into emp_teacherExamine  values " +
+									"('"+a_counter+"','"+a_id+"','"+strDate+"','"+strTime+"','"+itemType_negative+"','"+negative_item+"','"+describeF.getText()+"','-1');");
+						}
+						else//increase points
+						{
+							pstmt = conn.prepareStatement("insert into emp_teacherExamine  values " +
+									"('"+a_counter+"','"+a_id+"','"+strDate+"','"+strTime+"','"+itemType_positive+"','"+positive_item+"','"+describeF.getText()+"','1');");
+						}
+						pstmt.execute();
+					}
+				}
+				else
+				{
+					if(!negative_item.equals(""))//reduce  points
+					{
+						pstmt = conn.prepareStatement("insert into emp_teacherExamine values " +
+								"('"+a_counter+"','"+teacherID+"','"+strDate+"','"+strTime+"','"+itemType_negative+"','"+negative_item+"','"+describeF.getText()+"','-1');");
+					}
+					else//increase points
+					{
+						pstmt = conn.prepareStatement("insert into emp_teacherExamine values " +
+								"('"+a_counter+"','"+teacherID+"','"+strDate+"','"+strTime+"','"+itemType_positive+"','"+positive_item+"','"+describeF.getText()+"','1');");
+					}
 					pstmt.execute();
 				}
+				
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			else
-			{
-				pstmt = conn.prepareStatement("insert into emp_teacherExamine values " +
-						"('"+teacherID+"','"+strDate+"','"+strTime+"','"+itemType+"','"+itemTitle+"','"+describeF.getText()+"');");
-				pstmt.execute();
-			}
-			
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
+		describeF.setText("");
+		this.jb_item.setSelectedItem("");
+		this.jb_award.setSelectedItem("");
+		this.jb_teacher.setSelectedItem("");
 	}
 	
 	public List<String> correspondingTeachers(String className)
@@ -282,6 +581,38 @@ public class TeacherExaminePanel{
 				itemList.add(title);
 				title_type.put(title, type);
 				type_score.put(type, score); 
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void getItemsAward()
+	{
+		title_type_award = new Hashtable<String, String>();
+		type_score_award = new Hashtable<String, String>();
+		Connection conn;
+		try {
+			conn = connect();
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			pstmt = conn.prepareStatement("SELECT * from emp_awardItems;");
+			rs = pstmt.executeQuery();
+			while(rs.next())
+			{
+				String title = rs.getString("type_title");
+				String type = rs.getString("type_id");
+				String score = rs.getString("type_score");
+				itemList_award.add(title);
+				title_type_award.put(title, type);
+				type_score_award.put(type, score); 
 			}
 			rs.close();
 			pstmt.close();
@@ -412,7 +743,7 @@ public class TeacherExaminePanel{
 	        Label time = new Label(3,1,"时间 ");//column 1
 	        sheet.addCell(time);
 	        
-	        Label checkItem = new Label(4,1,"考核项目");//column 1
+	        Label checkItem = new Label(4,1,"项目");//column 1
 	        sheet.addCell(checkItem);
 	        
 	        Label score = new Label(5,1,"扣分 ");//column 1
@@ -487,19 +818,6 @@ public class TeacherExaminePanel{
 				rs.close();
 				pstmt.close();
 				conn.close();
-				/*
-		        Enumeration enumerate = recordHash.keys();
-		        while(enumerate.hasMoreElements())
-		        {
-		        	List<String> key = (List<String>) enumerate.nextElement();
-		        	String teacher_id = key.get(0);//teacher_id
-		        	String time = key.get(1);//time
-		        	
-		        	List<String> detail = recordHash.get(key);
-		        	String item_title = detail.get(0);
-		        	String item_score = detail.get(1);
-		        	fd
-		        }*/
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -513,6 +831,12 @@ public class TeacherExaminePanel{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return Level;
 	}
 
 }

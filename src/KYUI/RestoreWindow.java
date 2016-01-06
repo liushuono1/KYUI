@@ -122,10 +122,10 @@ public class RestoreWindow extends ClientUI {
 	public void mainUIrestore()
 	{
 		
-		if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)!=1)
-		{
-			return;
-		}
+	//	if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)!=1)
+		//{
+			//return;
+		//}
 		if(mainUI!=null)
 		{
 			mainUI.setExtendedState(Frame.MAXIMIZED_BOTH);

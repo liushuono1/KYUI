@@ -1,9 +1,12 @@
 package kyHRUI.Student;
 
 import java.util.Collection;
+import java.util.List;
+
 import bb.common.EmployeeCardVO;
 import bb.gui.ServerActionException;
 import bb.gui.base.AddActionPane;
+import bb.gui.hr.EmployeeActionManager;
 import bb.gui.hr.HumanResourceUtil;
 import bb.gui.server.HRServerActionManager;
 import bb.gui.swing.homepage.HomePageAddPane;
@@ -36,6 +39,7 @@ public String geneID()
 {
 	Collection<EmployeeCardVO> temp=null;
 	try {
+		
 		temp= HRServerActionManager.getInstance().findEmployeeCardsByDepartment(classType, false, 0,200);
 	} catch (ServerActionException e) {
 		// TODO Auto-generated catch block
@@ -56,37 +60,46 @@ public String geneID()
 		if(tempid>intID)
 			intID=tempid;
 	}
-
-	return "KY"+String.valueOf(intID+1);     //未考虑年份变化 ，以后补齐
+	String newID="KY"+String.valueOf(++intID); 
+	
+	
+	try {
+		//System.out.println("if new ID "+newID+" "+HRServerActionManager.getInstance().isCustomEmployeeExist(newID));
+		while(HRServerActionManager.getInstance().isEmployeeExistent(newID))
+		{
+			newID="KY"+String.valueOf(++intID);
+		}
+	} catch (ServerActionException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	String year=String.valueOf(new java.sql.Date(System.currentTimeMillis()).getYear()+1900);
+	System.out.println(year);
+	if(newID.contains("KY"+year)) //判断年份来获取新ID，首字需要从配置获得
+	{
+		return newID; 
+	}else
+	{
+		return firstIDbyType(classType);
+	}
 }
 
 
 public String firstIDbyType(String classtype)
 {
-	if(classtype.contains("宝一班"))
-	{
-		return "KY2015001";
-	}else if(classtype.contains("宝二班"))
-	{
-		return "KY2015101";
-	}else if(classtype.contains("宝三班"))
-	{
-		return "KY2015701";
-	}else if(classtype.contains("小一班"))
-	{
-		return "KY2015201";
-	}else if(classtype.contains("小二班"))
-	{
-		return "KY2015301";
-	}else if(classtype.contains("中班"))
-	{
-		return "KY2015501";
-	}else if(classtype.contains("大班"))
-	{
-		return "KY2015601";
-	}
+	String year=String.valueOf(new java.sql.Date(System.currentTimeMillis()).getYear());
+	Collection<String> deptss= EmployeeActionManager.getDepartmentList();
+	deptss.remove("园长办公室");
+	deptss.remove("教工部");
+	deptss.remove("综合办公室");
+	deptss.remove("");
+	deptss.remove("毕业");  //需要在外部定义例外。。。
 	
-	return "";
+	int d =((List<String>)deptss).indexOf(classtype);
+	
+	String newID = "KY"+year+String.valueOf(d)+"00"; //字首需要在外部定义
+	
+	return newID;
 }
 
 

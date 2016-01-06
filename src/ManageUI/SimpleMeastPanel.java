@@ -32,12 +32,16 @@ import KYUI.ScrollInfoPane;
 
 
 public class SimpleMeastPanel extends EastPanel{
+	
+	static SimpleMeastPanel instance=null;
+	
 	sqlQueryArea medTxt;
 	JPanel base;
 	JButton[] btnArray;
 	SimpleMeastPanel()
 	{
 		super();
+		instance=this;
 		this.setLayout(new BorderLayout());
 		
 		ScrollInfoPane si=KYMainUI.getInstance().getScrollInfoPane();
@@ -48,6 +52,13 @@ public class SimpleMeastPanel extends EastPanel{
 		this.add(BorderLayout.SOUTH,getMedPane());
 		si.startshow();
 		
+		
+		
+	}
+	
+	public static SimpleMeastPanel getInstance()
+	{
+		return instance;
 	}
 	
 	private JPanel getTeacherPane() {
@@ -294,7 +305,7 @@ public class SimpleMeastPanel extends EastPanel{
 		JLabel medLbl= new JLabel("请假记录");
 		medLbl.setPreferredSize(new Dimension(300,50));
 		medTxt = new sqlQueryArea() ;
-		
+		medTxt.setPreferredSize(new Dimension(300,150));
 		medTxt.setDataSource(KYMainUI.bds);
 		String[] Title={"姓名","是否中午外出","请假原因"};
 		String[] attributes={"app_name","app_currentNoon","app_reason"};

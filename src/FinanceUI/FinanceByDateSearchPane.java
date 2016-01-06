@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.JComponent;
 
+import AuthModule.AuthLV1;
 import AuthModule.CardAuth;
 import KYUI.KYMainUI;
 import bb.gui.ClientUtil;
@@ -14,7 +15,7 @@ import bb.gui.base.ClientUI;
 import bb.gui.swing.JDatePicker;
 import bb.gui.swing.homepage.HomePageMultiRowSearchPane;
 
-public class FinanceByDateSearchPane extends HomePageMultiRowSearchPane {
+public class FinanceByDateSearchPane extends HomePageMultiRowSearchPane implements AuthLV1{
 
 	 public FinanceByDateSearchPane()
 	 {
@@ -29,7 +30,7 @@ public class FinanceByDateSearchPane extends HomePageMultiRowSearchPane {
      throws ServerActionException
      {
 		 
-		 if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)==1)
+		 if(CardAuth.ID_Auth(this, 0)==1)
 		  {		
 			  final Date from = ((JDatePicker)getInputComponent(0)).getSelectedDate();
 			  final Date to = ((JDatePicker)getInputComponent(1)).getSelectedDate();
@@ -43,5 +44,11 @@ public class FinanceByDateSearchPane extends HomePageMultiRowSearchPane {
 		  }
 
      }
+
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return Level;
+	}
 	 
 }

@@ -141,6 +141,11 @@ public class KYManageUI extends KYMainUI{
 			public void TimeRepeatAction(String[] parms) {
 				// TODO Auto-generated method stub
 				RegClient();
+				if(SimpleMeastPanel.getInstance()!=null)
+				{
+					SimpleMeastPanel.getInstance().refresh();
+				}
+				
 				
 			}
 
@@ -162,6 +167,10 @@ public class KYManageUI extends KYMainUI{
 			@Override
 			public void RepeatAction(String[] parms) {
 				// TODO Auto-generated method stub
+				if(SimpleMeastPanel.getInstance()!=null)
+				{
+					SimpleMeastPanel.getInstance().refresh();
+				}
 				//RollCallUI.getinstence().refreashRollcall();
 			}};
 		
@@ -399,6 +408,10 @@ public class KYManageUI extends KYMainUI{
 	        @Override
 	        public void actionPerformed(ActionEvent e) {
 	            refresh();
+	            if(SimpleMeastPanel.getInstance()!=null)
+				{
+					SimpleMeastPanel.getInstance().refresh();
+				}
 	        }
 	    });
 	    menu.add(item);
@@ -665,7 +678,7 @@ public class KYManageUI extends KYMainUI{
     	
     	
     	Main.launchBizBox(KYManageUI.class.getName());
-    	
+    	//Main.launchBizBox(bb.app.lite2.Lite2MainUI.class.getName());
     	//new KYUI.KYUITray(null);
     	//autoLogon=false;
 

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Properties;
 
 import javax.swing.Box;
@@ -19,8 +20,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import Client4CLass.RollCallUI;
 import twaver.TWaverUtil;
+import bb.common.EmployeeCardVO;
+import bb.gui.ServerActionException;
 import bb.gui.company.app.AppUtil;
+import bb.gui.server.HRServerActionManager;
 import free.FreeMainUILogo;
 import free.FreeMenu;
 import free.FreeMenuBar;
@@ -169,6 +174,30 @@ public class KYUIUtil {
 			return TWaverUtil.getIcon(iconURL);
 		else
 			return null;
+	}
+	
+	public static Collection<EmployeeCardVO> getTeachers() {
+		// TODO Auto-generated method stub
+		Collection<EmployeeCardVO> temp=null,ret=null;
+		try {
+			EmployeeCardVO user =HRServerActionManager.getInstance().getEmployeeSelf();
+			temp= HRServerActionManager.getInstance().findEmployeeCardsByDepartment(user.getDepartment(), false, 0, RollCallUI.classMax);
+			ret= HRServerActionManager.getInstance().findEmployeeCardsByDepartment(user.getDepartment(), false, 0, RollCallUI.classMax);
+			ret.removeAll(temp);
+		} catch (ServerActionException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+
+		for(EmployeeCardVO empvo:temp)
+		{
+			if(empvo.getJobId().equals(KYMainUI.department) && empvo.getSecurityLevel().equals("LEVEL 3"))
+			{
+				ret.add(empvo);
+			}
+		}
+		return ret;
+		
 	}
 
 

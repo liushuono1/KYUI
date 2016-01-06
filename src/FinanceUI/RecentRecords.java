@@ -13,16 +13,19 @@ import javax.swing.JTable;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
 
+import AuthModule.AuthLV1;
 import AuthModule.CardAuth;
 import KYUI.KYMainUI;
 import bb.gui.base.ClientUI;
 
-public class RecentRecords extends ClientUI{
+public class RecentRecords extends ClientUI implements AuthLV1{
 
+	RecentRecords instance;
 	JTable table;
 	public RecentRecords()
 	{
 
+		instance=this;
 		{
 			JPanel panel = new JPanel();
 			panel.setBorder(BorderFactory.createTitledBorder("显示录入信息"));
@@ -39,7 +42,7 @@ public class RecentRecords extends ClientUI{
 			this.add(panel);
 		}
 		
-		if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)!=1)
+		if(CardAuth.ID_Auth(this, 0)!=1)
 		{
 			clearTable();
 		}
@@ -53,7 +56,7 @@ public class RecentRecords extends ClientUI{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)==1)
+				if(CardAuth.ID_Auth(instance, 0)==1)
 				{
 					 refreashTable();
 				}
@@ -155,4 +158,10 @@ public class RecentRecords extends ClientUI{
 	     }	
 		 return new DefaultTableModel(x, new String[]{"测试行1"});	
 	 }
+
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return Level;
+	}
 }

@@ -663,7 +663,7 @@ public class setFees extends JFrame{
 					//String[] child_care = get_child_care_typeFees(id);??
 					String child_care_type = child_care[0];//get child-care type!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					
-					//System.out.println(child_care_type);
+					System.out.println(child_care_type);
 					sum.ChargeCode +=  Integer.toHexString(Integer.parseInt(child_care_type, 10));
 					String child_care_fee_str = child_care[1];//get child_care fee
 					int child_care_fee = Integer.parseInt(child_care_fee_str);
@@ -756,6 +756,9 @@ public class setFees extends JFrame{
 			
 			}
 			
+			
+			//sum.sum += 260;	      //临时加入保险和体检费
+			//sum.ChargeCode += "08";
 			return sum;
 		}
 		/*
@@ -811,10 +814,13 @@ public class setFees extends JFrame{
 			int refund_fees = 0;
 			double refund_childCare_type;
 			String prev_date;
+			
 			if(final_fees)
 				prev_date =year+"-"+month;
 			else
 				prev_date= getPreviousYear_month(year+"-"+month);//the "year" & "month" of the previous month
+			
+			
 			String[] array = prev_date.split("-");
 			String[] first_last_day = lastDate(Integer.parseInt(array[0]), Integer.parseInt(array[1]));//last date of the previous month
 			String first_date = first_last_day[0];
@@ -828,7 +834,7 @@ public class setFees extends JFrame{
 			int counter = 0;
 			String temp_date = first_date;
 			System.out.println(shouldWork_days);
-			System.out.println(onDutyofMonth(year+"-"+month));
+			//System.out.println(onDutyofMonth(year+"-"+month));
 			
 			/*while(validDate(temp_date, last_date))
 			{
@@ -852,6 +858,7 @@ public class setFees extends JFrame{
 			for(String day: shouldWork_days)
 			{
 				List<String> attend_ids = onDutyofMonth(day).get(day);
+				System.out.println(" DAY  "+day+"  "+attend_ids);
 				if(attend_ids.size() != 0)//as long as having people
 				{
 					if(!attend_ids.contains(id))
@@ -1125,7 +1132,7 @@ public class setFees extends JFrame{
 					class_middle.add(id);
 				}
 				
-				pstmt = conn.prepareStatement("select * from emp_id where department LIKE '大%'");
+				pstmt = conn.prepareStatement("select * from emp_id where department LIKE '大%' OR department  ='毕业'"); //临时把毕业学生放入大班
 				rs = pstmt.executeQuery();
 				while(rs.next())
 				{
@@ -1268,6 +1275,7 @@ public class setFees extends JFrame{
 		{
 			int year = Integer.parseInt(date.split("-")[0]);
 			int month = Integer.parseInt(date.split("-")[1]);
+			//String prev_date= getPreviousYear_month(year+"-"+month);
 			return onDutyofMonth(year,month);
 		}
 		
@@ -1286,6 +1294,7 @@ public class setFees extends JFrame{
 				
 				List<String> onDutyDay = onDuty(day);
 				ondutyofmonth.put(day, onDutyDay);
+				System.out.println("DAY"+day+"   "+onDutyDay);
 			}
 			
 			System.out.println(ondutyofmonth.size());
@@ -1370,7 +1379,8 @@ public class setFees extends JFrame{
 				Connection conn = connect();
 				PreparedStatement p = null;
 				ResultSet rs = null;
-				p = conn.prepareStatement("SELECT * from emp_logginrecordall l join emp_id i on l.id=i.id where i.security_level='level 5' and l.L_date = '"+date+"';" );
+				p = conn.prepareStatement("SELECT * from emp_logginrecordall l join emp_id i on l.id=i.id where (i.security_level='level 4' OR i.security_level='level 5') and l.L_date = '"+date+"';" );
+				System.out.println(p);
 				rs = p.executeQuery();
 				Hashtable<List<String>, String> idDate_str = new Hashtable<List<String>, String>();
 				while(rs.next())
@@ -1544,6 +1554,7 @@ public class setFees extends JFrame{
 			{
 				String driver = "com.mysql.jdbc.Driver";
 				String url = "jdbc:mysql://192.168.1.100:3307/bb2_test";
+						
 				String user = "root"; 
 				String password = "root";
 		        Class.forName(driver);

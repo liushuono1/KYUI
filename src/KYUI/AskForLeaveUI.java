@@ -137,19 +137,25 @@ public class AskForLeaveUI extends ClientUI{
 				}
 				else
 				{
-					
+					//one_record += "\n";
 					String from_code = r.getString("from_code");
 					
 					Date toDate = r.getDate("app_to");
 					String to_code = r.getString("to_code");
 					one_record += fromDate+"("+from_code+")--"+toDate+"("+to_code+")";
 				}
-				boolean allow = r.getBoolean("allow");
-				if(!allow)
+				//boolean allow = r.getBoolean("allow");
+				int allow = r.getInt("allow");
+				if(allow == 0)
 				{
 					one_record += "\t\n";
 				}
-				else
+				else if(allow == 2)
+				{
+					//one_record += "\t\n";
+					one_record += "\t不批准\n";
+				}
+				else if(allow == 1)
 				{
 					one_record += "\t批准\n";	
 				}
@@ -552,14 +558,14 @@ public class AskForLeaveUI extends ClientUI{
 					if(validCount <noonTimes)
 					{
 						validCount++;
-						p.setBoolean(14, true);//accept the application
+						p.setInt(14, 1);//accept the application
 						KYUITray.getInstance().showTrayMsg("申请批准", name+"的申请已经获得系统自动批准。你的免审批还余 "+(noonTimes-validCount)+" 次");
 					}
 					else
 					{
 						KYUITray.getInstance().showTrayMsg("等待批准", name+"，你本月中午请假免审批次数已经超过 "+String.valueOf(noonTimes)+" 次!,请等待 批准");
 						JOptionPane.showMessageDialog(null, "你本月中午请假免批准次数已经超过"+String.valueOf(noonTimes)+"次!");
-						p.setBoolean(14, false);//not accept the application
+						p.setInt(14, 0);//not accept the application
 					}
 					p.execute();
 					clearApplicationPanel();
@@ -614,7 +620,7 @@ public class AskForLeaveUI extends ClientUI{
 								p.setDate(12, java.sql.Date.valueOf(toDateStr));
 								p.setString(13, toHalfCode);
 								
-								p.setBoolean(14, false);
+								p.setInt(14, 0);
 								p.execute();
 								clearApplicationPanel();
 							}
@@ -645,7 +651,7 @@ public class AskForLeaveUI extends ClientUI{
 			}
 			else
 			{
-				currentDateStr += "0"+String.valueOf(month);
+				currentDateStr += ""+String.valueOf(month);
 			}
 			Connection conn = connect();
 			PreparedStatement p = null;

@@ -16,7 +16,8 @@ public class SpeakEngin implements Runnable{
 	SpeakEngin()
 	{
 		sap = new ActiveXComponent("Sapi.SpVoice");
-		sapo = sap.getObject();
+		//sap = new ActiveXComponent("Sapi.SpeechSynthesizer");
+		
 	}
 	
 	SpeakEngin(String initwords)
@@ -76,13 +77,13 @@ public class SpeakEngin implements Runnable{
 		
 		//System.out.println("HERE");
 		runSwitch =false;
-		say("再见");
+		//say("再见");
 		
 	}
 	
 	public static void main(String args[])
 	{ 
-		SpeakEngin ss= new SpeakEngin("123");
+		SpeakEngin ss= new SpeakEngin();
 		(new Thread(ss)).start();
 		
 		try {
@@ -92,7 +93,7 @@ public class SpeakEngin implements Runnable{
 			e.printStackTrace();
 		}
 		
-		ss.say("4 5 6");
+		//ss.say("4 5 6");
 		
 		
 		try {

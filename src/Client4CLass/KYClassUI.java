@@ -15,6 +15,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
@@ -41,6 +43,9 @@ import KYUI.KYMainUI;
 import KYUI.MissionControlAction;
 import KYUI.RestoreWindow;
 import KYUI.ScrollInfoPane;
+import Simple.DutyList;
+import Simple.TaskManager;
+import Simple.Trigger;
 
 
 public class KYClassUI extends KYMainUI{
@@ -59,7 +64,27 @@ public class KYClassUI extends KYMainUI{
 		this.setExtendedState(Frame.NORMAL); 
 		setTitle(getTitle()+KYMainUI.department);
 		this.removeWindowListener(this.getWindowListeners()[0]);
-		
+		try {
+			TaskManager.start();
+			
+			Timer t = new Timer();
+			   TimerTask task = new TimerTask(){
+			    @Override
+			    public void run() 
+			    {
+			     // 要执行的代码
+			    	//testUpdate();
+			    	System.err.println(DutyList.getInstance());
+			    	Trigger.printTriggers();
+			    }
+			   };
+			   t.schedule(task, 0, 10000);//测试更新，每10秒一次
+			   
+			   
+		} catch (ClassNotFoundException | SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		replaceWindowActionListener();
 		
 		//setEastPane();

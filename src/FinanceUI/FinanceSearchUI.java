@@ -33,6 +33,7 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
+import AuthModule.AuthLV1;
 import AuthModule.CardAuth;
 import KYUI.KYMainUI;
 import bb.common.EmployeeCardVO;
@@ -40,7 +41,7 @@ import bb.gui.ServerActionException;
 import bb.gui.base.ClientUI;
 import bb.gui.server.HRServerActionManager;
 
-public class FinanceSearchUI extends ClientUI {
+public class FinanceSearchUI extends ClientUI implements AuthLV1{
 	static FinanceSearchUI instance = null;
 	private String passDate="";
 	private JFrame f;
@@ -66,7 +67,7 @@ public class FinanceSearchUI extends ClientUI {
 	
 	public FinanceSearchUI()
 	{
-		if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)==0)
+		if(CardAuth.ID_Auth(this, 0)==0)
 			this.dispose();;
 		this.setLayout(new BorderLayout());
 		this.add(BorderLayout.NORTH, getInputPanel());
@@ -227,7 +228,7 @@ public class FinanceSearchUI extends ClientUI {
 	
 	public void submitHandler()
 	{
-		if(CardAuth.ID_Auth(KYMainUI.getInstance(), 2)!=1)
+		if(CardAuth.ID_Auth(this, 2)!=1)
 			return;
 		List<OneRecord> submit_list = new LinkedList<OneRecord>();
 		System.out.println(mark_list);
@@ -907,6 +908,12 @@ public class FinanceSearchUI extends ClientUI {
 		if(instance == null)
 			instance = new FinanceSearchUI();
 		return instance;
+	}
+
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return Level;
 	}
 
 

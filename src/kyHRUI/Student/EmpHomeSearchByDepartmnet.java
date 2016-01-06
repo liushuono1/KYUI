@@ -41,6 +41,18 @@ public class EmpHomeSearchByDepartmnet extends
 		EmployeeListUI ui = new EmployeeListUI() {
 
 			@Override
+			protected AbstractActionManager createActionManager() {
+				
+				System.out.println("Self action added");
+				
+				//System.out.println(getActionManager());
+				
+				AbstractActionManager action = new StudentActionManager(this);
+				return action;
+			}
+
+			
+			@Override
 			public Collection getDataOnQuickSearch(String searchText,
 					int firstIndex, int length) throws ServerActionException {
 				return HRServerActionManager.getInstance()

@@ -4,6 +4,7 @@ package kyHRUI.Student;
 import bb.common.*;
 import bb.gui.*;
 import bb.gui.base.DepartmentComboBox;
+import bb.gui.base.MultiLanguageComboBox;
 import bb.gui.hr.EmployeeStatusComboBox;
 import bb.gui.hr.HumanResourceUtil;
 import bb.gui.server.SecurityServerActionManager;
@@ -105,9 +106,9 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 		
 		lbListInCompanyAddressBook = new JLabel("家庭住址");
 		txtListInCompanyAddressBook = new YesNoComboBox();
-		txtSecurityLevel = new EmployeeLevelComboBox();
+		txtSecurityLevel = new StuSecurityLevelBox();
 		txtSecurityLevel.setSelectedItem(bb.common.Constant.EmployeeSecurityLevel.LEVEL5);
-		txtSecurityLevel.setEditable(false);
+		//txtSecurityLevel.setEditable(false);
 		txtPicture = new JTextField();
 		txtEmployeeID = new DisplayTextField();
 		lbEmail = new JLabel();
@@ -220,8 +221,8 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 				.getString("UWEmployeeGeneralPane.FirstName"));
 		lbLastName.setText(HumanResourceUtil
 				.getString("UWEmployeeGeneralPane.LastName"));
-		lbSecurityLevel.setText(HumanResourceUtil
-				.getString("UWEmployeeGeneralPane.SecurityLevel"));
+		lbSecurityLevel.setText("在园状态");
+				//HumanResourceUtil				.getString("UWEmployeeGeneralPane.SecurityLevel"));
 		lbPhoneExtension.setText("电话");
 		lbStartDate.setText(HumanResourceUtil
 				.getString("UWEmployeeGeneralPane.StartDate"));
@@ -618,7 +619,7 @@ public class UWEmployeeStudentPane extends JPanel implements UpdateStep {
 	JTextField txtCompanyAddressBookName;
 	JLabel lbListInCompanyAddressBook;
 	YesNoComboBox txtListInCompanyAddressBook;
-	EmployeeLevelComboBox txtSecurityLevel;
+	MultiLanguageComboBox txtSecurityLevel;
 	JTextField txtPicture;
 	JTextField txtEmployeeID;
 	JLabel lbEmail;

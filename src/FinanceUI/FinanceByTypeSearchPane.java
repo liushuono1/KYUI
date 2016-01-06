@@ -8,13 +8,14 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 
+import AuthModule.AuthLV1;
 import AuthModule.CardAuth;
 import KYUI.KYMainUI;
 import bb.gui.ServerActionException;
 import bb.gui.base.ClientUI;
 import bb.gui.swing.homepage.HomePageMultiRowSearchPane;
 
-public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane{
+public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane implements AuthLV1{
 
 	public FinanceByTypeSearchPane()
 	{
@@ -27,7 +28,7 @@ public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane{
 	  @Override
 	public ClientUI getSearchResultUI()       throws ServerActionException
 	  {
-		  if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)==1)
+		  if(CardAuth.ID_Auth(this, 0)==1)
 		  {		
 		  final String input = ((JComboBox)getInputComponent(0)).getSelectedItem().toString();
 		  
@@ -69,5 +70,11 @@ public class FinanceByTypeSearchPane extends HomePageMultiRowSearchPane{
 	        }
 	        return result;
 	    }
+
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return Level;
+	}
 	 
 }

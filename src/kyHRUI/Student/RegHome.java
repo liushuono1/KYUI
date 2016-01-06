@@ -14,17 +14,17 @@ public class RegHome extends BaseHomePage {
 	public RegHome() {
 		super(1);
 		
-		if(KYMainUI.department.equals("")||
+		if(true)/*(KYMainUI.department.equals("")||
 				KYMainUI.department.equals("园长办公室") ||
 				KYMainUI.department.equals("教工部") ||
-				KYMainUI.department.equals("综合办公室"))
+				KYMainUI.department.equals("综合办公室"))*/
 		{
 					Collection<String> deptss= EmployeeActionManager.getDepartmentList();
-    	
 					deptss.remove("园长办公室");
 					deptss.remove("教工部");
 					deptss.remove("综合办公室");
 					deptss.remove("");
+					deptss.remove("毕业");
 					this.setTitle("注册学生主页");
 					HomePageGroupPane group = getTabPane(0).getGroupPane(0);
 					

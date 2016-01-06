@@ -38,9 +38,9 @@ public class StuffUIGeneralPane extends JPanel {
 		txtWorkAddress = new DisplayTextField();
 		lbDepartment = new JLabel();
 		txtDepartment = new DisplayTextField();
-		lbPosition = new JLabel("学生身份");
+		lbPosition = new JLabel("职位");
 		txtPosition = new DisplayTextField();
-		lbManager = new JLabel("家长姓名");
+		lbManager = new JLabel("主管");
 				//HumanResourceUtil.getString("UWEmployeeGeneralPane.Manager"));
 		txtManager = new DisplayTextField();
 		lbPhone = new JLabel();
@@ -65,10 +65,10 @@ public class StuffUIGeneralPane extends JPanel {
 				HumanResourceUtil
 						.getString("EmployeeUIGeneralPane.ContractExpires"));
 		txtContractExpires = new DisplayTextField();
-		lbIDCardNumber = new JLabel("宝宝"+
+		lbIDCardNumber = new JLabel(
 				HumanResourceUtil.getString("EmployeeUIGeneralPane.IDCard"));
 		txtIDCardNumber = new DisplayTextField();
-		lbCompanyAddressBookName = new JLabel("宝宝全名");
+		lbCompanyAddressBookName = new JLabel("姓名");
 			//	HumanResourceUtil
 				//		.getString("EmployeeUIGeneralPane.CompanyAddressBookName"));
 		txtCompanyAddressBookName = new DisplayTextField();
@@ -83,7 +83,7 @@ public class StuffUIGeneralPane extends JPanel {
 		lbBirthPlace = new JLabel(
 				HumanResourceUtil.getString("EmployeeUIGeneralPane.BirthPlace"));
 		txtBirthPlace = new DisplayTextField();
-		lbEducation = new JLabel("家长教育水平");
+		lbEducation = new JLabel("学历");
 				//HumanResourceUtil.getString("EmployeeUIGeneralPane.Education"));
 		txtEducation = new DisplayTextField();
 		lbSource = new JLabel(
@@ -203,11 +203,11 @@ public class StuffUIGeneralPane extends JPanel {
 				.getString("EmployeeUIGeneralPane.EmployeeFirstName"));
 		lbWorkAddress.setText("家庭住址");//HumanResourceUtil
 				//.getString("EmployeeUIGeneralPane.EmployeeWorkAddress"));
-		lbID.setText("学生编号");//HumanResourceUtil
+		lbID.setText("员工编号");//HumanResourceUtil
 				//.getString("EmployeeUIGeneralPane.EmployeeIDNumber"));
 		lbLastName.setText(HumanResourceUtil
 				.getString("EmployeeUIGeneralPane.EmployeeLastName"));
-		lbDepartment.setText("班级");//HumanResourceUtil
+		lbDepartment.setText("部门");//HumanResourceUtil
 				//.getString("EmployeeUIGeneralPane.EmployeeDepartment"));
 		lbPhone.setText(HumanResourceUtil
 				.getString("EmployeeUIGeneralPane.EmployeePhone"));

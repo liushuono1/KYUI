@@ -203,14 +203,11 @@ public class FinanceReportUI extends ClientUI {
 			OneRecord r = validRecord_list.get(i);
 			double income = r.getIncome();
 			double expense = r.getExpense();
-			if(income != 0)
-			{
+			
 				sum_income += income;
-			}
-			else if(expense != 0)
-			{
+			
 				sum_expense += expense;
-			}
+			
 		}
 		double balance = sum_income - sum_expense;
 		return balance;

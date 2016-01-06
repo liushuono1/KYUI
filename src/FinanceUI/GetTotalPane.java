@@ -6,10 +6,12 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import AuthModule.AuthLV1;
+import AuthModule.CardAuth;
 import bb.gui.base.ClientUI;
 import kyHRUI.Student.BasicActionPane;
 
-public class GetTotalPane extends BasicActionPane{
+public class GetTotalPane extends BasicActionPane implements AuthLV1{
 String account;
 	public GetTotalPane(String account) {
 		super(null);
@@ -24,7 +26,14 @@ String account;
 		final double balance = this.calculateBalance(records);
 		if(balance != 0)
 		{
-			JOptionPane.showMessageDialog(null, "余额为"+String.valueOf(balance)+"元");
+			if(CardAuth.ID_Auth(this, 0)==1)
+			{
+				JOptionPane.showMessageDialog(null, "余额为"+String.valueOf(balance)+"元");
+			}else
+			{
+				JOptionPane.showMessageDialog(null,"请申请权限！！！");
+			}
+			
 		}
 		else
 		{
@@ -68,5 +77,11 @@ String account;
 	@Override
 	public String getButtonText() {
 		return "查询余额";
+	}
+
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return Level;
 	}
 }

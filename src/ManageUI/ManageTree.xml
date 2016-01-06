@@ -13,7 +13,10 @@
 		<node name="UNC3" homeClass="KYUI.BlankUI" invisible="true"></node>
 		<node name="UNC4" homeClass="KYUI.BlankUI" invisible="true" />
 	</node>
-	<node name="员工管理" homeClass="kyHRUI.Stuff.SearchHome" invisible="false"></node>
+	<node name="员工管理" homeClass="kyHRUI.Stuff.SearchHome" invisible="false">
+		<node name="添加新员工" homeClass="kyHRUI.Stuff.RegHome" invisible="false"></node>
+		<node name="查找员工" homeClass="kyHRUI.Stuff.SearchHome" invisible="false"></node>
+		</node>
 
 	<node name="财务"
 		homeClass="FinanceUI.Homepage">
@@ -25,7 +28,7 @@
 			homeClass="FinanceUI.RecentRecords" />
 		<node name="学生收费"
 			homeClass="FinaceUI.Manege.paymentUI" />
-		<node name="UNC6" homeClass="FinanceUI.StatisticHomepage" invisible="true" />
+		<node name="UNC6" homeClass="FinanceUI.StatisticHomepage" invisible="false" />
 		<node name="UNC7" homeClass="KYUI.BlankUI" invisible="true" />
 	</node>
 

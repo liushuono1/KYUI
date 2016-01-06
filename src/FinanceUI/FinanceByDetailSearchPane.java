@@ -3,13 +3,14 @@ package FinanceUI;
 import java.util.Collection;
 import java.util.List;
 
+import AuthModule.AuthLV1;
 import AuthModule.CardAuth;
 import KYUI.KYMainUI;
 import bb.gui.ServerActionException;
 import bb.gui.base.ClientUI;
 import bb.gui.swing.homepage.HomePageSingleTextFieldSearchPane;
 
-public class FinanceByDetailSearchPane extends HomePageSingleTextFieldSearchPane {
+public class FinanceByDetailSearchPane extends HomePageSingleTextFieldSearchPane implements AuthLV1{
 
 	public FinanceByDetailSearchPane()
 	{
@@ -21,7 +22,7 @@ public class FinanceByDetailSearchPane extends HomePageSingleTextFieldSearchPane
      throws ServerActionException
      {
 		 
-		 if(CardAuth.ID_Auth(KYMainUI.getInstance(), 0)==1)
+		 if(CardAuth.ID_Auth(this, 0)==1)
 		  {		
 			   Collection<OneRecord> recordList =  FinanceUtil.searchByDetail(input);
 			   FinanceSearchUI ui = new FinanceSearchUI((List<OneRecord>) recordList);
@@ -35,4 +36,10 @@ public class FinanceByDetailSearchPane extends HomePageSingleTextFieldSearchPane
 		 
 
      }
+
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return Level;
+	}
 }

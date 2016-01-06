@@ -187,7 +187,7 @@ public class SimpleAttendenceRate {
             {
             	String date  = rs.getString("L_date");
             	String dept=  rs.getString("department");
-            	if(!dept.equals("教工部") && !dept.equals("综合办公室") && !dept.equals("园长办公室"))
+            	if(!dept.equals("教工部") && !dept.equals("综合办公室") && !dept.equals("园长办公室") && !dept.equals("毕业")&& !dept.equals("宝二班"))
             	{
             	 	System.out.println(dept+"\t"+date+"   :  "+ rs.getDouble("Att"));
                 	if(!Sats.contains(date))
@@ -201,11 +201,8 @@ public class SimpleAttendenceRate {
                 	
                 	System.out.println(dept+"\t"+date+"\t"+(DeptDate_Num.get(dept+"\t"+date)-rs.getDouble("Att")));
             	}
-   
             	
             }
-            
-           
             //System.out.println(DeptDate_Att_Sat);
             double sum_a1=0;
             for(double s:DeptDate_Att.values())
@@ -219,7 +216,9 @@ public class SimpleAttendenceRate {
             	sum_a2+=s;
             }
             
-            double ratio= (sum_a1/DeptDate_Att.size())/(sum_a2/DeptDate_Att_Sat.size());
+            double ratio= (sum_a1/DeptDate_Att.size())*(sum_a1/DeptDate_Att.size())/(sum_a2/DeptDate_Att_Sat.size());
+            ratio=ratio>1.5?1.5:ratio;
+            //ratio=1;
             System.out.println("ratio"+ratio);
             
             
@@ -300,6 +299,6 @@ public class SimpleAttendenceRate {
 	{
 		
 
-		SimpleAttendenceRate.getAttendenceRate("2015-06",bds);
+		SimpleAttendenceRate.getAttendenceRate("2015-11",bds);
 	}
 }

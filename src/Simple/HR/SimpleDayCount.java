@@ -45,7 +45,7 @@ public class SimpleDayCount {
     
     public static void TeacherDayCount()
     {
-    	String Year_Month="2015-06";
+    	String Year_Month="2015-09";
     	List<TimeRecord> list_all= new LinkedList<TimeRecord>();
     	 try {
  			Connection conn= bds.getConnection();

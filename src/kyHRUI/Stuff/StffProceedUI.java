@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import FinaceUI.Manege.paymentUI;
 import ManageUI.CardRegUI;
+import Simple.HR.SimpleTeacherArrange;
 import bb.common.EmployeeCardVO;
 import bb.gui.base.BaseHomePage;
 import bb.gui.base.ClientUI;
@@ -89,12 +90,31 @@ public class StffProceedUI extends BaseHomePage {
 					
 					@Override
 					public ClientUI getSearchResultUI() {
-						paymentUI ui = new paymentUI(VO);
-						return  ui;
+						new SimpleTeacherArrange(VO);
+						return  null;
 					}
 				};
 				lookUpAndSearchPane.add(pane);
 				group.addSearchPane(lookUpAndSearchPane);
+				
+				lookUpAndSearchPane = new MulHomePage();
+				pane  = new BasicActionPane(VO)
+					{
+						
+						@Override
+						public  String getAddUiTitle()
+						{
+							return "Œ¥∂®“Â";
+						};
+						
+						@Override
+						public ClientUI getSearchResultUI() {
+							
+							return  null;
+						}
+					};
+					lookUpAndSearchPane.add(pane);
+					group.addSearchPane(lookUpAndSearchPane);
 
 	}
 }

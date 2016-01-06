@@ -14,11 +14,11 @@ public class RegHome extends BaseHomePage {
 		super(1);
 		this.setTitle("注册员工主页");
 		HomePageGroupPane group = getTabPane(0).getGroupPane(0);
-		newStuff ui= new newStuff(KYMainUI.department)
+		newStuff ui= new newStuff("教工部")
 		{
 			@Override
 			public String getButtonText() {
-				return "添加新的"+KYMainUI.department+"员工";
+				return "添加新的员工";
 			}
 		};
 		group.addSearchPane(ui);

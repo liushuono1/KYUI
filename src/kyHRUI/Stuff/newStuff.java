@@ -67,25 +67,25 @@ public String firstIDbyType(String classtype)
 	
 	if(classtype.contains("宝一班"))
 	{
-		return "KY2015001";
+		return "KY"+YEAR+"001";
 	}else if(classtype.contains("宝二班"))
 	{
-		return "KY2015101";
+		return "KY"+YEAR+"101";
 	}else if(classtype.contains("宝三班"))
 	{
-		return "KY2015701";
+		return "KY"+YEAR+"701";
 	}else if(classtype.contains("小一班"))
 	{
-		return "KY2015201";
+		return "KY"+YEAR+"201";
 	}else if(classtype.contains("小二班"))
 	{
-		return "KY2015301";
+		return "KY"+YEAR+"301";
 	}else if(classtype.contains("中班"))
 	{
-		return "KY2015501";
+		return "KY"+YEAR+"501";
 	}else if(classtype.contains("大班"))
 	{
-		return "KY2015601";
+		return "KY"+YEAR+"601";
 	}else if(classtype.contains("教工部"))
 	{
 		return "K"+YEAR+"001";

@@ -167,6 +167,7 @@ public class StudentAddPane extends AddActionPane {
 		vo.setLastName(lastName);
 		vo.setFirstName(FirstName);
 		vo.setUserName(UserName);
+		vo.setDepartment(classType);
 		vo.setGender(true);
 		try {
 			empId = HRServerActionManager.getInstance().addEmployeeCard(vo,	isAutoAdd);
@@ -178,8 +179,6 @@ public class StudentAddPane extends AddActionPane {
 			return false;
 		}
 	}
-	
-	
 	
 	
 	public static boolean valid_tuijianka(String ID)

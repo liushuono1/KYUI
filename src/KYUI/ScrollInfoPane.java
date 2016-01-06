@@ -1,6 +1,8 @@
 package KYUI;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -9,32 +11,70 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import Simple.Duty;
+import Simple.FeedBackPane;
 
 public class ScrollInfoPane extends JButton implements Runnable{
 
-	  /**
+	
+	
+	static ScrollInfoPane instance;
+	/**
      * 参考纵坐标，控制动画效果
      */
-    int y,y2,textspeed;   
-    int strWidth ,noticeWidth,fontsize;
+    
+	int y,y2,textspeed;   
+    public int getTextspeed() {
+		return textspeed;
+	}
+
+
+	public void setTextspeed(int textspeed) {
+		this.textspeed = textspeed;
+	}
+
+
+	int strWidth ,noticeWidth,fontsize;
     public int lines=1;
     public static MsgQueue  msgQueue = new MsgQueue();
     public static String textContent ="";
     public static String NoticeContent = "";
+    FeedBackPane fdbp;
+    
+    
 
   
     
+
+	public void setFdbp(FeedBackPane fdbp) {
+		this.fdbp = fdbp;
+	}
+
+	
+	public static ScrollInfoPane getInstance() {
+		return instance;
+	}
+
+
+	
+
 	public ScrollInfoPane(int Lines,String initmsg,String InitNotice)
 	{
+		
+		ScrollInfoPane.instance = this;
 		this.lines=Lines;
 		pushMsg(initmsg);
 		NoticeContent=InitNotice;
-		System.out.println("here3"+System.currentTimeMillis());
+		//System.out.println("here3"+System.currentTimeMillis());
 		this.addActionListener(new ActionListener(){
 
 			@Override
@@ -45,7 +85,9 @@ public class ScrollInfoPane extends JButton implements Runnable{
 				{
 					NoticeContent="";  //还需加入信息到操作日志（未完成）
 				}
-				
+				JFrame frame= interFrame.getInstance();
+				frame.add(BorderLayout.CENTER,fdbp);
+				frame.setVisible(true);
 				
 			}});
 		
@@ -54,11 +96,23 @@ public class ScrollInfoPane extends JButton implements Runnable{
 	public ScrollInfoPane(int Lines)
 
 	{
+		ScrollInfoPane.instance = this;
 		this.lines=Lines;
+		this.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				JFrame frame= interFrame.getInstance();
+				//System.out.println(((Duty)msgQueue.currentMsg()).getFeedback().getType());
+				frame.add(BorderLayout.CENTER,fdbp);
+				frame.setVisible(true);
+				
+			}});
 		
 	}
 	
-	public void pushMsg(String m)
+	public void pushMsg(Object m)
 	{
 		msgQueue.addMsg(m);
 	}
@@ -68,7 +122,7 @@ public class ScrollInfoPane extends JButton implements Runnable{
 		NoticeContent=m;
 	}
 	
-	public void pushOnlyMsg(String m)
+	public void pushOnlyMsg(Object m)
 	{
 		msgQueue.clearMsg();
 		msgQueue.addMsg(m);
@@ -101,7 +155,7 @@ public class ScrollInfoPane extends JButton implements Runnable{
 				fontsize=(int)(getSize().getHeight()*0.9);
 			
 		}
-		textspeed=(int)(getSize().getWidth()*0.01);
+		textspeed=(int)(getSize().getWidth()*0.02);
 	}
 	public void startshow()
 	{
@@ -109,7 +163,7 @@ public class ScrollInfoPane extends JButton implements Runnable{
 		
 		
 		new Thread(this).start();
-		System.out.println(getSize().height +"    "+getSize().width);
+		//System.out.println(getSize().height +"    "+getSize().width);
 	}
 	
 	 @Override
@@ -122,8 +176,18 @@ public class ScrollInfoPane extends JButton implements Runnable{
 	    		
 		    		y -= textspeed;
 		            if (y < -strWidth)
-		            {
-		            	textContent=msgQueue.nextMsg();
+		            {		            	
+		            	textContent=msgQueue.nextMsg().toString();
+		            	if(msgQueue.currentMsg() instanceof Duty)
+		            	{
+		            		setFdbp(((Duty)msgQueue.currentMsg()).getFeedback().getFeedBackPane());
+		            		((Duty)msgQueue.currentMsg()).getFeedback().setHostwindow(interFrame.getInstance());
+		            		
+		            		System.err.println("***"+((Duty)msgQueue.currentMsg()).getFeedback().getType());
+		            	}else
+		            	{
+		            		setFdbp(new StringFDBP(textContent));
+		            	}
 		            	
 		            	y = this.getSize().width;
 		            }
@@ -241,7 +305,7 @@ public class ScrollInfoPane extends JButton implements Runnable{
 class MsgQueue
 {
 	int maxMsg =5,pointer=0;
-	Queue<String> msgs = new LinkedList<String>();
+	List<Object> msgs = new LinkedList<Object>();
 	
 
 	public void addAll(Collection<String> c)
@@ -250,9 +314,10 @@ class MsgQueue
 		{
 			addMsg(m);
 		}
+	
 	}
 	
-	public void addAll(String[] c)
+	public void addAll(Object[] c)
 	{
 		for(int i=0;i<c.length;i++)
 		{
@@ -260,30 +325,46 @@ class MsgQueue
 		}
 	}
 	
-	public void addMsg(String m)
+	public void addMsg(Object m)
 	{
 		msgs.add(m);
 		if(msgs.size()>(maxMsg>0?maxMsg:Integer.MAX_VALUE))
 		{
-			int count= msgs.size()-maxMsg;
+			/*int count= msgs.size()-maxMsg;
 			while(count-->0)
 			{
 				msgs.poll();
-			}
+			}*/
+			msgs.remove(0);
 		}
 	}
 	
-	public String nextMsg()
+	public Object currentMsg()
+	{
+		if(msgs.size()==0)
+			return "";
+		else
+			return (msgs.toArray()[pointer]);
+	}
+	
+	public Object nextMsg()
 	{	
 		if(msgs.size()!=0)
 		{
-
+			pointer++;
 			if(pointer>=msgs.size())
 			{
 				pointer=0;
 			}
+			if((msgs.toArray()[pointer])instanceof Duty&&((Duty)msgs.toArray()[pointer]).isFinished())
+			{
+				
+				msgs.remove(msgs.toArray()[pointer]);
+				pointer--;
+				return nextMsg();
+			}
 			
-			return (String)(msgs.toArray()[pointer++]);
+			return (msgs.toArray()[pointer]);
 		}
 		else
 		{
@@ -294,8 +375,72 @@ class MsgQueue
 	
 	public void clearMsg()
 	{
-		msgs.clear();
+		int removeIdx=0;
+		while(msgs.size()!=0 && removeIdx<msgs.size())
+		{
+			if(msgs.get(removeIdx) instanceof String)
+			{
+				msgs.remove(removeIdx);
+			}else
+			{
+				removeIdx++;
+			}
+		}
+		
+		
 	}
+	
+	public void clear()
+	{
+		msgs.clear();
+	};
 
 }
 
+
+class interFrame extends JFrame
+{   
+	static JFrame instance;
+	interFrame()
+	{
+		instance=this;
+		this.setSize(new Dimension(300,200));
+		this.setLayout(new BorderLayout());
+	}
+	public static JFrame getInstance()
+	{
+		if(instance==null)
+		{
+			new interFrame();
+		}
+		return instance;
+		
+	}
+	
+}
+
+class StringFDBP extends FeedBackPane
+{
+
+	StringFDBP(final String title) {
+		JButton ExpBtn = new JButton("详细");
+		ExpBtn.addActionListener(new ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent actionevent) {
+						// TODO Auto-generated method stub
+						//JOptionPane.showConfirmDialog(null,title );
+					}
+				});
+		
+		this.add(BorderLayout.SOUTH,ExpBtn);
+		JLabel lbl = new JLabel(title);
+		JPanel lblPane = new JPanel();
+		lblPane.setLayout(new BorderLayout());
+		lblPane.add(lbl);
+		this.setFeedbackPane(lblPane);
+			// TODO Auto-generated constructor stub
+	}
+	
+}

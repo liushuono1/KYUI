@@ -46,7 +46,7 @@ public class RollCallUI extends ClientUI implements KYRefreshable{
 	
 	static String  SQLIP = KYMainUI.SQLIP,
 		   classType=KYMainUI.department;
-	static int classMax=Integer.parseInt(KYMainUI.KYProperties.getProperty("classMax"));
+	public static int classMax=Integer.parseInt(KYMainUI.KYProperties.getProperty("classMax"));
 	static boolean AfterCareTime=false;		
 	static //String audiofile ="189.wav";
 	java.sql.Time checkTime = new java.sql.Time(System.currentTimeMillis());
